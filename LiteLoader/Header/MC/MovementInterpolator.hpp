@@ -10,7 +10,14 @@
 class MovementInterpolator {
 
 #define AFTER_EXTRA
-
+public:
+    Vec3 mPos;
+    Vec2 mRot;
+    float mHeadYaw;
+    int mPositionSteps;
+    int mRotationSteps;
+    int mHeadYawSteps;
+    bool mInterpolationActive;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEMENTINTERPOLATOR
 public:

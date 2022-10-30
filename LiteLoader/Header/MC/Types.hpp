@@ -864,6 +864,15 @@ enum class ActorType : unsigned int {
     MAX_ENTITY_ID = 0x100,
 };
 
+enum class MobSpawnMethod : int {
+    Unknown = 0x0,
+    SpawnEgg = 0x1,
+    Command = 0x2,
+    Dispenser = 0x3,
+    Spawner = 0x4,
+    SpawnMethod_Count = 0x5,
+};
+
 enum Difficulty : int {
     Peaceful = 0,
     Easy     = 1,

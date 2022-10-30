@@ -3,22 +3,101 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Actor.hpp"
-
-#define BEFORE_EXTRA
-
-#undef BEFORE_EXTRA
-
+#include "CompassSpriteCalculator.hpp"
+#include "ClockSpriteCalculator.hpp"
+#include "MovementInterpolator.hpp"
 class Mob : public Actor {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
 public:
-struct JumpPreventionResult {
-    JumpPreventionResult() = delete;
-    JumpPreventionResult(JumpPreventionResult const&) = delete;
-    JumpPreventionResult(JumpPreventionResult const&&) = delete;
-};
-enum TravelType;
+    struct JumpPreventionResult {
+        JumpPreventionResult() = delete;
+        JumpPreventionResult(JumpPreventionResult const&) = delete;
+        JumpPreventionResult(JumpPreventionResult const&&) = delete;
+    };
+    enum TravelType;
+
+public:
+    float mYBodyRot;//1672
+    float mYBodyRotO;
+    float mYHeadRot;
+    float mYHeadRotO;
+    int mHurtTime;
+    int mHurtDuration;
+    float mHurtDir;
+    int mAttackTime;
+    float mOTilt;
+    float mTilt;
+    int mLookTime;
+    float mFallTime;
+    bool mFloatsInLiquid;
+    int mJumpTicks;
+    Vec3 mElytraRot;
+    CompassSpriteCalculator mCompassSpriteCalc;
+    ClockSpriteCalculator mClockSpriteCalc;	
+    float mXxa;
+    float mYya;
+    float mZza;
+    float mYRotA;
+    bool mHasMoveInput;
+    float mAttackAnim;
+    float mORun;
+    float mRun;
+    bool mSwinging;
+    int mSwingTime;
+    int mNoActionTime;
+    int mNoJumpDelay;
+    float mDefaultLookAngle;
+    float mFrictionModifier;
+    float mFlyingSpeed;
+    float mSwimSpeedMultiplier;
+    int mDeathTime;
+    int mDeathScore;
+    float mAnimStep;
+    float mAnimStepO;
+    float mLockedBodyYRot;
+    float mRiderYRotLimit;
+    MovementInterpolator mInterpolation;
+    int mLastHurt;
+    ActorDamageCause mLastHurtCause;
+    unsigned __int64 mLastHurtTimestamp;
+    int mDmgSpill;
+    int mDmgPartial;
+    bool mJumping;
+    bool mJumpVelRedux;
+    float mPlayerJumpPendingScale;
+    bool mAllowStandSliding;
+    Vec3 mJumpStartPos;
+    float mSpeed;
+    float mMovementComponentCurrentSpeed;
+    bool mSurfaceMob;
+    bool mNaturallySpawned;
+    bool mDead;
+    std::weak_ptr<class VillageLegacy> mVillageLegacy;
+    bool mWantsToBeJockey;
+    int mAmbientPlayBackInterval;
+    bool mSpawnedXP;
+    int mRollCounter;
+    ActorUniqueID mLookingAtId;
+    ActorUniqueID mLastHurtMobId;
+    ActorUniqueID mLastHurtByMobId;
+    ActorUniqueID mLastHurtByPlayerId;
+    ActorUniqueID mCaravanHead;
+    ActorUniqueID mCaravanTail;
+    int mLastHurtMobTimestamp;
+    int mLastHurtByMobTime;
+    int mLastHurtByMobTimestamp;
+    float mOAttackAnim;
+    int mArrowCount;
+    int mRemoveArrowTime;
+    int mFallFlyTicks;
+    bool mHasBoundOrigin;
+    BlockPos mBoundOrigin;
+    MobSpawnMethod mSpawnMethod;
+    bool mCreateAiOnReload;
+    ActorUniqueID mTargetCaptainId;
+
 
 public:
 
@@ -282,3 +361,5 @@ protected:
 private:
 
 };
+
+//static_assert(offsetof(Mob, mJumping) == 1920);

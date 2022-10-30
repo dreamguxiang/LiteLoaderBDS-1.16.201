@@ -208,9 +208,8 @@ Vec3 Actor::getCameraPos() const {
  namespace HitDetection {
  void searchActors(class Vec3 const& a1, float a2, class Vec3 const& a3, class AABB const& a4, class Actor* a5, class Player* a6, float& a7, class Actor*& a8, class Vec3& a9, bool a10) {
  }
- }
+}; 
 
- }; 
  Actor* Actor::getActorFromViewVector(float maxDistance) {
      auto& bs = getRegion();
      auto pos = getCameraPos();

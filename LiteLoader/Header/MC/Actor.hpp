@@ -244,7 +244,6 @@ public:
     float mExplosionOffset;
     float mShadowOffset;
     float mMaxAutoStep;
-    //float mUserDefineMaxAutoStep;
     float mPushthrough;
     float mWalkDistPrev;
     float mWalkDist;
@@ -271,7 +270,6 @@ public:
     bool mWasHurtLastFrame;
     bool mInvulnerable;
     int mOnFire;
-    //int mBurnDamage;
     int mFlameTexFrameIndex;
     int mClientSideFireTransitionStartTick;
     float mFlameFrameIncrementTime;
@@ -304,23 +302,6 @@ public:
     ActorUniqueID mLegacyUniqueID;
     bool mHighlightedThisFrame;
     bool mInitialized;
-    //bool mShowNametag;
-    //bool mAlwaysShowNameTag;
-    //bool mNotRenderAtAll;
-    //int mAOIRenderDist;
-    //bool isHideHead;
-    //bool isHideTorso;
-    //bool isHideLeg;
-    //bool isHideFeet;
-    //bool isAiClosed;
-    //float mGravity;
-    //bool mIsModEntity;
-    //bool mIgnoreHurt;
-    //bool mNeedDispatchKnock;
-    //bool mNeedSyncModData;
-    //bool mNeedStopNextKnockBack;
-    //bool mNeedTriggerNextKnockBack;
-    //ActorUniqueID oldEntityUniqueID;
     BlockSource* mRegion;
     Dimension* mDimension;
     Level* mLevel;
@@ -333,13 +314,10 @@ public:
     ActorType mActorType;
     ActorDefinitionIdentifier mActorIdentifier;
     std::unique_ptr<BaseAttributeMap> mAttributes;
-    //std::unique_ptr<StorylineComponent> mStorylineComponent;
-    //std::unique_ptr<MoveTrackComponent> mMoveTrackComponent;
     std::unique_ptr<EconomyTradeableComponent> mEconomyTradeableComponent;
     std::shared_ptr<AnimationComponent> mAnimationComponent;
     AABBShapeComponent mAABBComponent;
     StateVectorComponent mStateVectorComponent;
-    //Vec3 mPostTickPosDelta; //??
     std::unique_ptr<PredictedMovementComponent> mPredictedMovementComponent;
     ActorUniqueID mTargetId;
     ActorUniqueID mInLovePartner;
@@ -364,11 +342,6 @@ public:
     ActorTerrainInterlockData mTerrainInterlockData;
     float mArmorDropChance[4];
     float mHandDropChance[2];
-    //bool mIsKnockedBackOnDeath;
-    //int mClientObjId;
-    //bool mIsMovedByScript;
-    //bool mIsPlayingRidingAni;
-    //bool mIsOnScreen;
     bool mUpdateBonesAndEffects;
     bool mUpdateEffects;
     std::shared_ptr < struct IActorMovementProxy > mMovementProxy;
@@ -396,42 +369,6 @@ public:
     MolangVariableMap mMolangVariables;
     CompoundTag mCachedComponentData;
     ActorUniqueID mFishingHookID;
-
-	
-   // std::unordered_map<int, class EntityFont*> mEntityFontMap;
-   //std::set<int> mFrameAniSet;
-   //std::set<int> mParticleSet;
-   //int mItemBindModel;
-   //int mWeaponBindModel;
-   //bool mWBMEnabled;
-   //bool mWBMSynFlag;
-   //int mNameTagSfx;
-   //std::string mItemBindModelName;
-   //Netease::SkeletonBindInfo mSkeletonBindInfo;
-   // std::unique_ptr<std::unordered_set<ActorUniqueID>> mSurroundHitTestEntityFilter;
-   // std::unique_ptr<std::unordered_set<BlockPos>> mSurroundHitTestBlockEntityFilter;
-   // std::unique_ptr<class SurroundHitTest> mSurroundHitTest;
-   // std::string mFireSource;
-   // bool mPresistence;
-   // bool mKeepInClient;
-   // bool mUseModelSkin;
-   // Vec3 mModelOffset;
-   // std::string mModelName;
-   // std::string mModelTexture;
-   // ActorUniqueID mModelBindActorID;
-   // ActorUniqueID mCameraBindActorID;
-   // bool mModelHurtShader;
-   // std::string mScriptData;
-   // std::string mScriptId;
-   // Vec3 mCustomSeat;
-   // bool mIsCustomSeat;
-   // bool mIsRideControl;
-   // bool mIsRideRight;
-   // bool mIsShowHorseInventory;
-   // bool mIsRestrictToOwner;
-   // float mUiModelScale;
-   // Vec3 mUiModelOffset;
-   // bool mUseAttrDamage;
 
 #define AFTER_EXTRA
 public:
@@ -965,4 +902,4 @@ private:
 
 };
 
-static_assert(offsetof(Actor, mTicksInWall) == 1564);
+static_assert(offsetof(Actor, mFishingHookID) == 1664);

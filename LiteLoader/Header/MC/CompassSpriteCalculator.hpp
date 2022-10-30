@@ -10,7 +10,10 @@
 class CompassSpriteCalculator {
 
 #define AFTER_EXTRA
-
+public:
+    int mFrame;
+    float mRot;
+    float mRotA;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPASSSPRITECALCULATOR
 public:

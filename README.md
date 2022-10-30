@@ -1,4 +1,5 @@
-# The support is almost complete. Some events are not supported
+# This project is developed based on BDS 1.16.201
+# Try to be compatible with multiple versions (1.16.201-1.19.40)
 
 # LiteLoaderBDS - Epoch-making & Cross-language Bedrock Dedicated Servers Plugin Loader
 

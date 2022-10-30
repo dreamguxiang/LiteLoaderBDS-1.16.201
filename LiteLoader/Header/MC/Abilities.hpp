@@ -4,13 +4,17 @@
 #include "../Global.h"
 
 #define BEFORE_EXTRA
-
+#include "PermissionsHandler.hpp"
+#include "Ability.hpp"
 #undef BEFORE_EXTRA
 
 class Abilities {
 
 #define AFTER_EXTRA
-
+public:
+    std::unique_ptr<class PermissionsHandler> mPermissions;
+    std::array<Ability, 18> mAbilities;
+    std::array<Ability, 8> mCustomAbilityCache;
 #undef AFTER_EXTRA
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITIES

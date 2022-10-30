@@ -10,6 +10,12 @@
 class PlayerInventory {
 
 #define AFTER_EXTRA
+public:
+    struct SlotData {
+    public:
+        ContainerID mContainerId;
+        int mSlot;
+    };
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERINVENTORY

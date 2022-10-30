@@ -11,7 +11,9 @@
 class SimpleContainer : public Container {
 
 #define AFTER_EXTRA
-
+public:
+    int mSize;
+    std::vector<ItemStack> mItems;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLECONTAINER
 public:

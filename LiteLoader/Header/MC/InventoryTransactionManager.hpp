@@ -10,7 +10,13 @@
 class InventoryTransactionManager {
 
 #define AFTER_EXTRA
-
+public:
+    char filler[0x28];
+    //class Player* mPlayer;//0
+    //std::unique_ptr<class InventoryTransaction> mCurrentTransaction;//8
+    //std::vector<class InventoryAction> mExpectedActions;//16
+    //std::vector<class InventoryTransactionItemGroup> mInventoryTransaction;//64
+	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTIONMANAGER
 public:
@@ -29,3 +35,5 @@ public:
     MCAPI ~InventoryTransactionManager();
 
 };
+
+static_assert(sizeof(InventoryTransactionManager) == 0x28);

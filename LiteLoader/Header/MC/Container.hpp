@@ -11,7 +11,17 @@
 class Container {
 
 #define AFTER_EXTRA
-// Add new members to class
+    // Add new members to class
+public:
+    ContainerType mContainerType;
+    ContainerType mGameplayContainerType;
+    std::unordered_set<class ContainerContentChangeListener*> mContentChangeListeners;
+    std::unordered_set<class ContainerSizeChangeListener*> mSizeChangeListeners;
+    std::deque<std::function<void __cdecl(Container&, int, ItemStack const&, ItemStack const&)>> mTransactionContextStack;
+    std::string mName;
+    bool mCustomName;
+    unsigned int mContainerRuntimeId;
+	
 public:
     LIAPI std::string getTypeName();
 

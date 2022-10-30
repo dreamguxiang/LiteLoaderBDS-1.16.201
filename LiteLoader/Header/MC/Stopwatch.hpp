@@ -10,7 +10,13 @@
 class Stopwatch {
 
 #define AFTER_EXTRA
-
+public:
+    long double _st;
+    long double _tt;
+    long double _last;
+    long double _max;
+    int _count;
+    int _printcounter;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOPWATCH
 public:

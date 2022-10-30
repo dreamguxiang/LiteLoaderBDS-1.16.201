@@ -10,6 +10,8 @@
 class PermissionsHandler {
 
 #define AFTER_EXTRA
+public:
+    uint8_t mCommandPermissions[1];
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERMISSIONSHANDLER

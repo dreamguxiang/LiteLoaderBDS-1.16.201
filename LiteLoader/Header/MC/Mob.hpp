@@ -6,7 +6,7 @@
 #include "CompassSpriteCalculator.hpp"
 #include "ClockSpriteCalculator.hpp"
 #include "MovementInterpolator.hpp"
-class Mob : public Actor {
+class __declspec(align(8)) Mob : public Actor {
 
 #define AFTER_EXTRA
     // Add Member There

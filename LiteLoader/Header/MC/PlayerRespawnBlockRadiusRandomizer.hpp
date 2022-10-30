@@ -10,7 +10,13 @@
 class PlayerRespawnBlockRadiusRandomizer {
 
 #define AFTER_EXTRA
-
+public:
+    unsigned int mSpawnRadius;
+    unsigned int mPossibleOrigins;
+    unsigned int mLargestPrime;
+    unsigned int mStartOrigin;
+    unsigned int mCurrentOrigin;
+    unsigned int mIterationCount;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERRESPAWNBLOCKRADIUSRANDOMIZER
 public:

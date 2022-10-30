@@ -10,7 +10,24 @@
 class Ability {
 
 #define AFTER_EXTRA
+public:
+    char filler[12];
+    enum class Type : unsigned char {
+        Invalid = 0x0,
+        Unset = 0x1,
+        Bool = 0x2,
+        Float = 0x3,
+    };
 
+    enum class Options : unsigned char{
+        None = 0x0,
+        NoSave = 0x1,
+        CommandExposed = 0x2,
+        PermissionsInterfaceExposed = 0x4,
+        WorldbuilderOverrides = 0x8,
+    };
+
+	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABILITY
 public:
@@ -24,3 +41,6 @@ public:
     MCAPI Ability();
 
 };
+
+
+

@@ -4,13 +4,15 @@
 #include "../Global.h"
 
 #define BEFORE_EXTRA
-
+#include "ItemInstance.hpp"
 #undef BEFORE_EXTRA
 
-class ItemGroup {
+class __declspec(align(8)) ItemGroup {
 
 #define AFTER_EXTRA
-
+public:
+    ItemInstance mItemTemplate;
+    int mCount;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMGROUP
 public:

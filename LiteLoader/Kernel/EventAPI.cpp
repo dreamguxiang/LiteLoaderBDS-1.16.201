@@ -63,15 +63,15 @@
 #include <MC/PackSource.hpp>
 #include <MC/TextPacket.hpp>
 
-static_assert(offsetof(InventoryAction, source) == 0x0);
-static_assert(offsetof(InventoryAction, slot) == 0x0c);
-static_assert(offsetof(InventorySource, type) == 0x0);
-static_assert(offsetof(InventorySource, container) == 0x04);
-static_assert(offsetof(InventorySource, flags) == 0x08);
-static_assert(offsetof(ComplexInventoryTransaction, type) == 0x08);
-static_assert(offsetof(ComplexInventoryTransaction, data) == 0x10);
-static_assert(offsetof(InventoryTransaction, actions) == 0x0);
-static_assert(offsetof(InventoryTransaction, items) == 0x40);
+//static_assert(offsetof(InventoryAction, source) == 0x0);
+//static_assert(offsetof(InventoryAction, slot) == 0x0c);
+//static_assert(offsetof(InventorySource, type) == 0x0);
+//static_assert(offsetof(InventorySource, container) == 0x04);
+//static_assert(offsetof(InventorySource, flags) == 0x08);
+//static_assert(offsetof(ComplexInventoryTransaction, type) == 0x08);
+//static_assert(offsetof(ComplexInventoryTransaction, data) == 0x10);
+//static_assert(offsetof(InventoryTransaction, actions) == 0x0);
+//static_assert(offsetof(InventoryTransaction, items) == 0x40);
 
 using namespace Event;
 using std::vector;
@@ -2055,7 +2055,7 @@ TInstanceHook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTran
             auto& action = InvTran.getActions(InventorySource(InventorySourceType::Container, ContainerID::Inventory));
             if (action.size() == 1) {
                 PlayerDropItemEvent ev{};
-                auto& item = a2->getInventory().getItem(action[0].slot);
+                auto& item = a2->getInventory().getItem(action[0].mSlot);
                 ev.mItemStack = const_cast<ItemStack*>(&item);
                 ev.mPlayer = a2;
                 if (!ev.call()) {

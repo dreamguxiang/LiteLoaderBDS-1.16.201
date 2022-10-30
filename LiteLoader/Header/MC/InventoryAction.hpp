@@ -12,12 +12,13 @@
 class InventoryAction {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
 public:
-    InventorySource source;                    // 0
-    uint32_t slot;                             // 12
-    ItemStack fromItem;                        // 16
-    ItemStack toItem;                          // 264
+    InventorySource mSource;
+    unsigned int mSlot;
+    ItemStack mFromItem;
+    ItemStack mToItem;
+
 
 private:
 //    inline void test()

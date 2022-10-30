@@ -338,10 +338,10 @@ void LLMain() {
     });
 }
 
-#include "MC/Mob.hpp"
+#include "MC/Player.hpp"
 // Call LLMain
 THook(int, "main", int a, void* b) {
-    std::cout << offsetof(Mob, mCreateAiOnReload) << std::endl;
+    std::cout << offsetof(Player, mRespawnPositionCandidate) << std::endl;
     startTime = clock();
     char** str = static_cast<char**>(b);
     for (int i = 0; i < a; ++i) {

@@ -11,6 +11,8 @@
 class Random {
 
 #define AFTER_EXTRA
+private:
+    char filler[0x9D4];
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOM

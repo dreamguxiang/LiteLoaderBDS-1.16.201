@@ -17,13 +17,8 @@ enum ItemStackNetIdType : unsigned char {
 #undef BEFORE_EXTRA
 
 struct ItemStackNetIdVariant {
-
-#define AFTER_EXTRA
-// Add Member There
-    std::variant<
-        TypedServerNetId<ItemStackNetIdTag, int, 0>, TypedClientNetId<ItemStackRequestIdTag, int, 0>,
-        TypedClientNetId<ItemStackLegacyRequestIdTag, int, 0>>
-        id;
+public:
+    char filler[8];
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKNETIDVARIANT

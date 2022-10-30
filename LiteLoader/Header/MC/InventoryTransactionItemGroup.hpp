@@ -10,7 +10,12 @@
 class InventoryTransactionItemGroup {
 
 #define AFTER_EXTRA
-
+public:
+    int mItemId;
+    int mItemAux;
+    std::unique_ptr<class CompoundTag> mTag;
+    int mCount;
+    bool mOverflow;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTIONITEMGROUP
 public:

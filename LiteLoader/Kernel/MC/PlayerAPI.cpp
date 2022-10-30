@@ -46,13 +46,13 @@ extern Logger logger;
 
 NetworkIdentifier* Player::getNetworkIdentifier() const{
     //ServerPlayer::isHostingPlayer
-    return dAccess<NetworkIdentifier*>(this, 2432);
+    return dAccess<NetworkIdentifier*>(this, 2536);
 }
 
 
 Certificate* Player::getCertificate() const{
     //KickCommand::_kickPlayer Line116
-    return dAccess<Certificate*>(this, 2736);
+    return dAccess<Certificate*>(this, 2840);
 }
 
 std::string Player::getRealName() {

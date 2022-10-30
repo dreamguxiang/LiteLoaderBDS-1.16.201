@@ -18,19 +18,274 @@ class CompoundTag;
 #include "DataItem.hpp"
 #include "../I18nAPI.h"
 #include "AttributeInstance.hpp"
-#undef BEFORE_EXTRA
+#include "Abilities.hpp"
+#include "NetworkIdentifier.hpp"
+#include "SerializedSkin.hpp"
+#include "Stopwatch.hpp"
+#include "PlayerInventory.hpp"
+#include "ItemGroup.hpp"
+#include "PlayerUIContainer.hpp"
+#include "InventoryTransactionManager.hpp"
+#include "Random.hpp"
+#include "PlayerRespawnBlockRadiusRandomizer.hpp"
 
-class Player : public Mob {
+#undef BEFORE_EXTRA
+class PlayerRespawnRandomizer {
+public:
+    Random mRandom;
+    unsigned int mSpawnRadius;
+    unsigned int mSquaredRadius;
+    PlayerRespawnBlockRadiusRandomizer mPrimaryRandomizer;
+    PlayerRespawnBlockRadiusRandomizer mSecondaryRandomizer;
+    Vec3 mSpawnCenter;
+    Vec3 mPrimaryOffset;
+    Vec3 mPrimaryScale;
+};
+static_assert(sizeof(PlayerRespawnRandomizer) == 2608);
+
+class SkinAdjustments {
+public:
+    unsigned int mAnimOverrideBitmask;
+};
+
+class __declspec(align(8)) NameTagInfo {
+public:
+    std::string mPrefix;
+    std::string mPrefixColor;
+    std::string mNameColor;
+    std::string mSuffixColor;
+    std::string mSuffix;
+    bool mEnable;
+    bool mRenderNameColor;
+};
+
+class BedHelper {
+private:
+    float mNorthDir;
+    float mSouthDir;
+    float mWestDir;
+    float mEastDir;
+    float mBedOffsetX;
+    float mBedOffsetZ;
+    float mMobOffsetWestX;
+    float mMobOffsetEastX;
+    float mMobOffsetSouthZ;
+    float mMobOffsetNorthZ;
+};
+
+class __declspec(align(8)) Player : public Mob {
 
 #define AFTER_EXTRA
-    // Add new members to class
+
 public:
-    enum PositionMode : char {
-        NORMAL,
-        RESPAWN,
-        TELEPORT,
-        HEAD_ROTATION,
+    class CachedSpawnData {
+    public:
+        AutomaticID<Dimension, int> mRespawnDimensionId;
+        Vec3 mActualRespawnPosition;
+        BlockPos mRequestedRespawnPosition;
+        bool mHasRespawnPosition;
+        BlockPos mSharedSpawnPosition;
+        bool mRespawnReady;
+        Vec3 mPlayerPos;
+        bool mIsForcedRespawn;
+        bool mIsAdventure;
+        bool mIsFlyingOrNotOverworld;
+        bool mPositionLoadedFromSave;
     };
+    class PlayerSpawnPoint {
+    public:
+        BlockPos mSpawnBlockPos;
+        BlockPos mPlayerPosition;
+        AutomaticID<Dimension, int> mDimension;
+    };
+	
+public:
+    int mCastawayTimer;
+    bool mAteKelp;
+    int mLastBiome;
+    std::vector<int> mOceanBiomes;
+    bool mCastawaySent;
+    bool sailseasSent;
+    enum class DimensionState : int {
+        Ready = 0x0,
+        Pending = 0x1,
+        WaitingServerResponse = 0x2,
+        WaitingArea = 0x3,
+    } mDimensionState;
+    bool mServerHasMovementAuthority;
+    char mUserType;
+    int mScore;
+    float mOBob;
+    float mBob;
+    bool mHandsBusy;
+    std::string mName;
+    BuildPlatform mBuildPlatform;
+    Abilities mAbilities;
+    const NetworkIdentifier mOwner;
+    std::string mUniqueName;
+    std::string mServerId;
+    std::string mSelfSignedId;
+    std::string mPlatformOfflineId;
+    unsigned __int64 mClientRandomId;
+    const mce::UUID mClientUUID;
+    std::unique_ptr<Certificate> mCertificate;
+    std::string mPlatformId;
+    ActorUniqueID mPendingRideID;
+    ActorUniqueID mPendingLeftShoulderRiderID;
+    ActorUniqueID mPendingRightShoulderRiderID;
+    ActorUniqueID mInteractTarget;
+    Vec3 mInteractTargetPos;
+    bool mHasFakeInventory;
+    bool mIsRegionSuspended;
+    std::shared_ptr<class ChunkViewSource> mChunkSource;
+    std::shared_ptr<class ChunkViewSource> mSpawnChunkSource;
+    std::unique_ptr<class BlockSource> mOwnedBlockSource;
+    bool mUpdateMobs;
+    Vec3 mFirstPersonLatestHandOffset;
+    Vec3 mCapePosO;
+    Vec3 mCapePos;
+    float mPaddleForces[2];
+    bool mIsPaddling[2];
+    float mDistanceSinceTravelledEvent;
+    float mDistanceSinceTransformEvent;
+    std::shared_ptr<class IContainerManager> mContainerManager;
+    std::unique_ptr<class PlayerInventory> mInventory;
+
+    SerializedSkin mSkin;
+    std::vector<ItemInstance> mCreativeItemList;
+    std::array<std::vector<ItemGroup>, 4> mFilteredCreativeItemList;
+    unsigned __int8 mClientSubId;
+    std::string mPlatformOnlineId;//getactorrender
+    enum class SpawnPositionState : int {
+        InitializeSpawnPositionRandomizer = 0x0,
+        WaitForClientAck = 0x1,
+        DetermineDimension = 0x2,
+        ChangeDimension = 0x3,
+        WaitForDimension = 0x4,
+        ChooseSpawnArea = 0x5,
+        CheckLoadedChunk = 0x6,
+        ChooseSpawnPosition = 0x7,
+        SpawnComplete = 0x8,
+    } mSpawnPositionState;
+    enum class SpawnPositionSource : int {
+        Randomizer = 0x0,
+        Respawn = 0x1,
+        Teleport = 0x2,
+        Static = 0x3,
+    } mSpawnPositionSource;//??
+    Vec3 mSpawnPositioningTestPosition;
+    bool mBlockRespawnUntilClientMessage;
+    unsigned int mRespawnChunkBuilderPolicyHandle;
+    Player::CachedSpawnData mCachedSpawnData;
+    std::unique_ptr<class BlockSource> mSpawnBlockSource;
+    bool mHasSeenCredits;
+    Stopwatch mRespawnStopwatch_Searching;
+    Vec3 mRespawnOriginalPosition;
+    AutomaticID<Dimension, int> mRespawnOriginalDimension;
+    bool mRespawnReady;
+    std::string mRespawnMessage;
+    bool mCheckBed;
+    ItemStack mItemInUse;
+    PlayerInventory::SlotData mItemInUseSlot;
+    int mItemInUseDuration;
+    __int16 mSleepCounter;
+    __int16 mPrevSleepCounter;
+    bool mInteractDataDirty;
+    ActorUniqueID mPreviousInteractEntity;
+    int mPreviousCarriedItem;
+    bool mAutoJumping;
+    int mEmoteTicks;
+    class PacketSender* mPacketSender;
+    BlockPos mBounceStartPos;
+    const Block* mBounceBlock;
+    float mFOVModifier;
+    std::shared_ptr<class HudContainerManagerModel> mHudContainerManagerModel;
+    std::unique_ptr<class EnderChestContainer> mEnderChestInventory;
+    std::vector<ActorUniqueID> mTrackedBossIDs;
+    enum class PositionMode : unsigned char {
+        Normal = 0x0,
+        Respawn = 0x1,
+        Teleport = 0x2,
+        OnlyHeadRot = 0x3,
+    } mPositionMode;
+    ActorType mLastHurtBy;
+    ItemGroup mCursorSelectedItemGroup;
+    PlayerUIContainer mPlayerUIContainer;//4336
+    InventoryTransactionManager mTransactionManager;//4592
+    std::shared_ptr<class GameMode> mGameMode;//4632
+    PlayerRespawnRandomizer mSpawnRandomizer;//4640
+    std::unique_ptr<class ItemStackNetManagerBase> mItemStackNetManager;//7248
+    float mVRMoveAdjAngle;//7256
+    std::shared_ptr<AnimationComponent> mUIAnimationComponent;//7260
+    //16
+    std::shared_ptr<AnimationComponent> mMapAnimationComponent;//7276
+    //16
+    Player::PlayerSpawnPoint mPlayerRespawnPoint; // 7292
+    //28
+    bool mUseUIAnimationComponent; //   7320
+    //4
+    std::vector<class PlayerListener*> mListeners; // 7324
+    //36
+    Vec3 mRespawnPositionCandidate; // 7364
+    bool mPlayerIsSleeping;
+    bool mAllPlayersSleeping;//??
+    bool mDestroyingBlock;
+    Vec3 mSurvivalViewerPosition;
+    std::vector<unsigned int> mOnScreenAnimationTextures;
+    int mOnScreenAnimationTicks;
+    GameType mPlayerGameType;
+    int mEnchantmentSeed;//??
+    unsigned int mChunkRadius;
+    int mMapIndex;
+    unsigned __int64 mElytraLoop;
+    float mElytraVolume;
+    float mUnderwaterLightLevel;
+    std::unordered_map<std::string, int> mCooldowns;
+    __int64 mStartedBlockingTimeStamp;
+    __int64 mBlockedUsingShieldTimeStamp;
+    __int64 mBlockedUsingDamagedShieldTimeStamp;
+    bool mPrevBlockedUsingShield;
+    bool mPrevBlockedUsingDamagedShield;//?
+    bool mUsedPotion;
+    int mBounceHeight;
+    SkinAdjustments mSkinAdjustments;
+    SerializedSkin mSerializedSkin;
+    int mScanForDolphinTimer;
+	
+    AABB* mHead;
+    AABB* mOther;
+    float mWidth;
+    float mHeight;
+    bool mCanMove;
+    bool mCanAttack;
+    bool mCanJump;
+    bool mCollisionTest;
+    float mCollisionTestPrecision;
+    float mRotateVelocity;
+    bool mSetRotateVelocity;
+    Vec3 mExtendDistance;
+    std::string mVipFormatName;
+    NameTagInfo mVipNameTagInfo;
+    std::string mNameTagName;
+    NameTagInfo mNameTagNameInfo;
+    float mMaxExhaustionValue;
+    int mHealthTick;
+    int mHealthLevel;
+    bool mNaturalRegen;
+    int mStarveTick;
+    int mStarveLevel;
+    bool mNaturalStarve;
+    unsigned int mGrowthLevel;
+
+	
+    bool mR5DataRecoverComplete;
+    std::string mDeviceId;
+    bool mUsingModSkin;//?
+    bool mFlagClientForBAIReset;
+    bool mOverrideHeightToWidth;//?
+    BedHelper mBedHelper;
+
+public:
 
     LIAPI std::string getName();
     LIAPI std::string getRealName();

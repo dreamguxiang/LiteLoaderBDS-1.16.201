@@ -220,6 +220,7 @@ double mce::Color::deltaE00(mce::Color const& dst) const {
 double mce::Color::distanceTo(mce::Color const& dst) const {
     return this->deltaE00(dst);
 }
+
 } // namespace mce
 
 Vec3 BlockPos::toVec3() const {

@@ -44,15 +44,15 @@
 
 extern Logger logger;
 
-NetworkIdentifier* Player::getNetworkIdentifier() const{
-    //ServerPlayer::isHostingPlayer
-    return dAccess<NetworkIdentifier*>(this, 2536);
+NetworkIdentifier* Player::getNetworkIdentifier() const {
+    // ServerPlayer::isHostingPlayer
+    return const_cast<NetworkIdentifier*>(&mOwner);
 }
 
 
 Certificate* Player::getCertificate() const{
     //KickCommand::_kickPlayer Line116
-    return dAccess<Certificate*>(this, 2840);
+    return mCertificate.get();
 }
 
 std::string Player::getRealName() {
@@ -73,14 +73,14 @@ string Player::getIP() {
 
 #include <MC/Localization.hpp>
 string Player::getLanguageCode() {
-    // auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
-    // for (auto& iter : *map) {
-    //     string s(iter.first.c_str());
-    //     if (s.find("LanguageCode") != std::string::npos) {
-    //         auto langCode = iter.second.value_.string_;
-    //         return langCode;
-    //     }
-    // }
+    /* auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
+     for (auto& iter : *map) {
+         string s(iter.first.c_str());
+         if (s.find("LanguageCode") != std::string::npos) {
+             auto langCode = iter.second.value_.string_;
+             return langCode;
+         }
+     }*/
     return "unknown";
 }
 

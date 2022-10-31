@@ -338,10 +338,10 @@ void LLMain() {
     });
 }
 
-#include "MC/Player.hpp"
+#include "MC/ServerPlayer.hpp"
 // Call LLMain
 THook(int, "main", int a, void* b) {
-    std::cout << offsetof(Player, mBedHelper) << std::endl;
+    std::cout << offsetof(ServerPlayer, mBedHelper) << std::endl;
     startTime = clock();
     char** str = static_cast<char**>(b);
     for (int i = 0; i < a; ++i) {

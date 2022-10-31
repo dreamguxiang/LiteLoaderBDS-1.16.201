@@ -227,7 +227,7 @@ std::vector<Actor*> Level::getAllEntities(int dimId) {
 
         // Check Valid
         std::vector<Actor*> result;
-        auto currTick = SymCall("?getCurrentTick@Level@@QEBAAEBUTick@@XZ", Tick*, Level*)(lv)->t;
+        auto currTick = lv->getCurrentServerTick();
         for (auto& i : list) {
             // auto entity = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ",
             //     Actor*, void*)(&i.second);

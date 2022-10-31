@@ -41,9 +41,6 @@ public:
         float mAveragePacketLoss;
         unsigned __int64 mTotalBytesReceived;
         unsigned __int64 mTotalBytesSent;
-        unsigned __int64 unk40;
-        int unk48;
-        bool unk52;
     };
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKPEER

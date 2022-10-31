@@ -4,13 +4,17 @@
 #include "../Global.h"
 
 #define BEFORE_EXTRA
-
+#include "ContainerContentChangeListener.hpp"
+#include "IContainerManager.hpp"
 #undef BEFORE_EXTRA
 
-class BaseContainerMenu {
+class BaseContainerMenu : public ContainerContentChangeListener, IContainerManager {
 
 #define AFTER_EXTRA
-
+    class Player* mPlayer;
+    std::vector<class ItemStack> mLastSlots;
+    ContainerID mContainerId;
+    ContainerType mContainerType;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASECONTAINERMENU
 public:

@@ -514,6 +514,7 @@ TInstanceHook(bool, "?drop@Player@@UEAA_NAEBVItemStack@@_N@Z",
             return false;
     }
     IF_LISTENED_END(PlayerDropItemEvent)
+    std::cout << this->getRealName() << std::endl;
     return original(this, it, a3);
 }
 

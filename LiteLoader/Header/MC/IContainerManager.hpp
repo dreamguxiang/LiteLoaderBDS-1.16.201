@@ -10,7 +10,7 @@
 class IContainerManager {
 
 #define AFTER_EXTRA
-
+    void** v;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONTAINERMANAGER
 public:

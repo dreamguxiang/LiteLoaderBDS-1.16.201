@@ -24,7 +24,41 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
     }
     return str;
 }
+THook(void, "?BedrockLogOut@@YAXIPEBDZZ",
+      int a1, char* a2, ...) {
+    char Buffer[4096];
+    va_list va;
+    va_start(va, a2);
+    auto v1 = vsprintf(Buffer, a2, va);
+    va_end(va);
+    if (v1 < 0)
+        v1 = -1;
+    if (v1 < 0)
+        return original(a1, a2, va);
+    string input = Buffer;
 
+
+    input.erase(std::remove(input.begin(), input.end(), '\n'), input.end());
+    switch (a1) {
+        case 1u:
+            serverLogger.debug << input << Logger::endl;
+            return;
+        case 2u:
+            serverLogger.info << input << Logger::endl;
+            return;
+        case 4u:
+            serverLogger.warn << input << Logger::endl;
+            return;
+        case 8u:
+            serverLogger.error << input << Logger::endl;
+            return;
+        default:
+            serverLogger.info << input << Logger::endl;
+            return;
+    }
+
+    return original(a1, a2, va);
+}
 // Standardize BDS's output
 THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z", int a1, const char* ts) {
     string input = ts;
@@ -50,10 +84,10 @@ THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z", int a1, const char* ts) {
 
 // Block BDS from adding LOG metadata
 // 虽然这个是可用的，但开了以后BDS自身的后台记录没有了时间
-// THook(void, "?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LogAreaID@@IV34@HH@Z",
-//       void* a1, void* a2, int a3, unsigned int a4, size_t *a5, __int64 a6, int a7) {
-//     return;
-// }
+ THook(void, "?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LogAreaID@@IV34@HH@Z",
+       void* a1, void* a2, int a3, unsigned int a4, size_t *a5, __int64 a6, int a7) {
+     return;
+ }
 
 #include "LiteLoader.h"
 #include <MC/BedrockLog.hpp>
@@ -65,10 +99,6 @@ THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@
     va_list va;
     auto text = (char*)a8;
     va_start(va, a8);
-    if (string(text).find("= TELEMETRY MESSAGE =") != string(text).npos) {
-        ModifyInfomation::telemetryText = 6;
-        return BedrockLog::log_va(a1, a2, a3, a4, a5, a6, a7, "To enable Server Telemetry, add the line 'emit-server-telemetry=true' to the server.properties file in the bds directory", va);
-    }
     if (ModifyInfomation::telemetryText > 0) {
         ModifyInfomation::telemetryText--;
         return;

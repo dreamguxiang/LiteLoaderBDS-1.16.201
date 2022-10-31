@@ -6,13 +6,46 @@
 #include "Player.hpp"
 
 #define BEFORE_EXTRA
-
+#include "NetworkChunkPublisher.hpp"
+#include "InventoryMenu.hpp"
 #undef BEFORE_EXTRA
 
 class ServerPlayer : public Player {
 
 #define AFTER_EXTRA
-
+public:
+    //NetworkHandler* mNetworkHandler;
+    //std::function<void __cdecl(ServerPlayer&)> mOnPlayerLoadedCallback;
+    //NetworkChunkPublisher mChunkPublisherView;
+    //InventoryMenu mInventoryMenu;
+    //ContainerID mContainerCounter;
+    //unsigned int mMaxChunkRadius;
+    //bool mLoading;
+    //bool mIsTeacher;
+    //bool mTeleportedThisTick;
+    //bool mLocalPlayerInitialized;
+    //Tick mPrevShieldBlockingTick;
+    //std::unique_ptr<CompoundTag> mLostDataTag;
+    //unsigned int mClientViewRadius;
+    //unsigned int mClientRequestedRadius;
+    //int mRemainingStructureRefreshTicks;
+    //StructureFeatureType mCurrentStructureFeature;
+    //std::chrono::time_point<std::chrono::steady_clock, std::chrono::duration<__int64, std::ratio<1, 1000000000>>> mLastKnownSyncTime;
+    //std::chrono::time_point<std::chrono::steady_clock, std::chrono::duration<__int64, std::ratio<1, 1000000000>>> mLastKnownDesyncTime;
+    //float mCheatingStrikeScore;
+    //std::unordered_map<ActorUniqueID, ServerPlayer::NearbyActor> mNearbyActors;
+    //std::unique_ptr<ServerMoveInputHandler> mMoveInputHandler;
+    //InputMode mCurrentInputMode;
+    //ClientPlayMode mPlayMode;
+    //PlayerMovementTelemetryData mMovementData;
+    //CallbackToken mCloseContainerToken;
+    //std::string mLoginUid;
+    //Vec3 mLastValidRecvPos;
+    //bool mLastRecvOnground;
+    //bool mCameraDeparted;
+    //bool mThirdPersonPerspective;
+    //Vec2 mRotationToCamera;
+	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYER
 public:

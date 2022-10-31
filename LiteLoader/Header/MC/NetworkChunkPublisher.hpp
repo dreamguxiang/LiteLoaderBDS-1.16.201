@@ -10,7 +10,21 @@
 class NetworkChunkPublisher {
 
 #define AFTER_EXTRA
-
+public:
+    void** v;
+    class Level* mLevel;
+    class NetworkHandler* mNetworkHandler;
+    NetworkIdentifier mOwner;
+    class ClientBlobCache::Server::ActiveTransfersManager* mClientCache;
+    unsigned __int8 mSubClientId;
+    BlockPos mLastChunkUpdatePosition;
+    unsigned int mLastChunkUpdateRadius;
+    unsigned int mHandleForChunkBuildOrderUpdates;
+    int mChunksSentSinceStart;
+    std::unique_ptr<class ChunkViewSource> mSource;
+    std::function<void __cdecl(buffer_span_mut<std::shared_ptr<class LevelChunk>>, buffer_span<unsigned int>)> mAddCallback;
+    std::string mCacheSerializeBuffer;
+    std::unordered_map<class ChunkPositionAndDimension, std::weak_ptr<class LevelChunk>> mQueuedChunks;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKCHUNKPUBLISHER
 public:

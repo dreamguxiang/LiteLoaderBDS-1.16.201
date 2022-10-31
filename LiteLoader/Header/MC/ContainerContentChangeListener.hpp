@@ -10,7 +10,8 @@
 class ContainerContentChangeListener {
 
 #define AFTER_EXTRA
-
+public:
+    void** v;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERCONTENTCHANGELISTENER
 public:

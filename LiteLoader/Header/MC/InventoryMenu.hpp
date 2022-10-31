@@ -2,15 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
+#include "BaseContainerMenu.hpp"
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class InventoryMenu {
+class InventoryMenu : public BaseContainerMenu {
 
 #define AFTER_EXTRA
-
+public:
+    class Container* mContainer;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYMENU
 public:

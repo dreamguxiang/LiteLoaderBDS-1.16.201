@@ -205,7 +205,7 @@ public:
     MCVAPI void onTick();
     MCVAPI void onTransferRequest(class NetworkIdentifier const &, std::string const &, int);
     MCVAPI void onUnableToConnect();
-    MCVAPI void sendPacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &);
+    MCVAPI void sendPacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum class PacketViolationResponse, enum class MinecraftPacketIds, class NetworkIdentifier const &);
 #endif
 
 };

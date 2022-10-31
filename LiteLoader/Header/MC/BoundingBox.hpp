@@ -83,7 +83,7 @@ public:
     }
 
 public:
-    MCAPI BoundingBox(class BlockPos const&, class BlockPos const&, enum Rotation);
+    MCAPI BoundingBox(class BlockPos const&, class BlockPos const&, enum class Rotation);
 
     MCAPI bool isValid() const;
 

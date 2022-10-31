@@ -27,7 +27,7 @@ class BlockInstance;
 class ItemStack;
 class BlockSource;
 enum class FaceID : char;
-enum ActorFlags : int{
+enum class ActorFlags : int {
     Unknown_25 = -1,
     ONFIRE = 0x0,
     SNEAKING = 0x1,
@@ -457,23 +457,23 @@ public:
 
 public:
     /*0*/ virtual bool hasComponent(class HashedString const &) const;
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /*2*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /*3*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /*4*/ virtual void reloadComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
+    /*2*/ virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
+    /*3*/ virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
+    /*4*/ virtual void reloadComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*5*/ virtual void _serverInitItemStackIds();
     /*6*/ virtual void _doInitialMove();
     /*7*/ virtual ~Actor();
     /*8*/ virtual void reset();
     /*9*/ virtual int getOnDeathExperience();
-    /*10*/ virtual enum ActorType getOwnerEntityType();
+    /*10*/ virtual enum class ActorType getOwnerEntityType();
     /*11*/ virtual void remove();
     /*12*/ virtual void setPos(class Vec3 const &);
     /*13*/ virtual struct PredictedMovementValues const & getPredictedMovementValues() const;
     /*14*/ virtual class Vec3 const & getPos() const;
     /*15*/ virtual class Vec3 const & getPosOld() const;
     /*16*/ virtual class Vec3 const getPosExtrapolated(float) const;
-    /*17*/ virtual class Vec3 getAttachPos(enum ActorLocation, float) const;
+    /*17*/ virtual class Vec3 getAttachPos(enum class ActorLocation, float) const;
     /*18*/ virtual class Vec3 getFiringPos() const;
     /*19*/ virtual void setRot(class Vec2 const &);
     /*20*/ virtual void move(class Vec3 const &);
@@ -504,7 +504,7 @@ public:
     /*45*/ virtual bool startRiding(class Actor &);
     /*46*/ virtual void addRider(class Actor &);
     /*47*/ virtual void flagRiderToRemove(class Actor &);
-    /*48*/ virtual std::string getExitTip(std::string const &, enum InputMode) const;
+    /*48*/ virtual std::string getExitTip(std::string const &, enum class InputMode) const;
     /*49*/ virtual bool intersects(class Vec3 const &, class Vec3 const &) const;
     /*50*/ virtual bool isFree(class Vec3 const &, float);
     /*51*/ virtual bool isFree(class Vec3 const &);
@@ -526,7 +526,7 @@ public:
     /*67*/ virtual bool isImmersedInWater() const;
     /*68*/ virtual bool isInWaterOrRain() const;
     /*69*/ virtual bool isInLava() const;
-    /*70*/ virtual bool isUnderLiquid(enum MaterialType) const;
+    /*70*/ virtual bool isUnderLiquid(enum class MaterialType) const;
     /*71*/ virtual bool isOverWater() const;
     /*72*/ virtual void makeStuckInBlock(class Vec3 const &);
     /*73*/ virtual float getCameraOffset() const;
@@ -583,14 +583,14 @@ public:
     /*124*/ virtual void rideLanded(class Vec3 const &, class Vec3 const &);
     /*125*/ virtual bool shouldRender() const;
     /*126*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
-    /*127*/ virtual enum ActorDamageCause getBlockDamageCause(class Block const &) const;
+    /*127*/ virtual enum class ActorDamageCause getBlockDamageCause(class Block const &) const;
     /*128*/ virtual void actuallyHurt(int, class ActorDamageSource const &, bool);
     /*129*/ virtual void animateHurt();
     /*130*/ virtual bool doFireHurt(int);
     /*131*/ virtual void onLightningHit();
     /*132*/ virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /*133*/ virtual void feed(int);
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
     /*135*/ virtual float getPickRadius();
     /*136*/ virtual class HashedString const & getActorRendererId() const;
     /*137*/ virtual class ItemActor * spawnAtLocation(int, int);
@@ -601,13 +601,13 @@ public:
     /*142*/ virtual void despawn();
     /*143*/ virtual void killed(class Actor &);
     /*144*/ virtual void awardKillScore(class Actor &, int);
-    /*145*/ virtual void setArmor(enum ArmorSlot, class ItemStack const &);
-    /*146*/ virtual class ItemStack const & getArmor(enum ArmorSlot) const;
-    /*147*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
-    /*148*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
-    /*149*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
-    /*150*/ virtual class ItemStack const & getEquippedSlot(enum EquipmentSlot) const;
-    /*151*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const &);
+    /*145*/ virtual void setArmor(enum class ArmorSlot, class ItemStack const &);
+    /*146*/ virtual class ItemStack const & getArmor(enum class ArmorSlot) const;
+    /*147*/ virtual enum class ArmorMaterialType getArmorMaterialTypeInSlot(enum class ArmorSlot) const;
+    /*148*/ virtual enum class ArmorTextureType getArmorMaterialTextureTypeInSlot(enum class ArmorSlot) const;
+    /*149*/ virtual float getArmorColorInSlot(enum class ArmorSlot, int) const;
+    /*150*/ virtual class ItemStack const & getEquippedSlot(enum class EquipmentSlot) const;
+    /*151*/ virtual void setEquippedSlot(enum class EquipmentSlot, class ItemStack const &);
     /*152*/ virtual class ItemStack const & getCarriedItem() const;
     /*153*/ virtual void setCarriedItem(class ItemStack const &);
     /*154*/ virtual void setOffhandSlot(class ItemStack const &);
@@ -617,7 +617,7 @@ public:
     /*158*/ virtual void saveWithoutId(class CompoundTag &);
     /*159*/ virtual bool load(class CompoundTag const &, class DataLoadHelper &);
     /*160*/ virtual void loadLinks(class CompoundTag const &, std::vector<struct ActorLink> &, class DataLoadHelper &);
-    /*161*/ virtual enum ActorType getEntityTypeId() const;
+    /*161*/ virtual enum class ActorType getEntityTypeId() const;
     /*162*/ virtual class HashedString const & queryEntityRenderer() const;
     /*163*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*164*/ virtual void setOnFire(int);
@@ -633,8 +633,8 @@ public:
     /*174*/ virtual void checkFallDamage(float, bool);
     /*175*/ virtual void causeFallDamage(float);
     /*176*/ virtual void handleFallDistanceOnServer(float, bool);
-    /*177*/ virtual void playSynchronizedSound(enum LevelSoundEvent, class Vec3 const &, class Block const &, bool);
-    /*178*/ virtual void playSynchronizedSound(enum LevelSoundEvent, class Vec3 const &, int, bool);
+    /*177*/ virtual void playSynchronizedSound(enum class LevelSoundEvent, class Vec3 const &, class Block const &, bool);
+    /*178*/ virtual void playSynchronizedSound(enum class LevelSoundEvent, class Vec3 const &, int, bool);
     /*179*/ virtual void onSynchedDataUpdate(int);
     /*180*/ virtual bool canAddRider(class Actor &) const;
     /*181*/ virtual bool canPickupItem(class ItemStack const &) const;
@@ -648,7 +648,7 @@ public:
     /*189*/ virtual void startSwimming();
     /*190*/ virtual void stopSwimming();
     /*191*/ virtual void buildDebugInfo(std::string &) const;
-    /*192*/ virtual enum CommandPermissionLevel getCommandPermissionLevel() const;
+    /*192*/ virtual enum class CommandPermissionLevel getCommandPermissionLevel() const;
     /*193*/ virtual class AttributeInstance * getMutableAttribute(class Attribute const &);
     /*194*/ virtual class AttributeInstance const & getAttribute(class Attribute const &) const;
     /*195*/ virtual int getDeathTime() const;
@@ -663,7 +663,7 @@ public:
     /*204*/ virtual class AnimationComponent & getAnimationComponent();
     /*205*/ virtual void openContainerComponent(class Player &);
     /*206*/ virtual void swing();
-    /*207*/ virtual void useItem(class ItemStackBase &, enum ItemUseMethod, bool);
+    /*207*/ virtual void useItem(class ItemStackBase &, enum class ItemUseMethod, bool);
     /*208*/ virtual void __unk_vfn_208();
     /*209*/ virtual void __unk_vfn_209();
     /*210*/ virtual void getDebugText(std::vector<std::string> &);
@@ -757,11 +757,11 @@ public:
     MCAPI void consumeItem(class ItemActor &, int);
     MCAPI void dropLeash(bool, bool);
     MCAPI void dropTowards(class ItemStack const &, class Vec3);
-    MCAPI std::vector<struct DistanceSortedActor> fetchNearbyActorsSorted(class Vec3 const &, enum ActorType);
+    MCAPI std::vector<struct DistanceSortedActor> fetchNearbyActorsSorted(class Vec3 const &, enum class ActorType);
     MCAPI void forEachLeashedActor(class std::function<void (class gsl::not_null<class Actor *>)>);
     MCAPI class BlockPos getBlockPosCurrentlyStandingOn(class Actor *) const;
-    MCAPI enum PaletteColor getColor() const;
-    MCAPI enum PaletteColor getColor2() const;
+    MCAPI enum class PaletteColor getColor() const;
+    MCAPI enum class PaletteColor getColor2() const;
     MCAPI int getControllingSeat();
     MCAPI class Dimension & getDimension() const;
     MCAPI int getHealth() const;
@@ -778,7 +778,7 @@ public:
     MCAPI int getRiderIndex(class Actor const &) const;
     MCAPI class ActorRuntimeID getRuntimeID() const;
     MCAPI int getSkinID() const;
-    MCAPI bool getStatusFlag(enum ActorFlags) const;
+    MCAPI bool getStatusFlag(enum class ActorFlags) const;
     MCAPI int getStrength() const;
     MCAPI int getStrengthMax() const;
     MCAPI int getStructuralIntegrity() const;
@@ -789,11 +789,11 @@ public:
     MCAPI struct ActorUniqueID const & getUniqueID() const;
     MCAPI int getVariant() const;
     MCAPI class Vec3 getViewVector(float) const;
-    MCAPI bool hasCategory(enum ActorCategory) const;
+    MCAPI bool hasCategory(enum class ActorCategory) const;
     MCAPI bool hasEffect(class MobEffect const &) const;
     MCAPI bool hasFamily(class HashedString const &) const;
     MCAPI bool hasPlayerRider() const;
-    MCAPI bool hasSubBBIn(enum MaterialType) const;
+    MCAPI bool hasSubBBIn(enum class MaterialType) const;
     MCAPI bool hasTag(std::string const &) const;
     MCAPI bool hasTags() const;
     MCAPI bool hasTickingArea() const;
@@ -811,7 +811,7 @@ public:
     MCAPI void moveRelative(float, float, float, float);
     MCAPI void moveTo(class Vec3 const &, class Vec2 const &);
     MCAPI void pickUpItem(class ItemActor &, int);
-    MCAPI void playSound(enum LevelSoundEvent, class Vec3 const &, int);
+    MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, int);
     MCAPI void positionAllRiders();
     MCAPI bool pullInEntity(class Actor &);
     MCAPI void pushBackActionEventToActionQueue(class ActionEvent);
@@ -826,8 +826,8 @@ public:
     MCAPI void sendActorDefinitionEventTriggered(std::string const &);
     MCAPI void sendMotionToServer();
     MCAPI void setBaseDefinition(struct ActorDefinitionIdentifier const &, bool, bool);
-    MCAPI void setColor(enum PaletteColor);
-    MCAPI void setColor2(enum PaletteColor);
+    MCAPI void setColor(enum class PaletteColor);
+    MCAPI void setColor2(enum class PaletteColor);
     MCAPI void setHurtDir(int);
     MCAPI void setHurtTime(int);
     MCAPI void setInLove(class Actor *);
@@ -872,7 +872,7 @@ public:
     MCAPI static void _move(struct IActorMovementProxy &, class Vec3 const &);
     MCAPI static void checkEntityOnewayCollision(class BlockSource &, class BlockPos const &);
     MCAPI static void moveRelative(struct IActorMovementProxy &, float, float, float, float);
-    MCAPI static bool setStatusFlag(class SynchedActorData &, enum ActorFlags, bool);
+    MCAPI static bool setStatusFlag(class SynchedActorData &, enum class ActorFlags, bool);
 
 //protected:
     MCAPI bool _damageSensorComponentHurt(int &, int, class ActorDamageSource const &);

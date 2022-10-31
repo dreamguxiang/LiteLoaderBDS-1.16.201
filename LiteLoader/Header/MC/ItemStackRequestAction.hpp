@@ -25,12 +25,12 @@ public:
     /*2*/ virtual int getFilteredStringIndex() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTION
 #endif
-    MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);
+    MCAPI static std::string const getActionTypeName(enum class ItemStackRequestActionType);
     MCAPI static std::unique_ptr<class ItemStackRequestAction> read(class ReadOnlyBinaryStream &);
 
 //private:
 
 private:
-    MCAPI static class BidirectionalUnorderedMap<enum ItemStackRequestActionType, std::string> const actionTypeMap;
+    MCAPI static class BidirectionalUnorderedMap<enum class ItemStackRequestActionType, std::string> const actionTypeMap;
 
 };

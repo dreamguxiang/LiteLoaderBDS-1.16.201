@@ -36,7 +36,7 @@ public:
     /*101*/ virtual void __unk_vfn_101();
     /*102*/ virtual void __unk_vfn_102();
     /*123*/ virtual void __unk_vfn_123();
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
     /*171*/ virtual void __unk_vfn_171();
     /*175*/ virtual void causeFallDamage(float);
     /*184*/ virtual void __unk_vfn_184();
@@ -49,11 +49,11 @@ public:
     /*249*/ virtual void __unk_vfn_249();
     /*260*/ virtual void __unk_vfn_260();
     /*261*/ virtual void destroy(class ActorDamageSource const &, bool);
-    /*262*/ virtual enum MinecartType getType();
+    /*262*/ virtual enum class MinecartType getType();
     /*263*/ virtual class Block const * getDefaultDisplayBlock() const;
     /*264*/ virtual void __unk_vfn_264();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTTNT
 #endif
-    MCAPI void primeFuse(enum ActorDamageCause);
+    MCAPI void primeFuse(enum class ActorDamageCause);
 
 };

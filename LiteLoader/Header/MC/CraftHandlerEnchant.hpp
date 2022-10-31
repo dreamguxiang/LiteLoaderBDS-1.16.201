@@ -22,14 +22,14 @@ public:
 public:
     /*0*/ virtual ~CraftHandlerEnchant();
     /*1*/ virtual void endRequestBatch();
-    /*2*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
+    /*2*/ virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*3*/ virtual void _postCraftRequest(bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERENCHANT
 #endif
 
 //private:
     MCAPI class EnchantingContainerManagerModel & _getEnchantingModel() const;
-    MCAPI enum ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 9> const &);
+    MCAPI enum class ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 9> const &);
 
 private:
 

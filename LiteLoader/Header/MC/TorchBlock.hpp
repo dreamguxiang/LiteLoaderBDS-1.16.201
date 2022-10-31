@@ -66,16 +66,16 @@ public:
     /*161*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*163*/ virtual void __unk_vfn_163();
     /*166*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /*168*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*168*/ virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*174*/ virtual void __unk_vfn_174();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TORCHBLOCK
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
-    MCAPI TorchBlock(std::string const &, int, enum MaterialType);
+    MCAPI TorchBlock(std::string const &, int, enum class MaterialType);
 
 //protected:
-    MCAPI class Vec3 _flameParticlePos(class BlockPos const &, enum TorchFacing) const;
+    MCAPI class Vec3 _flameParticlePos(class BlockPos const &, enum class TorchFacing) const;
     MCAPI bool canBePlacedOn(class BlockSource &, class BlockPos const &, unsigned char) const;
 
 //private:
@@ -83,7 +83,7 @@ public:
 protected:
 
 private:
-    MCAPI static enum TorchFacing const DATA_FROM_FACING[];
+    MCAPI static enum class TorchFacing const DATA_FROM_FACING[];
     MCAPI static unsigned short const FACING_FROM_DATA[];
 
 };

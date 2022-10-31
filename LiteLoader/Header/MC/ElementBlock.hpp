@@ -62,10 +62,10 @@ public:
     /*174*/ virtual void __unk_vfn_174();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ELEMENTBLOCK
 #endif
-    MCAPI ElementBlock(std::string const &, int, enum ElementType);
-    MCAPI static struct ElementInfo getElementInfo(enum ElementType);
-    MCAPI static class RecipeIngredient getIngredientForElement(enum ElementType, int);
-    MCAPI static class ItemInstance getItemForElement(enum ElementType, int);
+    MCAPI ElementBlock(std::string const &, int, enum class ElementType);
+    MCAPI static struct ElementInfo getElementInfo(enum class ElementType);
+    MCAPI static class RecipeIngredient getIngredientForElement(enum class ElementType, int);
+    MCAPI static class ItemInstance getItemForElement(enum class ElementType, int);
     MCAPI static void initElements();
     MCAPI static bool isElement(class ItemStackBase const &);
 

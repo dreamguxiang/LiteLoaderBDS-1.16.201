@@ -47,7 +47,7 @@ public:
 
 };
 struct StorageMigration {
-    enum StorageMigrationType;
+    enum class StorageMigrationType;
     StorageMigration() = delete;
     StorageMigration(StorageMigration const&) = delete;
     StorageMigration(StorageMigration const&&) = delete;
@@ -101,7 +101,7 @@ public:
 class ScopeExit;
 class Http {
 public:
-    enum Implementation;
+    enum class Implementation;
 };
 class SessionInfo
 {
@@ -112,6 +112,6 @@ public:
 };
 
 #undef AFTER_EXTRA
-    MCAPI void throw_system_error(enum std::errc);
+    MCAPI void throw_system_error(enum class std::errc);
 
 };

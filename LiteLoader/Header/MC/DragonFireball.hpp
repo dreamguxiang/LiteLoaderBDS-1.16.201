@@ -47,7 +47,7 @@ public:
     /*249*/ virtual void __unk_vfn_249();
     /*260*/ virtual void __unk_vfn_260();
     /*262*/ virtual void __unk_vfn_262();
-    /*263*/ virtual enum ParticleType getTrailParticle();
+    /*263*/ virtual enum class ParticleType getTrailParticle();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONFIREBALL
     MCVAPI bool shouldBurn();
 #endif

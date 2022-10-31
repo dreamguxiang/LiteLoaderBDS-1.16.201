@@ -36,6 +36,6 @@ public:
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BELLBLOCKACTOR
 #endif
-    MCAPI bool ring(enum Direction::Type, class BlockSource &, bool);
+    MCAPI bool ring(enum class Direction::Type, class BlockSource &, bool);
 
 };

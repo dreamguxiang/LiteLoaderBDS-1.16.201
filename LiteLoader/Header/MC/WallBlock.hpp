@@ -25,7 +25,7 @@ public:
     /*10*/ virtual class AABB const & getAABB(class BlockSource &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*13*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*16*/ virtual void __unk_vfn_16();
-    /*19*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    /*19*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /*20*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
@@ -84,7 +84,7 @@ public:
     MCAPI static class std::array<std::string, 14> const WALL_NAMES;
 
 //private:
-    MCAPI enum WallConnectionType _desiredConnectionState(class BlockSource &, class BlockPos const &, unsigned char) const;
+    MCAPI enum class WallConnectionType _desiredConnectionState(class BlockSource &, class BlockPos const &, unsigned char) const;
     MCAPI bool _isCovered(class BlockSource &, class BlockPos const &, class AABB const &) const;
     MCAPI bool _shouldBePost(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI bool _tryAddToTickingQueue(class BlockSource &, class BlockPos const &) const;

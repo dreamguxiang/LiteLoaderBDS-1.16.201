@@ -22,12 +22,12 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTCOORDINATOR
 #endif
-    MCAPI void sendActorAcquiredItem(class Actor &, class ItemInstance const &, unsigned int, enum ItemAcquisitionMethod, class Actor *);
-    MCAPI void sendActorCarriedItemChanged(class Actor &, class ItemInstance const &, class ItemInstance const &, enum HandSlot);
+    MCAPI void sendActorAcquiredItem(class Actor &, class ItemInstance const &, unsigned int, enum class ItemAcquisitionMethod, class Actor *);
+    MCAPI void sendActorCarriedItemChanged(class Actor &, class ItemInstance const &, class ItemInstance const &, enum class HandSlot);
     MCAPI void sendActorDroppedItem(class Actor &, class ItemInstance const &);
     MCAPI void sendActorHurt(struct ActorHurtEvent const &);
-    MCAPI void sendActorPredictedMove(class Actor &, enum MovePredictionType, class Vec3 const &);
-    MCAPI void sendActorUseItem(class Actor &, class ItemInstance const &, enum ItemUseMethod);
+    MCAPI void sendActorPredictedMove(class Actor &, enum class MovePredictionType, class Vec3 const &);
+    MCAPI void sendActorUseItem(class Actor &, class ItemInstance const &, enum class ItemUseMethod);
     MCAPI void sendActorUseItemOn(class Actor &, class ItemStack const &, class BlockPos const &, unsigned char);
 
 };

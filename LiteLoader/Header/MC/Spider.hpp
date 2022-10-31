@@ -57,7 +57,7 @@ public:
     /*338*/ virtual void __unk_vfn_338();
     /*354*/ virtual void __unk_vfn_354();
     /*356*/ virtual float getModelScale() const;
-    /*357*/ virtual enum Spider::Type getSpiderType() const;
+    /*357*/ virtual enum class Spider::Type getSpiderType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPIDER
     MCVAPI bool useNewAi() const;
 #endif

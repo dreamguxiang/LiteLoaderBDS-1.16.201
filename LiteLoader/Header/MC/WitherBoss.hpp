@@ -22,8 +22,8 @@ public:
 #endif
 
 public:
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /*2*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
+    /*2*/ virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~WitherBoss();
     /*11*/ virtual void remove();
     /*18*/ virtual class Vec3 getFiringPos() const;
@@ -42,7 +42,7 @@ public:
     /*102*/ virtual void __unk_vfn_102();
     /*123*/ virtual void __unk_vfn_123();
     /*126*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
     /*171*/ virtual void __unk_vfn_171();
     /*175*/ virtual void causeFallDamage(float);
     /*184*/ virtual void __unk_vfn_184();

@@ -21,28 +21,28 @@ public:
 
 public:
     /*0*/ virtual ~ScriptServerActorEventListener();
-    /*1*/ virtual enum EventResult onActorAttack(class Actor &, class Actor &, int);
-    /*2*/ virtual enum EventResult onActorHurt(struct ActorHurtEvent const &);
-    /*3*/ virtual enum EventResult onActorMove(class Actor &, class Vec3 const &);
+    /*1*/ virtual enum class EventResult onActorAttack(class Actor &, class Actor &, int);
+    /*2*/ virtual enum class EventResult onActorHurt(struct ActorHurtEvent const &);
+    /*3*/ virtual enum class EventResult onActorMove(class Actor &, class Vec3 const &);
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual enum EventResult onActorTick(class Actor &);
-    /*6*/ virtual enum EventResult onActorSneakChanged(class Actor &, bool);
-    /*7*/ virtual enum EventResult onActorStartRiding(class Actor &, class Actor &);
-    /*8*/ virtual enum EventResult onActorStopRiding(class Actor &, bool, bool, bool);
-    /*9*/ virtual enum EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum ActorType);
-    /*10*/ virtual enum EventResult onActorDefinitionEventTriggered(struct ActorDefinitionEvent const &);
-    /*11*/ virtual enum EventResult onActorUseItem(class Actor &, class ItemInstance const &, enum ItemUseMethod);
+    /*5*/ virtual enum class EventResult onActorTick(class Actor &);
+    /*6*/ virtual enum class EventResult onActorSneakChanged(class Actor &, bool);
+    /*7*/ virtual enum class EventResult onActorStartRiding(class Actor &, class Actor &);
+    /*8*/ virtual enum class EventResult onActorStopRiding(class Actor &, bool, bool, bool);
+    /*9*/ virtual enum class EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum class ActorType);
+    /*10*/ virtual enum class EventResult onActorDefinitionEventTriggered(struct ActorDefinitionEvent const &);
+    /*11*/ virtual enum class EventResult onActorUseItem(class Actor &, class ItemInstance const &, enum class ItemUseMethod);
     /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual enum EventResult onActorCreated(class Actor &);
-    /*14*/ virtual enum EventResult onProjectileHit(struct ProjectileHitEvent const &);
+    /*13*/ virtual enum class EventResult onActorCreated(class Actor &);
+    /*14*/ virtual enum class EventResult onProjectileHit(struct ProjectileHitEvent const &);
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual enum EventResult onActorAcquiredItem(class Actor &, class ItemInstance const &, unsigned int, enum ItemAcquisitionMethod, class Actor *);
+    /*17*/ virtual enum class EventResult onActorAcquiredItem(class Actor &, class ItemInstance const &, unsigned int, enum class ItemAcquisitionMethod, class Actor *);
     /*18*/ virtual void __unk_vfn_18();
-    /*19*/ virtual enum EventResult onActorDroppedItem(class Actor &, class ItemInstance const &);
-    /*20*/ virtual enum EventResult onActorCarriedItemChanged(class Actor &, class ItemInstance const &, class ItemInstance const &, enum HandSlot);
-    /*21*/ virtual enum EventResult onActorEquippedArmor(class Actor &, class ItemInstance const &, enum ArmorSlot);
-    /*22*/ virtual enum EventResult onActorRemoved(class Actor &);
+    /*19*/ virtual enum class EventResult onActorDroppedItem(class Actor &, class ItemInstance const &);
+    /*20*/ virtual enum class EventResult onActorCarriedItemChanged(class Actor &, class ItemInstance const &, class ItemInstance const &, enum class HandSlot);
+    /*21*/ virtual enum class EventResult onActorEquippedArmor(class Actor &, class ItemInstance const &, enum class ArmorSlot);
+    /*22*/ virtual enum class EventResult onActorRemoved(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSERVERACTOREVENTLISTENER
 #endif
 

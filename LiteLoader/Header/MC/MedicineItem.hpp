@@ -39,7 +39,7 @@ public:
     /*72*/ virtual void __unk_vfn_72();
     /*73*/ virtual void __unk_vfn_73();
     /*76*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*78*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    /*78*/ virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /*87*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*101*/ virtual void __unk_vfn_101();
     /*102*/ virtual void __unk_vfn_102();

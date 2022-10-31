@@ -21,18 +21,18 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEEVENTLISTENER
-    MCVAPI enum EventResult onLeaveGameDone(class ServerInstance &);
-    MCVAPI enum EventResult onServerInitializeEnd(class ServerInstance &);
-    MCVAPI enum EventResult onServerInitializeStart(class ServerInstance &);
-    MCVAPI enum EventResult onServerLevelInitialized(class ServerInstance &, class Level &);
-    MCVAPI enum EventResult onServerMinecraftInitialized(class ServerInstance &, class Minecraft &);
-    MCVAPI enum EventResult onServerResume(class ServerInstance &);
-    MCVAPI enum EventResult onServerSuspend(class ServerInstance &);
-    MCVAPI enum EventResult onServerThreadStarted(class ServerInstance &);
-    MCVAPI enum EventResult onServerThreadStopped(class ServerInstance &);
-    MCVAPI enum EventResult onServerUpdateEnd(class ServerInstance &);
-    MCVAPI enum EventResult onServerUpdateStart(class ServerInstance &);
-    MCVAPI enum EventResult onStartLeaveGame(class ServerInstance &);
+    MCVAPI enum class EventResult onLeaveGameDone(class ServerInstance &);
+    MCVAPI enum class EventResult onServerInitializeEnd(class ServerInstance &);
+    MCVAPI enum class EventResult onServerInitializeStart(class ServerInstance &);
+    MCVAPI enum class EventResult onServerLevelInitialized(class ServerInstance &, class Level &);
+    MCVAPI enum class EventResult onServerMinecraftInitialized(class ServerInstance &, class Minecraft &);
+    MCVAPI enum class EventResult onServerResume(class ServerInstance &);
+    MCVAPI enum class EventResult onServerSuspend(class ServerInstance &);
+    MCVAPI enum class EventResult onServerThreadStarted(class ServerInstance &);
+    MCVAPI enum class EventResult onServerThreadStopped(class ServerInstance &);
+    MCVAPI enum class EventResult onServerUpdateEnd(class ServerInstance &);
+    MCVAPI enum class EventResult onServerUpdateStart(class ServerInstance &);
+    MCVAPI enum class EventResult onStartLeaveGame(class ServerInstance &);
 #endif
 
 };

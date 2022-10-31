@@ -15,9 +15,9 @@ namespace SharedConstants {
     MCAPI extern int const AutomationProtocolVersion;
     MCAPI extern int const CompanionAppProtocolVersion;
     MCAPI extern class SemVersion const CurrentGameSemVersion;
-    MCAPI extern enum LevelChunkFormat const CurrentLevelChunkFormat;
-    MCAPI extern enum StorageVersion const CurrentStorageVersion;
-    MCAPI extern enum SubChunkFormat const CurrentSubChunkFormat;
+    MCAPI extern enum class LevelChunkFormat const CurrentLevelChunkFormat;
+    MCAPI extern enum class StorageVersion const CurrentStorageVersion;
+    MCAPI extern enum class SubChunkFormat const CurrentSubChunkFormat;
     MCAPI extern bool const IsBeta;
     MCAPI extern int const MajorVersion;
     MCAPI extern class GameVersion const MinimumCompatibleGameVersionForLevelData;

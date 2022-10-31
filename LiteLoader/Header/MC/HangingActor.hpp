@@ -28,8 +28,8 @@ public:
     MCVAPI void normalTick();
     MCVAPI bool placeHangingEntity(class BlockSource &, int);
     MCVAPI void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    MCVAPI void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    MCVAPI void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    MCVAPI void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
+    MCVAPI void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     MCVAPI void setDir(int);
     MCVAPI void setSize(float, float);
     MCVAPI bool wouldSurvive(class BlockSource &);

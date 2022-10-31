@@ -32,11 +32,11 @@ public:
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /*14*/ virtual void _moveToBlock();
     /*15*/ virtual class Vec3 _getTargetPosition() const;
-    /*17*/ virtual bool getPOI(enum POIType);
-    /*18*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
+    /*17*/ virtual bool getPOI(enum class POIType);
+    /*18*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum class POIType) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOPOIGOAL
 #endif
-    MCAPI MoveToPOIGoal(class Mob &, float, enum POIType, float);
+    MCAPI MoveToPOIGoal(class Mob &, float, enum class POIType, float);
 
 //protected:
     MCAPI bool _canReachPOI(class Vec3 const &, float, bool);

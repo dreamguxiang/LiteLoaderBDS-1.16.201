@@ -38,6 +38,6 @@ public:
     MCAPI static class mce::Color const SILVER;
     MCAPI static class mce::Color const WHITE;
     MCAPI static class mce::Color const YELLOW;
-    MCAPI static class mce::Color const & getColor(enum PaletteColor);
+    MCAPI static class mce::Color const & getColor(enum class PaletteColor);
 
 };

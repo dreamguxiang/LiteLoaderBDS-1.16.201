@@ -29,6 +29,6 @@ public:
     /*11*/ virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCRYPTEDPROXYENV
 #endif
-    MCAPI EncryptedProxyEnv(class leveldb::Env *, class ContentIdentity const &, std::string const &, enum EncryptedProxyReadMode);
+    MCAPI EncryptedProxyEnv(class leveldb::Env *, class ContentIdentity const &, std::string const &, enum class EncryptedProxyReadMode);
 
 };

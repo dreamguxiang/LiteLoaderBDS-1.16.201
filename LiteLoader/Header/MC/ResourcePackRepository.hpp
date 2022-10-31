@@ -35,9 +35,9 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKREPOSITORY
 #endif
     MCAPI ResourcePackRepository(class IMinecraftEventing &, class PackManifestFactory &, class IContentAccessibilityProvider &, class Core::FilePathManager *, class PackSourceFactory &, bool);
-    MCAPI void addInvalidPack(class ResourceLocation const &, enum PackType);
+    MCAPI void addInvalidPack(class ResourceLocation const &, enum class PackType);
     MCAPI class Core::PathBuffer<std::string> const getDevelopmentBehaviorPacksPath() const;
-    MCAPI class Core::PathBuffer<std::string> const getKnownPacksPath(enum KnownPackType) const;
+    MCAPI class Core::PathBuffer<std::string> const getKnownPacksPath(enum class KnownPackType) const;
     MCAPI class ResourcePack * getResourcePackForPackId(struct PackIdVersion const &) const;
     MCAPI class ResourcePack * getResourcePackInPath(class Core::Path const &) const;
     MCAPI class ResourcePack * getResourcePackSatisfiesPackId(struct PackIdVersion const &, bool) const;
@@ -64,18 +64,18 @@ public:
 
 //private:
     MCAPI void _addResourcePackIfNotAlreadyAdded(class Pack &);
-    MCAPI void _detectKnownPacksChange(struct ResourcePackRepository::KnownPackContainer &, struct ResourcePackRepository::KnownPackContainer const &, enum KnownPackType);
+    MCAPI void _detectKnownPacksChange(struct ResourcePackRepository::KnownPackContainer &, struct ResourcePackRepository::KnownPackContainer const &, enum class KnownPackType);
     MCAPI void _findVanillaPacks();
     MCAPI void _initialize();
     MCAPI void _initializePackSource();
     MCAPI void _initializeWorldPackSource();
-    MCAPI void _loadLastKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum KnownPackType);
+    MCAPI void _loadLastKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum class KnownPackType);
     MCAPI void _loadPacks(bool);
-    MCAPI bool _packExists(class mce::UUID const &, class SemVersion const &, enum PackOrigin) const;
+    MCAPI bool _packExists(class mce::UUID const &, class SemVersion const &, enum class PackOrigin) const;
     MCAPI void _reloadDynamicPackagePacks();
     MCAPI void _reloadUserPacks();
     MCAPI bool _removePack(class ResourceLocation const &, bool);
-    MCAPI void _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum KnownPackType);
+    MCAPI void _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum class KnownPackType);
     MCAPI void _triggerRemoveResourcePackCallback(class ResourcePack *);
 
 private:

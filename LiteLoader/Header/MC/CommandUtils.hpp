@@ -25,7 +25,7 @@ namespace CommandUtils {
     MCAPI std::string getActorName(class Actor const &);
     MCAPI class BlockPos getFeetBlockPos(class Actor const *);
     MCAPI class Vec3 getFeetPos(class Actor const *);
-    MCAPI std::vector<enum ActorType> getInvalidCommandEntities();
+    MCAPI std::vector<enum class ActorType> getInvalidCommandEntities();
     MCAPI class Player const * getOriginPlayer(class CommandOrigin const &);
     MCAPI bool isFunctionValid(class CommandOutput &, class FunctionEntry &, std::string const &);
     MCAPI bool isPlayerSpawnedMob(class Actor const &, class Actor const &);

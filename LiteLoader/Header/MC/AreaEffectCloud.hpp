@@ -21,7 +21,7 @@ public:
 #endif
 
 public:
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~AreaEffectCloud();
     /*32*/ virtual void __unk_vfn_32();
     /*40*/ virtual void normalTick();
@@ -56,7 +56,7 @@ public:
     MCAPI int getPickupCount() const;
     MCAPI void setDuration(int);
     MCAPI void setInitialRadius(float);
-    MCAPI void setParticle(enum ParticleType);
+    MCAPI void setParticle(enum class ParticleType);
     MCAPI void setParticleColor(class mce::Color &);
     MCAPI void setPickupCount(int);
     MCAPI void setPotion(short);

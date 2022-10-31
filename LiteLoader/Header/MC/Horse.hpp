@@ -22,7 +22,7 @@ public:
 #endif
 
 public:
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~Horse();
     /*28*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
     /*32*/ virtual void __unk_vfn_32();
@@ -44,7 +44,7 @@ public:
     /*118*/ virtual void setStanding(bool);
     /*123*/ virtual void __unk_vfn_123();
     /*133*/ virtual void feed(int);
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
     /*171*/ virtual void __unk_vfn_171();
     /*173*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*175*/ virtual void causeFallDamage(float);
@@ -96,7 +96,7 @@ public:
 
 //private:
     MCAPI void openMouth();
-    MCAPI void setHorseFlag(enum HorseFlags, bool);
+    MCAPI void setHorseFlag(enum class HorseFlags, bool);
 
 private:
 

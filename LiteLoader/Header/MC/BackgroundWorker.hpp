@@ -34,7 +34,7 @@ public:
 //private:
     MCAPI void _doNoWorkDelay();
     MCAPI bool _processNextTask();
-    MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
+    MCAPI enum class BackgroundWorker::RunOneResult _runOneTask();
 
 private:
     MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;

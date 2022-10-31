@@ -23,7 +23,7 @@ public:
     /*0*/ virtual ~WoodlandMansionStart();
     /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual enum StructureFeatureType getType() const;
+    /*3*/ virtual enum class StructureFeatureType getType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WOODLANDMANSIONSTART
 #endif
 

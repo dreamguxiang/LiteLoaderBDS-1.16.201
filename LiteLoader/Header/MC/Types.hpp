@@ -633,13 +633,13 @@ public:
 };
 
 struct GameEventConfig {
-    enum GameEvents;
+    enum class GameEvents;
 };
 
 #include "IMinecraftEventing.hpp"
 
 struct OperationNodeValues {
-    enum Terrain;
+    enum class Terrain;
 };
 class Editor {
 public:
@@ -647,7 +647,7 @@ public:
 };
 
 struct SubChunkStorageUnit {
-    enum PruneType;
+    enum class PruneType;
 };
 
 // Templates
@@ -877,12 +877,141 @@ enum class ContainerType : char {
     SMITHING_TABLE         = 33,
 };
 
-enum GameType : int {
+enum class BlockActorType : int {
+    Undefined = 0x0,
+    Furnace = 0x1,
+    Chest = 0x2,
+    NetherReactor = 0x3,
+    Sign = 0x4,
+    MobSpawner = 0x5,
+    Skull = 0x6,
+    FlowerPot = 0x7,
+    BrewingStand = 0x8,
+    EnchantingTable = 0x9,
+    DaylightDetector = 0xA,
+    Music = 0xB,
+    Comparator = 0xC,
+    Dispenser = 0xD,
+    Dropper = 0xE,
+    Hopper = 0xF,
+    Cauldron = 0x10,
+    ItemFrame = 0x11,
+    PistonArm = 0x12,
+    MovingBlock = 0x13,
+    Chalkboard = 0x14,
+    Beacon = 0x15,
+    EndPortal = 0x16,
+    EnderChest = 0x17,
+    EndGateway = 0x18,
+    ShulkerBox = 0x19,
+    CommandBlock = 0x1A,
+    Bed = 0x1B,
+    Banner = 0x1C,
+    StructureBlock = 0x20,
+    Jukebox = 0x21,
+    ChemistryTable = 0x22,
+    Conduit = 0x23,
+    JigsawBlock = 0x24,
+    Lectern = 0x25,
+    BlastFurnace = 0x26,
+    Smoker = 0x27,
+    Bell = 0x28,
+    Campfire = 0x29,
+    BarrelBlock = 0x2A,
+    Beehive = 0x2B,
+    Lodestone = 0x2C,
+    ModBlock = 0xFF,
+    _count = 0x100,
+};
+
+
+enum class BlockProperty : unsigned __int64 {
+    None = 0x0,
+    Stair = 0x1,
+    HalfSlab = 0x2,
+    Hopper = 0x4,
+    TopSnow = 0x8,
+    FenceGate = 0x10,
+    Leaf = 0x20,
+    ThinConnects2D = 0x40,
+    Connects2D = 0x80,
+    Carpet = 0x100,
+    Button = 0x200,
+    Door = 0x400,
+    Portal = 0x800,
+    Heavy = 0x1000,
+    Snow = 0x2000,
+    Trap = 0x4000,
+    Sign = 0xFFFF8000,
+    Walkable = 0x10000,
+    PressurePlate = 0x20000,
+    PistonBlockGrabber = 0x40000,
+    TopSolidBlocking = 0x80000,
+    SolidBlocking = 0x100000,
+    CubeShaped = 0x200000,
+    Power_NO = 0x400000,
+    Power_BlockDown = 0x800000,
+    Immovable = 0x1000000,
+    BreakOnPush = 0x2000000,
+    Piston = 0x4000000,
+    InfiniBurn = 0x8000000,
+    RequiresWorldBuilder = 0x10000000,
+    CausesDamage = 0x20000000,
+    BreaksWhenFallenOnByHeavy = 0x40000000,
+    OnlyPistonPush = 0x80000000,
+    Liquid = 0x100000000,
+    CanBeBuiltOver = 0x200000000,
+    SnowRecoverable = 0x400000000,
+    Scaffolding = 0x800000000,
+    CanSupportCenterHangingBlock = 0x1000000000,
+    BreaksWhenHitByArrow = 0x2000000000,
+    Unwalkable = 0x4000000000,
+    Impenetrable = 0x8000000000,
+    Hollow = 0x10000000000,
+    OperatorBlock = 0x20000000000,
+    SupportedByFlowerPot = 0x40000000000,
+    PreventsJumping = 0x80000000000,
+    ContainsHoney = 0x100000000000,
+    Slime = 0x200000000000,
+    IrregularShapedPathable = 0x400000000000,
+    Climbable = 0x800000000000,
+    CanHaltWhenClimbing = 0x1000000000000,
+};
+
+enum class GameType : int {
     Survival  = 0,
     Creative  = 1,
     Adventure = 2,
     Spectator = 6
 };
+
+enum class CreativeItemCategory : int {
+    All = 0x0,
+    Construction = 0x1,
+    Nature = 0x2,
+    Equipment = 0x3,
+    Items = 0x4,
+    ItemCommandOnly = 0x5,
+    Undefined = 0x6,
+    NUM_CATEGORIES = 0x7,
+    Custom = 0x8,
+    Count = 0x9,
+};
+
+enum class Mirror : unsigned char {
+    None = 0x0,
+    X = 0x1,
+    Z = 0x2,
+    XZ = 0x3,
+};
+enum class Rotation : unsigned char {
+    None = 0x0,
+    Rotate90 = 0x1,
+    Rotate180 = 0x2,
+    Rotate270 = 0x3,
+    Total = 0x4,
+};
+
 
 enum class ActorType : unsigned int {
     Undefined = 0x1,
@@ -1025,6 +1154,25 @@ enum class ActorType : unsigned int {
     MAX_ENTITY_ID = 0x100,
 };
 
+enum class BlockRenderLayer : unsigned int {
+    RENDERLAYER_DOUBLE_SIDED = 0x0,
+    RENDERLAYER_BLEND_WATER = 0x1,
+    RENDERLAYER_ALPHATEST_MICRO_BLOCK = 0x2,
+    RENDERLAYER_RAY_TRACED_WATER = 0x3,
+    RENDERLAYER_BLEND = 0x4,
+    RENDERLAYER_OPAQUE = 0x5,
+    RENDERLAYER_OPTIONAL_ALPHATEST = 0x6,
+    RENDERLAYER_ALPHATEST = 0x7,
+    RENDERLAYER_SEASONS_OPAQUE = 0x8,
+    RENDERLAYER_SEASONS_OPTIONAL_ALPHATEST = 0x9,
+    RENDERLAYER_ALPHATEST_SINGLE_SIDE = 0xA,
+    RENDERLAYER_ENDPORTAL = 0xB,
+    RENDERLAYER_BARRIER = 0xC,
+    RENDERLAYER_STRUCTURE_VOID = 0xD,
+    _RENDERLAYER_COUNT = 0xE,
+};
+
+
 enum class MobSpawnMethod : int {
     Unknown = 0x0,
     SpawnEgg = 0x1,
@@ -1034,14 +1182,14 @@ enum class MobSpawnMethod : int {
     SpawnMethod_Count = 0x5,
 };
 
-enum Difficulty : int {
+enum class Difficulty : int {
     Peaceful = 0,
     Easy     = 1,
     Normal   = 2,
     Hard     = 3
 };
 
-enum PlayerPermissionLevel : int {
+enum class PlayerPermissionLevel : int {
     Visitor  = 0,
     Member   = 1,
     Operator = 2,

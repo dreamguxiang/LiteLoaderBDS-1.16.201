@@ -27,19 +27,19 @@ public:
     MCVAPI bool _registerSystemObjects(class ScriptApi::ScriptObjectHandle const &);
     MCVAPI bool executeCommand(struct ScriptCommand const &);
     MCVAPI void onExecuteCommandCalled(class ScriptApi::ScriptVersionInfo const &, struct ScriptCommand &&);
-    MCVAPI enum EventResult onLeaveGameDone(class ServerInstance &);
-    MCVAPI enum EventResult onLevelTick();
-    MCVAPI enum EventResult onServerLevelInitialized(class ServerInstance &, class Level &);
-    MCVAPI enum EventResult onServerThreadStarted(class ServerInstance &);
-    MCVAPI enum EventResult onServerUpdateEnd(class ServerInstance &);
-    MCVAPI enum EventResult onServerUpdateStart(class ServerInstance &);
+    MCVAPI enum class EventResult onLeaveGameDone(class ServerInstance &);
+    MCVAPI enum class EventResult onLevelTick();
+    MCVAPI enum class EventResult onServerLevelInitialized(class ServerInstance &, class Level &);
+    MCVAPI enum class EventResult onServerThreadStarted(class ServerInstance &);
+    MCVAPI enum class EventResult onServerUpdateEnd(class ServerInstance &);
+    MCVAPI enum class EventResult onServerUpdateStart(class ServerInstance &);
     MCVAPI bool setupInterface();
 #endif
 
 //private:
     MCAPI void _queueResourcePackScripts(class ResourcePackManager &);
     MCAPI void _registerEventListeners(class Level &, class NetworkHandler &);
-    MCAPI void _setupContext(class Minecraft &, class PacketSender &, class entt::basic_registry<enum entt::entity> &);
+    MCAPI void _setupContext(class Minecraft &, class PacketSender &, class entt::basic_registry<enum class entt::entity> &);
     MCAPI void _unregisterEventListeners(class Level *, class NetworkHandler &);
 
 private:

@@ -27,10 +27,10 @@ public:
     /*4*/ virtual bool allowInventoryTransactionManager() const;
     /*6*/ virtual void onContainerScreenOpen(class ContainerScreenContext const &);
     /*7*/ virtual void onContainerScreenClose();
-    /*8*/ virtual class SparseContainer * initOpenContainer(class BlockSource &, enum ContainerEnumName, class ContainerWeakRef const &);
+    /*8*/ virtual class SparseContainer * initOpenContainer(class BlockSource &, enum class ContainerEnumName, class ContainerWeakRef const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERSERVER
 #endif
-    MCAPI void _handleLegacyTransactionRequest(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &, std::vector<struct std::pair<enum ContainerEnumName, class std::vector<unsigned char, class std::allocator<unsigned char>>>> const &);
+    MCAPI void _handleLegacyTransactionRequest(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &, std::vector<struct std::pair<enum class ContainerEnumName, class std::vector<unsigned char, class std::allocator<unsigned char>>>> const &);
     MCAPI class gsl::final_action<class std::function<void (void)>> _retainSetItemStackNetIdVariantScope();
     MCAPI void startCrafting(bool, class BlockPos const &);
     MCAPI class CallbackToken tryCloseContainerScreen(class std::function<void (void)>);
@@ -40,7 +40,7 @@ public:
     MCAPI void _handleRequestData(std::vector<struct ItemStackResponseInfo> &, class ItemStackRequestData const *);
     MCAPI void _processQueue();
     MCAPI void _queueRequests(class ItemStackRequestBatch const &);
-    MCAPI void _setTextFilterState(enum ItemStackNetManagerServer::TextFilterState);
+    MCAPI void _setTextFilterState(enum class ItemStackNetManagerServer::TextFilterState);
     MCAPI bool _tryFilterText(class ItemStackRequestData const *);
 
 private:

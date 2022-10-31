@@ -35,7 +35,7 @@ public:
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual void __unk_vfn_15();
-    /*16*/ virtual enum EducationEditionOffer getEducationEditionOffering() const;
+    /*16*/ virtual enum class EducationEditionOffer getEducationEditionOffering() const;
     /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual struct ConnectionDefinition getConnectionDefinition() const;
     /*19*/ virtual void __unk_vfn_19();

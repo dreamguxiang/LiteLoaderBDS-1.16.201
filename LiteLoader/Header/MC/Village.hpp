@@ -23,22 +23,22 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGE
 #endif
     MCAPI Village(class Dimension &, class mce::UUID, class BlockPos const &);
-    MCAPI void addActorToVillage(enum DwellerRole, struct ActorUniqueID const &);
+    MCAPI void addActorToVillage(enum class DwellerRole, struct ActorUniqueID const &);
     MCAPI void addAggressor(class Mob const &);
     MCAPI bool addPOI(class std::weak_ptr<class POIInstance>);
     MCAPI void addVillager(struct ActorUniqueID const &);
     MCAPI bool checkNeedMoreVillagers() const;
     MCAPI void debugDraw();
-    MCAPI class std::weak_ptr<class POIInstance> fetchOwnedPOI(struct ActorUniqueID const &, enum POIType);
+    MCAPI class std::weak_ptr<class POIInstance> fetchOwnedPOI(struct ActorUniqueID const &, enum class POIType);
     MCAPI class std::optional<class BlockPos> findRandomSpawnPos(class BlockSource &, class BlockPos const &, class BlockPos const &);
     MCAPI float getApproximateRadius() const;
     MCAPI unsigned __int64 getBedPOICount() const;
-    MCAPI class std::weak_ptr<class POIInstance> getClosestPOI(enum POIType, class BlockPos const &);
+    MCAPI class std::weak_ptr<class POIInstance> getClosestPOI(enum class POIType, class BlockPos const &);
     MCAPI int getStanding(struct ActorUniqueID const &);
-    MCAPI bool hasSpecificDweller(enum DwellerRole, struct ActorUniqueID const &) const;
+    MCAPI bool hasSpecificDweller(enum class DwellerRole, struct ActorUniqueID const &) const;
     MCAPI void loadDataByKey(std::string const &, class CompoundTag const &);
     MCAPI int modifyStanding(struct ActorUniqueID const &, int);
-    MCAPI class std::_List_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<struct ActorUniqueID const, struct Village::DwellerData>>>> removeActorFromVillage(enum DwellerRole, struct ActorUniqueID const &);
+    MCAPI class std::_List_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<struct ActorUniqueID const, struct Village::DwellerData>>>> removeActorFromVillage(enum class DwellerRole, struct ActorUniqueID const &);
     MCAPI void removeVillageSavedData();
     MCAPI void rewardAllPlayers(int);
     MCAPI void tick(struct Tick, class BlockSource &);
@@ -69,7 +69,7 @@ public:
     MCAPI void _loadVillageDwellers(class CompoundTag const &);
     MCAPI void _loadVillagePOIs(class CompoundTag const &);
     MCAPI void _loadVillagePlayerStanding(class CompoundTag const &);
-    MCAPI void _playSoundFrom(class Vec3 const &, enum LevelSoundEvent);
+    MCAPI void _playSoundFrom(class Vec3 const &, enum class LevelSoundEvent);
     MCAPI void _readyRaidGroup(class std::unordered_set<struct ActorUniqueID, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct ActorUniqueID>> &);
     MCAPI void _ringBells(class BlockSource &, class Random &) const;
     MCAPI void _saveVillageData() const;

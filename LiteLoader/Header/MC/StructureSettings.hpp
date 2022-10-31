@@ -6,20 +6,6 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 // TODO: Need to verify
-enum Mirror : unsigned char {
-    None_15=0,
-    X,
-    Z,
-    XZ,
-};
-enum Rotation : unsigned char {
-    None_14=0,
-    Rotate90,
-    Rotate180,
-    Rotate270,
-    Total,
-};
-
 #undef BEFORE_EXTRA
 
 class StructureSettings {
@@ -57,10 +43,10 @@ public:
     inline void setStructureSize(class BlockPos const & bp){
         this->mStructureSize = bp;
     };
-    inline void setMirror(enum Mirror a0){
+    inline void setMirror(enum class Mirror a0){
         this->mMirror = a0;
     };
-    inline void setRotation(enum Rotation a0){
+    inline void setRotation(enum class Rotation a0){
         this->mRotation = a0;
     };
 

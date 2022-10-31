@@ -39,7 +39,7 @@ public:
     MCAPI void setSkinIndex(class Actor &, int, bool);
 
 //private:
-    MCAPI void _defineEntityDataString(class Actor &, enum ActorDataIDs);
+    MCAPI void _defineEntityDataString(class Actor &, enum class ActorDataIDs);
     MCAPI void _deserializeData();
     MCAPI void _loadActions(std::vector<std::unique_ptr<class NpcAction>> &, std::string const &) const;
     MCAPI void _loadData(class Actor &);

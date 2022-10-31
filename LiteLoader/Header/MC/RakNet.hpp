@@ -12,7 +12,7 @@ namespace RakNet {
 
 #define AFTER_EXTRA
 // Add Member There
-    enum StartupResult;
+    enum class StartupResult;
     class RakNetSocket2;
     struct SplitPacketChannel;
     class BitStream;

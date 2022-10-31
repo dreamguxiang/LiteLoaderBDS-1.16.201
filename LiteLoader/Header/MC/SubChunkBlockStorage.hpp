@@ -24,7 +24,7 @@ public:
     MCVAPI class ISubChunkBlockStoragePaletted * asPalettedStorage();
     MCVAPI class ISubChunkBlockStoragePaletted const * asPalettedStorage() const;
 #endif
-    MCAPI static std::unique_ptr<class SubChunkBlockStorage> makeDeserialized(class IDataInput &, class BlockPalette const &, enum SubChunkFormat);
+    MCAPI static std::unique_ptr<class SubChunkBlockStorage> makeDeserialized(class IDataInput &, class BlockPalette const &, enum class SubChunkFormat);
     MCAPI static std::unique_ptr<class SubChunkBlockStorage> makeFromVolume(class BlockVolume const &, short);
     MCAPI static std::unique_ptr<class SubChunkBlockStorage> makeUniform(class Block const &);
 

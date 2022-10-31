@@ -29,7 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONIDENTIFIER
 #endif
-    MCAPI ActorDefinitionIdentifier(enum ActorType);
+    MCAPI ActorDefinitionIdentifier(enum class ActorType);
     MCAPI ActorDefinitionIdentifier(std::string const &);
     MCAPI ActorDefinitionIdentifier(char const *);
     MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier &&);

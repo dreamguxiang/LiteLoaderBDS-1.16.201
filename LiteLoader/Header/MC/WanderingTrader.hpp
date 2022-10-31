@@ -35,7 +35,7 @@ public:
     /*101*/ virtual void __unk_vfn_101();
     /*102*/ virtual void __unk_vfn_102();
     /*123*/ virtual void __unk_vfn_123();
-    /*161*/ virtual enum ActorType getEntityTypeId() const;
+    /*161*/ virtual enum class ActorType getEntityTypeId() const;
     /*171*/ virtual void __unk_vfn_171();
     /*184*/ virtual void __unk_vfn_184();
     /*208*/ virtual void __unk_vfn_208();

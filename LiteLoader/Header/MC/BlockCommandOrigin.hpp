@@ -30,11 +30,11 @@ public:
     /*5*/ virtual class Level * getLevel() const;
     /*6*/ virtual class Dimension * getDimension() const;
     /*7*/ virtual class Actor * getEntity() const;
-    /*8*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /*8*/ virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /*9*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*16*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*17*/ virtual bool isSelectorExpansionAllowed() const;
-    /*21*/ virtual enum CommandOriginType getOriginType() const;
+    /*21*/ virtual enum class CommandOriginType getOriginType() const;
     /*26*/ virtual class CommandBlockActor * getBlockEntity() const;
     /*27*/ virtual class BaseCommandBlock * getBaseCommandBlock() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMMANDORIGIN

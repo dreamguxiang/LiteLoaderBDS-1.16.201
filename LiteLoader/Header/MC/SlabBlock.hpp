@@ -45,7 +45,7 @@ public:
     /*48*/ virtual void __unk_vfn_48();
     /*52*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /*58*/ virtual void __unk_vfn_58();
-    /*63*/ virtual enum BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
+    /*63*/ virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /*65*/ virtual void __unk_vfn_65();
     /*79*/ virtual void __unk_vfn_79();
     /*82*/ virtual int getResourceCount(class Random &, class Block const &, int, bool) const;

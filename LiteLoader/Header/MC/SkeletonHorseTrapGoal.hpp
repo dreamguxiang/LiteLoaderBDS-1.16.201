@@ -32,8 +32,8 @@ public:
 #endif
 
 //private:
-    MCAPI class Horse * _createHorse(enum Difficulty const &);
-    MCAPI class Skeleton * _createSkeleton(enum Difficulty const &, class Horse const &);
+    MCAPI class Horse * _createHorse(enum class Difficulty const &);
+    MCAPI class Skeleton * _createSkeleton(enum class Difficulty const &, class Horse const &);
 
 private:
 

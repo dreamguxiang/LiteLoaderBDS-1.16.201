@@ -39,9 +39,9 @@ public:
 #endif
     MCAPI ChalkboardBlockActor(class BlockPos const &);
     MCAPI void setText(std::string const &);
-    MCAPI static std::vector<class BlockPos> calculateAllBlocks(class BlockPos const &, enum ChalkboardSize, int);
-    MCAPI static bool canCreateChalkboard(class Actor *, class BlockSource &, class BlockPos const &, enum ChalkboardSize, int, std::vector<class BlockPos> &);
+    MCAPI static std::vector<class BlockPos> calculateAllBlocks(class BlockPos const &, enum class ChalkboardSize, int);
+    MCAPI static bool canCreateChalkboard(class Actor *, class BlockSource &, class BlockPos const &, enum class ChalkboardSize, int, std::vector<class BlockPos> &);
     MCAPI static class ChalkboardBlockActor * convertFromEntity(class BlockSource &, class CompoundTag const &);
-    MCAPI static class ChalkboardBlockActor * createChalkboard(class Actor *, class BlockSource &, class BlockPos const &, enum ChalkboardSize, int, bool, std::string);
+    MCAPI static class ChalkboardBlockActor * createChalkboard(class Actor *, class BlockSource &, class BlockPos const &, enum class ChalkboardSize, int, bool, std::string);
 
 };

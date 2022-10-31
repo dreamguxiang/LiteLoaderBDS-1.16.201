@@ -30,7 +30,7 @@ public:
     /*10*/ virtual bool deleteAsset(class Core::PathBuffer<std::string> const &);
     /*11*/ virtual bool writeAsset(class Core::Path const &, std::string const &);
     /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const;
-    /*17*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
+    /*17*/ virtual enum class PackAccessAssetGenerationResult generateAssetSet();
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCRYPTEDFILEACCESSSTRATEGY
 #endif

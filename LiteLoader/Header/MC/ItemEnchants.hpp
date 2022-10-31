@@ -28,7 +28,7 @@ public:
     MCAPI std::vector<class EnchantmentInstance> getAllEnchants() const;
     MCAPI std::vector<std::string> getEnchantNames() const;
     MCAPI int getTotalValue(bool) const;
-    MCAPI int hasEnchant(enum Enchant::Type) const;
+    MCAPI int hasEnchant(enum class Enchant::Type) const;
     MCAPI class ItemEnchants & operator=(class ItemEnchants &&);
     MCAPI void read(class ReadOnlyBinaryStream &);
     MCAPI ~ItemEnchants();

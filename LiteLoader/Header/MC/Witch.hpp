@@ -37,7 +37,7 @@ public:
     /*103*/ virtual bool canAttack(class Actor *, bool) const;
     /*108*/ virtual void performRangedAttack(class Actor &, float);
     /*123*/ virtual void __unk_vfn_123();
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
     /*171*/ virtual void __unk_vfn_171();
     /*184*/ virtual void __unk_vfn_184();
     /*208*/ virtual void __unk_vfn_208();

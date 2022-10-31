@@ -55,7 +55,7 @@ public:
 #endif
 
 public:
-    /*3*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*3*/ virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*5*/ virtual void _serverInitItemStackIds();
     /*7*/ virtual ~ServerPlayer();
     /*32*/ virtual void __unk_vfn_32();
@@ -72,8 +72,8 @@ public:
     /*102*/ virtual void __unk_vfn_102();
     /*106*/ virtual bool isValidTarget(class Actor *) const;
     /*123*/ virtual void __unk_vfn_123();
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*145*/ virtual void setArmor(enum ArmorSlot, class ItemStack const &);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
+    /*145*/ virtual void setArmor(enum class ArmorSlot, class ItemStack const &);
     /*154*/ virtual void setOffhandSlot(class ItemStack const &);
     /*159*/ virtual bool load(class CompoundTag const &, class DataLoadHelper &);
     /*170*/ virtual bool canChangeDimensions() const;
@@ -99,7 +99,7 @@ public:
     /*294*/ virtual void __unk_vfn_294();
     /*304*/ virtual void __unk_vfn_304();
     /*311*/ virtual void hurtArmor(class ActorDamageSource const &, int);
-    /*314*/ virtual void setDamagedArmor(enum ArmorSlot, class ItemStack const &);
+    /*314*/ virtual void setDamagedArmor(enum class ArmorSlot, class ItemStack const &);
     /*315*/ virtual void sendArmorDamage(class std::bitset<4> const &);
     /*316*/ virtual void sendArmor(class std::bitset<4> const &);
     /*327*/ virtual void clearVanishEnchantedItemsOnDeath();
@@ -118,7 +118,7 @@ public:
     /*369*/ virtual void __unk_vfn_369();
     /*371*/ virtual void __unk_vfn_371();
     /*373*/ virtual void __unk_vfn_373();
-    /*376*/ virtual void setPermissions(enum CommandPermissionLevel);
+    /*376*/ virtual void setPermissions(enum class CommandPermissionLevel);
     /*379*/ virtual void __unk_vfn_379();
     /*380*/ virtual void __unk_vfn_380();
     /*381*/ virtual void openTrading(struct ActorUniqueID const &, bool);
@@ -137,7 +137,7 @@ public:
     /*399*/ virtual bool isLoading() const;
     /*400*/ virtual bool isPlayerInitialized() const;
     /*401*/ virtual void __unk_vfn_401();
-    /*404*/ virtual void setPlayerGameType(enum GameType);
+    /*404*/ virtual void setPlayerGameType(enum class GameType);
     /*407*/ virtual void __unk_vfn_407();
     /*411*/ virtual void setContainerData(class IContainerManager &, int, int);
     /*412*/ virtual void slotChanged(class IContainerManager &, class Container &, int, class ItemStack const &, class ItemStack const &, bool);
@@ -152,20 +152,20 @@ public:
     /*427*/ virtual void sendNetworkPacket(class Packet &) const;
     /*428*/ virtual class PlayerEventCoordinator & getPlayerEventCoordinator();
     /*429*/ virtual class MoveInputHandler * getMoveInputHandler();
-    /*430*/ virtual enum InputMode getInputMode() const;
-    /*431*/ virtual enum ClientPlayMode getPlayMode() const;
-    /*432*/ virtual void reportMovementTelemetry(enum MovementEventType);
+    /*430*/ virtual enum class InputMode getInputMode() const;
+    /*431*/ virtual enum class ClientPlayMode getPlayMode() const;
+    /*432*/ virtual void reportMovementTelemetry(enum class MovementEventType);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYER
     MCVAPI void frameUpdate(class FrameUpdateContextBase &);
     MCVAPI void openNpcInteractScreen(class Actor &);
     MCVAPI void openPortfolio();
 #endif
-    MCAPI ServerPlayer(class Level &, class PacketSender &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, enum GameType, class NetworkIdentifier const &, unsigned char, class std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, int, bool);
+    MCAPI ServerPlayer(class Level &, class PacketSender &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, enum class GameType, class NetworkIdentifier const &, unsigned char, class std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, int, bool);
     MCAPI void checkCheating(class Vec3 const &);
     MCAPI void doDeleteContainerManager(bool);
     MCAPI unsigned int findClientChunkRadius(unsigned int) const;
     MCAPI void handleActorPickRequestOnServer(class Actor const &, bool);
-    MCAPI enum ContainerID openUnmanagedContainer();
+    MCAPI enum class ContainerID openUnmanagedContainer();
     MCAPI bool recoverR5LostInventoryAndXP();
     MCAPI void selectItem(class ItemStack const &);
     MCAPI void setClientChunkRadius(unsigned int);

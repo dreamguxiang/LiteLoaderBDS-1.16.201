@@ -26,7 +26,7 @@ public:
     /*2*/ virtual void registerOutputCallback(class std::function<void (class AutomationCmdOutput &)> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUTSENDER
 #endif
-    MCAPI void sendToAdmins(class CommandOrigin const &, class CommandOutput const &, enum CommandPermissionLevel);
+    MCAPI void sendToAdmins(class CommandOrigin const &, class CommandOutput const &, enum class CommandPermissionLevel);
     MCAPI static std::vector<std::string> translate(std::vector<std::string> const &);
 
 //protected:

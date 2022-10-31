@@ -47,6 +47,6 @@ public:
     /*123*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, float, float, float) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERITEM
 #endif
-    MCAPI static std::vector<struct std::pair<class gsl::not_null<class BannerPattern const *>, enum ItemColor>> getPatternAndColorPairsFromItemStack(class ItemStackBase const &);
+    MCAPI static std::vector<struct std::pair<class gsl::not_null<class BannerPattern const *>, enum class ItemColor>> getPatternAndColorPairsFromItemStack(class ItemStackBase const &);
 
 };

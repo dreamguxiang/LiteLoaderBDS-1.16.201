@@ -21,8 +21,8 @@ public:
 #endif
 
 public:
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /*2*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
+    /*2*/ virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~Minecart();
     /*25*/ virtual float getInterpolatedBodyYaw(float) const;
     /*32*/ virtual void __unk_vfn_32();
@@ -60,7 +60,7 @@ public:
     /*259*/ virtual void _onSizeUpdated();
     /*260*/ virtual void __unk_vfn_260();
     /*261*/ virtual void destroy(class ActorDamageSource const &, bool);
-    /*262*/ virtual enum MinecartType getType() = 0;
+    /*262*/ virtual enum class MinecartType getType() = 0;
     /*263*/ virtual class Block const * getDefaultDisplayBlock() const;
     /*264*/ virtual void __unk_vfn_264();
     /*265*/ virtual int getDefaultDisplayOffset() const;

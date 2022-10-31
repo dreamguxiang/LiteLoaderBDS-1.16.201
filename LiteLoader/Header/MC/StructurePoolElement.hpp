@@ -20,22 +20,22 @@ public:
 #endif
 
 public:
-    /*0*/ virtual class BlockPos getSize(enum Rotation) const;
-    /*1*/ virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, enum Rotation) const;
+    /*0*/ virtual class BlockPos getSize(enum class Rotation) const;
+    /*1*/ virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, enum class Rotation) const;
     /*2*/ virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, class LegacyStructureSettings &, class BlockSource *) const;
-    /*3*/ virtual class BoundingBox getBoundingBox(class BlockPos, enum Rotation) const;
-    /*4*/ virtual void setProjection(enum Projection);
-    /*5*/ virtual enum Projection getProjection() const;
-    /*6*/ virtual enum PostProcessSettings getPostProcessSettings() const;
-    /*7*/ virtual bool place(class BlockSource &, class BlockPos, enum Rotation, class BoundingBox, class Random &, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier>>>> &, class BlockPos) const;
-    /*8*/ virtual void placeActors(class BlockSource &, class BlockPos, enum Rotation, class Random &) const;
+    /*3*/ virtual class BoundingBox getBoundingBox(class BlockPos, enum class Rotation) const;
+    /*4*/ virtual void setProjection(enum class Projection);
+    /*5*/ virtual enum class Projection getProjection() const;
+    /*6*/ virtual enum class PostProcessSettings getPostProcessSettings() const;
+    /*7*/ virtual bool place(class BlockSource &, class BlockPos, enum class Rotation, class BoundingBox, class Random &, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier>>>> &, class BlockPos) const;
+    /*8*/ virtual void placeActors(class BlockSource &, class BlockPos, enum class Rotation, class Random &) const;
     /*9*/ virtual void handleJigsawBlock(class BlockSource &, class JigsawBlockInfo &, class LegacyStructureSettings &) const;
     /*10*/ virtual void handleDataMarker(class BlockSource &, class BlockPos, std::string, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier>>>> &) const;
     /*11*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLELEMENT
 #endif
-    MCAPI StructurePoolElement(class StructureManager &, std::string const &, std::vector<std::unique_ptr<class StructurePoolBlockRule>> const *, std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const *, std::vector<std::unique_ptr<class StructurePoolActorRule>> const *, enum Projection, enum PostProcessSettings);
-    MCAPI StructurePoolElement(class StructureManager &, std::string const &, enum Projection, enum PostProcessSettings);
+    MCAPI StructurePoolElement(class StructureManager &, std::string const &, std::vector<std::unique_ptr<class StructurePoolBlockRule>> const *, std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const *, std::vector<std::unique_ptr<class StructurePoolActorRule>> const *, enum class Projection, enum class PostProcessSettings);
+    MCAPI StructurePoolElement(class StructureManager &, std::string const &, enum class Projection, enum class PostProcessSettings);
 
 //private:
     MCAPI class StructurePoolElement::LazyTemplate const & _getTemplate() const;

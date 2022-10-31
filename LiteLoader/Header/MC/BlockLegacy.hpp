@@ -8,12 +8,77 @@
 class Block;
 class BlockSource;
 class ItemStack;
-
+#include "BaseGameVersion.hpp"
+#include "HashedString.hpp"
+#include "Brightness.hpp"
+#include "Actor.hpp"
 #undef BEFORE_EXTRA
 
 class BlockLegacy {
 
 public:
+    std::string mDescriptionId;
+    HashedString mRawNameId;
+    std::string mNamespace;
+    HashedString mFullName;
+    bool mFancy;
+    BlockRenderLayer mRenderLayer;
+    bool mRenderLayerCanRenderAsOpaque;
+    BlockProperty mProperties;
+    BlockActorType mBlockEntityType;
+    bool mAnimatedTexture;
+    float mBrightnessGamma;
+    float mThickness;
+    bool mCanSlide;
+    bool mCanInstatick;
+    bool mIsInteraction;
+    float mGravity;
+    const class Material* mMaterial;
+    bool mHeavy;
+    float mParticleQuantityScalar;
+    CreativeItemCategory mCreativeCategory;
+    std::string mCreativeGroup;
+    bool mAllowsRunes;
+    bool mCanBeBrokenFromFalling;
+    bool mSolid;
+    bool mPushesOutItems;
+    bool mIgnoreBlockForInsideCubeRenderer;
+    bool mIsTrapdoor;
+    bool mIsDoor;
+    float mTranslucency;
+    bool mShouldRandomTick;
+    bool mShouldRandomTickExtraLayer;
+    bool mIsMobPiece;
+    bool mCanBeExtraBlock;
+    bool mCanPropagateBrightness;
+    Brightness mLightBlock;
+    Brightness mLightEmission;
+    int mFlameOdds;
+    int mBurnOdds;
+    float mDestroySpeed;
+    float mExplosionResistance;
+    mce::Color mMapColor;
+    float mFriction;
+    unsigned __int16 mID;
+    BaseGameVersion mMinRequiredBaseGameVersion;
+    bool mIsVanilla;
+    std::vector<class HashedString> mTags;
+    bool mTickToScript;
+    bool mSendNeighborChangedToScript;
+    bool mFireResistant;
+    std::unordered_map<std::string, class DefinitionEvent> mEventHandlers;
+    AABB mVisualShape;
+    unsigned int mBitsUsed;
+    unsigned int mTotalBitsUsed;
+    std::map<unsigned __int64,class ItemStateInstance> mStates;
+    std::unordered_map<class HashedString, unsigned __int64> mStateNameMap;
+    unsigned __int64 mCreativeEnumState;
+    std::vector<std::unique_ptr<Block>> mBlockPermutations;
+    const Block* mDefaultState;
+    std::shared_mutex mAccess;//Core::Cache
+    std::unordered_map<unsigned short,class Block const*> mContent;//Core::Cache
+    OwnerPtrT<EntityRefTraits> mEntity;
+    std::unique_ptr<class BlockStateGroup> mBlockStateGroup;
 
 public:
     struct NameInfo;
@@ -33,11 +98,11 @@ public:
     };
     inline bool hasBlockEntity() const{
         // LevelChunk::_removeCallbacks Line28
-        return getBlockEntityType();
+        return (int)getBlockEntityType();
     }
-    inline enum BlockActorType getBlockEntityType() const{
+    inline enum class BlockActorType getBlockEntityType() const{
         // LevelChunk::_removeCallbacks Line28
-        return dAccess<BlockActorType>(this,168);;
+        return dAccess<BlockActorType>(this,168);
     };
 
 #undef AFTER_EXTRA
@@ -68,7 +133,7 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual bool isStrippable(class Block const &) const;
     /*18*/ virtual class Block const & getStrippedBlock(class Block const &) const;
-    /*19*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    /*19*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /*20*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /*21*/ virtual void getConnectedDirections(class Block const &, class BlockPos const &, class BlockSource &, bool &, bool &, bool &, bool &) const;
     /*22*/ virtual void __unk_vfn_22();
@@ -112,11 +177,11 @@ public:
     /*60*/ virtual void onStructureBlockPlace(class BlockSource &, class BlockPos const &) const;
     /*61*/ virtual void onStructureNeighborBlockPlace(class BlockSource &, class BlockPos const &) const;
     /*62*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
-    /*63*/ virtual enum BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
+    /*63*/ virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /*64*/ virtual void updateEntityAfterFallOn(class BlockPos const &, struct IActorMovementProxy &) const;
     /*65*/ virtual void __unk_vfn_65();
     /*66*/ virtual bool ignoreEntitiesOnPistonMove(class Block const &) const;
-    /*67*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    /*67*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /*68*/ virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /*69*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*70*/ virtual bool mayPick() const;
@@ -181,7 +246,7 @@ public:
     /*129*/ virtual class Block const & getRenderBlock() const;
     /*130*/ virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /*131*/ virtual void __unk_vfn_131();
-    /*132*/ virtual enum Flip getFaceFlip(unsigned char, class Block const &) const;
+    /*132*/ virtual enum class Flip getFaceFlip(unsigned char, class Block const &) const;
     /*133*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*134*/ virtual class BlockLegacy & init();
     /*135*/ virtual class BlockLegacy & setLightBlock(struct Brightness);
@@ -190,7 +255,7 @@ public:
     /*138*/ virtual class BlockLegacy & setFlammable(class FlameOdds, class BurnOdds);
     /*139*/ virtual class BlockLegacy & setDestroyTime(float);
     /*140*/ virtual class BlockLegacy & setFriction(float);
-    /*141*/ virtual class BlockLegacy & addProperty(enum BlockProperty);
+    /*141*/ virtual class BlockLegacy & addProperty(enum class BlockProperty);
     /*142*/ virtual class BlockLegacy & addState(class ItemState const &);
     /*143*/ virtual class BlockLegacy & addState(class ItemState const &, unsigned __int64);
     /*144*/ virtual class BlockLegacy & setAllowsRunes(bool);
@@ -216,8 +281,8 @@ public:
     /*164*/ virtual class HitResult clip(class BlockSource &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /*165*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*166*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /*167*/ virtual enum BlockRenderLayer getRenderLayer() const;
-    /*168*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*167*/ virtual enum class BlockRenderLayer getRenderLayer() const;
+    /*168*/ virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*169*/ virtual int getExtraRenderLayers() const;
     /*170*/ virtual float getExplosionResistance(class Actor *) const;
     /*171*/ virtual struct Brightness getLightEmission(class Block const &) const;
@@ -267,7 +332,7 @@ public:
 #endif
     MCAPI BlockLegacy(std::string const &, int, class Material const &);
     MCAPI bool addAABB(class AABB const &, class AABB const *, std::vector<class AABB> &) const;
-    MCAPI class BlockLegacy & addBlockProperty(enum BlockProperty);
+    MCAPI class BlockLegacy & addBlockProperty(enum class BlockProperty);
     MCAPI class BlockLegacy & addTag(class HashedString const &);
     MCAPI std::string buildDescriptionName(class Block const &) const;
     MCAPI void createBlockPermutations(unsigned int);
@@ -281,7 +346,7 @@ public:
     MCAPI bool operator==(class BlockLegacy const &) const;
     MCAPI class ItemActor * popResource(class BlockSource &, class BlockPos const &, class ItemInstance const &) const;
     MCAPI class BlockLegacy & setCanBeExtraBlock(bool);
-    MCAPI class BlockLegacy & setCategory(enum CreativeItemCategory);
+    MCAPI class BlockLegacy & setCategory(enum class CreativeItemCategory);
     MCAPI class BlockLegacy & setCreativeEnumState(class ItemState const &);
     MCAPI class BlockLegacy & setCreativeGroup(std::string const &);
     MCAPI class BlockLegacy & setMinRequiredBaseGameVersion(class BaseGameVersion const &);
@@ -298,3 +363,5 @@ public:
 protected:
 
 };
+
+//static_assert(sizeof(BlockLegacy) == );

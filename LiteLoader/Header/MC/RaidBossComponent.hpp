@@ -31,8 +31,8 @@ public:
     MCAPI void updateBossBarStats(class Actor &, class Raid const &);
 
 //private:
-    MCAPI void _broadcastBossEvent(enum BossEventUpdateType, class Actor &);
-    MCAPI void _sendBossEvent(enum BossEventUpdateType, class Player &);
+    MCAPI void _broadcastBossEvent(enum class BossEventUpdateType, class Actor &);
+    MCAPI void _sendBossEvent(enum class BossEventUpdateType, class Player &);
 
 private:
 

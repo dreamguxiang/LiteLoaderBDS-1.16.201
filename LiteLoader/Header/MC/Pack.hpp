@@ -26,8 +26,8 @@ public:
     MCAPI Pack(std::unique_ptr<class PackManifest>, std::unique_ptr<class PackAccessStrategy>, std::unique_ptr<class SubpackInfoCollection>, std::unique_ptr<class PackMetadata>);
     MCAPI void move(class Pack &&);
     MCAPI void notifyDeleted();
-    MCAPI static std::unique_ptr<class Pack> createPack(class ResourceLocation const &, enum PackType, enum PackOrigin, class PackManifestFactory &, class IContentKeyProvider const &, class PackSourceReport *);
-    MCAPI static std::unique_ptr<class PackMetadata> createPackMetadata(enum PackType, class PackManifest &, class PackAccessStrategy const &, class PackReport &);
+    MCAPI static std::unique_ptr<class Pack> createPack(class ResourceLocation const &, enum class PackType, enum class PackOrigin, class PackManifestFactory &, class IContentKeyProvider const &, class PackSourceReport *);
+    MCAPI static std::unique_ptr<class PackMetadata> createPackMetadata(enum class PackType, class PackManifest &, class PackAccessStrategy const &, class PackReport &);
 
 //private:
 

@@ -14,10 +14,10 @@ namespace JsonPackUtils {
 
 #undef AFTER_EXTRA
     MCAPI bool readBoolAndReport(class Json::Value const &, std::string const &, std::vector<std::string> &, class PackReport &, bool, bool);
-    MCAPI struct std::pair<class Json::Value const, enum PackParseErrorType> readRequiredValue(class Json::Value const &, std::string const &, enum Json::ValueType);
+    MCAPI struct std::pair<class Json::Value const, enum class PackParseErrorType> readRequiredValue(class Json::Value const &, std::string const &, enum class Json::ValueType);
     MCAPI std::string readStringAndReport(class Json::Value const &, std::string const &, std::vector<std::string> &, class PackReport &, bool);
     MCAPI std::vector<std::string> readStringArrayAndReport(class Json::Value const &, std::string const &, std::vector<std::string> &, class PackReport &, bool);
-    MCAPI struct std::pair<class Json::Value const, enum PackParseErrorType> readValueAndReportErrors(class Json::Value const &, std::string const &, enum Json::ValueType, std::vector<std::string> &, class PackReport &, bool);
+    MCAPI struct std::pair<class Json::Value const, enum class PackParseErrorType> readValueAndReportErrors(class Json::Value const &, std::string const &, enum class Json::ValueType, std::vector<std::string> &, class PackReport &, bool);
     MCAPI std::string stringizePath(std::vector<std::string> const &);
 
 };

@@ -27,12 +27,12 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECONTAINERMENU
     MCVAPI void broadcastChanges();
     MCVAPI void containerContentChanged(int);
-    MCVAPI enum ContainerID getContainerId() const;
-    MCVAPI enum ContainerType getContainerType() const;
+    MCVAPI enum class ContainerID getContainerId() const;
+    MCVAPI enum class ContainerType getContainerType() const;
     MCVAPI bool isResultSlot(int);
     MCVAPI bool isSlotDirty(int);
-    MCVAPI void setContainerId(enum ContainerID);
-    MCVAPI void setContainerType(enum ContainerType);
+    MCVAPI void setContainerId(enum class ContainerID);
+    MCVAPI void setContainerType(enum class ContainerType);
     MCVAPI void setData(int, int);
     MCVAPI ~BaseContainerMenu();
 #endif

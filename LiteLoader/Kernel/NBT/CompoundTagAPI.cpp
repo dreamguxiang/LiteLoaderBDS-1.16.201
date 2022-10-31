@@ -1001,66 +1001,66 @@ inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int indent, int 
                 oss << ' ';
         }
         switch (childrenType) {
-            case Tag::End:
+            case Tag::Type::End:
                 if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asEndTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::Byte:
+            case Tag::Type::Byte:
                 if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asByteTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::Short:
+            case Tag::Type::Short:
                 if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asShortTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::Int:
+            case Tag::Type::Int:
                 if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asIntTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::Int64:
+            case Tag::Type::Int64:
                 if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asInt64Tag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::Float:
+            case Tag::Type::Float:
                 if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asFloatTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::Double:
+            case Tag::Type::Double:
                 if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asDoubleTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::ByteArray:
+            case Tag::Type::ByteArray:
                 if (snbtFormat != SnbtFormat::Minimize)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asByteArrayTag(), indent, level + 1, snbtFormat);
                 shouldReturn = true;
                 break;
-            case Tag::String:
+            case Tag::Type::String:
                 if (snbtFormat != SnbtFormat::Minimize)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asStringTag(), indent, level + 1, snbtFormat);
                 shouldReturn = true;
                 break;
-            case Tag::List:
+            case Tag::Type::List:
                 if (snbtFormat != SnbtFormat::Minimize)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asListTag(), indent, level + 1, snbtFormat);
                 shouldReturn = true;
                 break;
-            case Tag::Compound:
+            case Tag::Type::Compound:
                 if (snbtFormat != SnbtFormat::Minimize)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asCompoundTag(), indent, level + 1, snbtFormat);
                 shouldReturn = true;
                 break;
-            case Tag::IntArray:
+            case Tag::Type::IntArray:
                 if (snbtFormat != SnbtFormat::Minimize)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asIntArrayTag(), indent, level + 1, snbtFormat);
@@ -1096,40 +1096,40 @@ inline void __appendSNBT(std::ostringstream& oss, CompoundTag& tag, int indent, 
         }
         auto tag = const_cast<Tag*>(child.get());
         switch (tag->getTagType()) {
-            case Tag::End:
+            case Tag::Type::End:
                 __appendSNBT(oss, *tag->asEndTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::Byte:
+            case Tag::Type::Byte:
                 __appendSNBT(oss, *tag->asByteTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::Short:
+            case Tag::Type::Short:
                 __appendSNBT(oss, *tag->asShortTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::Int:
+            case Tag::Type::Int:
                 __appendSNBT(oss, *tag->asIntTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::Int64:
+            case Tag::Type::Int64:
                 __appendSNBT(oss, *tag->asInt64Tag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::Float:
+            case Tag::Type::Float:
                 __appendSNBT(oss, *tag->asFloatTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::Double:
+            case Tag::Type::Double:
                 __appendSNBT(oss, *tag->asDoubleTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::ByteArray:
+            case Tag::Type::ByteArray:
                 __appendSNBT(oss, *tag->asByteArrayTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::String:
+            case Tag::Type::String:
                 __appendSNBT(oss, *tag->asStringTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::List:
+            case Tag::Type::List:
                 __appendSNBT(oss, *tag->asListTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::Compound:
+            case Tag::Type::Compound:
                 __appendSNBT(oss, *tag->asCompoundTag(), indent, level + 1, snbtFormat);
                 break;
-            case Tag::IntArray:
+            case Tag::Type::IntArray:
                 __appendSNBT(oss, *tag->asIntArrayTag(), indent, level + 1, snbtFormat);
                 break;
             default:
@@ -1217,32 +1217,32 @@ inline void __appendPrettySNBT(std::ostringstream& oss, EndTag& tag, unsigned in
 }
 template <>
 inline void __appendPrettySNBT(std::ostringstream& oss, ByteTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[Tag::Type::Byte].mPrefix << (int)(signed char)tag.value() << format.mValueFormats[Tag::Type::Byte].mSuffix;
+    oss << format.mValueFormats[(int)Tag::Type::Byte].mPrefix << (int)(signed char)tag.value() << format.mValueFormats[(int)Tag::Type::Byte].mSuffix;
 }
 template <>
 inline void __appendPrettySNBT(std::ostringstream& oss, ShortTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[Tag::Type::Short].mPrefix << tag.value() << format.mValueFormats[Tag::Type::Short].mSuffix;
+    oss << format.mValueFormats[(int)Tag::Type::Short].mPrefix << tag.value() << format.mValueFormats[(int)Tag::Type::Short].mSuffix;
 }
 template <>
 inline void __appendPrettySNBT(std::ostringstream& oss, IntTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[Tag::Type::Int].mPrefix << tag.value() << format.mValueFormats[Tag::Type::Int].mSuffix;
+    oss << format.mValueFormats[(int)Tag::Type::Int].mPrefix << tag.value() << format.mValueFormats[(int)Tag::Type::Int].mSuffix;
 }
 template <>
 inline void __appendPrettySNBT(std::ostringstream& oss, Int64Tag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[Tag::Type::Int64].mPrefix << tag.value() << format.mValueFormats[Tag::Type::Int64].mSuffix;
+    oss << format.mValueFormats[(int)Tag::Type::Int64].mPrefix << tag.value() << format.mValueFormats[(int)Tag::Type::Int64].mSuffix;
 }
 template <>
 inline void __appendPrettySNBT(std::ostringstream& oss, FloatTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[Tag::Type::Float].mPrefix << tag.value() << format.mValueFormats[Tag::Type::Float].mSuffix;
+    oss << format.mValueFormats[(int)Tag::Type::Float].mPrefix << tag.value() << format.mValueFormats[(int)Tag::Type::Float].mSuffix;
 }
 template <>
 inline void __appendPrettySNBT(std::ostringstream& oss, DoubleTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[Tag::Type::Double].mPrefix << tag.value() << format.mValueFormats[Tag::Type::Double].mSuffix;
+    oss << format.mValueFormats[(int)Tag::Type::Double].mPrefix << tag.value() << format.mValueFormats[(int)Tag::Type::Double].mSuffix;
 }
 template <>
 inline void __appendPrettySNBT(std::ostringstream& oss, ByteArrayTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    auto& valueFormat = format.mValueFormats[Tag::Type::ByteArray];
-    auto& elementFormat = format.mValueFormats[Tag::Type::Byte];
+    auto& valueFormat = format.mValueFormats[(int)Tag::Type::ByteArray];
+    auto& elementFormat = format.mValueFormats[(int)Tag::Type::Byte];
     auto& separator = format.mSeparator;
     size_t size = tag.value().size;
     if (size == 0) {
@@ -1262,8 +1262,8 @@ inline void __appendPrettySNBT(std::ostringstream& oss, ByteArrayTag& tag, unsig
 }
 template <>
 inline void __appendPrettySNBT(std::ostringstream& oss, IntArrayTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    auto& valueFormat = format.mValueFormats[Tag::Type::IntArray];
-    auto& elementFormat = format.mValueFormats[Tag::Type::Int];
+    auto& valueFormat = format.mValueFormats[(int)Tag::Type::IntArray];
+    auto& elementFormat = format.mValueFormats[(int)Tag::Type::Int];
     auto& separator = format.mSeparator;
     size_t size = tag.value().size;
     if (size == 0) {
@@ -1284,7 +1284,7 @@ inline void __appendPrettySNBT(std::ostringstream& oss, IntArrayTag& tag, unsign
 
 template <>
 inline void __appendPrettySNBT(std::ostringstream& oss, StringTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    auto& valueFormat = format.mValueFormats[Tag::Type::String];
+    auto& valueFormat = format.mValueFormats[(int)Tag::Type::String];
     oss << valueFormat.mPrefix;
     __appendPrettyString(oss, tag.value(), format);
     oss << valueFormat.mSuffix;
@@ -1296,7 +1296,7 @@ inline void __appendPrettyList(std::ostringstream& oss, ListTag& tag, unsigned i
     for (auto& child : tag) {
         if (!first) {
             oss << format.mSeparator;
-            if (format.mExpandInList[childrenType])
+            if (format.mExpandInList[(int)childrenType])
                 __appendPrettyReturnSpace(oss, level + 1, format);
         }
         __appendPrettySNBT<type>(oss, *static_cast<type*>(child), level + 1, format);
@@ -1306,13 +1306,13 @@ inline void __appendPrettyList(std::ostringstream& oss, ListTag& tag, unsigned i
 
 template <>
 inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    auto& valueFormat = format.mValueFormats[Tag::Type::List];
+    auto& valueFormat = format.mValueFormats[(int)Tag::Type::List];
     if (tag.size() == 0) {
         oss << valueFormat.mPrefix << valueFormat.mSuffix;
         return;
     }
     auto childrenType = tag.getElementType();
-    bool expand = format.mExpandInList[childrenType];
+    bool expand = format.mExpandInList[(int)childrenType];
 
     oss << valueFormat.mPrefix;
     if (expand && level < format.mMaxLevel)
@@ -1320,40 +1320,40 @@ inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned i
     const Tag::Type tagType = childrenType;
 
     switch (childrenType) {
-        case Tag::End:
+        case Tag::Type::End:
             __appendPrettyList<EndTag>(oss, tag, level, format, childrenType);
             break;
-        case Tag::Byte:
+        case Tag::Type::Byte:
             __appendPrettyList<ByteTag>(oss, tag, level, format, childrenType);
             break;
-        case Tag::Short:
+        case Tag::Type::Short:
             __appendPrettyList<ShortTag>(oss, tag, level, format, childrenType);
             break;
-        case Tag::Int:
+        case Tag::Type::Int:
             __appendPrettyList<IntTag>(oss, tag, level, format, childrenType);
             break;
-        case Tag::Int64:
+        case Tag::Type::Int64:
             __appendPrettyList<Int64Tag>(oss, tag, level, format, childrenType);
             break;
-        case Tag::Float:
+        case Tag::Type::Float:
             __appendPrettyList<FloatTag>(oss, tag, level, format, childrenType);
             break;
-        case Tag::Double:
+        case Tag::Type::Double:
             __appendPrettyList<DoubleTag>(oss, tag, level, format, childrenType);
             break;
-        case Tag::ByteArray:
+        case Tag::Type::ByteArray:
             __appendPrettyList<ByteArrayTag>(oss, tag, level, format, childrenType);
             break;
-        case Tag::String:
+        case Tag::Type::String:
             __appendPrettyList<StringTag>(oss, tag, level, format, childrenType);
             break;
-        case Tag::List:
+        case Tag::Type::List:
             __appendPrettyList<ListTag>(oss, tag, level, format, childrenType);
             break;
-        case Tag::Compound:
+        case Tag::Type::Compound:
             __appendPrettyList<CompoundTag>(oss, tag, level, format, childrenType);
             break;
-        case Tag::IntArray:
+        case Tag::Type::IntArray:
             __appendPrettyList<IntArrayTag>(oss, tag, level, format, childrenType);
             break;
         default:
@@ -1366,7 +1366,7 @@ inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned i
 }
 template <>
 inline void __appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    auto& valueFormat = format.mValueFormats[Tag::Type::Compound];
+    auto& valueFormat = format.mValueFormats[(int)Tag::Type::Compound];
     if (tag.isEmpty()) {
         oss << valueFormat.mPrefix << valueFormat.mSuffix;
         return;
@@ -1386,40 +1386,40 @@ inline void __appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, unsign
 
         auto tag = const_cast<Tag*>(child.get());
         switch (tag->getTagType()) {
-            case Tag::End:
+            case Tag::Type::End:
                 __appendPrettySNBT(oss, *tag->asEndTag(), level + 1, format);
                 break;
-            case Tag::Byte:
+            case Tag::Type::Byte:
                 __appendPrettySNBT(oss, *tag->asByteTag(), level + 1, format);
                 break;
-            case Tag::Short:
+            case Tag::Type::Short:
                 __appendPrettySNBT(oss, *tag->asShortTag(), level + 1, format);
                 break;
-            case Tag::Int:
+            case Tag::Type::Int:
                 __appendPrettySNBT(oss, *tag->asIntTag(), level + 1, format);
                 break;
-            case Tag::Int64:
+            case Tag::Type::Int64:
                 __appendPrettySNBT(oss, *tag->asInt64Tag(), level + 1, format);
                 break;
-            case Tag::Float:
+            case Tag::Type::Float:
                 __appendPrettySNBT(oss, *tag->asFloatTag(), level + 1, format);
                 break;
-            case Tag::Double:
+            case Tag::Type::Double:
                 __appendPrettySNBT(oss, *tag->asDoubleTag(), level + 1, format);
                 break;
-            case Tag::ByteArray:
+            case Tag::Type::ByteArray:
                 __appendPrettySNBT(oss, *tag->asByteArrayTag(), level + 1, format);
                 break;
-            case Tag::String:
+            case Tag::Type::String:
                 __appendPrettySNBT(oss, *tag->asStringTag(), level + 1, format);
                 break;
-            case Tag::List:
+            case Tag::Type::List:
                 __appendPrettySNBT(oss, *tag->asListTag(), level + 1, format);
                 break;
-            case Tag::Compound:
+            case Tag::Type::Compound:
                 __appendPrettySNBT(oss, *tag->asCompoundTag(), level + 1, format);
                 break;
-            case Tag::IntArray:
+            case Tag::Type::IntArray:
                 __appendPrettySNBT(oss, *tag->asIntArrayTag(), level + 1, format);
                 break;
             default:

@@ -27,7 +27,7 @@ public:
     MCAPI class std::weak_ptr<class Village> getClosestVillageWithRaid(class BlockPos const &);
     MCAPI class std::weak_ptr<class POIInstance> getPOI(class BlockPos const &) const;
     MCAPI class std::weak_ptr<class Village> getVillageByID(class mce::UUID const &) const;
-    MCAPI bool hasPOI(class BlockPos const &, enum POIType) const;
+    MCAPI bool hasPOI(class BlockPos const &, enum class POIType) const;
     MCAPI void insertPOI(class std::shared_ptr<class POIInstance> &&);
     MCAPI bool isValidPOIType(class BlockPos const &, class Block const &) const;
     MCAPI void removePOI(class std::weak_ptr<class POIInstance>);

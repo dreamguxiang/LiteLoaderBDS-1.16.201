@@ -38,7 +38,7 @@ public:
     /*102*/ virtual void __unk_vfn_102();
     /*112*/ virtual void setSitting(bool);
     /*123*/ virtual void __unk_vfn_123();
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
     /*159*/ virtual bool load(class CompoundTag const &, class DataLoadHelper &);
     /*171*/ virtual void __unk_vfn_171();
     /*179*/ virtual void onSynchedDataUpdate(int);
@@ -51,7 +51,7 @@ public:
     /*243*/ virtual bool _hurt(class ActorDamageSource const &, int, bool, bool);
     /*249*/ virtual void __unk_vfn_249();
     /*260*/ virtual void __unk_vfn_260();
-    /*267*/ virtual enum LevelSoundEvent getAmbientSound();
+    /*267*/ virtual enum class LevelSoundEvent getAmbientSound();
     /*294*/ virtual void __unk_vfn_294();
     /*302*/ virtual bool isAlliedTo(class Mob *);
     /*303*/ virtual bool doHurtTarget(class Actor *);

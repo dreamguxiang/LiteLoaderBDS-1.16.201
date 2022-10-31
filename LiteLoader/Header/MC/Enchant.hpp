@@ -21,7 +21,7 @@ public:
 
 public:
     /*0*/ virtual ~Enchant();
-    /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
+    /*1*/ virtual bool isCompatibleWith(enum class Enchant::Type) const;
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
     /*4*/ virtual int getMinLevel() const;
@@ -38,7 +38,7 @@ public:
     MCVAPI bool isMeleeDamageEnchant() const;
     MCVAPI bool isProtectionEnchant() const;
 #endif
-    MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, std::string const &, std::string const &, int, int, bool);
+    MCAPI Enchant(enum class Enchant::Type, enum class Enchant::Frequency, std::string const &, std::string const &, int, int, bool);
     MCAPI bool isAvailable() const;
     MCAPI static void initEnchants();
     MCAPI static std::vector<std::unique_ptr<class Enchant>> mEnchants;

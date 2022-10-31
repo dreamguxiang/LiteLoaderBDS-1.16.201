@@ -24,7 +24,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JOURNALEDFILE
 #endif
     MCAPI class Core::Result close();
-    MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum Core::FileBufferingMode);
+    MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum class Core::FileBufferingMode);
     MCAPI ~JournaledFile();
     MCAPI static class Core::PathBuffer<std::string> findReadPath(class Core::Path);
     MCAPI static bool isOldFile(class Core::Path);

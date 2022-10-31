@@ -49,8 +49,8 @@ public:
     /*102*/ virtual void __unk_vfn_102();
     /*117*/ virtual void __unk_vfn_117();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIELDITEM
-    MCVAPI enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
-    MCVAPI enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
+    MCVAPI enum class InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
+    MCVAPI enum class InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
 #endif
     MCAPI static int const EFFECTIVE_BLOCK_DELAY;
     MCAPI static std::string const TIMESTAMP_TAG;

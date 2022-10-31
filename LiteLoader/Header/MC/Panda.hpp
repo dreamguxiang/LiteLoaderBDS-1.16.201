@@ -47,7 +47,7 @@ public:
     /*249*/ virtual void __unk_vfn_249();
     /*259*/ virtual void _onSizeUpdated();
     /*260*/ virtual void __unk_vfn_260();
-    /*267*/ virtual enum LevelSoundEvent getAmbientSound();
+    /*267*/ virtual enum class LevelSoundEvent getAmbientSound();
     /*294*/ virtual void __unk_vfn_294();
     /*304*/ virtual void __unk_vfn_304();
     /*333*/ virtual void setTransitioningSitting(bool);

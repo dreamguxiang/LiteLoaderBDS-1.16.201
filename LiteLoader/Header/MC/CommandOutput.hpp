@@ -142,14 +142,14 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUT
 #endif
-    MCAPI CommandOutput(enum CommandOutputType);
+    MCAPI CommandOutput(enum class CommandOutputType);
     MCAPI void addToResultList(std::string const &, class Actor const &);
     MCAPI void error(std::string const &, std::vector<class CommandOutputParameter> const &);
     MCAPI void success(std::string const &, std::vector<class CommandOutputParameter> const &);
     MCAPI ~CommandOutput();
 
 //private:
-    MCAPI void addMessage(std::string const &, std::vector<class CommandOutputParameter> const &, enum CommandOutputMessageType);
+    MCAPI void addMessage(std::string const &, std::vector<class CommandOutputParameter> const &, enum class CommandOutputMessageType);
 
 private:
 

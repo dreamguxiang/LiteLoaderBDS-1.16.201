@@ -8,7 +8,7 @@
 #include <MC/StructureEditorData.hpp>
 
  unsigned int BlockActor::getBlockEntityType(Block* block) {
-     return block->getBlockEntityType(); // IDA Block::getBlockEntityType
+     return (uint32_t)block->getBlockEntityType(); // IDA Block::getBlockEntityType
  }
 
 bool BlockActor::refreshData() {

@@ -30,7 +30,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEARABLEITEMCOMPONENT
 #endif
     MCAPI static void bindType();
-    MCAPI static bool dispenseArmor(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char, enum EquipmentSlot);
+    MCAPI static bool dispenseArmor(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char, enum class EquipmentSlot);
     MCAPI static class HashedString const & getIdentifier();
 
 };

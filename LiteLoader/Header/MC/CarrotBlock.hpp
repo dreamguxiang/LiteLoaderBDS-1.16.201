@@ -58,8 +58,8 @@ public:
     /*156*/ virtual void __unk_vfn_156();
     /*157*/ virtual void __unk_vfn_157();
     /*163*/ virtual void __unk_vfn_163();
-    /*167*/ virtual enum BlockRenderLayer getRenderLayer() const;
-    /*168*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*167*/ virtual enum class BlockRenderLayer getRenderLayer() const;
+    /*168*/ virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*174*/ virtual void __unk_vfn_174();
     /*179*/ virtual class ItemInstance const getBaseSeed() const;
     /*180*/ virtual class ItemInstance const getBaseCrop() const;

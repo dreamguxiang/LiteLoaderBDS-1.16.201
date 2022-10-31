@@ -23,7 +23,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYTRADEABLECOMPONENT
 #endif
     MCAPI void addAdditionalSaveData(class CompoundTag &);
-    MCAPI class UpdateTradePacket createDataPacket(class Actor &, enum ContainerID);
+    MCAPI class UpdateTradePacket createDataPacket(class Actor &, enum class ContainerID);
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI void notifyTrade(class Actor &, int);
     MCAPI class LegacyTradeableComponent & operator=(class LegacyTradeableComponent &&);

@@ -27,7 +27,7 @@ public:
 #endif
 
 public:
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~ItemActor();
     /*31*/ virtual bool isFireImmune() const;
     /*32*/ virtual void __unk_vfn_32();
@@ -46,7 +46,7 @@ public:
     /*102*/ virtual void __unk_vfn_102();
     /*123*/ virtual void __unk_vfn_123();
     /*126*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
     /*163*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*165*/ virtual class AABB getHandleWaterAABB() const;
     /*171*/ virtual void __unk_vfn_171();

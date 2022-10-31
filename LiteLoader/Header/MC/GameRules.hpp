@@ -39,7 +39,7 @@ public:
 //private:
     MCAPI class GameRule & _registerRule(std::string const &, struct GameRuleId);
     MCAPI void _registerRules();
-    MCAPI std::unique_ptr<class GameRulesChangedPacket> _setRule(struct GameRuleId, union GameRule::Value, enum GameRule::Type, bool, bool *, bool *, class GameRule::ValidationError *);
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> _setRule(struct GameRuleId, union GameRule::Value, enum class GameRule::Type, bool, bool *, bool *, class GameRule::ValidationError *);
 
 private:
 

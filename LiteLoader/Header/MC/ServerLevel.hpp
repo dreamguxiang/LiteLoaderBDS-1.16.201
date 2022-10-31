@@ -36,11 +36,11 @@ public:
     MCVAPI bool initialize(std::string const &, class LevelSettings const &, class LevelData *, std::string const *);
     MCVAPI void loadFunctionManager();
     MCVAPI bool postProcessResources();
-    MCVAPI void runCommand(class HashedString const &, class CommandOrigin &, enum CommandOriginSystem, enum CurrentCmdVersion);
-    MCVAPI void runCommand(class Command &, class CommandOrigin &, enum CommandOriginSystem);
+    MCVAPI void runCommand(class HashedString const &, class CommandOrigin &, enum class CommandOriginSystem, enum class CurrentCmdVersion);
+    MCVAPI void runCommand(class Command &, class CommandOrigin &, enum class CommandOriginSystem);
     MCVAPI void saveAdditionalData();
     MCVAPI void setCommandsEnabled(bool);
-    MCVAPI void setDifficulty(enum Difficulty);
+    MCVAPI void setDifficulty(enum class Difficulty);
     MCVAPI void setWorldTemplateOptionsUnlocked();
     MCVAPI void tick();
     MCVAPI void updateSleepingPlayerList();

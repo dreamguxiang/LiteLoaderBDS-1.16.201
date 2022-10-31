@@ -30,7 +30,7 @@ public:
     /*5*/ virtual void uploadChunk(struct FileInfo const &, struct FileChunkInfo const &, std::vector<unsigned char> const &, class std::function<void (bool)>);
     /*7*/ virtual bool canCancelUpload(struct FileInfo const &) const;
     /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual enum UploadError getInitErrorCode() const;
+    /*9*/ virtual enum class UploadError getInitErrorCode() const;
     /*10*/ virtual float getUploadProgress(struct FileInfo const &) const;
     /*11*/ virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERFILECHUNKUPLOADER

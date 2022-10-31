@@ -37,15 +37,15 @@ public:
     MCAPI static std::string getSerializationKey(struct ActorUniqueID);
 
 //private:
-    MCAPI void _addDecoration(enum MapDecoration::Type, class Level &, struct MapItemTrackedActor::UniqueId const &, class Vec3 const &, std::string const &, class mce::Color const &);
-    MCAPI class std::shared_ptr<class MapItemTrackedActor> _addTrackedMapEntity(struct MapItemTrackedActor::UniqueId const &, class BlockSource &, enum MapDecoration::Type);
+    MCAPI void _addDecoration(enum class MapDecoration::Type, class Level &, struct MapItemTrackedActor::UniqueId const &, class Vec3 const &, std::string const &, class mce::Color const &);
+    MCAPI class std::shared_ptr<class MapItemTrackedActor> _addTrackedMapEntity(struct MapItemTrackedActor::UniqueId const &, class BlockSource &, enum class MapDecoration::Type);
     MCAPI void _deserializeData(class CompoundTag const &);
     MCAPI bool _isPlayerHoldingMap(class Player &);
     MCAPI void _removeDecoration(struct MapItemTrackedActor::UniqueId const &);
     MCAPI void _removeTrackedMapEntity(struct MapItemTrackedActor::UniqueId const &);
     MCAPI bool _updateTrackedEntityDecoration(class BlockSource &, class std::shared_ptr<class MapItemTrackedActor>);
     MCAPI void _updateTrackedEntityDecorations(class BlockSource &);
-    MCAPI void _updateTrackedPlayerDecorations(class BlockSource &, class Player &, class Vec3 &, std::string &, class mce::Color &, class AutomaticID<class Dimension, int>, enum MapDecoration::Type &);
+    MCAPI void _updateTrackedPlayerDecorations(class BlockSource &, class Player &, class Vec3 &, std::string &, class mce::Color &, class AutomaticID<class Dimension, int>, enum class MapDecoration::Type &);
 
 private:
 

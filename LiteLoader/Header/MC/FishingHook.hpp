@@ -21,7 +21,7 @@ public:
 #endif
 
 public:
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~FishingHook();
     /*32*/ virtual void __unk_vfn_32();
     /*37*/ virtual void lerpTo(class Vec3 const &, class Vec2 const &, int);
@@ -38,7 +38,7 @@ public:
     /*101*/ virtual void __unk_vfn_101();
     /*102*/ virtual void __unk_vfn_102();
     /*123*/ virtual void __unk_vfn_123();
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
     /*157*/ virtual bool save(class CompoundTag &);
     /*163*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*171*/ virtual void __unk_vfn_171();

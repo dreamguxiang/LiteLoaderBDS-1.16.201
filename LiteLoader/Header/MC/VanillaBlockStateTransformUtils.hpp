@@ -22,14 +22,14 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABLOCKSTATETRANSFORMUTILS
 #endif
-    MCAPI static class Block const * transformBlock(class Block const &, enum Rotation, enum Mirror);
-    MCAPI static class Block const * transformBlock(class Block const &, enum CommonDirection);
+    MCAPI static class Block const * transformBlock(class Block const &, enum class Rotation, enum class Mirror);
+    MCAPI static class Block const * transformBlock(class Block const &, enum class CommonDirection);
 
 //private:
-    MCAPI static enum CommonDirection _mirror(enum CommonDirection, enum Mirror);
-    MCAPI static enum CommonDirection _mirrorFrontBack(enum CommonDirection);
-    MCAPI static enum CommonDirection _mirrorLeftRight(enum CommonDirection);
-    MCAPI static enum CommonDirection _rotate(enum CommonDirection, enum Rotation);
+    MCAPI static enum class CommonDirection _mirror(enum class CommonDirection, enum class Mirror);
+    MCAPI static enum class CommonDirection _mirrorFrontBack(enum class CommonDirection);
+    MCAPI static enum class CommonDirection _mirrorLeftRight(enum class CommonDirection);
+    MCAPI static enum class CommonDirection _rotate(enum class CommonDirection, enum class Rotation);
 
 private:
 

@@ -25,7 +25,7 @@ public:
     Neighbors(Neighbors const&&) = delete;
 };
 
-enum HardcodedSpawnAreaType : char {
+enum class HardcodedSpawnAreaType : char {
     NONE = 0,
     NETHER_FORTRESS = 1,
     SWAMP_HUT = 2,
@@ -36,7 +36,7 @@ enum HardcodedSpawnAreaType : char {
 
 struct HardcodedSpawningArea {
     class BoundingBox aabb;
-    enum HardcodedSpawnAreaType type;
+    enum class HardcodedSpawnAreaType type;
 };
 public:
     struct Tick const & getLastTick() const{
@@ -61,7 +61,7 @@ public:
 #endif
     MCAPI LevelChunk(class Dimension &, class ChunkPos const &, bool);
     MCAPI void addEntity(std::unique_ptr<class Actor>);
-    MCAPI void addHardcodedSpawningArea(class BoundingBox const &, enum HardcodedSpawnAreaType);
+    MCAPI void addHardcodedSpawningArea(class BoundingBox const &, enum class HardcodedSpawnAreaType);
     MCAPI bool applySeasonsPostProcess(class BlockSource &);
     MCAPI void checkBiomeStates();
     MCAPI bool checkSeasonsPostProcessDirty();
@@ -80,7 +80,7 @@ public:
     MCAPI class BlockActor * getBlockEntity(class ChunkBlockPos const &);
     MCAPI signed char getCachedTemperatureNoise(class ChunkBlockPos const &);
     MCAPI void getEntities(class gsl::span<class gsl::not_null<class Actor const *>, -1>, class AABB const &, std::vector<class Actor *> &, bool) const;
-    MCAPI void getEntities(enum ActorType, class AABB const &, std::vector<class Actor *> &, bool) const;
+    MCAPI void getEntities(enum class ActorType, class AABB const &, std::vector<class Actor *> &, bool) const;
     MCAPI class Block const & getExtraBlock(class ChunkBlockPos const &) const;
     MCAPI class BlockPos const getTopRainBlockPos(class ChunkBlockPos const &);
     MCAPI bool hasEntity(class Actor &);
@@ -92,7 +92,7 @@ public:
     MCAPI void recomputeHeightMap(bool);
     MCAPI class std::shared_ptr<class BlockActor> removeBlockEntity(class BlockPos const &);
     MCAPI std::unique_ptr<class Actor> removeEntity(class Actor &);
-    MCAPI void removeHardcodedSpawningArea(enum HardcodedSpawnAreaType);
+    MCAPI void removeHardcodedSpawningArea(enum class HardcodedSpawnAreaType);
     MCAPI void runtimeRelightSubchunk(class BlockSource &, unsigned __int64, std::vector<struct SubChunkLightUpdate> const &, std::vector<class BlockPos> &);
     MCAPI void serializeBlockEntities(class IDataOutput &) const;
     MCAPI bool serializeBorderBlocks(class IDataOutput &) const;
@@ -112,12 +112,12 @@ public:
     MCAPI void tick(class BlockSource &, struct Tick const &);
     MCAPI void tickBlockEntities(class BlockSource &);
     MCAPI void tickBlocks(class BlockSource &);
-    MCAPI void updateCheckSum(enum LevelChunkTag, class gsl::basic_string_span<char const, -1>, unsigned __int64);
+    MCAPI void updateCheckSum(enum class LevelChunkTag, class gsl::basic_string_span<char const, -1>, unsigned __int64);
     MCAPI ~LevelChunk();
 
 //protected:
     MCAPI bool _compareCheckSumAgainstExpectedForKey(class std::unordered_map<struct LevelChunkHashMapKey, unsigned __int64, struct std::hash<struct LevelChunkHashMapKey>, struct std::equal_to<struct LevelChunkHashMapKey>, class std::allocator<struct std::pair<struct LevelChunkHashMapKey const, unsigned __int64>>> const &, struct LevelChunkHashMapKey const &) const;
-    MCAPI struct SubChunk & _createSubChunk(unsigned __int64, bool, enum SubChunkInitMode);
+    MCAPI struct SubChunk & _createSubChunk(unsigned __int64, bool, enum class SubChunkInitMode);
     MCAPI void _deserializeEntity(class BlockSource &, class IDataInput &, std::vector<struct ActorLink> &);
     MCAPI void _fixupCorruptedBlockActors(class std::unordered_map<class ChunkBlockPos, class std::shared_ptr<class BlockActor>, struct std::hash<class ChunkBlockPos>, struct std::equal_to<class ChunkBlockPos>, class std::allocator<struct std::pair<class ChunkBlockPos const, class std::shared_ptr<class BlockActor>>>> &);
     MCAPI void _generateOriginalLightingSubChunk(class BlockSource &, unsigned __int64, bool);

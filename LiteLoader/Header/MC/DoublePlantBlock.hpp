@@ -48,7 +48,7 @@ public:
     /*58*/ virtual void __unk_vfn_58();
     /*62*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*65*/ virtual void __unk_vfn_65();
-    /*67*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    /*67*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /*69*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*72*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /*73*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
@@ -81,15 +81,15 @@ public:
     /*161*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*163*/ virtual void __unk_vfn_163();
     /*166*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /*167*/ virtual enum BlockRenderLayer getRenderLayer() const;
-    /*168*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*167*/ virtual enum class BlockRenderLayer getRenderLayer() const;
+    /*168*/ virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*174*/ virtual void __unk_vfn_174();
     /*178*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUBLEPLANTBLOCK
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI int getType(class BlockSource &, class BlockPos const &, class Block const &) const;
-    MCAPI bool placeAt(class BlockSource &, class BlockPos const &, enum DoublePlantType, int, class Actor *) const;
+    MCAPI bool placeAt(class BlockSource &, class BlockPos const &, enum class DoublePlantType, int, class Actor *) const;
 
 //private:
     MCAPI bool _isCoveredByTopSnow(class BlockSource &, class BlockPos const &) const;

@@ -47,7 +47,7 @@ public:
     /*45*/ virtual void __unk_vfn_45();
     /*48*/ virtual void __unk_vfn_48();
     /*58*/ virtual void __unk_vfn_58();
-    /*63*/ virtual enum BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
+    /*63*/ virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /*65*/ virtual void __unk_vfn_65();
     /*70*/ virtual bool mayPick() const;
     /*71*/ virtual bool mayPick(class BlockSource &, class Block const &, bool) const;

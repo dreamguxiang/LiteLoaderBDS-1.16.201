@@ -67,6 +67,6 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI BushBlock(std::string const &, int, class Material const &);
-    MCAPI bool growCrops(class BlockSource &, class BlockPos const &, enum FertilizerType) const;
+    MCAPI bool growCrops(class BlockSource &, class BlockPos const &, enum class FertilizerType) const;
 
 };

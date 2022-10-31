@@ -54,12 +54,12 @@ public:
     MCAPI static std::string const TAG_E_TRAIL;
     MCAPI static std::string const TAG_E_TYPE;
     MCAPI static void getFormattedHoverText(class CompoundTag const &, std::string &, std::string const &);
-    MCAPI static class ItemInstance const & initFireworkChargeItem(class ItemInstance &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
-    MCAPI static class ItemStack const & initFireworkChargeItem(class ItemStack &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
+    MCAPI static class ItemInstance const & initFireworkChargeItem(class ItemInstance &, enum class FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
+    MCAPI static class ItemStack const & initFireworkChargeItem(class ItemStack &, enum class FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
     MCAPI static void setColor(class ItemStackBase &);
 
 //private:
-    MCAPI static void _initFireworkChargeItem(class ItemStackBase &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
+    MCAPI static void _initFireworkChargeItem(class ItemStackBase &, enum class FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
     MCAPI static void appendColors(std::string &, std::vector<unsigned char>);
 
 private:

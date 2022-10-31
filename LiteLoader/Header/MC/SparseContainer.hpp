@@ -32,28 +32,28 @@ public:
     MCVAPI void stopOpen(class Player &);
     MCVAPI ~SparseContainer();
 #endif
-    MCAPI SparseContainer(class ItemStackNetManagerBase &, class Container &, enum SparseContainerBackingSetType);
+    MCAPI SparseContainer(class ItemStackNetManagerBase &, class Container &, enum class SparseContainerBackingSetType);
     MCAPI void _networkUpdateItem(int, class ItemStack const &);
     MCAPI class ItemStack _serverTakeItems(int, int);
-    MCAPI void addAvailableSetCountCallback(enum ContainerEnumName, class std::function<int (int, class ItemStackBase const &)>);
-    MCAPI void addItemAllowedInSlotCallback(enum ContainerEnumName, class std::function<bool (int, class ItemStackBase const &, int)>);
-    MCAPI void addItemAllowedToAddCallback(enum ContainerEnumName, class std::function<bool (class ItemStackBase const &)>);
-    MCAPI void addItemAllowedToRemoveCallback(enum ContainerEnumName, class std::function<bool (class ItemStackBase const &)>);
-    MCAPI void addValidSlotForContainerCallback(enum ContainerEnumName, class std::function<bool (int)>);
-    MCAPI enum ItemAddType canAdd(enum ContainerEnumName, int, class ItemStackBase const &, int) const;
-    MCAPI bool canDrop(enum ContainerEnumName, int, int) const;
-    MCAPI bool canRemove(enum ContainerEnumName, int, int) const;
-    MCAPI enum ItemSetType canSet(enum ContainerEnumName, int, class ItemStackBase const &, int) const;
+    MCAPI void addAvailableSetCountCallback(enum class ContainerEnumName, class std::function<int (int, class ItemStackBase const &)>);
+    MCAPI void addItemAllowedInSlotCallback(enum class ContainerEnumName, class std::function<bool (int, class ItemStackBase const &, int)>);
+    MCAPI void addItemAllowedToAddCallback(enum class ContainerEnumName, class std::function<bool (class ItemStackBase const &)>);
+    MCAPI void addItemAllowedToRemoveCallback(enum class ContainerEnumName, class std::function<bool (class ItemStackBase const &)>);
+    MCAPI void addValidSlotForContainerCallback(enum class ContainerEnumName, class std::function<bool (int)>);
+    MCAPI enum class ItemAddType canAdd(enum class ContainerEnumName, int, class ItemStackBase const &, int) const;
+    MCAPI bool canDrop(enum class ContainerEnumName, int, int) const;
+    MCAPI bool canRemove(enum class ContainerEnumName, int, int) const;
+    MCAPI enum class ItemSetType canSet(enum class ContainerEnumName, int, class ItemStackBase const &, int) const;
     MCAPI bool isUsingLegacyScreenTransactions() const;
-    MCAPI bool isValidSlot(enum ContainerEnumName, int) const;
+    MCAPI bool isValidSlot(enum class ContainerEnumName, int) const;
 
 //private:
-    MCAPI int _getAvailableAddCount(enum ContainerEnumName, class ItemStack const &) const;
-    MCAPI bool _isItemAllowedInSlot(enum ContainerEnumName, int, class ItemStackBase const &, int) const;
+    MCAPI int _getAvailableAddCount(enum class ContainerEnumName, class ItemStack const &) const;
+    MCAPI bool _isItemAllowedInSlot(enum class ContainerEnumName, int, class ItemStackBase const &, int) const;
     MCAPI void _onItemNetworkChanged(int, class ItemStack const &, class ItemStack const &);
     MCAPI void _setBackingContainerSlot(int, class ItemStack const &);
 
 private:
-    MCAPI static class BidirectionalUnorderedMap<enum SparseContainer::PushSlotPredictionResult, std::string> const pushSlotPredictionResultMap;
+    MCAPI static class BidirectionalUnorderedMap<enum class SparseContainer::PushSlotPredictionResult, std::string> const pushSlotPredictionResultMap;
 
 };

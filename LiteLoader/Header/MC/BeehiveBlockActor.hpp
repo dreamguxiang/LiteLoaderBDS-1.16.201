@@ -36,7 +36,7 @@ public:
     MCAPI void evictAll(class BlockSource &, bool);
     MCAPI void saveUserData(class CompoundTag &) const;
     MCAPI bool tryAdmit(class Actor &);
-    MCAPI static enum BlockActorType const TypeId;
+    MCAPI static enum class BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
 
 //private:

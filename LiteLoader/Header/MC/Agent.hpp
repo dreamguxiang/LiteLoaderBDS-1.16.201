@@ -22,7 +22,7 @@ public:
 #endif
 
 public:
-    /*3*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*3*/ virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~Agent();
     /*32*/ virtual void __unk_vfn_32();
     /*34*/ virtual void teleportTo(class Vec3 const &, bool, int, int, struct ActorUniqueID const &);
@@ -42,7 +42,7 @@ public:
     /*101*/ virtual void __unk_vfn_101();
     /*102*/ virtual void __unk_vfn_102();
     /*123*/ virtual void __unk_vfn_123();
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
     /*153*/ virtual void setCarriedItem(class ItemStack const &);
     /*171*/ virtual void __unk_vfn_171();
     /*182*/ virtual bool canBePulledIntoVehicle() const;

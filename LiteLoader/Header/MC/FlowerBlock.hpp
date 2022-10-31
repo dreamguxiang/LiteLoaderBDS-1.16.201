@@ -45,7 +45,7 @@ public:
     /*48*/ virtual void __unk_vfn_48();
     /*58*/ virtual void __unk_vfn_58();
     /*65*/ virtual void __unk_vfn_65();
-    /*67*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    /*67*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /*69*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*73*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /*74*/ virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
@@ -66,8 +66,8 @@ public:
     /*156*/ virtual void __unk_vfn_156();
     /*157*/ virtual void __unk_vfn_157();
     /*163*/ virtual void __unk_vfn_163();
-    /*167*/ virtual enum BlockRenderLayer getRenderLayer() const;
-    /*168*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*167*/ virtual enum class BlockRenderLayer getRenderLayer() const;
+    /*168*/ virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*174*/ virtual void __unk_vfn_174();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOWERBLOCK
 #endif

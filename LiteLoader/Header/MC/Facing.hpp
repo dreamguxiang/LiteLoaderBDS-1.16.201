@@ -43,8 +43,8 @@ public:
     MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT;
     MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT_AXIS_Y;
     MCAPI static std::vector<unsigned char> const ALL_FACES;
-    MCAPI static enum Facing::Name const BY2DDATA[];
-    MCAPI static enum Facing::Name const DIRECTIONS[];
+    MCAPI static enum class Facing::Name const BY2DDATA[];
+    MCAPI static enum class Facing::Name const DIRECTIONS[];
     MCAPI static class BlockPos const DIRECTION[];
     MCAPI static unsigned char const FACINGMASK[];
     MCAPI static class Vec3 const NORMAL[];
@@ -54,11 +54,11 @@ public:
     MCAPI static int const STEP_Z[];
     MCAPI static unsigned char fromVec3(class Vec3 const &);
     MCAPI static unsigned char getOpposite(unsigned char);
-    MCAPI static struct glm::tmat3x3<float, 0> getRotationMatrix(unsigned char, enum Facing::Rotation);
+    MCAPI static struct glm::tmat3x3<float, 0> getRotationMatrix(unsigned char, enum class Facing::Rotation);
     MCAPI static int getStepX(unsigned char);
     MCAPI static int getStepY(unsigned char);
     MCAPI static int getStepZ(unsigned char);
-    MCAPI static unsigned char rotateFaceAroundGivenFace(unsigned char, unsigned char, enum Facing::Rotation);
+    MCAPI static unsigned char rotateFaceAroundGivenFace(unsigned char, unsigned char, enum class Facing::Rotation);
     MCAPI static class gsl::basic_string_span<char const, -1> toString(unsigned char);
 
 };

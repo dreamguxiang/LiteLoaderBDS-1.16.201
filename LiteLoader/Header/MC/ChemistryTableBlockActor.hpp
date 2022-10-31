@@ -42,7 +42,7 @@ public:
 //private:
     MCAPI std::unique_ptr<class LabTableReaction> _createReaction(class Random &, std::vector<class ItemStack> const &);
     MCAPI void _popPendingReactionOutput(class BlockSource &);
-    MCAPI enum ChemistryTableType _updateType(class BlockSource &);
+    MCAPI enum class ChemistryTableType _updateType(class BlockSource &);
 
 private:
 

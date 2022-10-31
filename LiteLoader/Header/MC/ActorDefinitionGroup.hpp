@@ -57,8 +57,8 @@ public:
 
 //private:
     MCAPI void _getResources(class Level &);
-    MCAPI struct ActorDefinitionGroup::LoadActorResult _loadActorDefinition(class Level &, std::string const &, enum CurrentCmdVersion const &, class Json::Value &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> &);
-    MCAPI bool _loadDefinitionFromJSON(class SemVersion const &, enum CurrentCmdVersion const &, std::string const &, class Json::Value &, std::string const &, class Level &);
+    MCAPI struct ActorDefinitionGroup::LoadActorResult _loadActorDefinition(class Level &, std::string const &, enum class CurrentCmdVersion const &, class Json::Value &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> &);
+    MCAPI bool _loadDefinitionFromJSON(class SemVersion const &, enum class CurrentCmdVersion const &, std::string const &, class Json::Value &, std::string const &, class Level &);
     MCAPI void _loadTemplates(class Level &, std::string const &, struct DeserializeDataParams);
     MCAPI void _setupCommonResourceDefinitionMap(class ActorDefinition &, class Level &);
 

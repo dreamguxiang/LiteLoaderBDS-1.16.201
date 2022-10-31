@@ -39,8 +39,8 @@ public:
     MCAPI ResourcePackManager(class std::function<class Core::PathBuffer<std::string> (void)>, class ContentTierManager const &, bool);
     MCAPI int composeFullStack(class ResourcePackStack &, class ResourcePackStack const &, class ResourcePackStack const &, class ResourcePackStack const &) const;
     MCAPI std::vector<class Core::PathBuffer<std::string>> getResourcesOfGroup(class PackInstance const &, std::string const &) const;
-    MCAPI class ResourcePackStack const & getStack(enum ResourcePackStackType) const;
-    MCAPI bool setStack(std::unique_ptr<class ResourcePackStack>, enum ResourcePackStackType, bool);
+    MCAPI class ResourcePackStack const & getStack(enum class ResourcePackStackType) const;
+    MCAPI bool setStack(std::unique_ptr<class ResourcePackStack>, enum class ResourcePackStackType, bool);
 
 //private:
     MCAPI void _calculateMinEngineVersionFromFullStack();

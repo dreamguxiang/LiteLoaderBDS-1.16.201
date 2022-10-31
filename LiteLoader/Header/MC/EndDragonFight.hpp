@@ -38,12 +38,12 @@ public:
     MCAPI void _makeEndIslandFeature(class BlockSource &, class BlockPos);
     MCAPI void _placeAndLinkNewGatewayPair();
     MCAPI bool _setEndGatewayBlockActorExitPosition(class BlockSource &, class BlockSource &, class BlockPos const &, class BlockPos const &, bool);
-    MCAPI void _setRespawnStage(enum RespawnAnimation);
+    MCAPI void _setRespawnStage(enum class RespawnAnimation);
     MCAPI void _spawnExitPortal(bool);
-    MCAPI void _spawnNewGatewayChunksTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
+    MCAPI void _spawnNewGatewayChunksTask(class std::tuple<enum class EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
     MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const &, int);
     MCAPI void _updateCrystalCount();
-    MCAPI void _verifyExitPositionsTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
+    MCAPI void _verifyExitPositionsTask(class std::tuple<enum class EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
 
 private:
 

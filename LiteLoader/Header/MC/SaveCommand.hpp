@@ -35,6 +35,6 @@ public:
 private:
     MCAPI static std::vector<struct SnapshotFilenameAndLength> mSaveAllFileList;
     MCAPI static class std::mutex mSaveAllMutex;
-    MCAPI static enum SaveCommand::State mState;
+    MCAPI static enum class SaveCommand::State mState;
 
 };

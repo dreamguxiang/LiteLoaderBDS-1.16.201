@@ -61,7 +61,7 @@ public:
     MCVAPI void tick(class BlockSource &);
     MCVAPI void triggerEvent(int, int);
 #endif
-    MCAPI ChestBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &, bool);
+    MCAPI ChestBlockActor(enum class BlockActorType, std::string const &, enum class BlockActorRendererId, class BlockPos const &, bool);
     MCAPI bool canPairWith(class BlockActor *, class BlockSource &);
     MCAPI void forceCloseChest(class BlockSource &);
     MCAPI void pairWith(class ChestBlockActor *, bool);

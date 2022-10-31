@@ -21,16 +21,16 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTEVENTLISTENER
-    MCVAPI enum EventResult onScriptAddFilterToView(std::string const &);
-    MCVAPI enum EventResult onScriptBroadcastEvent(std::string const &, enum RegistrationType, bool);
-    MCVAPI enum EventResult onScriptError(std::string const &, std::string const &);
-    MCVAPI enum EventResult onScriptGetComponent(std::string const &, enum RegistrationType, bool);
-    MCVAPI enum EventResult onScriptInternalError(std::string const &);
-    MCVAPI enum EventResult onScriptListenForEvent(std::string const &);
-    MCVAPI enum EventResult onScriptLoaded(std::string const &, unsigned __int64);
-    MCVAPI enum EventResult onScriptRan(std::string const &, std::string const &, bool);
-    MCVAPI enum EventResult onScriptRegisterSpatialView(std::string const &);
-    MCVAPI enum EventResult onScriptRegisterView();
+    MCVAPI enum class EventResult onScriptAddFilterToView(std::string const &);
+    MCVAPI enum class EventResult onScriptBroadcastEvent(std::string const &, enum class RegistrationType, bool);
+    MCVAPI enum class EventResult onScriptError(std::string const &, std::string const &);
+    MCVAPI enum class EventResult onScriptGetComponent(std::string const &, enum class RegistrationType, bool);
+    MCVAPI enum class EventResult onScriptInternalError(std::string const &);
+    MCVAPI enum class EventResult onScriptListenForEvent(std::string const &);
+    MCVAPI enum class EventResult onScriptLoaded(std::string const &, unsigned __int64);
+    MCVAPI enum class EventResult onScriptRan(std::string const &, std::string const &, bool);
+    MCVAPI enum class EventResult onScriptRegisterSpatialView(std::string const &);
+    MCVAPI enum class EventResult onScriptRegisterView();
 #endif
 
 };

@@ -22,17 +22,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADACTIONLIST
 #endif
-    MCAPI void addChunkLoadedRequest(class ChunkLoadedRequest, std::string const &, enum ChunksLoadedStatus, class LevelStorage &);
+    MCAPI void addChunkLoadedRequest(class ChunkLoadedRequest, std::string const &, enum class ChunksLoadedStatus, class LevelStorage &);
     MCAPI void onStaticTickingAreaAdded(class ServerLevel &, class LevelStorage &, class Dimension &, std::string const &);
-    MCAPI enum QueueRequestResult tryQueueChunkLoadedRequest(class ChunkLoadedRequest, class ServerLevel &, class LevelStorage &, class Dimension &);
+    MCAPI enum class QueueRequestResult tryQueueChunkLoadedRequest(class ChunkLoadedRequest, class ServerLevel &, class LevelStorage &, class Dimension &);
     MCAPI ~ChunkLoadActionList();
 
 //private:
-    MCAPI void _addChunkLoadedRequest(class ChunkLoadedRequest, std::string const &, enum ChunksLoadedStatus, class LevelStorage &);
+    MCAPI void _addChunkLoadedRequest(class ChunkLoadedRequest, std::string const &, enum class ChunksLoadedStatus, class LevelStorage &);
     MCAPI std::string _createLevelStorageId(std::string const &, std::string const &);
     MCAPI void _executeLoadedChunkLoadRequest(class ChunkLoadedRequest &, class ServerLevel &, class Dimension &);
     MCAPI void _loadRequests(std::string const &, class LevelStorage &);
-    MCAPI void _saveRequest(class ChunkLoadedRequest &, std::string const &, enum ChunkRequestListType, class LevelStorage &);
+    MCAPI void _saveRequest(class ChunkLoadedRequest &, std::string const &, enum class ChunkRequestListType, class LevelStorage &);
 
 private:
 

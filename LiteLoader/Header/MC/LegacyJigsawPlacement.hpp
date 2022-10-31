@@ -22,11 +22,11 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYJIGSAWPLACEMENT
 #endif
-    MCAPI void addPieces(std::vector<std::unique_ptr<class StructurePiece>> &, class StructurePoolElement const &, class Random &, class BlockPos const &, enum Rotation const &, class JigsawStructureRegistry const &, class Dimension &);
+    MCAPI void addPieces(std::vector<std::unique_ptr<class StructurePiece>> &, class StructurePoolElement const &, class Random &, class BlockPos const &, enum class Rotation const &, class JigsawStructureRegistry const &, class Dimension &);
     MCAPI ~LegacyJigsawPlacement();
 
 //private:
-    MCAPI void _addPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class PoolElementStructurePiece const &, class Random &, class BlockPos const &, enum Rotation const &, class JigsawStructureRegistry const &, class Dimension &, class BlockVolume &, class BlockPos const &);
+    MCAPI void _addPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class PoolElementStructurePiece const &, class Random &, class BlockPos const &, enum class Rotation const &, class JigsawStructureRegistry const &, class Dimension &, class BlockVolume &, class BlockPos const &);
     MCAPI bool _tryPlacingPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class PoolElementStructurePiece const &, class Random &, class JigsawBlockInfo const &, class BoundingBox const &, std::vector<class BoundingBox> &, class BlockPos const &, class StructureTemplatePool const *, class JigsawStructureRegistry const &, class Dimension &, class BlockVolume &, class BlockPos const &);
 
 private:

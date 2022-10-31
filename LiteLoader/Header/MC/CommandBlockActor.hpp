@@ -45,13 +45,13 @@ public:
 #endif
     MCAPI class CommandBlock const * getCommandBlock(class BlockSource &) const;
     MCAPI bool getConditionalMode(class BlockSource &) const;
-    MCAPI enum CommandBlockMode getMode(class BlockSource &) const;
+    MCAPI enum class CommandBlockMode getMode(class BlockSource &) const;
     MCAPI bool markConditionMet(class BlockSource &);
     MCAPI bool performCommand(class BlockSource &);
-    MCAPI void updateBlock(class BlockSource &, std::string const &, std::string const &, enum CommandBlockMode, bool, bool, bool, int, bool);
+    MCAPI void updateBlock(class BlockSource &, std::string const &, std::string const &, enum class CommandBlockMode, bool, bool, bool, int, bool);
 
 //private:
-    MCAPI void _setAutomatic(class BlockSource &, bool, enum CommandBlockMode);
+    MCAPI void _setAutomatic(class BlockSource &, bool, enum class CommandBlockMode);
 
 private:
 

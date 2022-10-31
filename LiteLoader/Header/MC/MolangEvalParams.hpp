@@ -27,7 +27,7 @@ public:
     MCAPI class Actor * popActor();
     MCAPI float popFloat();
     MCAPI unsigned __int64 popHash();
-    MCAPI unsigned __int64 popMissingVariableOrActorAddress(enum MolangVariableIndex);
+    MCAPI unsigned __int64 popMissingVariableOrActorAddress(enum class MolangVariableIndex);
     MCAPI unsigned __int64 popMissingVariableOrActorAddress(class HashedString const &);
     MCAPI bool popPublicAccessMode();
     MCAPI void popRenderParamsCopyAndPtr();

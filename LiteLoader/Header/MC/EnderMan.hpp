@@ -51,7 +51,7 @@ public:
     /*249*/ virtual void __unk_vfn_249();
     /*260*/ virtual void __unk_vfn_260();
     /*262*/ virtual void resolveDeathLoot(int, class ActorDamageSource const &);
-    /*267*/ virtual enum LevelSoundEvent getAmbientSound();
+    /*267*/ virtual enum class LevelSoundEvent getAmbientSound();
     /*274*/ virtual bool hurtEffects(class ActorDamageSource const &, int, bool, bool);
     /*281*/ virtual void aiStep();
     /*294*/ virtual void __unk_vfn_294();

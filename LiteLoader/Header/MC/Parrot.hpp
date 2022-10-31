@@ -22,7 +22,7 @@ public:
 #endif
 
 public:
-    /*2*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*2*/ virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~Parrot();
     /*22*/ virtual class Vec3 getInterpolatedRidingPosition(float) const;
     /*32*/ virtual void __unk_vfn_32();
@@ -53,7 +53,7 @@ public:
     /*249*/ virtual void __unk_vfn_249();
     /*260*/ virtual void __unk_vfn_260();
     /*266*/ virtual void playAmbientSound();
-    /*267*/ virtual enum LevelSoundEvent getAmbientSound();
+    /*267*/ virtual enum class LevelSoundEvent getAmbientSound();
     /*281*/ virtual void aiStep();
     /*294*/ virtual void __unk_vfn_294();
     /*304*/ virtual void __unk_vfn_304();

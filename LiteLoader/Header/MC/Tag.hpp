@@ -35,7 +35,7 @@ class Tag {
 
 #define AFTER_EXTRA
 public:
-    enum Type : uint8_t {
+    enum class Type : uint8_t {
         End,
         Byte,
         Short,
@@ -108,7 +108,7 @@ public:
     /*2*/ virtual void write(class IDataOutput &) const = 0;
     /*3*/ virtual void load(class IDataInput &) = 0;
     /*4*/ virtual std::string toString() const = 0;
-    /*5*/ virtual enum Tag::Type getId() const = 0;
+    /*5*/ virtual enum class Tag::Type getId() const = 0;
     /*6*/ virtual bool equals(class Tag const &) const;
     /*7*/ virtual void print(class PrintStream &) const;
     /*8*/ virtual void print(std::string const &, class PrintStream &) const;
@@ -117,8 +117,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAG
 #endif
     MCAPI static std::string const NullString;
-    MCAPI static std::string getTagName(enum Tag::Type);
-    MCAPI static std::unique_ptr<class Tag> newTag(enum Tag::Type);
+    MCAPI static std::string getTagName(enum class Tag::Type);
+    MCAPI static std::unique_ptr<class Tag> newTag(enum class Tag::Type);
     MCAPI static std::unique_ptr<class Tag> readNamedTag(class IDataInput &, std::string &);
     MCAPI static void writeNamedTag(std::string const &, class Tag const &, class IDataOutput &);
 

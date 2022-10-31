@@ -46,7 +46,7 @@ public:
     /*12*/ virtual bool isDamageable() const;
     /*13*/ virtual bool isDyeable() const;
     /*14*/ virtual bool isDye() const;
-    /*15*/ virtual enum ItemColor getItemColor() const;
+    /*15*/ virtual enum class ItemColor getItemColor() const;
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual bool isFood() const;
     /*18*/ virtual bool isThrowable() const;
@@ -58,14 +58,14 @@ public:
     /*24*/ virtual class Item & setStackedByData(bool);
     /*25*/ virtual class Item & setMaxDamage(int);
     /*26*/ virtual class Item & setHandEquipped();
-    /*27*/ virtual class Item & setUseAnimation(enum UseAnimation);
+    /*27*/ virtual class Item & setUseAnimation(enum class UseAnimation);
     /*28*/ virtual class Item & setMaxUseDuration(int);
     /*29*/ virtual class Item & setRequiresWorldBuilder(bool);
     /*30*/ virtual class Item & setExplodable(bool);
     /*31*/ virtual class Item & setFireResistant(bool);
     /*32*/ virtual class Item & setIsGlint(bool);
     /*33*/ virtual class Item & setShouldDespawn(bool);
-    /*34*/ virtual enum BlockShape getBlockShape() const;
+    /*34*/ virtual enum class BlockShape getBlockShape() const;
     /*35*/ virtual bool canBeDepleted() const;
     /*36*/ virtual bool canDestroySpecial(class Block const &) const;
     /*37*/ virtual int getLevelDataForAuxValue(int) const;
@@ -109,7 +109,7 @@ public:
     /*75*/ virtual class ItemDescriptor buildDescriptor(short, class CompoundTag const *) const;
     /*76*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*77*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*78*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    /*78*/ virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /*79*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
     /*80*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /*81*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
@@ -158,8 +158,8 @@ public:
     /*124*/ virtual float getArmorKnockbackResistance() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEM
     MCVAPI class mce::Color getBaseColor(class ItemStack const &) const;
-    MCVAPI enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
-    MCVAPI enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
+    MCVAPI enum class InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
+    MCVAPI enum class InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
     MCVAPI class mce::Color getSecondaryColor(class ItemStack const &) const;
     MCVAPI bool hasCustomColor(class ItemStackBase const &) const;
     MCVAPI bool isActorPlacerItem() const;
@@ -184,7 +184,7 @@ public:
     MCAPI bool hasTag(class HashedString const &) const;
     MCAPI bool isElytra() const;
     MCAPI class Item & setAllowOffhand(bool);
-    MCAPI class Item & setCategory(enum CreativeItemCategory);
+    MCAPI class Item & setCategory(enum class CreativeItemCategory);
     MCAPI class Item & setDescriptionId(std::string const &);
     MCAPI class Item & setFurnaceBurnIntervalMultiplier(float);
     MCAPI class Item & setFurnaceXPmultiplier(float);
@@ -216,7 +216,7 @@ public:
     MCAPI static void startCreativeItemDefinitions(bool, class CreativeItemRegistry *);
 
 //protected:
-    MCAPI void _helpChangeInventoryItemInPlace(class Actor &, class ItemStack &, class ItemStack &, enum ItemAcquisitionMethod) const;
+    MCAPI void _helpChangeInventoryItemInPlace(class Actor &, class ItemStack &, class ItemStack &, enum class ItemAcquisitionMethod) const;
 
 //private:
     MCAPI static void _addLooseCreativeItemsClient();

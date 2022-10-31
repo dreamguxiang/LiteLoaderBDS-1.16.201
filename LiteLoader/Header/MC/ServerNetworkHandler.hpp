@@ -42,7 +42,7 @@ public:
 
 public:
 
-    MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum MinecraftPacketIds);
+    MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum class MinecraftPacketIds);
     MCVAPI class GameSpecificNetEventCallback * getGameSpecificNetEventCallback();
     MCVAPI void handle(class NetworkIdentifier const &, class UpdatePlayerGameTypePacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class PhotoTransferPacket const &);
@@ -119,7 +119,7 @@ public:
     MCVAPI void onWebsocketRequest(std::string const &, std::string const &, class std::function<void (void)>);
     MCVAPI void onXboxUserBlocked(std::string const &);
     MCVAPI void onXboxUserUnblocked(std::string const &);
-    MCVAPI void sendServerLegacyParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int);
+    MCVAPI void sendServerLegacyParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int);
 
     MCAPI ServerNetworkHandler(class GameCallbacks &, class Level &, class NetworkHandler &, class PrivateKeyManager &, class ServerLocator &, class PacketSender &, class AllowList &, class PermissionsFile *, class mce::UUID const &, int, bool, std::vector<std::string> const &, std::string, int, class MinecraftCommands &, class IMinecraftApp &, class std::unordered_map<struct PackIdVersion, std::string, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, std::string>>> const &, class Scheduler &, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>);
     MCAPI void allowIncomingConnections(std::string const &, bool);

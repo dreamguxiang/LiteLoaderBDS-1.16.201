@@ -50,7 +50,7 @@ public:
     MCAPI void tick();
 
 //private:
-    MCAPI void _changeNatState(enum RakNetInstance::NATState, int, std::string const &);
+    MCAPI void _changeNatState(enum class RakNetInstance::NATState, int, std::string const &);
     MCAPI class std::shared_ptr<class RakNetInstance::RakNetNetworkPeer> _createPeer(class NetworkIdentifier const &);
     MCAPI void _openNatConnection(struct RakNet::SystemAddress const &);
     MCAPI void _pingNatService(bool);

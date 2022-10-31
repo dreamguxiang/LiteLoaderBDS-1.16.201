@@ -22,7 +22,7 @@ public:
 #endif
 
 public:
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~Slime();
     /*11*/ virtual void remove();
     /*32*/ virtual void __unk_vfn_32();
@@ -61,7 +61,7 @@ public:
     /*338*/ virtual void __unk_vfn_338();
     /*354*/ virtual void __unk_vfn_354();
     /*356*/ virtual bool canDealDamage();
-    /*357*/ virtual enum LevelSoundEvent getSquishSound();
+    /*357*/ virtual enum class LevelSoundEvent getSquishSound();
     /*358*/ virtual void setSlimeSize(int);
     /*359*/ virtual bool doPlayJumpSound();
     /*360*/ virtual bool doPlayLandSound();

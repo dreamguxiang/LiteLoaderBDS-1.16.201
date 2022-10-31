@@ -14,15 +14,14 @@ enum class CommandParameterDataType {
     SOFT_ENUM,
     POSIFIX,
 };
-enum SemanticConstraint: unsigned char
-{
+enum class SemanticConstraint : unsigned char {
     NoneConstraint = 0,
     RequiresCheatsEnabled=1,
     RequiresElevatedPermissions=2,
     RequiresHostPermissions=4,
     VALUE_MASK=8,
 };
-enum CommandParameterOption : unsigned char
+enum class CommandParameterOption : unsigned char
 {
     None = 0,
     EnumAutocompleteExpansion = 1,
@@ -71,8 +70,8 @@ public:
     , mand(optional)
     , options(0){};
 
-    CommandParameterData & addOptions(enum CommandParameterOption options){
-        this->options = this->options | options;
+    CommandParameterData & addOptions(enum class CommandParameterOption options){
+        this->options = this->options | (int)options;
         return *this;
     };
 #undef AFTER_EXTRA

@@ -35,7 +35,7 @@ public:
     MCVAPI bool save(class CompoundTag &) const;
     MCVAPI void tick(class BlockSource &);
 #endif
-    MCAPI ShulkerBoxBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &);
+    MCAPI ShulkerBoxBlockActor(enum class BlockActorType, std::string const &, enum class BlockActorRendererId, class BlockPos const &);
     MCAPI static bool itemAllowed(class ItemStackBase const &);
     MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const &, int);
 

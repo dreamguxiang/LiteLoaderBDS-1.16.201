@@ -26,7 +26,7 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*10*/ virtual void __unk_vfn_10();
     /*16*/ virtual void __unk_vfn_16();
-    /*34*/ virtual enum BlockShape getBlockShape() const;
+    /*34*/ virtual enum class BlockShape getBlockShape() const;
     /*37*/ virtual int getLevelDataForAuxValue(int) const;
     /*43*/ virtual void __unk_vfn_43();
     /*45*/ virtual void __unk_vfn_45();

@@ -42,7 +42,7 @@ public:
     /*38*/ virtual int getFirstEmptySlot() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILLINGCONTAINER
 #endif
-    MCAPI FillingContainer(class Player *, int, enum ContainerType);
+    MCAPI FillingContainer(class Player *, int, enum class ContainerType);
     MCAPI int getSlotWithItem(class ItemStack const &, bool, bool) const;
     MCAPI bool removeResource(int);
     MCAPI int removeResource(class ItemStack const &, bool, bool, int);

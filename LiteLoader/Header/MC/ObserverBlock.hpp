@@ -60,7 +60,7 @@ public:
     /*128*/ virtual void __unk_vfn_128();
     /*130*/ virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /*131*/ virtual void __unk_vfn_131();
-    /*132*/ virtual enum Flip getFaceFlip(unsigned char, class Block const &) const;
+    /*132*/ virtual enum class Flip getFaceFlip(unsigned char, class Block const &) const;
     /*146*/ virtual void __unk_vfn_146();
     /*155*/ virtual void __unk_vfn_155();
     /*156*/ virtual void __unk_vfn_156();

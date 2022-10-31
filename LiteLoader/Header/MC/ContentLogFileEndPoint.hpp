@@ -26,7 +26,7 @@ public:
     /*2*/ virtual void flush();
     /*3*/ virtual void setEnabled(bool);
     /*4*/ virtual bool isEnabled() const;
-    /*5*/ virtual void log(enum LogArea, enum LogLevel, char const *);
+    /*5*/ virtual void log(enum class LogArea, enum class LogLevel, char const *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGFILEENDPOINT
 #endif
     MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path);

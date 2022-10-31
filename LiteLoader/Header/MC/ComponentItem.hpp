@@ -42,7 +42,7 @@ public:
     /*21*/ virtual class IFoodItemComponent * getFood() const;
     /*22*/ virtual class FuelItemComponent * getFuel() const;
     /*25*/ virtual class Item & setMaxDamage(int);
-    /*34*/ virtual enum BlockShape getBlockShape() const;
+    /*34*/ virtual enum class BlockShape getBlockShape() const;
     /*35*/ virtual bool canBeDepleted() const;
     /*36*/ virtual bool canDestroySpecial(class Block const &) const;
     /*37*/ virtual int getLevelDataForAuxValue(int) const;
@@ -76,7 +76,7 @@ public:
     /*73*/ virtual void __unk_vfn_73();
     /*76*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*77*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*78*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    /*78*/ virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /*79*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
     /*80*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /*81*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;

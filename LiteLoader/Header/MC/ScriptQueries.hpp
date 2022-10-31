@@ -23,7 +23,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTQUERIES
 #endif
-    MCAPI bool getEntitiesFromQuery(class ScriptApi::ScriptVersionInfo const &, class ScriptEngine &, class entt::basic_registry<enum entt::entity> &, enum entt::entity, std::vector<class ScriptApi::ScriptObjectHandle> &);
-    MCAPI bool getEntitiesFromQuery(class ScriptApi::ScriptVersionInfo const &, class ScriptEngine &, class entt::basic_registry<enum entt::entity> &, enum entt::entity, double, double, double, double, double, double, std::vector<class ScriptApi::ScriptObjectHandle> &);
+    MCAPI bool getEntitiesFromQuery(class ScriptApi::ScriptVersionInfo const &, class ScriptEngine &, class entt::basic_registry<enum class entt::entity> &, enum class entt::entity, std::vector<class ScriptApi::ScriptObjectHandle> &);
+    MCAPI bool getEntitiesFromQuery(class ScriptApi::ScriptVersionInfo const &, class ScriptEngine &, class entt::basic_registry<enum class entt::entity> &, enum class entt::entity, double, double, double, double, double, double, std::vector<class ScriptApi::ScriptObjectHandle> &);
 
 };

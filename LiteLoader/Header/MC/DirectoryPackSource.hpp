@@ -24,14 +24,14 @@ public:
     /*0*/ virtual ~DirectoryPackSource();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual enum PackOrigin getPackOrigin() const;
-    /*4*/ virtual enum PackType getPackType() const;
+    /*3*/ virtual enum class PackOrigin getPackOrigin() const;
+    /*4*/ virtual enum class PackType getPackType() const;
     /*5*/ virtual class PackSourceReport load(class PackManifestFactory &, class IContentKeyProvider const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTORYPACKSOURCE
     MCVAPI void forEachPack(class std::function<void (class Pack &)>);
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
-    MCAPI DirectoryPackSource(class Core::Path const &, enum PackType, enum PackOrigin, bool);
+    MCAPI DirectoryPackSource(class Core::Path const &, enum class PackType, enum class PackOrigin, bool);
     MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const &);
 
 };

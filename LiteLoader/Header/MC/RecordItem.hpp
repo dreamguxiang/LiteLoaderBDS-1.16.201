@@ -45,6 +45,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECORDITEM
     MCVAPI bool isMusicDisk() const;
 #endif
-    MCAPI RecordItem(std::string const &, int, enum LevelSoundEvent);
+    MCAPI RecordItem(std::string const &, int, enum class LevelSoundEvent);
 
 };

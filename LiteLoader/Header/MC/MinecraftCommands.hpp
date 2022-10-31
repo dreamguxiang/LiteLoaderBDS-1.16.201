@@ -52,7 +52,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTCOMMANDS
 #endif
-    MCAPI class Command * compileCommand(class HashedString const &, class CommandOrigin &, enum CurrentCmdVersion, class std::function<void (std::string const &)>);
+    MCAPI class Command * compileCommand(class HashedString const &, class CommandOrigin &, enum class CurrentCmdVersion, class std::function<void (std::string const &)>);
     MCAPI struct MCRESULT executeCommand(class std::shared_ptr<class CommandContext>, bool) const;
     MCAPI void handleOutput(class CommandOrigin const &, class CommandOutput const &) const;
     MCAPI void initCoreEnums(class IWorldRegistriesProvider const &, class ActorFactory const &, class Experiments const &, class BaseGameVersion const &);
@@ -60,6 +60,6 @@ public:
     MCAPI struct MCRESULT requestCommandExecution(std::unique_ptr<class CommandOrigin>, std::string const &, int, bool) const;
     MCAPI void runCommand(class Command &, class CommandOrigin &);
     MCAPI void setRegistryNetworkUpdateCallback(class std::function<void (class Packet const &)>) const;
-    MCAPI static enum CommandOutputType getOutputType(class CommandOrigin const &);
+    MCAPI static enum class CommandOutputType getOutputType(class CommandOrigin const &);
 
 };

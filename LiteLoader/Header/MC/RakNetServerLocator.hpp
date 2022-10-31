@@ -25,7 +25,7 @@ public:
     /*0*/ virtual ~RakNetServerLocator();
     /*1*/ virtual void onSuspend();
     /*2*/ virtual void onResume();
-    /*3*/ virtual void announceServer(std::string const &, std::string const &, enum GameType, int, int, bool);
+    /*3*/ virtual void announceServer(std::string const &, std::string const &, enum class GameType, int, int, bool);
     /*4*/ virtual void stopAnnouncingServer();
     /*5*/ virtual void findServers(int, int);
     /*6*/ virtual void addCustomServer(class AsynchronousIPResolver const &, int);

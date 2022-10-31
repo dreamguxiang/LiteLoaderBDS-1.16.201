@@ -31,7 +31,7 @@ public:
     MCVAPI void onAppUnpaused();
     MCVAPI void onDeviceLost();
     MCVAPI void onLowMemory();
-    MCVAPI void onOperationModeChanged(enum OperationMode);
+    MCVAPI void onOperationModeChanged(enum class OperationMode);
     MCVAPI void onPerformanceModeChanged(bool);
     MCVAPI void onPushNotificationReceived(class PushNotificationMessage const &);
     MCVAPI void onResizeBegin();

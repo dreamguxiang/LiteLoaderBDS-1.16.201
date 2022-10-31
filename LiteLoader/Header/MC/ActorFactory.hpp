@@ -34,7 +34,7 @@ public:
     MCAPI std::unique_ptr<class Actor> loadEntity(class CompoundTag *, class DataLoadHelper &, class DimensionHeightRange const &, class LevelChunk const *);
     MCAPI ~ActorFactory();
     MCAPI static class Actor * fixLegacyEntity(class BlockSource &, class CompoundTag const *);
-    MCAPI static void registerEntityMapping(enum ActorType const &, bool, std::unique_ptr<class Actor> ( *const &)(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &), class std::optional<int>);
+    MCAPI static void registerEntityMapping(enum class ActorType const &, bool, std::unique_ptr<class Actor> ( *const &)(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &), class std::optional<int>);
 
 //private:
     MCAPI void _buildSummonableActorList(class Experiments const &, class std::function<void (std::string const &, struct ActorFactoryData const &)>) const;

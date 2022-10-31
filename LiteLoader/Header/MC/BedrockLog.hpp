@@ -6,7 +6,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum LogAreaID;
+enum class LogAreaID;
 #undef BEFORE_EXTRA
 
 namespace BedrockLog {
@@ -19,27 +19,27 @@ public:
     LogAreaFilter(LogAreaFilter const&) = delete;
     LogAreaFilter(LogAreaFilter const&&) = delete;
 };
-enum LogChannel;
-enum LogRule;
-enum LogCategory;
+enum class LogChannel;
+enum class LogRule;
+enum class LogCategory;
 struct LogDetails {
     LogDetails() = delete;
     LogDetails(LogDetails const&) = delete;
     LogDetails(LogDetails const&&) = delete;
 };
 #undef AFTER_EXTRA
-    MCAPI enum LogAreaID _areaFilterFromString(std::string const &);
+    MCAPI enum class LogAreaID _areaFilterFromString(std::string const &);
     MCAPI bool _constructAreaFilterFromString(std::string const &, class BedrockLog::LogAreaFilter &);
     MCAPI std::string _constructAreaFilterStringFromFilter(class BedrockLog::LogAreaFilter const &);
-    MCAPI struct BedrockLog::LogDetails & _getLog(enum BedrockLog::LogCategory, enum BedrockLog::LogChannel);
+    MCAPI struct BedrockLog::LogDetails & _getLog(enum class BedrockLog::LogCategory, enum class BedrockLog::LogChannel);
     MCAPI void _initAreaFilterMap();
     MCAPI void _initPriorityFilterMap();
-    MCAPI void _openChannel(class Core::Path const &, std::string const &, std::string const &, enum BedrockLog::LogCategory, enum BedrockLog::LogChannel, bool, class LogSettingsUpdater *, double);
+    MCAPI void _openChannel(class Core::Path const &, std::string const &, std::string const &, enum class BedrockLog::LogCategory, enum class BedrockLog::LogChannel, bool, class LogSettingsUpdater *, double);
     MCAPI void closeAndResetAllLogs();
-    MCAPI void createLog(class Core::Path const &, std::string const &, std::string const &, enum BedrockLog::LogCategory, class std::bitset<3>, bool, class LogSettingsUpdater *, double);
+    MCAPI void createLog(class Core::Path const &, std::string const &, std::string const &, enum class BedrockLog::LogCategory, class std::bitset<3>, bool, class LogSettingsUpdater *, double);
     MCAPI void flushAllLogs();
-    MCAPI void log(enum BedrockLog::LogCategory, class std::bitset<3>, enum BedrockLog::LogRule, enum LogAreaID, unsigned int, char const *, int, char const *, ...);
-    MCAPI void log_va(enum BedrockLog::LogCategory, class std::bitset<3>, enum BedrockLog::LogRule, enum LogAreaID, unsigned int, char const *, int, char const *, char *);
+    MCAPI void log(enum class BedrockLog::LogCategory, class std::bitset<3>, enum class BedrockLog::LogRule, enum class LogAreaID, unsigned int, char const *, int, char const *, ...);
+    MCAPI void log_va(enum class BedrockLog::LogCategory, class std::bitset<3>, enum class BedrockLog::LogRule, enum class LogAreaID, unsigned int, char const *, int, char const *, char *);
     MCAPI int rakDebugLog(char const *, ...);
     MCAPI void update();
 

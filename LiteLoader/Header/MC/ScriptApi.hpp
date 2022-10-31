@@ -18,7 +18,7 @@ namespace ScriptApi {
     MCAPI void * CreateComponentChakraCallback(void *, bool, void **, unsigned short, void *);
     MCAPI void * CreateEntityChakraCallback(void *, bool, void **, unsigned short, void *);
     MCAPI void * CreateEventDataChakraCallback(void *, bool, void **, unsigned short, void *);
-    MCAPI enum _JsErrorCode DefineChakraCallback(void *, std::string const &, void * ( *)(void *, bool, void **, unsigned short, void *), void *, class ScriptApi::ScriptReport &);
+    MCAPI enum class _JsErrorCode DefineChakraCallback(void *, std::string const &, void * ( *)(void *, bool, void **, unsigned short, void *), void *, class ScriptApi::ScriptReport &);
     MCAPI void * DestroyComponentChakraCallback(void *, bool, void **, unsigned short, void *);
     MCAPI void * DestroyEntityChakraCallback(void *, bool, void **, unsigned short, void *);
     MCAPI void * ErrorChakraCallback(void *, bool, void **, unsigned short, void *);
@@ -30,8 +30,8 @@ namespace ScriptApi {
     MCAPI void * HasComponentChakraCallback(void *, bool, void **, unsigned short, void *);
     MCAPI void * InfoChakraCallback(void *, bool, void **, unsigned short, void *);
     MCAPI void * IsValidEntityChakraCallback(void *, bool, void **, unsigned short, void *);
-    MCAPI enum _JsErrorCode JsCreatePropertyIdHelper(std::string const &, void **);
-    MCAPI enum _JsErrorCode JsGetStringHelper(void *, std::string &);
+    MCAPI enum class _JsErrorCode JsCreatePropertyIdHelper(std::string const &, void **);
+    MCAPI enum class _JsErrorCode JsGetStringHelper(void *, std::string &);
     MCAPI void * ListenForEventChakraCallback(void *, bool, void **, unsigned short, void *);
     MCAPI void * LogChakraCallback(void *, bool, void **, unsigned short, void *);
     MCAPI void * OnChakraEngineCall(void *, bool, void **, unsigned short, void *, class std::function<void (class ScriptApi::ScriptCallbackInterface &, std::vector<class ScriptApi::ScriptObjectHandle> const &, class ScriptApi::ScriptObjectHandle &)>);

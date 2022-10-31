@@ -27,11 +27,11 @@ public:
     /*11*/ virtual bool getDamagingEntityIsCreative() const;
     /*12*/ virtual bool getDamagingEntityIsWorldBuilder() const;
     /*13*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /*14*/ virtual enum ActorType getDamagingEntityType() const;
-    /*15*/ virtual enum ActorCategory getDamagingEntityCategories() const;
+    /*14*/ virtual enum class ActorType getDamagingEntityType() const;
+    /*15*/ virtual enum class ActorCategory getDamagingEntityCategories() const;
     /*16*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGEBYCHILDACTORSOURCE
 #endif
-    MCAPI ActorDamageByChildActorSource(class Actor &, class Actor &, enum ActorDamageCause);
+    MCAPI ActorDamageByChildActorSource(class Actor &, class Actor &, enum class ActorDamageCause);
 
 };

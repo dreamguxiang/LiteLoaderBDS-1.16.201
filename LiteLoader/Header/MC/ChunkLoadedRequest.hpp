@@ -25,12 +25,12 @@ public:
     MCAPI ChunkLoadedRequest(std::string const &, std::unique_ptr<class IChunkLoadedAction>);
     MCAPI ChunkLoadedRequest(struct Bounds const &, std::unique_ptr<class IChunkLoadedAction>, bool);
     MCAPI ChunkLoadedRequest(class ChunkLoadedRequest &&);
-    MCAPI enum ChunksLoadedStatus areAllChunksLoaded(class Dimension &, __int64) const;
-    MCAPI enum ChunksLoadedStatus areAllChunksLoadedOnChunkLoaded(class ChunkSource &, class LevelChunk &, __int64) const;
-    MCAPI class CompoundTag serialize(enum ChunkRequestListType);
+    MCAPI enum class ChunksLoadedStatus areAllChunksLoaded(class Dimension &, __int64) const;
+    MCAPI enum class ChunksLoadedStatus areAllChunksLoadedOnChunkLoaded(class ChunkSource &, class LevelChunk &, __int64) const;
+    MCAPI class CompoundTag serialize(enum class ChunkRequestListType);
     MCAPI ~ChunkLoadedRequest();
-    MCAPI static enum ChunksLoadedStatus areAllChunksLoaded(class ChunkSource &, struct Bounds const &, bool);
-    MCAPI static enum ChunksLoadedStatus areAllChunksLoadedAndTicking(class ChunkSource &, struct Bounds const &, bool, __int64);
+    MCAPI static enum class ChunksLoadedStatus areAllChunksLoaded(class ChunkSource &, struct Bounds const &, bool);
+    MCAPI static enum class ChunksLoadedStatus areAllChunksLoadedAndTicking(class ChunkSource &, struct Bounds const &, bool, __int64);
     MCAPI static bool isValidTag(class CompoundTag const &);
     MCAPI static struct DeserializedChunkLoadedRequest load(std::string const &, class CompoundTag const &, std::string const &);
 

@@ -22,7 +22,7 @@ public:
 #endif
 
 public:
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~TripodCamera();
     /*11*/ virtual void remove();
     /*32*/ virtual void __unk_vfn_32();

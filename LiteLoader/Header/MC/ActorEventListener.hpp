@@ -21,36 +21,36 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTLISTENER
-    MCVAPI enum EventResult onActorAcquiredItem(class Actor &, class ItemInstance const &, unsigned int, enum ItemAcquisitionMethod, class Actor *);
-    MCVAPI enum EventResult onActorAddEffect(struct ActorAddEffectEvent const &);
-    MCVAPI enum EventResult onActorAttack(class Actor &, class Actor &, int);
-    MCVAPI enum EventResult onActorAttackedActor(class Actor &, class Actor &);
-    MCVAPI enum EventResult onActorCarriedItemChanged(class Actor &, class ItemInstance const &, class ItemInstance const &, enum HandSlot);
-    MCVAPI enum EventResult onActorCreated(class Actor &);
-    MCVAPI enum EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum ActorType);
-    MCVAPI enum EventResult onActorDefinitionEventTriggered(struct ActorDefinitionEvent const &);
-    MCVAPI enum EventResult onActorDroppedItem(class Actor &, class ItemInstance const &);
-    MCVAPI enum EventResult onActorEquippedArmor(class Actor &, class ItemInstance const &, enum ArmorSlot);
-    MCVAPI enum EventResult onActorGriefingBlock(struct ActorGriefingBlockEvent const &);
-    MCVAPI enum EventResult onActorHurt(struct ActorHurtEvent const &);
-    MCVAPI enum EventResult onActorKilled(struct ActorKilledEvent const &);
-    MCVAPI enum EventResult onActorMobInteraction(class Actor &, enum MinecraftEventing::InteractionType, enum ActorType);
-    MCVAPI enum EventResult onActorMove(class Actor &, class Vec3 const &);
-    MCVAPI enum EventResult onActorPlacedItem(class Actor &, class ItemInstance const &);
-    MCVAPI enum EventResult onActorPredictedMove(class Actor &, enum MovePredictionType, class Vec3 const &);
-    MCVAPI enum EventResult onActorRemoveEffect(struct ActorRemoveEffectEvent const &);
-    MCVAPI enum EventResult onActorRemoved(class Actor &);
-    MCVAPI enum EventResult onActorSneakChanged(class Actor &, bool);
-    MCVAPI enum EventResult onActorStartRiding(class Actor &, class Actor &);
-    MCVAPI enum EventResult onActorStopRiding(class Actor &, bool, bool, bool);
-    MCVAPI enum EventResult onActorTargetAcquired(class Actor &, class Actor &);
-    MCVAPI enum EventResult onActorTeleported(class Actor &);
-    MCVAPI enum EventResult onActorTick(class Actor &);
-    MCVAPI enum EventResult onActorUseItem(class Actor &, class ItemInstance const &, enum ItemUseMethod);
-    MCVAPI enum EventResult onActorUseItemOn(class Actor &, class ItemStack const &, class BlockPos const &, unsigned char);
-    MCVAPI enum EventResult onKnockBack(struct KnockBackEvent const &);
-    MCVAPI enum EventResult onMountTaming(struct MountTamingEvent const &);
-    MCVAPI enum EventResult onProjectileHit(struct ProjectileHitEvent const &);
+    MCVAPI enum class EventResult onActorAcquiredItem(class Actor &, class ItemInstance const &, unsigned int, enum class ItemAcquisitionMethod, class Actor *);
+    MCVAPI enum class EventResult onActorAddEffect(struct ActorAddEffectEvent const &);
+    MCVAPI enum class EventResult onActorAttack(class Actor &, class Actor &, int);
+    MCVAPI enum class EventResult onActorAttackedActor(class Actor &, class Actor &);
+    MCVAPI enum class EventResult onActorCarriedItemChanged(class Actor &, class ItemInstance const &, class ItemInstance const &, enum class HandSlot);
+    MCVAPI enum class EventResult onActorCreated(class Actor &);
+    MCVAPI enum class EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum class ActorType);
+    MCVAPI enum class EventResult onActorDefinitionEventTriggered(struct ActorDefinitionEvent const &);
+    MCVAPI enum class EventResult onActorDroppedItem(class Actor &, class ItemInstance const &);
+    MCVAPI enum class EventResult onActorEquippedArmor(class Actor &, class ItemInstance const &, enum class ArmorSlot);
+    MCVAPI enum class EventResult onActorGriefingBlock(struct ActorGriefingBlockEvent const &);
+    MCVAPI enum class EventResult onActorHurt(struct ActorHurtEvent const &);
+    MCVAPI enum class EventResult onActorKilled(struct ActorKilledEvent const &);
+    MCVAPI enum class EventResult onActorMobInteraction(class Actor &, enum class MinecraftEventing::InteractionType, enum class ActorType);
+    MCVAPI enum class EventResult onActorMove(class Actor &, class Vec3 const &);
+    MCVAPI enum class EventResult onActorPlacedItem(class Actor &, class ItemInstance const &);
+    MCVAPI enum class EventResult onActorPredictedMove(class Actor &, enum class MovePredictionType, class Vec3 const &);
+    MCVAPI enum class EventResult onActorRemoveEffect(struct ActorRemoveEffectEvent const &);
+    MCVAPI enum class EventResult onActorRemoved(class Actor &);
+    MCVAPI enum class EventResult onActorSneakChanged(class Actor &, bool);
+    MCVAPI enum class EventResult onActorStartRiding(class Actor &, class Actor &);
+    MCVAPI enum class EventResult onActorStopRiding(class Actor &, bool, bool, bool);
+    MCVAPI enum class EventResult onActorTargetAcquired(class Actor &, class Actor &);
+    MCVAPI enum class EventResult onActorTeleported(class Actor &);
+    MCVAPI enum class EventResult onActorTick(class Actor &);
+    MCVAPI enum class EventResult onActorUseItem(class Actor &, class ItemInstance const &, enum class ItemUseMethod);
+    MCVAPI enum class EventResult onActorUseItemOn(class Actor &, class ItemStack const &, class BlockPos const &, unsigned char);
+    MCVAPI enum class EventResult onKnockBack(struct KnockBackEvent const &);
+    MCVAPI enum class EventResult onMountTaming(struct MountTamingEvent const &);
+    MCVAPI enum class EventResult onProjectileHit(struct ProjectileHitEvent const &);
 #endif
 
 };

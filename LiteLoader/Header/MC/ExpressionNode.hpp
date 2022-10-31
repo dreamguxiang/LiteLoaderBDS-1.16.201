@@ -31,7 +31,7 @@ public:
     MCAPI unsigned __int64 getTreeHash(bool) const;
     MCAPI bool getTreeString(std::string &, bool) const;
     MCAPI bool hasMadd() const;
-    MCAPI enum MolangCompileResult link() const;
+    MCAPI enum class MolangCompileResult link() const;
     MCAPI void moveConstantChildToValueIfFloatOrHashType(int);
     MCAPI class ExpressionNode & operator=(float);
     MCAPI class ExpressionNode & operator=(class ExpressionNode const &);
@@ -45,16 +45,16 @@ public:
     MCAPI static void addErrorMessage(std::string const &);
     MCAPI static void buildExpressionOpTable();
     MCAPI static float fast_atof_positiveOnly(char const *&);
-    MCAPI static char const * getOpName(enum ExpressionOp);
+    MCAPI static char const * getOpName(enum class ExpressionOp);
     MCAPI static class std::recursive_mutex & getQueryFunctionMutex();
     MCAPI static bool initializeMolang();
-    MCAPI static std::vector<struct std::pair<std::string, enum ExpressionOp>> mAliasOpTokens;
+    MCAPI static std::vector<struct std::pair<std::string, enum class ExpressionOp>> mAliasOpTokens;
     MCAPI static std::vector<std::string> mExpressionOpTokens;
     MCAPI static class SemVersion const mLatestVersion;
     MCAPI static struct std::atomic<int> mNumRootExpressionsWithVariables;
     MCAPI static class SemVersion const mPeriodNoLongerAnIdentifierCharacterVersion;
-    MCAPI static class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)> const * queryFunctionAccessorFromString(std::string const &, enum MolangQueryFunctionReturnType &, bool);
-    MCAPI static enum QueryRegistrationResult registerQueryFunction(std::string const &, class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)>, std::string const &, enum MolangQueryFunctionReturnType, class HashedString, unsigned __int64, unsigned __int64, bool);
+    MCAPI static class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)> const * queryFunctionAccessorFromString(std::string const &, enum class MolangQueryFunctionReturnType &, bool);
+    MCAPI static enum class QueryRegistrationResult registerQueryFunction(std::string const &, class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)>, std::string const &, enum class MolangQueryFunctionReturnType, class HashedString, unsigned __int64, unsigned __int64, bool);
 
 //private:
     MCAPI bool _checkIsValidAndPopulateUsedTokenFlags(struct ExpressionOpBitField const &);
@@ -62,26 +62,26 @@ public:
     MCAPI bool _validateChildrenAreNumerical(bool);
     MCAPI bool buildTree(struct ExpressionOpBitField const &);
     MCAPI struct MolangScriptArg const & executeMolangProgram(class RenderParams &, struct MolangEvalParams &) const;
-    MCAPI bool findClosingOp(unsigned __int64 &, enum ExpressionOp) const;
+    MCAPI bool findClosingOp(unsigned __int64 &, enum class ExpressionOp) const;
     MCAPI bool optimizeFunctionCallParams();
     MCAPI bool processArrays();
-    MCAPI bool processBinaryExpression(enum ExpressionOp);
+    MCAPI bool processBinaryExpression(enum class ExpressionOp);
     MCAPI bool processMathFuncs();
     MCAPI bool processMemberAccessors();
     MCAPI bool processNegativesAndLogicalNots();
     MCAPI bool processQueriesAndFunctions();
     MCAPI bool processSections();
     MCAPI bool processSemicolons();
-    MCAPI bool processUnaryExpression(enum ExpressionOp);
-    MCAPI static enum MolangCompileResult _buildProgram(struct MolangProgramBuildState &, class ExpressionNode const *);
+    MCAPI bool processUnaryExpression(enum class ExpressionOp);
+    MCAPI static enum class MolangCompileResult _buildProgram(struct MolangProgramBuildState &, class ExpressionNode const *);
     MCAPI static struct MolangScriptArg * _getOrCreateReferencedMemberVariableScriptArg(struct MolangEvalParams &, class ExpressionNode const &);
-    MCAPI static bool _getQueryFunctionAccessor(struct MolangScriptArg &, std::string const &, enum MolangQueryFunctionReturnType, class HashedString const &);
+    MCAPI static bool _getQueryFunctionAccessor(struct MolangScriptArg &, std::string const &, enum class MolangQueryFunctionReturnType, class HashedString const &);
     MCAPI static struct MolangScriptArg const * _getReferencedMemberVariableScriptArg(struct MolangEvalParams &, class ExpressionNode const &);
     MCAPI static struct MolangScriptArg const * _getScriptArgFromMemberAccessedVariable(struct MolangEvalParams &, class ExpressionNode const &);
-    MCAPI static unsigned __int64 _maxOpChildren(enum ExpressionOp);
-    MCAPI static unsigned __int64 _minOpChildren(enum ExpressionOp);
+    MCAPI static unsigned __int64 _maxOpChildren(enum class ExpressionOp);
+    MCAPI static unsigned __int64 _minOpChildren(enum class ExpressionOp);
     MCAPI static void _writeScriptArgToMemberAccessedVariable(struct MolangEvalParams &, class ExpressionNode const &, struct MolangScriptArg const &);
-    MCAPI static void _writeScriptArgToMolangVariable(class MolangVariableMap &, enum MolangVariableIndex, struct MolangScriptArg const &);
+    MCAPI static void _writeScriptArgToMolangVariable(class MolangVariableMap &, enum class MolangVariableIndex, struct MolangScriptArg const &);
 
 private:
     MCAPI static class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)> _defaultUnknownQueryFunction;

@@ -23,17 +23,17 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONCOMPONENT
 #endif
     MCAPI std::unique_ptr<class ActorAnimationPlayer> createAnimationPlayer(class HashedString const &, class ExpressionNode const &);
-    MCAPI std::vector<class BoneOrientation> * getBoneOrientations(enum SkeletalHierarchyIndex, bool);
+    MCAPI std::vector<class BoneOrientation> * getBoneOrientations(enum class SkeletalHierarchyIndex, bool);
     MCAPI void initInstanceSpecificAnimationData(class MolangVariableMap *);
     MCAPI void initializeServerAnimationComponent(class Actor &, class std::shared_ptr<class CommonResourceDefinitionMap>, class std::function<void (class ActorAnimationPlayer &)>);
     MCAPI void serverUpdate(class Actor &);
     MCAPI void setDirty();
     MCAPI void setupDeltaTimeAndLifeTimeParams(bool);
     MCAPI ~AnimationComponent();
-    MCAPI static class std::shared_ptr<class AnimationComponent> getAnimationComponent(enum AnimationComponentGroup, class AnimationComponentID);
+    MCAPI static class std::shared_ptr<class AnimationComponent> getAnimationComponent(enum class AnimationComponentGroup, class AnimationComponentID);
 
 //private:
-    MCAPI static class std::unordered_map<class AnimationComponentID, class std::weak_ptr<class AnimationComponent>, struct std::hash<class AnimationComponentID>, struct std::equal_to<class AnimationComponentID>, class std::allocator<struct std::pair<class AnimationComponentID const, class std::weak_ptr<class AnimationComponent>>>> & _getAllAnimationComponents(enum AnimationComponentGroup);
+    MCAPI static class std::unordered_map<class AnimationComponentID, class std::weak_ptr<class AnimationComponent>, struct std::hash<class AnimationComponentID>, struct std::equal_to<class AnimationComponentID>, class std::allocator<struct std::pair<class AnimationComponentID const, class std::weak_ptr<class AnimationComponent>>>> & _getAllAnimationComponents(enum class AnimationComponentGroup);
     MCAPI static class std::recursive_mutex & _getAnimationComponentMapLock();
 
 private:

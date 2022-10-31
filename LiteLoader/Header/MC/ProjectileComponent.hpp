@@ -46,7 +46,7 @@ public:
 //private:
     MCAPI void _handleLightningOnHit(class Actor &);
     MCAPI bool _isLoyaltyTrident(class Actor const &) const;
-    MCAPI void _selectNextMoveDirection(class Actor &, enum ProjectileComponent::EAxis);
+    MCAPI void _selectNextMoveDirection(class Actor &, enum class ProjectileComponent::EAxis);
 
 private:
 

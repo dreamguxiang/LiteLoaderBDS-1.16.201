@@ -30,7 +30,7 @@ public:
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PANICGOAL
 #endif
-    MCAPI PanicGoal(class Mob &, float, bool, enum LevelSoundEvent, struct FloatRange, bool, bool, std::vector<enum ActorDamageCause>);
+    MCAPI PanicGoal(class Mob &, float, bool, enum class LevelSoundEvent, struct FloatRange, bool, bool, std::vector<enum class ActorDamageCause>);
 
 //private:
     MCAPI bool _findWaterPos(class Vec3 &, int, int);

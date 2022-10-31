@@ -80,7 +80,7 @@ public:
     MCAPI bool containsAnyBlockOfType(class BlockPos const &, class BlockPos const &, class Block const &) const;
     MCAPI bool containsAnyLiquid(class AABB const &);
     MCAPI bool containsAnySolidBlocking(class AABB const &);
-    MCAPI bool containsMaterial(class AABB const &, enum MaterialType);
+    MCAPI bool containsMaterial(class AABB const &, enum class MaterialType);
     MCAPI std::vector<class AABB> & fetchAABBs(class AABB const &, bool);
     MCAPI void fetchActorIds(unsigned __int64, class AABB const &, std::vector<struct ActorUniqueID> &) const;
     MCAPI void fetchActorIds(class AABB const &, std::vector<struct ActorUniqueID> &) const;
@@ -90,11 +90,11 @@ public:
     MCAPI class gsl::span<class BlockFetchResult const, -1> fetchBlocksInCylinder(class BlockPos const &, unsigned int, unsigned int, class std::function<bool (class Block const &)>);
     MCAPI class gsl::span<class BlockFetchResult const, -1> fetchBlocksInCylinderSorted(class BlockPos const &, unsigned int, unsigned int, class std::function<bool (class Block const &)>);
     MCAPI std::vector<class AABB> & fetchCollisionShapes(class AABB const &, float *, bool, class Actor *);
-    MCAPI class gsl::span<class gsl::not_null<class Actor *>, -1> fetchEntities(enum ActorType, class AABB const &, class Actor const *);
+    MCAPI class gsl::span<class gsl::not_null<class Actor *>, -1> fetchEntities(enum class ActorType, class AABB const &, class Actor const *);
     MCAPI class gsl::span<class gsl::not_null<class Actor *>, -1> fetchEntities(class gsl::span<class gsl::not_null<class Actor const *>, -1>, class AABB const &, bool);
     MCAPI class gsl::span<class gsl::not_null<class Actor *>, -1> fetchEntities(class Actor const *, class AABB const &, bool);
-    MCAPI std::vector<class Actor *> const & fetchEntities2(enum ActorType, class AABB const &, bool);
-    MCAPI class Actor * fetchNearestEntityOfType(class Actor *, class AABB const &, enum ActorType);
+    MCAPI std::vector<class Actor *> const & fetchEntities2(enum class ActorType, class AABB const &, bool);
+    MCAPI class Actor * fetchNearestEntityOfType(class Actor *, class AABB const &, enum class ActorType);
     MCAPI bool findNextTopSolidBlockAbove(class BlockPos &);
     MCAPI bool findNextTopSolidBlockUnder(class BlockPos &);
     MCAPI void fireBlockChanged(class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *);
@@ -115,9 +115,9 @@ public:
     MCAPI short getHeightmap(int, int);
     MCAPI class Block const & getLiquidBlock(class BlockPos const &) const;
     MCAPI class Material const & getMaterial(int, int, int) const;
-    MCAPI bool getNextTickUpdateForPos(class BlockPos const &, enum TickingQueueType, struct Tick &) const;
+    MCAPI bool getNextTickUpdateForPos(class BlockPos const &, enum class TickingQueueType, struct Tick &) const;
     MCAPI float getSeenPercent(class Vec3 const &, class AABB const &);
-    MCAPI class BlockTickingQueue * getTickingQueue(class BlockPos const &, enum TickingQueueType) const;
+    MCAPI class BlockTickingQueue * getTickingQueue(class BlockPos const &, enum class TickingQueueType) const;
     MCAPI float getVisualLiquidHeight(class Vec3 const &);
     MCAPI bool hasBlock(class BlockPos const &) const;
     MCAPI bool hasBorderBlock(class BlockPos);
@@ -125,19 +125,19 @@ public:
     MCAPI bool hasChunksAt(struct Bounds const &) const;
     MCAPI bool hasChunksAt(class AABB const &) const;
     MCAPI bool hasChunksAt(class BlockPos const &, int) const;
-    MCAPI bool hasTickInCurrentTick(class BlockPos const &, enum TickingQueueType) const;
-    MCAPI bool hasTickInPendingTicks(class BlockPos const &, class Block const &, enum TickingQueueType) const;
-    MCAPI bool hasTickInPendingTicks(class BlockPos const &, class BlockLegacy const &, enum TickingQueueType) const;
-    MCAPI bool hasTickInPendingTicks(class BlockPos const &, enum TickingQueueType) const;
+    MCAPI bool hasTickInCurrentTick(class BlockPos const &, enum class TickingQueueType) const;
+    MCAPI bool hasTickInPendingTicks(class BlockPos const &, class Block const &, enum class TickingQueueType) const;
+    MCAPI bool hasTickInPendingTicks(class BlockPos const &, class BlockLegacy const &, enum class TickingQueueType) const;
+    MCAPI bool hasTickInPendingTicks(class BlockPos const &, enum class TickingQueueType) const;
     MCAPI bool hasTickInPendingTicks(class BlockPos const &, class BlockLegacy const &) const;
     MCAPI bool hasTickInPendingTicks(class BlockPos const &) const;
     MCAPI bool hasUntickedNeighborChunk(class ChunkPos const &, int) const;
     MCAPI bool isEmptyBlock(int, int, int);
     MCAPI bool isInWall(class Vec3 const &);
-    MCAPI bool isPositionUnderLiquid(class Vec3 const &, enum MaterialType);
+    MCAPI bool isPositionUnderLiquid(class Vec3 const &, enum class MaterialType);
     MCAPI bool isSolidBlockingBlock(class BlockPos const &) const;
     MCAPI bool isSolidBlockingBlock(int, int, int) const;
-    MCAPI bool isTouchingMaterial(class BlockPos const &, enum MaterialType) const;
+    MCAPI bool isTouchingMaterial(class BlockPos const &, enum class MaterialType) const;
     MCAPI bool isUnderWater(class Vec3 const &, class Block const &) const;
     MCAPI bool isUnobstructedByEntities(class AABB const &, class gsl::span<class gsl::not_null<class Actor const *>, -1>);
     MCAPI bool mayPlace(class Block const &, class BlockPos const &, unsigned char, class Actor *, bool);
@@ -160,9 +160,9 @@ public:
 
 //private:
     MCAPI bool _getBlockPermissions(class BlockPos const &, bool);
-    MCAPI float _getLiquidHeight(class BlockPos const &, enum MaterialType, bool);
+    MCAPI float _getLiquidHeight(class BlockPos const &, enum class MaterialType, bool);
     MCAPI struct Brightness _getRawBrightness(class BlockPos const &, struct Brightness, bool, bool) const;
-    MCAPI void _removeFromTickingQueue(class BlockPos const &, class Block const &, enum TickingQueueType);
+    MCAPI void _removeFromTickingQueue(class BlockPos const &, class Block const &, enum class TickingQueueType);
 
 protected:
 

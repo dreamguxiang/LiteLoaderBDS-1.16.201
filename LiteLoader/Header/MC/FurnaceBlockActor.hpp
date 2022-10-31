@@ -52,7 +52,7 @@ public:
     MCAPI static bool isItemAllowedInFuelSlot(int, class ItemStackBase const &, int);
 
 //protected:
-    MCAPI FurnaceBlockActor(enum BlockActorType, class BlockPos const &, class HashedString const &, enum LevelSoundEvent, enum ContainerType, int, class Block const &, class Block const &);
+    MCAPI FurnaceBlockActor(enum class BlockActorType, class BlockPos const &, class HashedString const &, enum class LevelSoundEvent, enum class ContainerType, int, class Block const &, class Block const &);
 
 //private:
     MCAPI class BlockPos _getPositionOfNeighbor(int);

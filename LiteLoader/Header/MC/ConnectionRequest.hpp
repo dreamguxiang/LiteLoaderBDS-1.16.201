@@ -35,7 +35,7 @@ public:
     MCAPI std::string getClientThirdPartyName() const;
     MCAPI std::string getDeviceId() const;
     MCAPI std::vector<class SerializedPersonaPieceHandle> getPersonaPieces() const;
-    MCAPI class std::unordered_map<enum persona::PieceType, class TintMapColor, struct std::hash<enum persona::PieceType>, struct std::equal_to<enum persona::PieceType>, class std::allocator<struct std::pair<enum persona::PieceType const, class TintMapColor>>> getPieceTintColors() const;
+    MCAPI class std::unordered_map<enum class persona::PieceType, class TintMapColor, struct std::hash<enum class persona::PieceType>, struct std::equal_to<enum class persona::PieceType>, class std::allocator<struct std::pair<enum class persona::PieceType const, class TintMapColor>>> getPieceTintColors() const;
     MCAPI std::string getSelfSignedId() const;
     MCAPI std::string getSkinAnimationData() const;
     MCAPI class mce::Color getSkinColor() const;

@@ -12,20 +12,20 @@ class NetworkPeer {
 #define AFTER_EXTRA
     // Add Member There
 public:
-    enum Reliability : int {
+    enum class Reliability : int {
         Reliable = 0x0,
         ReliableOrdered = 0x1,
         Unreliable = 0x2,
         UnreliableSequenced = 0x3,
     };
 
-    enum DataStatus : int {
+    enum class DataStatus : int {
         HasData = 0x0,
         NoData = 0x1,
         BrokenData = 0x2,
     };
 
-    enum NetworkLoad : __int32 {
+    enum class NetworkLoad : __int32 {
         Unrestricted = 0x0,
         Low = 0x1,
         Medium = 0x2,
@@ -52,8 +52,8 @@ public:
 
 public:
     /*0*/ virtual ~NetworkPeer();
-    /*1*/ virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility) = 0;
-    /*2*/ virtual enum NetworkPeer::DataStatus receivePacket(std::string &) = 0;
+    /*1*/ virtual void sendPacket(std::string const &, enum class NetworkPeer::Reliability, int, unsigned short, enum class Compressibility) = 0;
+    /*2*/ virtual enum class NetworkPeer::DataStatus receivePacket(std::string &) = 0;
     /*3*/ virtual struct NetworkPeer::NetworkStatus getNetworkStatus() = 0;
     /*4*/ virtual void update();
     /*5*/ virtual void flush(class std::function<void (void)> &&);

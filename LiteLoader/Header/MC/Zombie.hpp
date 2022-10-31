@@ -22,7 +22,7 @@ public:
 #endif
 
 public:
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~Zombie();
     /*32*/ virtual void __unk_vfn_32();
     /*44*/ virtual float getRidingHeight();
@@ -58,7 +58,7 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Zombie(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &);
-    MCAPI void setZombieType(enum Zombie::ZombieType);
+    MCAPI void setZombieType(enum class Zombie::ZombieType);
 
 //protected:
 

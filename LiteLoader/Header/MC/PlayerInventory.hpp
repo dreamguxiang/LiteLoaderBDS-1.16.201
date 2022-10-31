@@ -31,12 +31,12 @@ public:
     MCVAPI void containerSizeChanged(int);
     MCVAPI void createTransactionContext(class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)>, class std::function<void (void)>);
 #endif
-    MCAPI int getContainerSize(enum ContainerID) const;
+    MCAPI int getContainerSize(enum class ContainerID) const;
     MCAPI int getHotbarSize() const;
-    MCAPI class ItemStack const & getItem(int, enum ContainerID) const;
+    MCAPI class ItemStack const & getItem(int, enum class ContainerID) const;
     MCAPI int getItemCount(class std::function<bool (class ItemStack const &)>);
     MCAPI struct PlayerInventory::SlotData getSelectedSlot() const;
     MCAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
-    MCAPI void setItem(int, class ItemStack const &, enum ContainerID, bool);
+    MCAPI void setItem(int, class ItemStack const &, enum class ContainerID, bool);
 
 };

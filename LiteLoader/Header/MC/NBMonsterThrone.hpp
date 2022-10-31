@@ -24,7 +24,7 @@ public:
     /*0*/ virtual ~NBMonsterThrone();
     /*1*/ virtual void moveBoundingBox(int, int, int);
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual enum StructurePieceType getType() const;
+    /*3*/ virtual enum class StructurePieceType getType() const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*6*/ virtual void __unk_vfn_6();

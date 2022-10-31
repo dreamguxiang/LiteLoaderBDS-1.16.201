@@ -28,12 +28,12 @@ public:
     /*5*/ virtual class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest();
     /*6*/ virtual void onContainerScreenOpen(class ContainerScreenContext const &);
     /*7*/ virtual void onContainerScreenClose() = 0;
-    /*8*/ virtual class SparseContainer * initOpenContainer(class BlockSource &, enum ContainerEnumName, class ContainerWeakRef const &) = 0;
-    /*9*/ virtual void _addLegacyTransactionRequestSetItemSlot(enum ContainerType, int);
+    /*8*/ virtual class SparseContainer * initOpenContainer(class BlockSource &, enum class ContainerEnumName, class ContainerWeakRef const &) = 0;
+    /*9*/ virtual void _addLegacyTransactionRequestSetItemSlot(enum class ContainerType, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERBASE
 #endif
     MCAPI static class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest(class Player *);
-    MCAPI static bool setPlayerContainer(class Player &, enum ContainerType, int, class ItemStack const &, class ItemStack &, class std::function<void (class ItemStack const &)> const &);
+    MCAPI static bool setPlayerContainer(class Player &, enum class ContainerType, int, class ItemStack const &, class ItemStack &, class std::function<void (class ItemStack const &)> const &);
 
 //protected:
     MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const &);

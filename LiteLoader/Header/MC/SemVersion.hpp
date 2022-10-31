@@ -11,7 +11,26 @@
 class SemVersion {
 
 #define AFTER_EXTRA
-
+public:
+    enum class MatchType : int {
+        Full = 0x0,
+        Partial = 0x1,
+        None = 0x2,
+    };
+    enum class ParseOption : int {
+        AllowWildcards = 0x0,
+        NoWildcards = 0x1,
+    };
+    struct any_version_constructor {
+    };
+    unsigned __int16 mMajor;
+    unsigned __int16 mMinor;
+    unsigned __int16 mPatch;
+    std::string mPreRelease;
+    std::string mBuildMeta;
+    std::string mFullVersionString;
+    bool mValidVersion;
+    bool mAnyVersion;
 #undef AFTER_EXTRA
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEMVERSION
@@ -24,9 +43,9 @@ public:
     MCAPI class SemVersion & operator=(class SemVersion const &);
     MCAPI bool operator==(class SemVersion const &) const;
     MCAPI ~SemVersion();
-    MCAPI static enum SemVersion::MatchType fromJson(class Json::Value const &, class SemVersion &, enum SemVersion::ParseOption);
-    MCAPI static enum SemVersion::MatchType fromJsonArray(class Json::Value const &, class SemVersion &);
-    MCAPI static enum SemVersion::MatchType fromString(std::string const &, class SemVersion &, enum SemVersion::ParseOption);
+    MCAPI static enum class SemVersion::MatchType fromJson(class Json::Value const &, class SemVersion &, enum class SemVersion::ParseOption);
+    MCAPI static enum class SemVersion::MatchType fromJsonArray(class Json::Value const &, class SemVersion &);
+    MCAPI static enum class SemVersion::MatchType fromString(std::string const &, class SemVersion &, enum class SemVersion::ParseOption);
 
 //private:
     MCAPI void _parseVersionToString();

@@ -22,16 +22,16 @@ public:
 public:
     /*0*/ virtual ~BlockEventListener();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual enum EventResult onBlockDestroyedByPlayer(class Player &, std::string, class BlockPos const &);
+    /*2*/ virtual enum class EventResult onBlockDestroyedByPlayer(class Player &, std::string, class BlockPos const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTLISTENER
-    MCVAPI enum EventResult onBlockDestructionStarted(class Player &, class BlockPos const &);
-    MCVAPI enum EventResult onBlockDestructionStopped(class Player &, class BlockPos const &, int);
-    MCVAPI enum EventResult onBlockExploded(class BlockPos const &, class Block const &, class Actor *);
-    MCVAPI enum EventResult onBlockInteractedWith(class Player &, class BlockPos const &);
-    MCVAPI enum EventResult onBlockModified(class BlockPos const &, class Block const &, class Block const &);
-    MCVAPI enum EventResult onBlockMovedByPiston(class BlockPos const &, class BlockPos const &, enum PistonBlockActor::PistonState);
-    MCVAPI enum EventResult onBlockPlacedByPlayer(class Player &, class Block const &, class BlockPos const &, bool);
-    MCVAPI enum EventResult onUnknownBlockReceived(class Level &, struct NewBlockID const &, unsigned short);
+    MCVAPI enum class EventResult onBlockDestructionStarted(class Player &, class BlockPos const &);
+    MCVAPI enum class EventResult onBlockDestructionStopped(class Player &, class BlockPos const &, int);
+    MCVAPI enum class EventResult onBlockExploded(class BlockPos const &, class Block const &, class Actor *);
+    MCVAPI enum class EventResult onBlockInteractedWith(class Player &, class BlockPos const &);
+    MCVAPI enum class EventResult onBlockModified(class BlockPos const &, class Block const &, class Block const &);
+    MCVAPI enum class EventResult onBlockMovedByPiston(class BlockPos const &, class BlockPos const &, enum class PistonBlockActor::PistonState);
+    MCVAPI enum class EventResult onBlockPlacedByPlayer(class Player &, class Block const &, class BlockPos const &, bool);
+    MCVAPI enum class EventResult onUnknownBlockReceived(class Level &, struct NewBlockID const &, unsigned short);
 #endif
 
 };

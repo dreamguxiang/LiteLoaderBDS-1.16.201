@@ -37,8 +37,8 @@ public:
     /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCONTAINERMODEL
 #endif
-    MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player &, struct ActorUniqueID, enum ContainerCategory);
-    MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player &, enum BlockActorType, class BlockPos const &, enum ContainerCategory);
+    MCAPI LevelContainerModel(enum class ContainerEnumName, int, class Player &, struct ActorUniqueID, enum class ContainerCategory);
+    MCAPI LevelContainerModel(enum class ContainerEnumName, int, class Player &, enum class BlockActorType, class BlockPos const &, enum class ContainerCategory);
     MCAPI static class Container * getContainerHelper(class Player &, struct ActorUniqueID const &);
 
 //private:

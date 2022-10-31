@@ -83,8 +83,8 @@ public:
     MCVAPI bool isDoorBlock() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
-    MCAPI DoorBlock(std::string const &, int, class Material const &, enum DoorBlock::DoorType);
-    MCAPI enum Direction::Type getBlockedDirection(class BlockSource &, class BlockPos const &) const;
+    MCAPI DoorBlock(std::string const &, int, class Material const &, enum class DoorBlock::DoorType);
+    MCAPI enum class Direction::Type getBlockedDirection(class BlockSource &, class BlockPos const &) const;
     MCAPI void getDoorBlocks(class BlockSource &, class BlockPos const &, class Block const *&, class Block const *&) const;
     MCAPI bool isToggled(class BlockSource &, class BlockPos const &) const;
     MCAPI void setToggled(class BlockSource &, class BlockPos const &, bool) const;

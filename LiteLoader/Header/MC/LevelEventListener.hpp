@@ -21,15 +21,15 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTLISTENER
-    MCVAPI enum EventResult onLevelAddedActor(class Level &, class Actor &);
-    MCVAPI enum EventResult onLevelAddedPlayer(class Level &, class Player &);
-    MCVAPI enum EventResult onLevelBiomesRegistered(class BiomeRegistry &);
-    MCVAPI enum EventResult onLevelInitialized(class Level &);
-    MCVAPI enum EventResult onLevelRemovedActor(class Level &, class Actor &);
-    MCVAPI enum EventResult onLevelRemovedPlayer(class Level &, class Player &);
-    MCVAPI enum EventResult onLevelSaveData(class Level &, class CompoundTag &);
-    MCVAPI enum EventResult onLevelTick();
-    MCVAPI enum EventResult onLevelWeatherChange(std::string const &, bool, bool);
+    MCVAPI enum class EventResult onLevelAddedActor(class Level &, class Actor &);
+    MCVAPI enum class EventResult onLevelAddedPlayer(class Level &, class Player &);
+    MCVAPI enum class EventResult onLevelBiomesRegistered(class BiomeRegistry &);
+    MCVAPI enum class EventResult onLevelInitialized(class Level &);
+    MCVAPI enum class EventResult onLevelRemovedActor(class Level &, class Actor &);
+    MCVAPI enum class EventResult onLevelRemovedPlayer(class Level &, class Player &);
+    MCVAPI enum class EventResult onLevelSaveData(class Level &, class CompoundTag &);
+    MCVAPI enum class EventResult onLevelTick();
+    MCVAPI enum class EventResult onLevelWeatherChange(std::string const &, bool, bool);
 #endif
 
 };

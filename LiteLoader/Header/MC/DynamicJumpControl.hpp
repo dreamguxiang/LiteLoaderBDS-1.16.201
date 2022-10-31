@@ -25,8 +25,8 @@ public:
     /*2*/ virtual void tick(class JumpControlComponent &, class Mob &);
     /*3*/ virtual int getJumpDelay(class JumpControlComponent const &, class Mob const &) const;
     /*4*/ virtual float getJumpPower(class JumpControlComponent const &, class Mob const &) const;
-    /*5*/ virtual enum JumpType getJumpType(class JumpControlComponent const &, class Mob const &) const;
-    /*6*/ virtual void setJumpType(class JumpControlComponent &, class Mob &, enum JumpType);
+    /*5*/ virtual enum class JumpType getJumpType(class JumpControlComponent const &, class Mob const &) const;
+    /*6*/ virtual void setJumpType(class JumpControlComponent &, class Mob &, enum class JumpType);
     /*7*/ virtual void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICJUMPCONTROL
 #endif

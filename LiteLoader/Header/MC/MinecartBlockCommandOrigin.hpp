@@ -27,7 +27,7 @@ public:
     /*4*/ virtual class Vec3 getWorldPosition() const;
     /*9*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*16*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /*21*/ virtual enum CommandOriginType getOriginType() const;
+    /*21*/ virtual enum class CommandOriginType getOriginType() const;
     /*26*/ virtual class CommandBlockActor * getBlockEntity() const;
     /*27*/ virtual class BaseCommandBlock * getBaseCommandBlock() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTBLOCKCOMMANDORIGIN

@@ -25,7 +25,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCE
     MCVAPI void onAppResumed();
     MCVAPI void onAppSuspended();
-    MCVAPI void onCriticalDiskError(bool, enum Core::LevelStorageState const &);
+    MCVAPI void onCriticalDiskError(bool, enum class Core::LevelStorageState const &);
     MCVAPI void onGameModeChanged();
     MCVAPI void onGameSessionReset();
     MCVAPI void onInternetUpdate();

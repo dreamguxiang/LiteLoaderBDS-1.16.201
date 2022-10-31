@@ -21,13 +21,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FACEDIRECTIONALBLOCK
-    MCVAPI enum Flip getFaceFlip(unsigned char, class Block const &) const;
+    MCVAPI enum class Flip getFaceFlip(unsigned char, class Block const &) const;
     MCVAPI unsigned char getMappedFace(unsigned char, class Block const &) const;
     MCVAPI class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     MCVAPI class Block const & getRenderBlock() const;
     MCVAPI bool isValidAuxValue(int) const;
 #endif
-    MCAPI static enum Flip getFaceFlipStatic(unsigned char, class Block const &, bool);
+    MCAPI static enum class Flip getFaceFlipStatic(unsigned char, class Block const &, bool);
     MCAPI static unsigned char getMappedFaceStatic(unsigned char, class Block const &, bool);
 
 };

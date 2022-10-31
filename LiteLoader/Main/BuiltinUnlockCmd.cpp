@@ -89,9 +89,9 @@ TClasslessInstanceHook(void, "?addEnumValueConstraints@CommandRegistry@@QEAAXAEB
                        std::string const& enumName, std::vector<std::string> const& enumValues, SemanticConstraint constraint) {
     if (!LL::globalConfig.enableUnlockCmd)
         return original(this, enumName, enumValues, constraint);
-    if (constraint & SemanticConstraint::RequiresCheatsEnabled) {
-        constraint = (SemanticConstraint)(constraint & (~SemanticConstraint::RequiresCheatsEnabled));
-        constraint = (SemanticConstraint)(constraint | SemanticConstraint::RequiresElevatedPermissions);
+    if ((unsigned char)constraint & (unsigned char)SemanticConstraint::RequiresCheatsEnabled) {
+       constraint = (SemanticConstraint)((unsigned char)constraint & (~(unsigned char)SemanticConstraint::RequiresCheatsEnabled));
+       constraint = (SemanticConstraint)((unsigned char)constraint | (unsigned char)SemanticConstraint::RequiresElevatedPermissions);
     }
     // if (constraint & SemanticConstraint::RequiresHostPermissions)
     //{

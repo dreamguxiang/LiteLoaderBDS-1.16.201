@@ -48,7 +48,7 @@ public:
 #endif
 
 //private:
-    MCAPI enum ItemColor _getColorIndex(class ItemDescriptor const &) const;
+    MCAPI enum class ItemColor _getColorIndex(class ItemDescriptor const &) const;
 
 private:
 

@@ -35,13 +35,13 @@ public:
     /*5*/ virtual class Level * getLevel() const;
     /*6*/ virtual class Dimension * getDimension() const;
     /*7*/ virtual class Actor * getEntity() const;
-    /*8*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /*8*/ virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /*9*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*16*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*17*/ virtual bool isSelectorExpansionAllowed() const;
-    /*21*/ virtual enum CommandOriginType getOriginType() const;
+    /*21*/ virtual enum class CommandOriginType getOriginType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMANDORIGIN
 #endif
-    MCAPI ServerCommandOrigin(std::string const &, class ServerLevel &, enum CommandPermissionLevel, class Dimension *);
+    MCAPI ServerCommandOrigin(std::string const &, class ServerLevel &, enum class CommandPermissionLevel, class Dimension *);
 
 };

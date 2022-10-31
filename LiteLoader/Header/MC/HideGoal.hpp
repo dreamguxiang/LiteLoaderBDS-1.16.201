@@ -31,7 +31,7 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*16*/ virtual unsigned __int64 _getRepathTime() const;
-    /*18*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
+    /*18*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum class POIType) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HIDEGOAL
 #endif
 

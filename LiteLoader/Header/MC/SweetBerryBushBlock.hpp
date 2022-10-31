@@ -46,7 +46,7 @@ public:
     /*52*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /*58*/ virtual void __unk_vfn_58();
     /*65*/ virtual void __unk_vfn_65();
-    /*67*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    /*67*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /*69*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*73*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /*74*/ virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
@@ -75,8 +75,8 @@ public:
     /*163*/ virtual void __unk_vfn_163();
     /*165*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*166*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /*167*/ virtual enum BlockRenderLayer getRenderLayer() const;
-    /*168*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*167*/ virtual enum class BlockRenderLayer getRenderLayer() const;
+    /*168*/ virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*174*/ virtual void __unk_vfn_174();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWEETBERRYBUSHBLOCK
     MCVAPI bool canBeSilkTouched() const;

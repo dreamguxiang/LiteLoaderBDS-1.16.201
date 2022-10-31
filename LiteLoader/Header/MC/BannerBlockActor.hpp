@@ -43,7 +43,7 @@ public:
     MCAPI static std::string const TAG_PATTERN;
     MCAPI static std::string const TAG_PATTERNS;
     MCAPI static std::string const TAG_TYPE;
-    MCAPI static enum BannerBlockType getBannerType(class CompoundTag const *);
+    MCAPI static enum class BannerBlockType getBannerType(class CompoundTag const *);
     MCAPI static int getBaseColor(class ItemStack const &);
     MCAPI static int getPatternCount(class CompoundTag const *);
     MCAPI static bool isDefaultBanner(class ItemStackBase const &);

@@ -22,26 +22,26 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDATA
 #endif
-    MCAPI LevelData(class LevelSettings const &, std::string const &, enum GeneratorType, class BlockPos const &, bool, enum EducationEditionOffer, float, float);
+    MCAPI LevelData(class LevelSettings const &, std::string const &, enum class GeneratorType, class BlockPos const &, bool, enum class EducationEditionOffer, float, float);
     MCAPI LevelData();
     MCAPI struct LevelDataValue const * _getValue(class HashedString const &) const;
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
     MCAPI class BaseGameVersion const & getBaseGameVersion() const;
-    MCAPI enum GameType getGameType() const;
-    MCAPI enum GeneratorType getGenerator() const;
+    MCAPI enum class GameType getGameType() const;
+    MCAPI enum class GeneratorType getGenerator() const;
     MCAPI unsigned int getSeed() const;
     MCAPI class BlockPos const & getSpawnPos() const;
     MCAPI void getTagData(class CompoundTag const &);
     MCAPI class LevelData & operator=(class LevelData &&);
     MCAPI void setEducationOid(std::string const &);
-    MCAPI void setGameType(enum GameType);
-    MCAPI void setGenerator(enum GeneratorType);
+    MCAPI void setGameType(enum class GameType);
+    MCAPI void setGenerator(enum class GeneratorType);
     MCAPI void setSeed(unsigned int);
     MCAPI void setSpawnPos(class BlockPos const &);
     MCAPI void setTagData(class CompoundTag &) const;
     MCAPI void touchLastLoadedWithVersion();
-    MCAPI void v1_read(class RakNet::BitStream &, enum StorageVersion);
+    MCAPI void v1_read(class RakNet::BitStream &, enum class StorageVersion);
     MCAPI ~LevelData();
 
 //private:

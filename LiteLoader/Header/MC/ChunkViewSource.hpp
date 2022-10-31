@@ -24,13 +24,13 @@ public:
     /*0*/ virtual ~ChunkViewSource();
     /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
     /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random &);
-    /*5*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode);
+    /*5*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum class ChunkSource::LoadMode);
     /*14*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*17*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKVIEWSOURCE
 #endif
     MCAPI ChunkViewSource(class ChunkSource &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &, struct Bounds const &);
-    MCAPI ChunkViewSource(class ChunkSource &, enum ChunkSource::LoadMode);
+    MCAPI ChunkViewSource(class ChunkSource &, enum class ChunkSource::LoadMode);
     MCAPI void move(struct Bounds const &, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
     MCAPI void move(class BlockPos const &, class BlockPos const &, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
     MCAPI void move(class BlockPos const &, int, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);

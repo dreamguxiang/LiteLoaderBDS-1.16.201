@@ -48,8 +48,8 @@ public:
     MCAPI int _countItems() const;
     MCAPI void _ensureTickingOrder(class BlockSource &, int);
     MCAPI void _tick(class BlockSource &, int);
-    MCAPI bool isAttachedToContainerType(class BlockSource &, enum ContainerType);
-    MCAPI bool isSourceOfContainerType(class BlockSource &, enum ContainerType);
+    MCAPI bool isAttachedToContainerType(class BlockSource &, enum class ContainerType);
+    MCAPI bool isSourceOfContainerType(class BlockSource &, enum class ContainerType);
 
 private:
 

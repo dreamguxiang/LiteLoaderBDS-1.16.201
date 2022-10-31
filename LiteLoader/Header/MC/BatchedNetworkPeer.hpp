@@ -22,8 +22,8 @@ public:
 
 public:
     /*0*/ virtual ~BatchedNetworkPeer();
-    /*1*/ virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
-    /*2*/ virtual enum NetworkPeer::DataStatus receivePacket(std::string &);
+    /*1*/ virtual void sendPacket(std::string const &, enum class NetworkPeer::Reliability, int, unsigned short, enum class Compressibility);
+    /*2*/ virtual enum class NetworkPeer::DataStatus receivePacket(std::string &);
     /*3*/ virtual struct NetworkPeer::NetworkStatus getNetworkStatus();
     /*4*/ virtual void update();
     /*5*/ virtual void flush(class std::function<void (void)> &&);

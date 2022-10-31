@@ -39,7 +39,7 @@ public:
     MCAPI bool init(class Json::Value &);
 
 //private:
-    MCAPI enum CameraItemComponentLegacy::UseAction _tryPlace(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char, class Vec3 &) const;
+    MCAPI enum class CameraItemComponentLegacy::UseAction _tryPlace(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char, class Vec3 &) const;
 
 private:
 

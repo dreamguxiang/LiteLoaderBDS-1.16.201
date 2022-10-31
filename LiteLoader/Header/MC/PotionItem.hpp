@@ -42,7 +42,7 @@ public:
     /*72*/ virtual void __unk_vfn_72();
     /*73*/ virtual void __unk_vfn_73();
     /*76*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*78*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    /*78*/ virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /*87*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*88*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
     /*101*/ virtual void __unk_vfn_101();
@@ -51,7 +51,7 @@ public:
     /*112*/ virtual class Item & setIcon(std::string const &, int);
     /*117*/ virtual void __unk_vfn_117();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTIONITEM
-    MCVAPI enum Potion::PotionType getPotionType() const;
+    MCVAPI enum class Potion::PotionType getPotionType() const;
     MCVAPI bool uniqueAuxValues() const;
 #endif
     MCAPI PotionItem(std::string const &, int);

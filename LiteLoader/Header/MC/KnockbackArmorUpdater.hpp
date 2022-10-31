@@ -41,7 +41,7 @@ public:
     /*18*/ virtual void __unk_vfn_18();
     /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual void __unk_vfn_20();
-    /*21*/ virtual enum EventResult onActorEquippedArmor(class Actor &, class ItemInstance const &, enum ArmorSlot);
+    /*21*/ virtual enum class EventResult onActorEquippedArmor(class Actor &, class ItemInstance const &, enum class ArmorSlot);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KNOCKBACKARMORUPDATER
 #endif
 

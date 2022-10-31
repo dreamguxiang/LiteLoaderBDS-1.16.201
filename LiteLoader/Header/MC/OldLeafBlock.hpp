@@ -63,7 +63,7 @@ public:
     /*157*/ virtual void __unk_vfn_157();
     /*160*/ virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /*163*/ virtual void __unk_vfn_163();
-    /*168*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*168*/ virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*173*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*174*/ virtual void __unk_vfn_174();
     /*178*/ virtual class ItemInstance getExtraResourceItem(class Block const &) const;

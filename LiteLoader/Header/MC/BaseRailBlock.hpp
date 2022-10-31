@@ -68,7 +68,7 @@ public:
     /*158*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /*161*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*163*/ virtual void __unk_vfn_163();
-    /*168*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*168*/ virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*174*/ virtual void __unk_vfn_174();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASERAILBLOCK
     MCVAPI bool canSpawnOn() const;

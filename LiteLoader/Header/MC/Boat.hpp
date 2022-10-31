@@ -21,14 +21,14 @@ public:
 #endif
 
 public:
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /*2*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
+    /*2*/ virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~Boat();
     /*11*/ virtual void remove();
     /*32*/ virtual void __unk_vfn_32();
     /*40*/ virtual void normalTick();
     /*46*/ virtual void addRider(class Actor &);
-    /*48*/ virtual std::string getExitTip(std::string const &, enum InputMode) const;
+    /*48*/ virtual std::string getExitTip(std::string const &, enum class InputMode) const;
     /*55*/ virtual void __unk_vfn_55();
     /*62*/ virtual void __unk_vfn_62();
     /*74*/ virtual float getShadowHeightOffs();
@@ -63,16 +63,16 @@ public:
     MCAPI Boat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &);
     MCAPI void computePaddleForcesBasedOnGaze(class Vec3 &, float &, float &, float, float);
     MCAPI void destroy(class Actor *);
-    MCAPI float getRowingTime(enum Side) const;
-    MCAPI bool setPaddleForce(enum Side, float);
-    MCAPI bool setPaddleState(enum Side, bool);
-    MCAPI void setRowingTime(enum Side, float);
+    MCAPI float getRowingTime(enum class Side) const;
+    MCAPI bool setPaddleForce(enum class Side, float);
+    MCAPI bool setPaddleState(enum class Side, bool);
+    MCAPI void setRowingTime(enum class Side, float);
 
 //private:
     MCAPI void _computePaddleForce(float &, float &, float, float);
     MCAPI void _control();
     MCAPI void _move();
-    MCAPI void _paddleControl(enum Side, class Vec3 &, class Vec3 &);
+    MCAPI void _paddleControl(enum class Side, class Vec3 &, class Vec3 &);
 
 private:
 

@@ -22,7 +22,7 @@ public:
 #endif
 
 public:
-    /*3*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*3*/ virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~ThrownPotion();
     /*32*/ virtual void __unk_vfn_32();
     /*55*/ virtual void __unk_vfn_55();

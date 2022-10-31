@@ -27,8 +27,8 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual enum EventResult onPlayerAuthInputReceived(class Player &, class PlayerAuthInputPacket const &);
-    /*8*/ virtual enum EventResult onPlayerAuthInputApplied(class Player &, class PlayerAuthInputPacket const &);
+    /*7*/ virtual enum class EventResult onPlayerAuthInputReceived(class Player &, class PlayerAuthInputPacket const &);
+    /*8*/ virtual enum class EventResult onPlayerAuthInputApplied(class Player &, class PlayerAuthInputPacket const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERREWINDLISTENER
 #endif
 

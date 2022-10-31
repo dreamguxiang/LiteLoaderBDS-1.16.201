@@ -57,7 +57,7 @@ public:
     MCVAPI bool shutdown();
     MCVAPI ~ScriptEngine();
 #endif
-    MCAPI ScriptEngine(enum ScriptApi::ApiScriptType);
+    MCAPI ScriptEngine(enum class ScriptApi::ApiScriptType);
     MCAPI bool deserializeScriptObjectHandleToJson(class ScriptApi::ScriptObjectHandle const &, class Json::Value &);
     MCAPI bool fireEventToScript(class EventInfo const &, class ScriptApi::ScriptObjectHandle &&);
     MCAPI bool helpDefinePosition(class BlockPos const &, class ScriptApi::ScriptObjectHandle &);

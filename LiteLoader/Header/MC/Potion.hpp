@@ -22,12 +22,12 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTION
 #endif
-    MCAPI void appendFormattedPotionText(std::string &, enum Potion::PotionType, enum Potion::PotionVariant, class Player const &, float) const;
-    MCAPI std::string effectDurationToString(enum Potion::PotionType, float, class MobEffectInstance const &) const;
+    MCAPI void appendFormattedPotionText(std::string &, enum class Potion::PotionType, enum class Potion::PotionVariant, class Player const &, float) const;
+    MCAPI std::string effectDurationToString(enum class Potion::PotionType, float, class MobEffectInstance const &) const;
     MCAPI std::string effectPotencyToString(class MobEffectInstance const &) const;
-    MCAPI std::string getDescriptionId(enum Potion::PotionType) const;
-    MCAPI std::string getPotentencyDescription(enum Potion::PotionType, float) const;
-    MCAPI std::string getPotentencyDescription(enum Potion::PotionType, float, std::string const &, class MobEffectInstance const &) const;
+    MCAPI std::string getDescriptionId(enum class Potion::PotionType) const;
+    MCAPI std::string getPotentencyDescription(enum class Potion::PotionType, float) const;
+    MCAPI std::string getPotentencyDescription(enum class Potion::PotionType, float, std::string const &, class MobEffectInstance const &) const;
     MCAPI int getPotionId() const;
     MCAPI ~Potion();
     MCAPI static class std::shared_ptr<class Potion const> const Awkward;
@@ -78,7 +78,7 @@ public:
     MCAPI static void initPotions();
 
 //private:
-    MCAPI Potion(std::string const &, std::vector<std::string>, std::vector<class MobEffectInstance>, enum Potion::PotionVariant);
+    MCAPI Potion(std::string const &, std::vector<std::string>, std::vector<class MobEffectInstance>, enum class Potion::PotionVariant);
     MCAPI static void addPotion(class std::shared_ptr<class Potion const>);
 
 private:

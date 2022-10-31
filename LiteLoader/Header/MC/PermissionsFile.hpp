@@ -23,16 +23,16 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONSFILE
 #endif
-    MCAPI void applyPlayerPermissionsFromDisk(class Player &, enum CommandPermissionLevel);
-    MCAPI std::vector<std::string> getXUIDsByPermission(enum PlayerPermissionLevel) const;
-    MCAPI bool isPermissionsSet(std::string const &, enum PlayerPermissionLevel) const;
-    MCAPI void persistPlayerPermissionsToDisk(class Player const &, enum PlayerPermissionLevel);
-    MCAPI void persistPlayerPermissionsToDisk(std::string const &, enum PlayerPermissionLevel);
-    MCAPI enum FileReadResult reload();
+    MCAPI void applyPlayerPermissionsFromDisk(class Player &, enum class CommandPermissionLevel);
+    MCAPI std::vector<std::string> getXUIDsByPermission(enum class PlayerPermissionLevel) const;
+    MCAPI bool isPermissionsSet(std::string const &, enum class PlayerPermissionLevel) const;
+    MCAPI void persistPlayerPermissionsToDisk(class Player const &, enum class PlayerPermissionLevel);
+    MCAPI void persistPlayerPermissionsToDisk(std::string const &, enum class PlayerPermissionLevel);
+    MCAPI enum class FileReadResult reload();
 
 //private:
-    MCAPI class std::tuple<enum FileReadResult, class Json::Value> readPermissionFile();
-    MCAPI void setDefaultPlayerPermission(class Player &, enum CommandPermissionLevel);
+    MCAPI class std::tuple<enum class FileReadResult, class Json::Value> readPermissionFile();
+    MCAPI void setDefaultPlayerPermission(class Player &, enum class CommandPermissionLevel);
 
 private:
 

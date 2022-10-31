@@ -27,9 +27,9 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual bool hasAnimationFinished() const;
     /*7*/ virtual class ActorAnimationPlayer * findAnimation(class HashedString const &);
-    /*8*/ virtual enum ActorAnimationType getAnimationType() const;
+    /*8*/ virtual enum class ActorAnimationType getAnimationType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTEMPTYACTORANIMATIONPLAYER
-    MCVAPI void applyToPose(class RenderParams &, class std::unordered_map<enum SkeletalHierarchyIndex, std::vector<class BoneOrientation>, struct std::hash<enum SkeletalHierarchyIndex>, struct std::equal_to<enum SkeletalHierarchyIndex>, class std::allocator<struct std::pair<enum SkeletalHierarchyIndex const, std::vector<class BoneOrientation>>>> &, float);
+    MCVAPI void applyToPose(class RenderParams &, class std::unordered_map<enum class SkeletalHierarchyIndex, std::vector<class BoneOrientation>, struct std::hash<enum class SkeletalHierarchyIndex>, struct std::equal_to<enum class SkeletalHierarchyIndex>, class std::allocator<struct std::pair<enum class SkeletalHierarchyIndex const, std::vector<class BoneOrientation>>>> &, float);
     MCVAPI void resetAnimation();
 #endif
     MCAPI DefaultEmptyActorAnimationPlayer();

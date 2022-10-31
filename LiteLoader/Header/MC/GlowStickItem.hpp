@@ -49,7 +49,7 @@ public:
     /*24*/ virtual class Item & setStackedByData(bool);
     /*25*/ virtual class Item & setMaxDamage(int);
     /*26*/ virtual class Item & setHandEquipped();
-    /*27*/ virtual class Item & setUseAnimation(enum UseAnimation);
+    /*27*/ virtual class Item & setUseAnimation(enum class UseAnimation);
     /*28*/ virtual class Item & setMaxUseDuration(int);
     /*29*/ virtual class Item & setRequiresWorldBuilder(bool);
     /*30*/ virtual class Item & setExplodable(bool);
@@ -100,7 +100,7 @@ public:
     /*75*/ virtual class ItemDescriptor buildDescriptor(short, class CompoundTag const *) const;
     /*76*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*77*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*78*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    /*78*/ virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /*79*/ virtual void __unk_vfn_79();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
@@ -148,6 +148,6 @@ public:
     /*123*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, float, float, float) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWSTICKITEM
 #endif
-    MCAPI static enum ItemColor const COLORS[];
+    MCAPI static enum class ItemColor const COLORS[];
 
 };

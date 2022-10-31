@@ -29,7 +29,7 @@ public:
     MCAPI void update(class Level &);
 
 //private:
-    MCAPI enum AddTickingAreaStatus _addArea(class Dimension &, std::string const &, struct Bounds const &, bool);
+    MCAPI enum class AddTickingAreaStatus _addArea(class Dimension &, std::string const &, struct Bounds const &, bool);
     MCAPI void _deletePendingArea(class LevelStorage &, struct PendingArea const &);
     MCAPI bool _hasPendingTickingAreaNamed(std::string const &, std::vector<struct PendingArea> const &) const;
     MCAPI void _processAdds(class Level &);

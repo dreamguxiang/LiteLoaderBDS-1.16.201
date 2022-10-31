@@ -37,7 +37,7 @@ public:
     /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINERMODELBASE
 #endif
-    MCAPI PlayerUIContainerModelBase(enum ContainerEnumName, class Player &, int, enum ContainerCategory);
+    MCAPI PlayerUIContainerModelBase(enum class ContainerEnumName, class Player &, int, enum class ContainerCategory);
 
 //protected:
     MCAPI void _refreshSlot(bool, int);

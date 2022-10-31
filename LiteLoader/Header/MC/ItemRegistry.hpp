@@ -24,13 +24,13 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMREGISTRY
 #endif
     MCAPI static class gsl::basic_string_span<char const, -1> const MINECRAFT_NAMESPACE;
-    MCAPI static std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &)>, bool, enum ItemType, enum PackType);
+    MCAPI static std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &)>, bool, enum class ItemType, enum class PackType);
     MCAPI static void clearItemAndCreativeItemRegistry();
     MCAPI static class WeakPtr<class Item> getItem(short);
     MCAPI static struct std::pair<std::string, int> getNameFromAlias(class HashedString const &, int);
     MCAPI static class HashedString getNameFromLegacyID(short);
     MCAPI static void initCreativeItemsServer(class ActorInfoRegistry *, class BlockDefinitionGroup *, bool, class BaseGameVersion const &, class Experiments const &, class std::function<void (class ActorInfoRegistry *, class BlockDefinitionGroup *, class CreativeItemRegistry *, bool, class BaseGameVersion const &, class Experiments const &)>);
-    MCAPI static void initServerData(class ResourcePackManager &, class Experiments const &, enum ItemType);
+    MCAPI static void initServerData(class ResourcePackManager &, class Experiments const &, enum class ItemType);
     MCAPI static class WeakPtr<class Item> lookupByName(int &, std::string const &);
     MCAPI static class WeakPtr<class Item> lookupByName(int &, int &, std::string const &);
     MCAPI static class WeakPtr<class Item> lookupByNameNoAlias(std::string const &);
@@ -50,7 +50,7 @@ public:
     MCAPI static void unregisterItem(class HashedString const &);
 
 //private:
-    MCAPI static void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &)>, bool, enum ItemType, enum PackType);
+    MCAPI static void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &)>, bool, enum class ItemType, enum class PackType);
 
 private:
     MCAPI static class std::unordered_map<class HashedString, class std::function<std::string (short)>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::function<std::string (short)>>>> mComplexAliasLookupMap;

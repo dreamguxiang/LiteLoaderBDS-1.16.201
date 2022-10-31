@@ -11,7 +11,8 @@
 class BaseGameVersion {
 
 #define AFTER_EXTRA
-
+public:
+    SemVersion mSemVersion;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEGAMEVERSION
 public:
@@ -30,6 +31,6 @@ public:
     MCAPI ~BaseGameVersion();
     MCAPI static class BaseGameVersion const ANY;
     MCAPI static class BaseGameVersion const EMPTY;
-    MCAPI static enum SemVersion::MatchType fromString(std::string const &, class BaseGameVersion &);
+    MCAPI static enum class SemVersion::MatchType fromString(std::string const &, class BaseGameVersion &);
 
 };

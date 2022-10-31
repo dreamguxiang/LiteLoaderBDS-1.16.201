@@ -42,7 +42,7 @@ public:
     /*73*/ virtual void __unk_vfn_73();
     /*76*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*77*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*78*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    /*78*/ virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /*79*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
     /*87*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*92*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const &) const;
@@ -66,12 +66,12 @@ public:
 
 //private:
     MCAPI bool _emptyBucket(class BlockSource &, class Block const &, class BlockPos const &, class Actor *, class ItemStack const &, unsigned char) const;
-    MCAPI bool _supportsEntityType(enum ActorType const &, class HashedString &) const;
+    MCAPI bool _supportsEntityType(enum class ActorType const &, class HashedString &) const;
     MCAPI bool _takeLiquid(class ItemStack &, class Actor &, class BlockPos const &) const;
 
 protected:
 
 private:
-    MCAPI static std::vector<struct std::pair<enum BucketFillType, enum ActorType>> const mFillTypeToEntityType;
+    MCAPI static std::vector<struct std::pair<enum class BucketFillType, enum class ActorType>> const mFillTypeToEntityType;
 
 };

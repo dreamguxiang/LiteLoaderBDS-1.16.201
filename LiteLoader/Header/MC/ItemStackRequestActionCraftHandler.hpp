@@ -22,16 +22,16 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTHANDLER
 #endif
-    MCAPI enum ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const &);
+    MCAPI enum class ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const &);
     MCAPI class ItemInstance * _initSingleCraftResult(class ItemInstance const &);
-    MCAPI enum ItemStackNetResult endRequest(enum ItemStackNetResult);
-    MCAPI enum ItemStackNetResult handleConsume(class ItemStackRequestActionConsume const &);
-    MCAPI enum ItemStackNetResult handleCraftResults(class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const &);
+    MCAPI enum class ItemStackNetResult endRequest(enum class ItemStackNetResult);
+    MCAPI enum class ItemStackNetResult handleConsume(class ItemStackRequestActionConsume const &);
+    MCAPI enum class ItemStackNetResult handleCraftResults(class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const &);
     MCAPI void onContainerScreenOpen(class ContainerScreenContext const &);
     MCAPI ~ItemStackRequestActionCraftHandler();
 
 //private:
-    MCAPI enum ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);
+    MCAPI enum class ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);
 
 private:
 

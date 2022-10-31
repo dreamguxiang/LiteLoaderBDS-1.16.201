@@ -45,7 +45,7 @@ public:
     /*123*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, float, float, float) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNITEM
 #endif
-    MCAPI SignItem(std::string const &, int, enum SignBlockActor::SignType);
+    MCAPI SignItem(std::string const &, int, enum class SignBlockActor::SignType);
     MCAPI static bool calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &);
 
 };

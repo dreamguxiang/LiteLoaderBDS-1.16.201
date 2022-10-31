@@ -3,6 +3,8 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+enum class Rotation : unsigned char;
+enum class Mirror : unsigned char;
 
 class Vec3;
 class BlockPos {
@@ -20,7 +22,7 @@ public:
     MCAPI unsigned __int64 hashCode() const;
     MCAPI class BlockPos relative(unsigned char, int) const;
     MCAPI std::string toString() const;
-    MCAPI class BlockPos transform(enum Rotation, enum Mirror, class Vec3 const&) const;
+    MCAPI class BlockPos transform(enum class Rotation, enum class Mirror, class Vec3 const&) const;
     MCAPI static class BlockPos const MAX;
     MCAPI static class BlockPos const MIN;
     MCAPI static class BlockPos const ONE;

@@ -7,7 +7,7 @@
 // Include Headers or Declare Types Here
 class Actor;
 
-enum ActorDamageCause : int {
+enum class ActorDamageCause : int {
     ActorDamageCause_None = -0x01,
     ActorDamageCause_Override = 0x00,
     ActorDamageCause_Contact = 0x01,
@@ -78,17 +78,17 @@ public:
     /*6*/ virtual bool getIsCreative() const;
     /*7*/ virtual bool getIsWorldBuilder() const;
     /*8*/ virtual struct ActorUniqueID getEntityUniqueID() const;
-    /*9*/ virtual enum ActorType getEntityType() const;
-    /*10*/ virtual enum ActorCategory getEntityCategories() const;
+    /*9*/ virtual enum class ActorType getEntityType() const;
+    /*10*/ virtual enum class ActorCategory getEntityCategories() const;
     /*11*/ virtual bool getDamagingEntityIsCreative() const;
     /*12*/ virtual bool getDamagingEntityIsWorldBuilder() const;
     /*13*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /*14*/ virtual enum ActorType getDamagingEntityType() const;
-    /*15*/ virtual enum ActorCategory getDamagingEntityCategories() const;
+    /*14*/ virtual enum class ActorType getDamagingEntityType() const;
+    /*15*/ virtual enum class ActorCategory getDamagingEntityCategories() const;
     /*16*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGESOURCE
 #endif
-    MCAPI static enum ActorDamageCause lookupCause(std::string const &);
-    MCAPI static std::string const & lookupCauseName(enum ActorDamageCause);
+    MCAPI static enum class ActorDamageCause lookupCause(std::string const &);
+    MCAPI static std::string const & lookupCauseName(enum class ActorDamageCause);
 
 };

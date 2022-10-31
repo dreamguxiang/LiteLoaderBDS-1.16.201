@@ -35,19 +35,19 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual enum DataLoadHelperType getType() const;
+    /*15*/ virtual enum class DataLoadHelperType getType() const;
     /*16*/ virtual bool shouldResetTime();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTDATALOADHELPER
     MCVAPI struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     MCVAPI class BlockPos loadBlockPosition(class BlockPos const &);
     MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const &);
     MCVAPI class Vec3 loadDirection(class Vec3 const &);
-    MCVAPI enum Direction::Type loadDirection(enum Direction::Type);
+    MCVAPI enum class Direction::Type loadDirection(enum class Direction::Type);
     MCVAPI unsigned char loadFacingID(unsigned char);
-    MCVAPI enum Mirror loadMirror(enum Mirror);
+    MCVAPI enum class Mirror loadMirror(enum class Mirror);
     MCVAPI struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
     MCVAPI class Vec3 loadPosition(class Vec3 const &);
-    MCVAPI enum Rotation loadRotation(enum Rotation);
+    MCVAPI enum class Rotation loadRotation(enum class Rotation);
     MCVAPI float loadRotationDegreesX(float);
     MCVAPI float loadRotationDegreesY(float);
     MCVAPI float loadRotationRadiansX(float);

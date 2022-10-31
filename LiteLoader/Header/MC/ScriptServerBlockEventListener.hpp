@@ -22,13 +22,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptServerBlockEventListener();
-    /*1*/ virtual enum EventResult onBlockPlacedByPlayer(class Player &, class Block const &, class BlockPos const &, bool);
-    /*2*/ virtual enum EventResult onBlockDestroyedByPlayer(class Player &, std::string, class BlockPos const &);
-    /*3*/ virtual enum EventResult onBlockMovedByPiston(class BlockPos const &, class BlockPos const &, enum PistonBlockActor::PistonState);
-    /*4*/ virtual enum EventResult onBlockDestructionStopped(class Player &, class BlockPos const &, int);
-    /*5*/ virtual enum EventResult onBlockDestructionStarted(class Player &, class BlockPos const &);
-    /*6*/ virtual enum EventResult onBlockInteractedWith(class Player &, class BlockPos const &);
-    /*7*/ virtual enum EventResult onBlockExploded(class BlockPos const &, class Block const &, class Actor *);
+    /*1*/ virtual enum class EventResult onBlockPlacedByPlayer(class Player &, class Block const &, class BlockPos const &, bool);
+    /*2*/ virtual enum class EventResult onBlockDestroyedByPlayer(class Player &, std::string, class BlockPos const &);
+    /*3*/ virtual enum class EventResult onBlockMovedByPiston(class BlockPos const &, class BlockPos const &, enum class PistonBlockActor::PistonState);
+    /*4*/ virtual enum class EventResult onBlockDestructionStopped(class Player &, class BlockPos const &, int);
+    /*5*/ virtual enum class EventResult onBlockDestructionStarted(class Player &, class BlockPos const &);
+    /*6*/ virtual enum class EventResult onBlockInteractedWith(class Player &, class BlockPos const &);
+    /*7*/ virtual enum class EventResult onBlockExploded(class BlockPos const &, class Block const &, class Actor *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSERVERBLOCKEVENTLISTENER
 #endif
 

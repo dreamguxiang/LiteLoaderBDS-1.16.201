@@ -23,7 +23,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATION
 #endif
     MCAPI ActorSkeletalAnimation(std::string const &, std::string const &);
-    MCAPI class ActorAnimationEvent & addActorEvent(float, std::string const &, enum CurrentCmdVersion);
+    MCAPI class ActorAnimationEvent & addActorEvent(float, std::string const &, enum class CurrentCmdVersion);
     MCAPI class ActorParticleEffectEvent & addParticleEffectEvent(float);
     MCAPI class ActorSoundEffectEvent & addSoundEffectEvent(float);
     MCAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();

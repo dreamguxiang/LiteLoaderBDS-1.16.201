@@ -37,7 +37,7 @@ public:
     /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYCONTAINERMODEL
 #endif
-    MCAPI InventoryContainerModel(enum ContainerEnumName, int, class Player &);
+    MCAPI InventoryContainerModel(enum class ContainerEnumName, int, class Player &);
 
 //private:
     MCAPI void _refreshSlot(int);

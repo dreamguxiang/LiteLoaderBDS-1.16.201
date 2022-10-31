@@ -63,8 +63,8 @@ public:
     /*124*/ virtual float getArmorKnockbackResistance() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORITEM
 #endif
-    MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum ArmorSlot);
-    MCAPI void playEquipSound(class BlockSource &, enum ArmorSlot, class Player &) const;
+    MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum class ArmorSlot);
+    MCAPI void playEquipSound(class BlockSource &, enum class ArmorSlot, class Player &) const;
     MCAPI static class ArmorItem::ArmorMaterial const CHAIN;
     MCAPI static class ArmorItem::ArmorMaterial const DIAMOND;
     MCAPI static class ArmorItem::ArmorMaterial const ELYTRA;
@@ -73,8 +73,8 @@ public:
     MCAPI static class ArmorItem::ArmorMaterial const LEATHER;
     MCAPI static class ArmorItem::ArmorMaterial const NETHERITE;
     MCAPI static class ArmorItem::ArmorMaterial const TURTLE;
-    MCAPI static bool dispenseArmor(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char, enum ArmorSlot);
-    MCAPI static enum ArmorSlot getSlotForItem(class ItemStackBase const &);
+    MCAPI static bool dispenseArmor(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char, enum class ArmorSlot);
+    MCAPI static enum class ArmorSlot getSlotForItem(class ItemStackBase const &);
     MCAPI static int const mHealthPerSlot[];
 
 //private:

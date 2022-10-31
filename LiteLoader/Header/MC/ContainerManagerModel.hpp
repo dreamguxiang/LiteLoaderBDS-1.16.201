@@ -21,10 +21,10 @@ public:
 
 public:
     /*0*/ virtual ~ContainerManagerModel();
-    /*1*/ virtual enum ContainerID getContainerId() const;
-    /*2*/ virtual void setContainerId(enum ContainerID);
-    /*3*/ virtual enum ContainerType getContainerType() const;
-    /*4*/ virtual void setContainerType(enum ContainerType);
+    /*1*/ virtual enum class ContainerID getContainerId() const;
+    /*2*/ virtual void setContainerId(enum class ContainerID);
+    /*3*/ virtual enum class ContainerType getContainerType() const;
+    /*4*/ virtual void setContainerType(enum class ContainerType);
     /*5*/ virtual void serverInitItemStackIds();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const = 0;
     /*7*/ virtual void setSlot(int, class ItemStack const &, bool) = 0;
@@ -35,13 +35,13 @@ public:
     /*12*/ virtual class ContainerScreenContext _postInit() = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERMANAGERMODEL
 #endif
-    MCAPI ContainerManagerModel(enum ContainerID, class Player &);
+    MCAPI ContainerManagerModel(enum class ContainerID, class Player &);
     MCAPI void postInit();
 
 //protected:
     MCAPI void _addContainer(class std::shared_ptr<class ContainerModel>);
     MCAPI class ContainerScreenContext _containerScreenContext(class BlockPos const &);
-    MCAPI class std::shared_ptr<class ContainerModel> _getContainer(enum ContainerEnumName) const;
+    MCAPI class std::shared_ptr<class ContainerModel> _getContainer(enum class ContainerEnumName) const;
     MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const &, float) const;
 
 protected:

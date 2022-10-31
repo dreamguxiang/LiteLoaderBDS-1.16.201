@@ -35,7 +35,7 @@ public:
     MCAPI bool openContainer(class Actor &, class Player &);
     MCAPI class ContainerComponent & operator=(class ContainerComponent &&);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
-    MCAPI void rebuildContainer(class Actor &, enum ContainerType, int, bool, int, bool);
+    MCAPI void rebuildContainer(class Actor &, enum class ContainerType, int, bool, int, bool);
     MCAPI void removeItemsOfType(class ItemStack const &, int);
     MCAPI bool setItem(int, class ItemStack const &);
     MCAPI void unpackLootTable(class Level &);

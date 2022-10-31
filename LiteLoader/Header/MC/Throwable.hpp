@@ -21,7 +21,7 @@ public:
 #endif
 
 public:
-    /*3*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*3*/ virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~Throwable();
     /*32*/ virtual void __unk_vfn_32();
     /*37*/ virtual void lerpTo(class Vec3 const &, class Vec2 const &, int);
@@ -55,7 +55,7 @@ public:
     /*262*/ virtual void __unk_vfn_262();
     /*263*/ virtual float getThrowUpAngleOffset();
     /*264*/ virtual float getGravity();
-    /*265*/ virtual enum ParticleType getParticleType();
+    /*265*/ virtual enum class ParticleType getParticleType();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWABLE
     MCVAPI bool canMakeStepSound() const;
     MCVAPI void onHit(class HitResult const &);

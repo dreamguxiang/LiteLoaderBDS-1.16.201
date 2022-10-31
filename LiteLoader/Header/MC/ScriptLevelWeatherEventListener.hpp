@@ -28,7 +28,7 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual enum EventResult onLevelWeatherChange(std::string const &, bool, bool);
+    /*8*/ virtual enum class EventResult onLevelWeatherChange(std::string const &, bool, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTLEVELWEATHEREVENTLISTENER
 #endif
 

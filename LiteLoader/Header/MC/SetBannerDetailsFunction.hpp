@@ -31,7 +31,7 @@ public:
 
 //private:
     MCAPI void _apply(class ItemStackBase &, class Random &, class LootTableContext &) const;
-    MCAPI static void _parseBannerPattern(std::vector<struct std::pair<unsigned char, enum ItemColor>> &, class Json::Value const &);
+    MCAPI static void _parseBannerPattern(std::vector<struct std::pair<unsigned char, enum class ItemColor>> &, class Json::Value const &);
 
 private:
 

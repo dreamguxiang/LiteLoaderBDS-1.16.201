@@ -10,7 +10,7 @@ class ReadOnlyBinaryStream;
 class BinaryStream;
 class ServerPlayer;
 class NetworkIdentifier;
-enum StreamReadResult;
+enum class StreamReadResult;
 enum class PacketReliability {
     Relible,
     RelibleOrdered
@@ -41,7 +41,7 @@ public:
     {
         return handler->getServerPlayer(*netId, dAccess<char>(this, 16));
     }
-    inline enum StreamReadResult _read(class ReadOnlyBinaryStream& binaryStream)
+    inline enum class StreamReadResult _read(class ReadOnlyBinaryStream& binaryStream)
     {
         return read(binaryStream);
     }
@@ -59,10 +59,10 @@ public:
 
 public:
     /*0*/ virtual ~Packet();
-    /*1*/ virtual enum MinecraftPacketIds getId() const = 0;
+    /*1*/ virtual enum class MinecraftPacketIds getId() const = 0;
     /*2*/ virtual std::string getName() const = 0;
     /*3*/ virtual void write(class BinaryStream &) const = 0;
-    /*4*/ virtual enum StreamReadResult read(class ReadOnlyBinaryStream &) = 0;
+    /*4*/ virtual enum class StreamReadResult read(class ReadOnlyBinaryStream &) = 0;
     /*5*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /*6*/ virtual bool disallowBatching() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKET

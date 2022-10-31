@@ -77,7 +77,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
     MCVAPI bool isSignalSource() const;
 #endif
-    MCAPI static enum LeverDirection getLeverFacing(int);
+    MCAPI static enum class LeverDirection getLeverFacing(int);
 
 //private:
     MCAPI bool _checkCanSurvive(class BlockSource &, class BlockPos const &) const;

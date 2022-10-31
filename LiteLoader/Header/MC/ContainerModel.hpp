@@ -37,7 +37,7 @@ public:
     /*14*/ virtual bool isValid();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual enum ContainerExpandStatus getItemExpandStatus(int) const;
+    /*17*/ virtual enum class ContainerExpandStatus getItemExpandStatus(int) const;
     /*18*/ virtual std::string const & getItemGroupName(int) const;
     /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual class Container * _getContainer() const;
@@ -50,7 +50,7 @@ public:
     MCVAPI void switchItemExpando(int);
     MCVAPI void tick(int);
 #endif
-    MCAPI ContainerModel(enum ContainerEnumName, int, enum ContainerCategory, bool);
+    MCAPI ContainerModel(enum class ContainerEnumName, int, enum class ContainerCategory, bool);
     MCAPI bool isContainerSlotInRange(int) const;
     MCAPI void networkUpdateItem(int, class ItemStack const &, class ItemStack const &);
     MCAPI void registerOnContainerChangedCallback(class std::function<void (int, class ItemStack const &, class ItemStack const &)>);

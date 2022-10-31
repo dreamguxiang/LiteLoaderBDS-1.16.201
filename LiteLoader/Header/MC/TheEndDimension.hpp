@@ -21,8 +21,8 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THEENDDIMENSION
-    MCVAPI void _upgradeOldLimboEntity(class CompoundTag &, enum LimboEntitiesVersion);
-    MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum StorageVersion);
+    MCVAPI void _upgradeOldLimboEntity(class CompoundTag &, enum class LimboEntitiesVersion);
+    MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum class StorageVersion);
     MCVAPI class std::tuple<std::unique_ptr<class ChunkSource>, class WorldGenerator *> createGenerator();
     MCVAPI void deserialize(class CompoundTag const &);
     MCVAPI void fixWallChunk(class ChunkSource &, class LevelChunk &);

@@ -21,8 +21,8 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDDIMENSION
-    MCVAPI void _upgradeOldLimboEntity(class CompoundTag &, enum LimboEntitiesVersion);
-    MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum StorageVersion);
+    MCVAPI void _upgradeOldLimboEntity(class CompoundTag &, enum class LimboEntitiesVersion);
+    MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum class StorageVersion);
     MCVAPI class std::tuple<std::unique_ptr<class ChunkSource>, class WorldGenerator *> createGenerator();
     MCVAPI void fixWallChunk(class ChunkSource &, class LevelChunk &);
     MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const &, float) const;

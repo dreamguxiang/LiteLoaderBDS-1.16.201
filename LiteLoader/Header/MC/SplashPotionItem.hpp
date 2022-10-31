@@ -48,7 +48,7 @@ public:
     /*110*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*112*/ virtual class Item & setIcon(std::string const &, int);
     /*117*/ virtual void __unk_vfn_117();
-    /*124*/ virtual enum Potion::PotionType getPotionType() const;
+    /*124*/ virtual enum class Potion::PotionType getPotionType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPLASHPOTIONITEM
 #endif
 

@@ -22,21 +22,21 @@ public:
 
 public:
     /*0*/ virtual ~EventPacket();
-    /*1*/ virtual enum MinecraftPacketIds getId() const;
+    /*1*/ virtual enum class MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
-    /*4*/ virtual enum StreamReadResult read(class ReadOnlyBinaryStream &);
+    /*4*/ virtual enum class StreamReadResult read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTPACKET
 #endif
     MCAPI EventPacket(class Player const *, class gsl::not_null<class Mob const *>);
-    MCAPI EventPacket(class Player const *, enum EventPacket::AgentResult, std::string const &, std::string const &, int);
-    MCAPI EventPacket(class Player const *, enum EventPacket::AgentResult, std::string const &, std::string const &, std::string const &);
-    MCAPI EventPacket(class Player const *, bool, class Actor const *, class gsl::not_null<class Mob const *>, enum ActorDamageCause);
-    MCAPI EventPacket(class Player const *, class Actor const *, class gsl::not_null<class Mob const *>, enum ActorDamageCause, std::string, int, enum ActorType);
-    MCAPI EventPacket(class Player const *, class Actor const *, class gsl::not_null<class Mob const *>, enum ActorDamageCause, enum ActorType);
-    MCAPI EventPacket(class Player const *, class gsl::not_null<class Actor const *>, enum MinecraftEventing::InteractionType);
+    MCAPI EventPacket(class Player const *, enum class EventPacket::AgentResult, std::string const &, std::string const &, int);
+    MCAPI EventPacket(class Player const *, enum class EventPacket::AgentResult, std::string const &, std::string const &, std::string const &);
+    MCAPI EventPacket(class Player const *, bool, class Actor const *, class gsl::not_null<class Mob const *>, enum class ActorDamageCause);
+    MCAPI EventPacket(class Player const *, class Actor const *, class gsl::not_null<class Mob const *>, enum class ActorDamageCause, std::string, int, enum class ActorType);
+    MCAPI EventPacket(class Player const *, class Actor const *, class gsl::not_null<class Mob const *>, enum class ActorDamageCause, enum class ActorType);
+    MCAPI EventPacket(class Player const *, class gsl::not_null<class Actor const *>, enum class MinecraftEventing::InteractionType);
     MCAPI EventPacket(class Player const *, class AutomaticID<class Dimension, int>);
-    MCAPI EventPacket(class Player const *, enum MinecraftEventing::AchievementIds, bool);
+    MCAPI EventPacket(class Player const *, enum class MinecraftEventing::AchievementIds, bool);
     MCAPI EventPacket();
     MCAPI EventPacket(class Player const *, struct EventPacket::Data const &);
     MCAPI class EventPacket & operator=(class EventPacket &&);

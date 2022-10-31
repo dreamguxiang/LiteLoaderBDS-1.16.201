@@ -23,7 +23,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ECONOMYTRADEABLECOMPONENT
 #endif
     MCAPI void addAdditionalSaveData(class CompoundTag &);
-    MCAPI class UpdateTradePacket createDataPacket(enum ContainerID);
+    MCAPI class UpdateTradePacket createDataPacket(enum class ContainerID);
     MCAPI void fixVillagerTierToMatchTradeList(class MerchantRecipeList *);
     MCAPI struct IntRange getCurrentCuredDiscount() const;
     MCAPI int getCurrentNearbyCuredDiscount() const;

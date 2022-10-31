@@ -84,7 +84,7 @@ public:
     /*60*/ virtual void __unk_vfn_60();
     /*61*/ virtual void __unk_vfn_61();
     /*62*/ virtual void __unk_vfn_62();
-    /*63*/ virtual enum BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
+    /*63*/ virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /*64*/ virtual void updateEntityAfterFallOn(class BlockPos const &, struct IActorMovementProxy &) const;
     /*65*/ virtual void __unk_vfn_65();
     /*66*/ virtual void __unk_vfn_66();
@@ -162,7 +162,7 @@ public:
     /*138*/ virtual class BlockLegacy & setFlammable(class FlameOdds, class BurnOdds);
     /*139*/ virtual class BlockLegacy & setDestroyTime(float);
     /*140*/ virtual class BlockLegacy & setFriction(float);
-    /*141*/ virtual class BlockLegacy & addProperty(enum BlockProperty);
+    /*141*/ virtual class BlockLegacy & addProperty(enum class BlockProperty);
     /*142*/ virtual class BlockLegacy & addState(class ItemState const &);
     /*143*/ virtual class BlockLegacy & addState(class ItemState const &, unsigned __int64);
     /*144*/ virtual class BlockLegacy & setAllowsRunes(bool);
@@ -188,8 +188,8 @@ public:
     /*164*/ virtual class HitResult clip(class BlockSource &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /*165*/ virtual void __unk_vfn_165();
     /*166*/ virtual void __unk_vfn_166();
-    /*167*/ virtual enum BlockRenderLayer getRenderLayer() const;
-    /*168*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*167*/ virtual enum class BlockRenderLayer getRenderLayer() const;
+    /*168*/ virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual float getExplosionResistance(class Actor *) const;
     /*171*/ virtual struct Brightness getLightEmission(class Block const &) const;
@@ -202,7 +202,7 @@ public:
     /*178*/ virtual class ItemInstance getEntityResourceItem(class Random &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNERBLOCK
     MCVAPI bool canContainLiquid() const;
-    MCVAPI bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    MCVAPI bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     MCVAPI int getResourceCount(class Random &, class Block const &, int, bool) const;
     MCVAPI bool isInteractiveBlock() const;
 #endif

@@ -29,7 +29,7 @@ public:
     /*4*/ virtual void load(class Json::Value const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPTION
 #endif
-    MCAPI Option(enum OptionID, enum OptionOwnerType, enum OptionResetFlags, std::string const &, std::string const &, enum OptionType);
+    MCAPI Option(enum class OptionID, enum class OptionOwnerType, enum class OptionResetFlags, std::string const &, std::string const &, enum class OptionType);
     MCAPI bool getBool() const;
     MCAPI void notifyOptionValueChanged(bool);
     MCAPI class Bedrock::PubSub::Subscription registerObserver(class std::function<void (class Option const &)>);

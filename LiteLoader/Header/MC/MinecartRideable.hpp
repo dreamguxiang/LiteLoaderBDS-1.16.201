@@ -44,7 +44,7 @@ public:
     /*241*/ virtual void __unk_vfn_241();
     /*249*/ virtual void __unk_vfn_249();
     /*260*/ virtual void __unk_vfn_260();
-    /*262*/ virtual enum MinecartType getType();
+    /*262*/ virtual enum class MinecartType getType();
     /*264*/ virtual void __unk_vfn_264();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTRIDEABLE
 #endif

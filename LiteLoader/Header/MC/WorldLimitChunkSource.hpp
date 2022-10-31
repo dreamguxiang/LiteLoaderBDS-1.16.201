@@ -24,7 +24,7 @@ public:
     /*0*/ virtual ~WorldLimitChunkSource();
     /*1*/ virtual void shutdown();
     /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
-    /*5*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode);
+    /*5*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum class ChunkSource::LoadMode);
     /*17*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
     /*21*/ virtual bool canCreateViews() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDLIMITCHUNKSOURCE

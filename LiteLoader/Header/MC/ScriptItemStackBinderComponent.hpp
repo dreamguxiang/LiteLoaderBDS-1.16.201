@@ -26,7 +26,7 @@ public:
     /*2*/ virtual bool deserialize(class ScriptEngine &, class ScriptApi::ScriptObjectHandle const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMSTACKBINDERCOMPONENT
 #endif
-    MCAPI ScriptItemStackBinderComponent(class entt::basic_registry<enum entt::entity> &, class ItemInstance const &);
+    MCAPI ScriptItemStackBinderComponent(class entt::basic_registry<enum class entt::entity> &, class ItemInstance const &);
     MCAPI static std::string const COUNT;
     MCAPI static std::string const ITEM;
     MCAPI static std::string const TAG;

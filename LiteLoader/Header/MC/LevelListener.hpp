@@ -30,7 +30,7 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
+    /*11*/ virtual class Particle * addParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
@@ -45,17 +45,17 @@ public:
     /*23*/ virtual void onChunkUnloaded(class LevelChunk &);
     /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual void __unk_vfn_25();
-    /*26*/ virtual void levelEvent(enum LevelEvent, class Vec3 const &, int);
+    /*26*/ virtual void levelEvent(enum class LevelEvent, class Vec3 const &, int);
     /*27*/ virtual void __unk_vfn_27();
-    /*28*/ virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    /*28*/ virtual void levelSoundEvent(enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELLISTENER
-    MCVAPI void addBreakingItemParticleEffect(class Vec3 const &, enum ParticleType, struct TextureUVCoordinateSet const &, bool);
+    MCVAPI void addBreakingItemParticleEffect(class Vec3 const &, enum class ParticleType, struct TextureUVCoordinateSet const &, bool);
     MCVAPI void addParticleEffect(class HashedString const &, class Actor const &, class HashedString const &, class Vec3 const &, class MolangVariableMap const &);
     MCVAPI void addParticleEffect(class HashedString const &, class Vec3 const &, class MolangVariableMap const &);
     MCVAPI void addTerrainParticleEffect(class BlockPos const &, class Block const &, class Vec3 const &, float, float, float);
     MCVAPI void addTerrainSlideEffect(class BlockPos const &, class Block const &, class Vec3 const &, float, float, float);
     MCVAPI void allChanged();
-    MCVAPI void levelEvent(enum LevelEvent, class CompoundTag const &);
+    MCVAPI void levelEvent(enum class LevelEvent, class CompoundTag const &);
     MCVAPI void levelSoundEvent(std::string const &, class Vec3 const &, float, float);
     MCVAPI void onEntityAdded(class Actor &);
     MCVAPI void onEntityRemoved(class Actor &);
@@ -63,7 +63,7 @@ public:
     MCVAPI void playMusic(std::string const &, class Vec3 const &, float, float);
     MCVAPI void playStreamingMusic(std::string const &, int, int, int);
     MCVAPI void playerListChanged();
-    MCVAPI void sendServerLegacyParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int);
+    MCVAPI void sendServerLegacyParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int);
     MCVAPI void stopAllSounds();
     MCVAPI void stopSoundEvent(std::string const &);
     MCVAPI void takePicture(class cg::ImageBuffer &, class Actor *, class Actor *, struct ScreenshotOptions &);

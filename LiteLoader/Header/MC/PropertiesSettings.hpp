@@ -31,7 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTIESSETTINGS
 #endif
     MCAPI PropertiesSettings(std::string const &);
-    MCAPI enum CommandPermissionLevel getOpPermissionLevel() const;
+    MCAPI enum class CommandPermissionLevel getOpPermissionLevel() const;
     MCAPI struct NetworkAddress getRemoteServerCommunicationEndpoint() const;
     MCAPI ~PropertiesSettings();
     MCAPI static bool parseBoolValue(std::string const &);

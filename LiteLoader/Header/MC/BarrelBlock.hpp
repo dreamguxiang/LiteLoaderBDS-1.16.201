@@ -52,7 +52,7 @@ public:
     /*127*/ virtual int getVariant(class Block const &) const;
     /*128*/ virtual void __unk_vfn_128();
     /*131*/ virtual void __unk_vfn_131();
-    /*132*/ virtual enum Flip getFaceFlip(unsigned char, class Block const &) const;
+    /*132*/ virtual enum class Flip getFaceFlip(unsigned char, class Block const &) const;
     /*146*/ virtual void __unk_vfn_146();
     /*152*/ virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /*155*/ virtual void __unk_vfn_155();

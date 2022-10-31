@@ -135,7 +135,7 @@ public:
 
 public:
     /*0*/ virtual ~Scoreboard();
-    /*1*/ virtual class DisplayObjective const * setDisplayObjective(std::string const &, class Objective const &, enum ObjectiveSortOrder);
+    /*1*/ virtual class DisplayObjective const * setDisplayObjective(std::string const &, class Objective const &, enum class ObjectiveSortOrder);
     /*2*/ virtual class Objective * clearDisplayObjective(std::string const &);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
@@ -165,7 +165,7 @@ public:
 #endif
     MCAPI Scoreboard(class CommandSoftEnumRegistry);
     MCAPI class Objective * addObjective(std::string const &, std::string const &, class ObjectiveCriteria const &);
-    MCAPI int applyPlayerOperation(bool &, std::vector<struct ScoreboardId> &, struct ScoreboardId const &, class Objective &, std::vector<struct ScoreboardId> &, class Objective &, enum CommandOperator);
+    MCAPI int applyPlayerOperation(bool &, std::vector<struct ScoreboardId> &, struct ScoreboardId const &, class Objective &, std::vector<struct ScoreboardId> &, class Objective &, enum class CommandOperator);
     MCAPI class ObjectiveCriteria * getCriteria(std::string const &) const;
     MCAPI std::vector<struct PlayerScore> getDisplayInfoFiltered(std::string const &) const;
     MCAPI class DisplayObjective const * getDisplayObjective(std::string const &) const;
@@ -180,7 +180,7 @@ public:
     MCAPI std::vector<class ScoreboardIdentityRef> getScoreboardIdentityRefs() const;
     MCAPI std::vector<struct ScoreboardId> getTrackedIds() const;
     MCAPI bool hasIdentityFor(struct ScoreboardId const &) const;
-    MCAPI int modifyPlayerScore(bool &, struct ScoreboardId const &, class Objective &, int, enum PlayerScoreSetFunction);
+    MCAPI int modifyPlayerScore(bool &, struct ScoreboardId const &, class Objective &, int, enum class PlayerScoreSetFunction);
     MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(struct ScoreboardId const &, struct PlayerScoreboardId const &);
     MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(struct ScoreboardId const &, struct ActorUniqueID const &);
     MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(struct ScoreboardId const &, std::string const &);

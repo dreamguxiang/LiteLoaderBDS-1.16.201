@@ -33,7 +33,7 @@ public:
 #endif
 
 //protected:
-    MCAPI FurnaceContainerManagerModel(class HashedString const &, enum ContainerType, enum BlockActorType, enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI FurnaceContainerManagerModel(class HashedString const &, enum class ContainerType, enum class BlockActorType, enum class ContainerID, class Player &, class BlockPos const &);
 
 //private:
     MCAPI class FurnaceBlockActor * _getFurnaceEntity();

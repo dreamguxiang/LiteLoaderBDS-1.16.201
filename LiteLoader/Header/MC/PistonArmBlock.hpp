@@ -26,7 +26,7 @@ public:
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class BlockSource &, class BlockPos const &, class Actor *) const;
     /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class Actor *) const;
     /*16*/ virtual void __unk_vfn_16();
-    /*19*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    /*19*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void __unk_vfn_24();
@@ -73,7 +73,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONARMBLOCK
     MCVAPI bool canBeSilkTouched() const;
 #endif
-    MCAPI PistonArmBlock(std::string const &, int, enum PistonBlock::Type);
+    MCAPI PistonArmBlock(std::string const &, int, enum class PistonBlock::Type);
 
 //private:
     MCAPI void _getCollisions(class AABB &, class AABB &, class AABB &, unsigned char) const;

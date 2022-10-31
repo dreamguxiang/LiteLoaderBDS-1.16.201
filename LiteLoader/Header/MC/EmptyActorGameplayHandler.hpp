@@ -21,15 +21,15 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMPTYACTORGAMEPLAYHANDLER
-    MCVAPI enum HandlerResult handleActorAddEffect(struct ActorAddEffectEvent const &);
-    MCVAPI enum HandlerResult handleActorDefinitionEventTriggered(struct ActorDefinitionEvent const &);
-    MCVAPI struct GameplayHandlerResult<enum CoordinatorResult> handleActorGriefingBlock(struct ActorGriefingBlockEvent const &);
-    MCVAPI enum HandlerResult handleActorHurt(struct ActorHurtEvent const &);
-    MCVAPI enum HandlerResult handleActorKilled(struct ActorKilledEvent const &);
-    MCVAPI enum HandlerResult handleActorRemoveEffect(struct ActorRemoveEffectEvent const &);
-    MCVAPI enum HandlerResult handleKnockBack(struct KnockBackEvent const &);
-    MCVAPI enum HandlerResult handleMountTaming(struct MountTamingEvent const &);
-    MCVAPI struct GameplayHandlerResult<enum CoordinatorResult> handleProjectileHit(struct ProjectileHitEvent const &);
+    MCVAPI enum class HandlerResult handleActorAddEffect(struct ActorAddEffectEvent const &);
+    MCVAPI enum class HandlerResult handleActorDefinitionEventTriggered(struct ActorDefinitionEvent const &);
+    MCVAPI struct GameplayHandlerResult<enum class CoordinatorResult> handleActorGriefingBlock(struct ActorGriefingBlockEvent const &);
+    MCVAPI enum class HandlerResult handleActorHurt(struct ActorHurtEvent const &);
+    MCVAPI enum class HandlerResult handleActorKilled(struct ActorKilledEvent const &);
+    MCVAPI enum class HandlerResult handleActorRemoveEffect(struct ActorRemoveEffectEvent const &);
+    MCVAPI enum class HandlerResult handleKnockBack(struct KnockBackEvent const &);
+    MCVAPI enum class HandlerResult handleMountTaming(struct MountTamingEvent const &);
+    MCVAPI struct GameplayHandlerResult<enum class CoordinatorResult> handleProjectileHit(struct ProjectileHitEvent const &);
 #endif
 
 };

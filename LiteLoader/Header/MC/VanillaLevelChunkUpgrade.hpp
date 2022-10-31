@@ -18,7 +18,7 @@ namespace VanillaLevelChunkUpgrade {
     MCAPI bool convertVillagerV2TagToV1(class CompoundTag &);
     MCAPI bool convertZombieVillagerV1TagToV2(class CompoundTag &);
     MCAPI bool convertZombieVillagerV2TagToV1(class CompoundTag &);
-    MCAPI void fixBlockStatesOnChunkBorderAxis(class BlockSource &, class LevelChunk const &, unsigned char, class BlockPos, enum VanillaLevelChunkUpgrade::Axis);
+    MCAPI void fixBlockStatesOnChunkBorderAxis(class BlockSource &, class LevelChunk const &, unsigned char, class BlockPos, enum class VanillaLevelChunkUpgrade::Axis);
     MCAPI void fixStemBlockStates(class BlockSource &, class BlockPos, class Block const &);
     MCAPI void fixUselessDynamicWater(class LevelChunk &, class BlockSource &);
     MCAPI void fixWallBlockStates(class BlockSource &, class BlockPos);
@@ -26,6 +26,6 @@ namespace VanillaLevelChunkUpgrade {
     MCAPI std::string const & getV1CareerFromDefinitionsList(class ListTag const *);
     MCAPI bool isWallBlock(class Block const &);
     MCAPI void upgradeLevelChunk(class LevelChunk &, class BlockSource &);
-    MCAPI void upgradeOldLimboEntity(class CompoundTag &, enum LimboEntitiesVersion);
+    MCAPI void upgradeOldLimboEntity(class CompoundTag &, enum class LimboEntitiesVersion);
 
 };

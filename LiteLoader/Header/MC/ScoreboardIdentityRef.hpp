@@ -11,9 +11,9 @@ class ScoreboardIdentityRef {
 
 #define AFTER_EXTRA
 public:
-    enum IdentityDefinition::Type getIdentityType(){
+    enum class IdentityDefinition::Type getIdentityType(){
         //ServerScoreboard::_unpackIdentityDefToScorePacket Line30~31 16+72
-        return dAccess<enum IdentityDefinition::Type>(this, 88);
+        return dAccess<enum class IdentityDefinition::Type>(this, 88);
     };
 
 #undef AFTER_EXTRA
@@ -28,7 +28,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDIDENTITYREF
 #endif
     MCAPI std::string const & getName(class std::function<std::string const & (struct ActorUniqueID)> const &) const;
-    MCAPI bool modifyScoreInObjective(int &, class Objective &, int, enum PlayerScoreSetFunction);
+    MCAPI bool modifyScoreInObjective(int &, class Objective &, int, enum class PlayerScoreSetFunction);
     MCAPI bool removeFromObjective(class Scoreboard &, class Objective &);
     MCAPI static class ScoreboardIdentityRef const Undefined;
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ScoreboardIdentityRef const &);

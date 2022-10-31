@@ -30,7 +30,7 @@ public:
     MCVAPI ~DedicatedServer();
 #endif
     MCAPI DedicatedServer();
-    MCAPI enum DedicatedServer::StartResult start(std::string const &);
+    MCAPI enum class DedicatedServer::StartResult start(std::string const &);
 
 //private:
     MCAPI void initalizeAppConfigs();

@@ -36,12 +36,12 @@ public:
     MCAPI bool tryToFixupRole(class Actor const &, class Village *);
 
 //private:
-    MCAPI enum DwellerRole _getRole(std::string const &) const;
-    MCAPI enum DwellerComponent::DwellingType _getType(std::string const &) const;
+    MCAPI enum class DwellerRole _getRole(std::string const &) const;
+    MCAPI enum class DwellerComponent::DwellingType _getType(std::string const &) const;
     MCAPI bool _isLockedInToProfession(class Actor const &) const;
 
 private:
-    MCAPI static class std::unordered_map<std::string, enum DwellerRole, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum DwellerRole>>> const DWELLING_ROLES;
-    MCAPI static class std::unordered_map<std::string, enum DwellerComponent::DwellingType, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum DwellerComponent::DwellingType>>> const DWELLING_TYPES;
+    MCAPI static class std::unordered_map<std::string, enum class DwellerRole, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum class DwellerRole>>> const DWELLING_ROLES;
+    MCAPI static class std::unordered_map<std::string, enum class DwellerComponent::DwellingType, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum class DwellerComponent::DwellingType>>> const DWELLING_TYPES;
 
 };

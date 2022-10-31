@@ -27,7 +27,7 @@ public:
     inline bool hasBlockEntity(){
         return getLegacyBlock().hasBlockEntity();
     }
-    inline enum BlockActorType getBlockEntityType() const{
+    inline enum class BlockActorType getBlockEntityType() const{
         return getLegacyBlock().getBlockEntityType();
     };
 
@@ -41,7 +41,7 @@ public:
 
 public:
     /*0*/ virtual ~Block();
-    /*1*/ virtual enum BlockRenderLayer getRenderLayer() const;
+    /*1*/ virtual enum class BlockRenderLayer getRenderLayer() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCK
 #endif
     MCAPI bool canSurvive(class BlockSource &, class BlockPos const &) const;
@@ -53,7 +53,7 @@ public:
     MCAPI void executeItemEvent(class ItemStackBase &, std::string const &, class BlockSource &, class BlockPos const &, class Actor *) const;
     MCAPI class AABB const & getAABB(class BlockSource &, class BlockPos const &, class AABB &, bool) const;
     MCAPI class ItemState const * getBlockState(class HashedString const &) const;
-    MCAPI enum CreativeItemCategory getCreativeCategory() const;
+    MCAPI enum class CreativeItemCategory getCreativeCategory() const;
     MCAPI std::string getDescriptionId() const;
     MCAPI float getDestroySpeed() const;
     MCAPI float getFriction() const;
@@ -63,7 +63,7 @@ public:
     MCAPI class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     MCAPI class HashedString const & getName() const;
     MCAPI float getThickness() const;
-    MCAPI bool hasProperty(enum BlockProperty) const;
+    MCAPI bool hasProperty(enum class BlockProperty) const;
     MCAPI bool hasState(class ItemState const &) const;
     MCAPI bool hasTag(unsigned __int64 const &) const;
     MCAPI bool hasTag(class HashedString const &) const;
@@ -79,7 +79,7 @@ public:
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     MCAPI void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     MCAPI void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
-    MCAPI bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    MCAPI bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     MCAPI void onPlace(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI void onPlayerPlacing(class BlockSource &, class BlockPos const &, class Actor &, unsigned char) const;
     MCAPI void onStepOff(class Actor &, class BlockPos const &) const;

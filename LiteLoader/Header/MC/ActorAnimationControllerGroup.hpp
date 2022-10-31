@@ -30,7 +30,7 @@ public:
     MCAPI static bool loadFormatVersion(class Json::Value const &, class SemVersion &);
 
 //private:
-    MCAPI void _loadActorAnimationController(std::string const &, class Core::Path const &, enum CurrentCmdVersion);
+    MCAPI void _loadActorAnimationController(std::string const &, class Core::Path const &, enum class CurrentCmdVersion);
     MCAPI static class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorAnimationControllerGroupParseMetaData>> _buildAnimationControllerFileSchema_v1_10();
     MCAPI static class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, bool>> _buildAnimationControllerFileSchema_v1_8();
     MCAPI static class std::mutex & _getActorAnimationControllerLock();

@@ -16,7 +16,7 @@ public:
         JumpPreventionResult(JumpPreventionResult const&) = delete;
         JumpPreventionResult(JumpPreventionResult const&&) = delete;
     };
-    enum TravelType;
+    enum class TravelType;
 
 public:
     float mYBodyRot;//1672
@@ -124,9 +124,9 @@ public:
 
 public:
     /*0*/ virtual bool hasComponent(class HashedString const &) const;
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /*2*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /*3*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
+    /*2*/ virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
+    /*3*/ virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*6*/ virtual void _doInitialMove();
     /*7*/ virtual ~Mob();
     /*23*/ virtual float getInterpolatedBodyRot(float) const;
@@ -163,15 +163,15 @@ public:
     /*119*/ virtual bool canPowerJump() const;
     /*121*/ virtual bool isJumping() const;
     /*123*/ virtual void __unk_vfn_123();
-    /*127*/ virtual enum ActorDamageCause getBlockDamageCause(class Block const &) const;
+    /*127*/ virtual enum class ActorDamageCause getBlockDamageCause(class Block const &) const;
     /*128*/ virtual void actuallyHurt(int, class ActorDamageSource const &, bool);
     /*129*/ virtual void animateHurt();
     /*130*/ virtual bool doFireHurt(int);
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*147*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
-    /*148*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
-    /*149*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
-    /*151*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const &);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
+    /*147*/ virtual enum class ArmorMaterialType getArmorMaterialTypeInSlot(enum class ArmorSlot) const;
+    /*148*/ virtual enum class ArmorTextureType getArmorMaterialTextureTypeInSlot(enum class ArmorSlot) const;
+    /*149*/ virtual float getArmorColorInSlot(enum class ArmorSlot, int) const;
+    /*151*/ virtual void setEquippedSlot(enum class EquipmentSlot, class ItemStack const &);
     /*164*/ virtual void setOnFire(int);
     /*171*/ virtual void __unk_vfn_171();
     /*175*/ virtual void causeFallDamage(float);
@@ -207,7 +207,7 @@ public:
     /*264*/ virtual void setSleeping(bool);
     /*265*/ virtual void setSprinting(bool);
     /*266*/ virtual void playAmbientSound();
-    /*267*/ virtual enum LevelSoundEvent getAmbientSound();
+    /*267*/ virtual enum class LevelSoundEvent getAmbientSound();
     /*268*/ virtual int getAmbientSoundPostponeTicks();
     /*269*/ virtual int getAmbientSoundPostponeTicksRange();
     /*270*/ virtual struct TextureUVCoordinateSet const * getItemInHandIcon(class ItemStack const &, int);
@@ -253,8 +253,8 @@ public:
     /*310*/ virtual float getArmorCoverPercentage() const;
     /*311*/ virtual void hurtArmor(class ActorDamageSource const &, int);
     /*312*/ virtual void hurtArmor(class ActorDamageSource const &, int, class std::bitset<4> const &);
-    /*313*/ virtual void hurtArmorSlot(class ActorDamageSource const &, int, enum ArmorSlot);
-    /*314*/ virtual void setDamagedArmor(enum ArmorSlot, class ItemStack const &);
+    /*313*/ virtual void hurtArmorSlot(class ActorDamageSource const &, int, enum class ArmorSlot);
+    /*314*/ virtual void setDamagedArmor(enum class ArmorSlot, class ItemStack const &);
     /*315*/ virtual void sendArmorDamage(class std::bitset<4> const &);
     /*316*/ virtual void sendArmor(class std::bitset<4> const &);
     /*317*/ virtual void containerChanged(int);
@@ -272,7 +272,7 @@ public:
     /*329*/ virtual int getDamageAfterMagicAbsorb(class ActorDamageSource const &, int);
     /*330*/ virtual bool createAIGoals();
     /*331*/ virtual void onBorn(class Actor &, class Actor &);
-    /*332*/ virtual bool setItemSlot(enum EquipmentSlot, class ItemStack const &);
+    /*332*/ virtual bool setItemSlot(enum class EquipmentSlot, class ItemStack const &);
     /*333*/ virtual void setTransitioningSitting(bool);
     /*334*/ virtual void attackAnimation(class Actor *, float);
     /*335*/ virtual int getAttackTime();
@@ -306,19 +306,19 @@ public:
 #endif
     MCAPI Mob(class Level &);
     MCAPI Mob(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &);
-    MCAPI float calcMoveRelativeSpeed(enum TravelType);
+    MCAPI float calcMoveRelativeSpeed(enum class TravelType);
     MCAPI bool checkTotemDeathProtection(class ActorDamageSource const &);
     MCAPI void emitJumpPreventedEvent(class BlockPos const &);
     MCAPI void frostWalk();
     MCAPI int getCaravanSize() const;
     MCAPI class Mob * getFirstCaravanHead();
-    MCAPI class ItemStack const & getItemSlot(enum EquipmentSlot) const;
+    MCAPI class ItemStack const & getItemSlot(enum class EquipmentSlot) const;
     MCAPI float getJumpMultiplier();
     MCAPI struct Mob::JumpPreventionResult getJumpPrevention();
-    MCAPI enum TravelType getTravelType();
+    MCAPI enum class TravelType getTravelType();
     MCAPI void onPlayerJump(int);
     MCAPI void resetAttributes();
-    MCAPI void sendArmorSlot(enum ArmorSlot);
+    MCAPI void sendArmorSlot(enum class ArmorSlot);
     MCAPI void setEatCounter(int);
     MCAPI void setIsPregnant(bool);
     MCAPI void setSpeedModifier(float);
@@ -328,12 +328,12 @@ public:
     MCAPI static float const PLAYER_SWIMMING_SURFACE_OFFSET;
     MCAPI static int const TOTAL_ROLL_STEPS;
     MCAPI static void _aiStep(struct IMobMovementProxy &);
-    MCAPI static float _calcMoveRelativeSpeed(struct IMobMovementProxy &, enum TravelType);
+    MCAPI static float _calcMoveRelativeSpeed(struct IMobMovementProxy &, enum class TravelType);
     MCAPI static void _travel(struct IMobMovementProxy &, float, float, float);
     MCAPI static void _updateMobTravel(struct IMobMovementProxy &);
     MCAPI static float calculateJumpImpulse(struct IMobMovementProxy const &);
     MCAPI static struct Mob::JumpPreventionResult getJumpPrevention(struct IMobMovementProxy const &);
-    MCAPI static enum TravelType getTravelType(struct IMobMovementProxy &);
+    MCAPI static enum class TravelType getTravelType(struct IMobMovementProxy &);
 
 //protected:
     MCAPI void _doSoulSpeedParticleEffect();

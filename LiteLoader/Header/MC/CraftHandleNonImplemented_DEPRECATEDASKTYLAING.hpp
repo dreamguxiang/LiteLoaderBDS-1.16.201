@@ -22,7 +22,7 @@ public:
 public:
     /*0*/ virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
+    /*2*/ virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLENONIMPLEMENTED_DEPRECATEDASKTYLAING
 #endif
 

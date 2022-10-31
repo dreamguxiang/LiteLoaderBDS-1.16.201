@@ -33,9 +33,9 @@ public:
     MCAPI ~StructureBlockPalette();
 
 //protected:
-    MCAPI enum StructureBlockPaletteLoadResult _parseBlockPalette(class CompoundTag const &);
-    MCAPI enum StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const &, int);
-    MCAPI enum StructureBlockPaletteLoadResult _parseBlockPositionDataList(class CompoundTag const &);
+    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPalette(class CompoundTag const &);
+    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const &, int);
+    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPositionDataList(class CompoundTag const &);
     MCAPI void _saveBlockPalette(class CompoundTag &) const;
     MCAPI void _saveBlockPositionDataList(class CompoundTag &) const;
 

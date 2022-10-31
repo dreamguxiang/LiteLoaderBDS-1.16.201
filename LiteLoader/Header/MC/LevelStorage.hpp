@@ -28,7 +28,7 @@ public:
     /*3*/ virtual bool hasKey(class gsl::basic_string_span<char const, -1>) const = 0;
     /*4*/ virtual void forEachKeyWithPrefix(class gsl::basic_string_span<char const, -1>, class std::function<void (class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const &) const = 0;
     /*5*/ virtual bool loadLevelData(class LevelData &) = 0;
-    /*6*/ virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, enum StorageVersion) = 0;
+    /*6*/ virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, enum class StorageVersion) = 0;
     /*7*/ virtual void saveLevelData(class LevelData const &) = 0;
     /*8*/ virtual class Core::PathBuffer<std::string> const & getFullPath() const = 0;
     /*9*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(std::string const &, std::string &&) = 0;
@@ -51,7 +51,7 @@ public:
     /*26*/ virtual void setFlushAllowed(bool) = 0;
     /*27*/ virtual void flushToPermanentStorage() = 0;
     /*28*/ virtual void freeCaches();
-    /*29*/ virtual void setCompactionCallback(class std::function<void (enum CompactionStatus)>) = 0;
+    /*29*/ virtual void setCompactionCallback(class std::function<void (enum class CompactionStatus)>) = 0;
     /*30*/ virtual void setCriticalSyncSaveCallback(class std::function<void (void)>) = 0;
     /*31*/ virtual void corruptLevel();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSTORAGE

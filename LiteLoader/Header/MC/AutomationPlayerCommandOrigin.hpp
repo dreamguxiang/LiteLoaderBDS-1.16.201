@@ -25,15 +25,15 @@ public:
     /*0*/ virtual ~AutomationPlayerCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
     /*2*/ virtual std::string getName() const;
-    /*8*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /*8*/ virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /*9*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*12*/ virtual bool hasChatPerms() const;
     /*13*/ virtual bool hasTellPerms() const;
     /*18*/ virtual class NetworkIdentifier const & getSourceId() const;
-    /*21*/ virtual enum CommandOriginType getOriginType() const;
+    /*21*/ virtual enum class CommandOriginType getOriginType() const;
     /*22*/ virtual struct CommandOriginData toCommandOriginData() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AUTOMATIONPLAYERCOMMANDORIGIN
 #endif
-    MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level &, std::string const &, enum CommandPermissionLevel, class NetworkIdentifier const &);
+    MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level &, std::string const &, enum class CommandPermissionLevel, class NetworkIdentifier const &);
 
 };

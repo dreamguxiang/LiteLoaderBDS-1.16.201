@@ -53,7 +53,7 @@ public:
     /*21*/ virtual void __unk_vfn_21();
     /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual void __unk_vfn_25();
-    /*26*/ virtual void levelEvent(enum LevelEvent, class Vec3 const &, int);
+    /*26*/ virtual void levelEvent(enum class LevelEvent, class Vec3 const &, int);
     /*27*/ virtual void __unk_vfn_27();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEATHER
 #endif

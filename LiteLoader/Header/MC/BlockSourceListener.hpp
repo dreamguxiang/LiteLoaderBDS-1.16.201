@@ -31,7 +31,7 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
+    /*11*/ virtual class Particle * addParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
@@ -46,9 +46,9 @@ public:
     /*23*/ virtual void onChunkUnloaded(class LevelChunk &);
     /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual void __unk_vfn_25();
-    /*26*/ virtual void levelEvent(enum LevelEvent, class Vec3 const &, int);
+    /*26*/ virtual void levelEvent(enum class LevelEvent, class Vec3 const &, int);
     /*27*/ virtual void __unk_vfn_27();
-    /*28*/ virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    /*28*/ virtual void levelSoundEvent(enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCELISTENER
     MCVAPI void onAreaChanged(class BlockSource &, class BlockPos const &, class BlockPos const &);
     MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *);

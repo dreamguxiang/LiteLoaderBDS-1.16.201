@@ -27,12 +27,12 @@ public:
 #endif
     MCAPI InventoryTransaction(class InventoryTransaction const &);
     MCAPI void addAction(class InventoryAction const &);
-    MCAPI enum InventoryTransactionError executeFull(class Player &, bool) const;
+    MCAPI enum class InventoryTransactionError executeFull(class Player &, bool) const;
     MCAPI void forceBalanceTransaction();
     MCAPI std::vector<class InventoryAction> const & getActions(class InventorySource const &) const;
-    MCAPI class std::function<enum InventoryTransactionError (class Player &, class InventoryAction const &, bool)> getVerifyFunction(class InventorySource const &) const;
+    MCAPI class std::function<enum class InventoryTransactionError (class Player &, class InventoryAction const &, bool)> getVerifyFunction(class InventorySource const &) const;
     MCAPI void serialize(class BinaryStream &, bool) const;
-    MCAPI enum InventoryTransactionError verifyFull(class Player &, bool) const;
+    MCAPI enum class InventoryTransactionError verifyFull(class Player &, bool) const;
     MCAPI ~InventoryTransaction();
 
 //private:
@@ -41,6 +41,6 @@ public:
     MCAPI void addItemToContent(class ItemStack const &, int);
 
 private:
-    MCAPI static class BidirectionalUnorderedMap<enum InventoryTransactionError, std::string> const inventoryTransactionErrorMap;
+    MCAPI static class BidirectionalUnorderedMap<enum class InventoryTransactionError, std::string> const inventoryTransactionErrorMap;
 
 };

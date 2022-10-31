@@ -13,8 +13,8 @@ class TeleportCommand : public Command {
 #define AFTER_EXTRA
     // Add Member There
 public:
-    enum FacingResult;
-    enum TeleportAnalysis;
+    enum class FacingResult;
+    enum class TeleportAnalysis;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTCOMMAND
 public:
@@ -32,8 +32,8 @@ public:
     MCAPI static void teleport(class Actor &, class Vec3, class Vec3 *, class AutomaticID<class Dimension, int>, class RelativeFloat, class RelativeFloat, int, struct ActorUniqueID const &);
 
 //private:
-    MCAPI enum TeleportCommand::FacingResult getFacingDirection(class CommandOrigin const &, class CommandOutput &, class Vec3 &) const;
-    MCAPI static enum TeleportCommand::TeleportAnalysis actorToLocationTeleportAnalysis(class CommandOrigin const &, class CommandArea const &, class CommandArea &, class Actor const &, class Vec3);
+    MCAPI enum class TeleportCommand::FacingResult getFacingDirection(class CommandOrigin const &, class CommandOutput &, class Vec3 &) const;
+    MCAPI static enum class TeleportCommand::TeleportAnalysis actorToLocationTeleportAnalysis(class CommandOrigin const &, class CommandArea const &, class CommandArea &, class Actor const &, class Vec3);
     MCAPI static std::unique_ptr<class CommandArea> getCommandAreaForTargets(class CommandOrigin const &, class CommandSelectorResults<class Actor> const &, class Vec3, bool);
 
 private:

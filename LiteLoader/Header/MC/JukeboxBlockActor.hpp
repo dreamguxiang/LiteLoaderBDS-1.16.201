@@ -43,7 +43,7 @@ public:
     MCAPI void stopPlayingRecord(class BlockSource &) const;
 
 //private:
-    MCAPI void _onChanged(class BlockSource &, enum LevelSoundEvent);
+    MCAPI void _onChanged(class BlockSource &, enum class LevelSoundEvent);
     MCAPI void _spawnMusicParticles(class Level &, float);
 
 private:

@@ -54,7 +54,7 @@ public:
     /*260*/ virtual void __unk_vfn_260();
     /*261*/ virtual float getInertia();
     /*262*/ virtual void __unk_vfn_262();
-    /*263*/ virtual enum ParticleType getTrailParticle();
+    /*263*/ virtual enum class ParticleType getTrailParticle();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREBALL
     MCVAPI bool canMakeStepSound() const;
     MCVAPI void onHit(class HitResult const &);

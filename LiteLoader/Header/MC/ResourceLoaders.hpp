@@ -21,7 +21,7 @@ namespace ResourceLoaders {
     MCAPI extern class BackwardsCompatTextureGroup backCompatGroup;
     MCAPI struct std::pair<int, std::string const &> getPackStackIndexOfResource(class ResourceLocation const &, std::vector<std::string> const &);
     MCAPI bool load(class ResourceLocation const &, std::string &);
-    MCAPI extern class std::map<enum ResourceFileSystem, std::unique_ptr<class ResourceLoader>, struct std::less<enum ResourceFileSystem>, class std::allocator<struct std::pair<enum ResourceFileSystem const, std::unique_ptr<class ResourceLoader>>>> loaders;
+    MCAPI extern class std::map<enum class ResourceFileSystem, std::unique_ptr<class ResourceLoader>, struct std::less<enum class ResourceFileSystem>, class std::allocator<struct std::pair<enum class ResourceFileSystem const, std::unique_ptr<class ResourceLoader>>>> loaders;
     MCAPI extern std::vector<std::string> const supportedImageExtensions;
 
 };

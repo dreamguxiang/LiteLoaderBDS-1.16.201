@@ -30,7 +30,7 @@ public:
     MCVAPI bool showsDurabilityInCreative() const;
     MCVAPI bool uniqueAuxValues() const;
     MCVAPI class ItemStack & use(class ItemStack &, class Player &) const;
-    MCVAPI enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    MCVAPI enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     MCVAPI ~ChemistryStickItem();
 #endif
 

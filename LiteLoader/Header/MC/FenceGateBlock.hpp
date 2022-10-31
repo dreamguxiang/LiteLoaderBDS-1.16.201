@@ -72,7 +72,7 @@ public:
     MCVAPI bool isFenceGateBlock() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
-    MCAPI FenceGateBlock(std::string const &, int, enum WoodType);
+    MCAPI FenceGateBlock(std::string const &, int, enum class WoodType);
     MCAPI void resolveIsInWall(class BlockSource &, class BlockPos const &) const;
 
 //private:

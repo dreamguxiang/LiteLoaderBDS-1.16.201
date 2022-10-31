@@ -24,8 +24,8 @@ public:
 #endif
 
 //private:
-    MCAPI static void _addClusterRuins(class StructureManager &, class Random &, enum Rotation const &, class BlockPos const &, struct OceanRuinConfiguration const &, std::vector<std::unique_ptr<class StructurePiece>> &);
-    MCAPI static void _addPiece(class StructureManager &, class BlockPos const &, enum Rotation const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, struct OceanRuinConfiguration const &, bool, float);
+    MCAPI static void _addClusterRuins(class StructureManager &, class Random &, enum class Rotation const &, class BlockPos const &, struct OceanRuinConfiguration const &, std::vector<std::unique_ptr<class StructurePiece>> &);
+    MCAPI static void _addPiece(class StructureManager &, class BlockPos const &, enum class Rotation const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, struct OceanRuinConfiguration const &, bool, float);
     MCAPI static std::vector<class BlockPos> _allPositions(class Random &, int, int, int);
 
 private:

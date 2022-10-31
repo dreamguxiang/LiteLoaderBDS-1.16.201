@@ -32,7 +32,7 @@ public:
     /*9*/ virtual void addAABBs(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class Actor *) const;
     /*16*/ virtual void __unk_vfn_16();
-    /*19*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    /*19*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void __unk_vfn_24();
@@ -82,7 +82,7 @@ public:
 
 //private:
     MCAPI void _emitBoneMeal(class Level &, class BlockSource &, class BlockPos const &) const;
-    MCAPI void _notifyClientComposterUsed(class Player const &, short, enum MinecraftEventing::POIBlockInteractionType) const;
+    MCAPI void _notifyClientComposterUsed(class Player const &, short, enum class MinecraftEventing::POIBlockInteractionType) const;
     MCAPI static std::vector<struct std::pair<int, signed char>> const & _getCompostableItems();
 
 private:

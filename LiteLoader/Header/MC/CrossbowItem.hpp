@@ -40,7 +40,7 @@ public:
     /*72*/ virtual void __unk_vfn_72();
     /*73*/ virtual void __unk_vfn_73();
     /*76*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*78*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    /*78*/ virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /*79*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
     /*101*/ virtual void __unk_vfn_101();
     /*102*/ virtual void __unk_vfn_102();

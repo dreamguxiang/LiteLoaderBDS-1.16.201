@@ -29,7 +29,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTINSTANCE
 #endif
     MCAPI MobEffectInstance(unsigned int, int, int, int, int, int, bool, bool, bool);
-    MCAPI int getDifficulityDuration(enum Difficulty) const;
+    MCAPI int getDifficulityDuration(enum class Difficulty) const;
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI void update(class MobEffectInstance const &);
     MCAPI static class MobEffectInstance const NO_EFFECT;

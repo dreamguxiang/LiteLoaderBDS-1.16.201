@@ -10,7 +10,7 @@
 class CommandOutputParameter {
  #define DISABLE_CONSTRUCTOR_PREVENTION_COMMANDOUTPUTPARAMETER
 #define AFTER_EXTRA
-    enum NoCountType;
+    enum class NoCountType;
     std::string str;
     int type;
 

@@ -17,8 +17,8 @@ struct GoalDefinition {
     MCAPI GoalDefinition(struct GoalDefinition &&);
     MCAPI GoalDefinition(struct GoalDefinition const &);
     MCAPI GoalDefinition();
-    MCAPI enum POIType _getPOITypeFromString(std::string);
-    MCAPI enum TargetSelectionMethod _getTargetSelectionMethodFromString(std::string const &);
+    MCAPI enum class POIType _getPOITypeFromString(std::string);
+    MCAPI enum class TargetSelectionMethod _getTargetSelectionMethodFromString(std::string const &);
     MCAPI struct GoalDefinition & operator=(struct GoalDefinition &&);
     MCAPI struct GoalDefinition & operator=(struct GoalDefinition const &);
     MCAPI bool parse(struct ConstDeserializeDataParams const &, int);

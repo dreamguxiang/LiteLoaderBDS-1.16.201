@@ -22,7 +22,7 @@ public:
 #endif
 
 public:
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~ZombieVillager();
     /*32*/ virtual void __unk_vfn_32();
     /*55*/ virtual void __unk_vfn_55();
@@ -36,7 +36,7 @@ public:
     /*101*/ virtual void __unk_vfn_101();
     /*102*/ virtual void __unk_vfn_102();
     /*123*/ virtual void __unk_vfn_123();
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
     /*171*/ virtual void __unk_vfn_171();
     /*184*/ virtual void __unk_vfn_184();
     /*208*/ virtual void __unk_vfn_208();

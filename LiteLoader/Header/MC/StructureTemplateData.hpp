@@ -42,12 +42,12 @@ public:
     MCAPI static std::string const DEFAULT_PALETTE_NAME;
 
 //protected:
-    MCAPI enum StructureLoadResult _parseBlockIndices(class CompoundTag const &);
-    MCAPI enum StructureLoadResult _parseEntities(class CompoundTag const &);
-    MCAPI enum StructureLoadResult _parseFormatVersion(class CompoundTag const &);
-    MCAPI enum StructureLoadResult _parsePalettes(class CompoundTag const &);
-    MCAPI enum StructureLoadResult _parseSize(class CompoundTag const &);
-    MCAPI enum StructureLoadResult _parseStructureWorldOrigin(class CompoundTag const &);
+    MCAPI enum class StructureLoadResult _parseBlockIndices(class CompoundTag const &);
+    MCAPI enum class StructureLoadResult _parseEntities(class CompoundTag const &);
+    MCAPI enum class StructureLoadResult _parseFormatVersion(class CompoundTag const &);
+    MCAPI enum class StructureLoadResult _parsePalettes(class CompoundTag const &);
+    MCAPI enum class StructureLoadResult _parseSize(class CompoundTag const &);
+    MCAPI enum class StructureLoadResult _parseStructureWorldOrigin(class CompoundTag const &);
     MCAPI void _saveBlockIndices(class CompoundTag &) const;
     MCAPI void _saveEntities(class CompoundTag &) const;
     MCAPI void _savePalettes(class CompoundTag &) const;

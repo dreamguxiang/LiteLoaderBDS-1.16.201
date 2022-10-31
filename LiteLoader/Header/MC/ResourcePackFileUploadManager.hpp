@@ -27,7 +27,7 @@ public:
     /*2*/ virtual void uploadFileToRealmStorage(std::string const &, class Core::Path const &, std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKFILEUPLOADMANAGER
 #endif
-    MCAPI void uploadResourcePack(std::string const &, class ResourceLocation const &, bool, bool, enum PackType, bool);
+    MCAPI void uploadResourcePack(std::string const &, class ResourceLocation const &, bool, bool, enum class PackType, bool);
 
 //private:
     MCAPI void _uploadPackToRealmStorage(std::string const &, class Core::Path const &, std::string const &);

@@ -22,12 +22,12 @@ public:
 
 public:
     /*0*/ virtual ~StartGamePacket();
-    /*1*/ virtual enum MinecraftPacketIds getId() const;
+    /*1*/ virtual enum class MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
-    /*4*/ virtual enum StreamReadResult read(class ReadOnlyBinaryStream &);
+    /*4*/ virtual enum class StreamReadResult read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STARTGAMEPACKET
 #endif
-    MCAPI StartGamePacket(class LevelSettings const &, struct ActorUniqueID, class ActorRuntimeID, enum GameType, bool, class Vec3 const &, class Vec2 const &, std::string const &, std::string const &, class ContentIdentity const &, class BlockPalette const &, std::string const &, class BlockDefinitionGroup const &, bool, enum ServerAuthMovementMode, unsigned __int64, int);
+    MCAPI StartGamePacket(class LevelSettings const &, struct ActorUniqueID, class ActorRuntimeID, enum class GameType, bool, class Vec3 const &, class Vec2 const &, std::string const &, std::string const &, class ContentIdentity const &, class BlockPalette const &, std::string const &, class BlockDefinitionGroup const &, bool, enum class ServerAuthMovementMode, unsigned __int64, int);
 
 };

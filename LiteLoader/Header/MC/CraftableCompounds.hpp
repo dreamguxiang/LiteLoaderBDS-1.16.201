@@ -19,19 +19,19 @@ public:
 
 public:
     /*0*/ virtual ~CraftableCompounds();
-    /*1*/ virtual void _registerCompound(std::vector<class ItemStack> const &, class ItemStack const &, enum LabTableReactionType, enum CompoundContainerType);
+    /*1*/ virtual void _registerCompound(std::vector<class ItemStack> const &, class ItemStack const &, enum class LabTableReactionType, enum class CompoundContainerType);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTABLECOMPOUNDS
 #endif
     MCAPI CraftableCompounds();
     MCAPI CraftableCompounds(class CraftableCompounds const &);
     MCAPI class ItemStack const & getCompound(std::vector<class ItemStack> const &);
-    MCAPI enum LabTableReactionType getReaction(std::vector<class ItemStack> const &);
+    MCAPI enum class LabTableReactionType getReaction(std::vector<class ItemStack> const &);
     MCAPI void registerCompounds();
 
 //protected:
     MCAPI std::string _getCompoundId(std::vector<class ItemStack> const &);
-    MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, enum CompoundType, enum LabTableReactionType, enum CompoundContainerType, int);
-    MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, class ItemStack const &, enum LabTableReactionType, enum CompoundContainerType);
+    MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, enum class CompoundType, enum class LabTableReactionType, enum class CompoundContainerType, int);
+    MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, class ItemStack const &, enum class LabTableReactionType, enum class CompoundContainerType);
 
 protected:
 

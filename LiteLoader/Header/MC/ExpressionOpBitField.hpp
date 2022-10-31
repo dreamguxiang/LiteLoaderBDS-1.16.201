@@ -21,8 +21,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPRESSIONOPBITFIELD
 #endif
-    MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
-    MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
-    MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
+    MCAPI bool areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp) const;
+    MCAPI bool areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp) const;
+    MCAPI bool areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp) const;
 
 };

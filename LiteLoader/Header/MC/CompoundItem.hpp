@@ -45,15 +45,15 @@ public:
     /*117*/ virtual void __unk_vfn_117();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDITEM
 #endif
-    MCAPI static enum CompoundType getCompoundType(class ItemDescriptor const &);
-    MCAPI static class RecipeIngredient getIngredientForCompound(enum CompoundType);
-    MCAPI static class ItemInstance getItemForCompound(enum CompoundType, int);
+    MCAPI static enum class CompoundType getCompoundType(class ItemDescriptor const &);
+    MCAPI static class RecipeIngredient getIngredientForCompound(enum class CompoundType);
+    MCAPI static class ItemInstance getItemForCompound(enum class CompoundType, int);
     MCAPI static bool isCompoundItem(class ItemStackBase const &);
 
 //private:
-    MCAPI void _registerSpecialCompound(class ItemInstance const &, enum CompoundType);
+    MCAPI void _registerSpecialCompound(class ItemInstance const &, enum class CompoundType);
     MCAPI void _registerSpecialCompounds();
-    MCAPI static std::string _getName(enum CompoundType);
+    MCAPI static std::string _getName(enum class CompoundType);
 
 private:
     MCAPI static class std::unordered_map<int, int, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, int>>> mIdToSpecialCompound;

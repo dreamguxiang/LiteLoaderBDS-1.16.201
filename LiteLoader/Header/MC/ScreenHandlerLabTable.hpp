@@ -21,16 +21,16 @@ public:
 
 public:
     /*0*/ virtual ~ScreenHandlerLabTable();
-    /*1*/ virtual bool canDestroy(enum ContainerEnumName, unsigned char) const;
-    /*2*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
-    /*3*/ virtual enum ItemStackNetResult endRequest();
+    /*1*/ virtual bool canDestroy(enum class ContainerEnumName, unsigned char) const;
+    /*2*/ virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const &);
+    /*3*/ virtual enum class ItemStackNetResult endRequest();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void postRequest(bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERLABTABLE
 #endif
 
 //private:
-    MCAPI enum ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<7> const &);
+    MCAPI enum class ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<7> const &);
 
 private:
 

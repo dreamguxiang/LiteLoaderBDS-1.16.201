@@ -97,16 +97,16 @@ public:
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
 #endif
-    MCAPI Container(enum ContainerType);
+    MCAPI Container(enum class ContainerType);
     MCAPI int getItemCount(class std::function<bool (class ItemStack const &)>);
     MCAPI int getRedstoneSignalFromContainer(class BlockSource &);
     MCAPI void triggerTransactionChange(int, class ItemStack const &, class ItemStack const &);
-    MCAPI static enum ContainerType getContainerTypeId(std::string const &);
+    MCAPI static enum class ContainerType getContainerTypeId(std::string const &);
 
 //protected:
     MCAPI void _serverInitId(int, class ItemStack &, class std::function<void (int, class ItemStack const &)>);
 
 protected:
-    MCAPI static class BidirectionalUnorderedMap<enum ContainerType, std::string> const containerTypeMap;
+    MCAPI static class BidirectionalUnorderedMap<enum class ContainerType, std::string> const containerTypeMap;
 
 };

@@ -22,7 +22,7 @@ public:
 #endif
 
 public:
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~EnderDragon();
     /*11*/ virtual void remove();
     /*32*/ virtual void __unk_vfn_32();
@@ -42,7 +42,7 @@ public:
     /*112*/ virtual void setSitting(bool);
     /*123*/ virtual void __unk_vfn_123();
     /*126*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
     /*170*/ virtual bool canChangeDimensions() const;
     /*171*/ virtual void __unk_vfn_171();
     /*182*/ virtual bool canBePulledIntoVehicle() const;
@@ -85,7 +85,7 @@ public:
     MCAPI float getHeadYOffset(float) const;
     MCAPI void hurtEntities(class gsl::span<class gsl::not_null<class Actor *>, -1>) const;
     MCAPI void knockBack(class gsl::span<class gsl::not_null<class Actor *>, -1>) const;
-    MCAPI std::unique_ptr<class Path> reconstructPath(class PathfinderNode &, class PathfinderNode &, enum PathCompletionType);
+    MCAPI std::unique_ptr<class Path> reconstructPath(class PathfinderNode &, class PathfinderNode &, enum class PathCompletionType);
 
 protected:
 

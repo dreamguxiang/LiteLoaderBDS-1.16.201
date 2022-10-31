@@ -29,6 +29,6 @@ public:
 #endif
     MCAPI CommandVersion(int, int);
     MCAPI static int const CurrentVersion;
-    MCAPI static enum CurrentCmdVersion const getVersionMapping(class SemVersion const &);
+    MCAPI static enum class CurrentCmdVersion const getVersionMapping(class SemVersion const &);
 
 };

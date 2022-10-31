@@ -37,7 +37,7 @@ public:
     /*102*/ virtual void __unk_vfn_102();
     /*105*/ virtual class Actor * findAttackTarget();
     /*123*/ virtual void __unk_vfn_123();
-    /*134*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*134*/ virtual void handleEntityEvent(enum class ActorEvent, int);
     /*171*/ virtual void __unk_vfn_171();
     /*184*/ virtual void __unk_vfn_184();
     /*208*/ virtual void __unk_vfn_208();

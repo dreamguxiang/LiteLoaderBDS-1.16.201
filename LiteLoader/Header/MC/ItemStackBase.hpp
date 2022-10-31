@@ -6,7 +6,6 @@
 
 #define BEFORE_EXTRA
 #include "Item.hpp"
-#include "BlockLegacy.hpp"
 #include <cstddef>
 #undef BEFORE_EXTRA
 
@@ -25,9 +24,9 @@ private:
     bool mShowPickUp;
     bool mWasPickedUp;
     bool mCanUseOn;
-    std::vector<const BlockLegacy*> mCanPlaceOn;
+    std::vector<const class BlockLegacy*> mCanPlaceOn;
     size_t mCanPlaceOnHash;
-    std::vector<const BlockLegacy*> mCanDestroy;
+    std::vector<const class BlockLegacy*> mCanDestroy;
     size_t mCanDestroyHash;
     int mBlockingTick;
     std::unique_ptr<ItemInstance> mChargedItem;
@@ -56,7 +55,7 @@ public:
     MCAPI void clearChargedItem();
     MCAPI class ItemEnchants constructItemEnchantsFromUserData() const;
     MCAPI void deserializeComponents(class IDataInput &);
-    MCAPI enum ArmorSlot getArmorSlot() const;
+    MCAPI enum class ArmorSlot getArmorSlot() const;
     MCAPI short getAuxValue() const;
     MCAPI int getBaseRepairCost() const;
     MCAPI class ComponentItem const * getComponentItem() const;

@@ -23,15 +23,15 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONHANDLER
 #endif
     MCAPI ItemStackRequestActionHandler(class ItemStackNetManagerServer &, class Player &);
-    MCAPI void _cacheLegacySlotIdAssignment(enum ContainerEnumName, unsigned char, class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &, class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const &);
+    MCAPI void _cacheLegacySlotIdAssignment(enum class ContainerEnumName, unsigned char, class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &, class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const &);
     MCAPI void _cacheSlotIdAssigment(class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &, unsigned char, unsigned char, class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const &);
-    MCAPI class SparseContainer * _getOrInitSparseContainer(enum ContainerEnumName);
-    MCAPI enum ItemStackNetResult _handleRemove(class ItemStackRequestActionTransferBase const &, class ItemStack &);
-    MCAPI class ContainerWeakRef const * _tryGetAllowedContainerWeakRef(enum ContainerEnumName) const;
+    MCAPI class SparseContainer * _getOrInitSparseContainer(enum class ContainerEnumName);
+    MCAPI enum class ItemStackNetResult _handleRemove(class ItemStackRequestActionTransferBase const &, class ItemStack &);
+    MCAPI class ContainerWeakRef const * _tryGetAllowedContainerWeakRef(enum class ContainerEnumName) const;
     MCAPI void addFilteredStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>, std::vector<std::string>);
-    MCAPI class std::tuple<enum ItemStackNetResult, std::vector<struct ItemStackResponseContainerInfo>> endRequest(enum ItemStackNetResult);
+    MCAPI class std::tuple<enum class ItemStackNetResult, std::vector<struct ItemStackResponseContainerInfo>> endRequest(enum class ItemStackNetResult);
     MCAPI std::vector<std::string> const & getFilteredStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>) const;
-    MCAPI enum ItemStackNetResult handleRequestAction(class ItemStackRequestAction const &);
+    MCAPI enum class ItemStackNetResult handleRequestAction(class ItemStackRequestAction const &);
     MCAPI void onContainerScreenOpen();
     MCAPI void removeFilteredStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>);
     MCAPI ~ItemStackRequestActionHandler();
@@ -39,9 +39,9 @@ public:
 //private:
     MCAPI void _addResponseSlotInfo(struct ItemStackRequestHandlerSlotInfo const &, class ItemStack const &);
     MCAPI bool _commitAllActionResults();
-    MCAPI enum ItemStackNetResult _handleDestroy(class ItemStackRequestActionDestroy const &);
-    MCAPI enum ItemStackNetResult _handleDrop(class ItemStackRequestActionDrop const &);
-    MCAPI enum ItemStackNetResult _handleTransfer(class ItemStackRequestActionTransferBase const &, bool, bool, bool);
+    MCAPI enum class ItemStackNetResult _handleDestroy(class ItemStackRequestActionDestroy const &);
+    MCAPI enum class ItemStackNetResult _handleDrop(class ItemStackRequestActionDrop const &);
+    MCAPI enum class ItemStackNetResult _handleTransfer(class ItemStackRequestActionTransferBase const &, bool, bool, bool);
     MCAPI class std::optional<struct ItemStackRequestActionHandler::RequestSlotIdAssignment> _resolveSlotIdAssignment(struct ItemStackRequestSlotInfo const &, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo const &, bool, bool);
 

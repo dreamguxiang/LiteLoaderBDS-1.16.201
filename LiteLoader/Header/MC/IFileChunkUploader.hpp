@@ -27,10 +27,10 @@ public:
     /*3*/ virtual void getServerMissingChunks(struct FileInfo const &, class std::function<void (std::vector<struct FileChunkInfo>)>) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void uploadChunk(struct FileInfo const &, struct FileChunkInfo const &, std::vector<unsigned char> const &, class std::function<void (bool)>);
-    /*6*/ virtual void uploadStream(struct FileInfo const &, unsigned __int64, std::string const &, class std::function<bool (unsigned __int64 &, std::vector<unsigned char> &)>, class std::function<void (enum IFileChunkUploader::UploadStreamResult)>);
+    /*6*/ virtual void uploadStream(struct FileInfo const &, unsigned __int64, std::string const &, class std::function<bool (unsigned __int64 &, std::vector<unsigned char> &)>, class std::function<void (enum class IFileChunkUploader::UploadStreamResult)>);
     /*7*/ virtual bool canCancelUpload(struct FileInfo const &) const = 0;
     /*8*/ virtual void __unk_vfn_8() = 0;
-    /*9*/ virtual enum UploadError getInitErrorCode() const = 0;
+    /*9*/ virtual enum class UploadError getInitErrorCode() const = 0;
     /*10*/ virtual float getUploadProgress(struct FileInfo const &) const = 0;
     /*11*/ virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILECHUNKUPLOADER

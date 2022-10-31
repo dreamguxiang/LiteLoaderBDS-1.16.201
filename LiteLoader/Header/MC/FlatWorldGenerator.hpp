@@ -22,11 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLATWORLDGENERATOR
-    MCVAPI bool findNearestFeature(enum StructureFeatureType, class BlockPos const &, class BlockPos &);
+    MCVAPI bool findNearestFeature(enum class StructureFeatureType, class BlockPos const &, class BlockPos &);
     MCVAPI class BlockPos findSpawnPosition() const;
     MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>);
     MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
-    MCVAPI enum StructureFeatureType getFeatureTypeAt(class BlockPos const &);
+    MCVAPI enum class StructureFeatureType getFeatureTypeAt(class BlockPos const &);
     MCVAPI void loadChunk(class LevelChunk &, bool);
     MCVAPI bool postProcess(class ChunkViewSource &);
     MCVAPI void prepareHeights(class BlockVolume &, class ChunkPos const &, bool);

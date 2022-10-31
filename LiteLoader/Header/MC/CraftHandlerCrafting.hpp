@@ -22,13 +22,13 @@ public:
 public:
     /*0*/ virtual ~CraftHandlerCrafting();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
+    /*2*/ virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERCRAFTING
 #endif
 
 //private:
-    MCAPI enum ItemStackNetResult _handleCraftCreative(class ItemStackRequestActionCraft<class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0>, 11> const &);
-    MCAPI enum ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 9> const &);
+    MCAPI enum class ItemStackNetResult _handleCraftCreative(class ItemStackRequestActionCraft<class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0>, 11> const &);
+    MCAPI enum class ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 9> const &);
 
 private:
 

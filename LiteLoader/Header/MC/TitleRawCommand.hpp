@@ -29,7 +29,7 @@ public:
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
-    MCAPI bool _sendTitlePacketTextObject(enum SetTitlePacket::TitleType, class CommandOrigin const &, class CommandOutput &, class CommandSelectorResults<class Player> const &) const;
+    MCAPI bool _sendTitlePacketTextObject(enum class SetTitlePacket::TitleType, class CommandOrigin const &, class CommandOutput &, class CommandSelectorResults<class Player> const &) const;
 
 private:
 

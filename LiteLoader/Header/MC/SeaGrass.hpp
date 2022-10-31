@@ -45,7 +45,7 @@ public:
     /*48*/ virtual void __unk_vfn_48();
     /*58*/ virtual void __unk_vfn_58();
     /*65*/ virtual void __unk_vfn_65();
-    /*67*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    /*67*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /*68*/ virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /*69*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*73*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;

@@ -27,7 +27,7 @@ public:
     /*14*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYCHUNKSTORAGE
 #endif
-    MCAPI LegacyChunkStorage(std::unique_ptr<class ChunkSource>, class LevelStorage &, enum StorageVersion, class Biome &);
+    MCAPI LegacyChunkStorage(std::unique_ptr<class ChunkSource>, class LevelStorage &, enum class StorageVersion, class Biome &);
 
 //private:
     MCAPI bool _isImported(class ChunkPos const &);

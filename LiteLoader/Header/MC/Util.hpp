@@ -22,7 +22,7 @@ public:
     EntityComponentProcessor(EntityComponentProcessor const&) = delete;
     EntityComponentProcessor(EntityComponentProcessor const&&) = delete;
 };
-enum NumberConversionResult;
+enum class NumberConversionResult;
 template <typename T0, int i1, int i2, int i3>
 class MultidimensionalArray {
 public:
@@ -42,7 +42,7 @@ struct FormattedString {
     MCAPI extern std::string const EMPTY_STRING;
     MCAPI extern std::string const NEW_LINE;
     MCAPI void _breakIntoWordsAndFindProfanity(std::string &, std::string &, std::vector<struct std::pair<int, int>> const &, class std::unordered_set<char, struct std::hash<char>, struct std::equal_to<char>, class std::allocator<char>> const &, class std::set<struct std::pair<int, int>, struct std::less<struct std::pair<int, int>>, class std::allocator<struct std::pair<int, int>>> &, class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> const &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> const &);
-    MCAPI void _logIfValidLogArea(enum LogArea, std::string const &);
+    MCAPI void _logIfValidLogArea(enum class LogArea, std::string const &);
     MCAPI void _recordProfanityLocationInWord(std::string const &, std::string &, std::vector<struct std::pair<int, int>> const &, int, int, class std::set<struct std::pair<int, int>, struct std::less<struct std::pair<int, int>>, class std::allocator<struct std::pair<int, int>>> &, class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> const &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> const &);
     MCAPI std::string base64_decode(std::string const &);
     MCAPI std::string base64_encode(unsigned char const *, unsigned int, bool);
@@ -69,7 +69,7 @@ struct FormattedString {
     MCAPI std::string stringTrim(std::string const &, std::string const &);
     MCAPI std::string stringTrim(std::string const &);
     MCAPI std::string toHex(std::string const &);
-    MCAPI enum Util::NumberConversionResult toInt(std::string const &, int &, int, int);
+    MCAPI enum class Util::NumberConversionResult toInt(std::string const &, int &, int, int);
     MCAPI std::string toLower(class gsl::basic_string_span<char const, -1> const &);
     MCAPI std::string toLower(std::string const &);
     MCAPI void toLowerInPlace(std::string &);
@@ -82,6 +82,6 @@ struct FormattedString {
     MCAPI int utf8len(std::string const &);
     MCAPI std::string utf8substring(std::string const &, int, int);
     MCAPI std::string vFormat(char const *, char *);
-    MCAPI bool validateIdentifier(std::string const &, enum LogArea, bool, struct std::pair<std::string, std::string> *);
+    MCAPI bool validateIdentifier(std::string const &, enum class LogArea, bool, struct std::pair<std::string, std::string> *);
 
 };

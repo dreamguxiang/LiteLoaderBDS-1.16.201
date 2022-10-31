@@ -25,8 +25,8 @@ public:
     /*2*/ virtual bool isShutdownDone();
     /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
     /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random &);
-    /*5*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode);
-    /*6*/ virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const &, enum ChunkSource::LoadMode);
+    /*5*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum class ChunkSource::LoadMode);
+    /*6*/ virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const &, enum class ChunkSource::LoadMode);
     /*7*/ virtual bool postProcess(class ChunkViewSource &);
     /*8*/ virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);
     /*9*/ virtual void loadChunk(class LevelChunk &, bool);
@@ -46,17 +46,17 @@ public:
 #endif
     MCAPI ChunkSource(std::unique_ptr<class ChunkSource>);
     MCAPI void checkAndLaunchChunkGenerationTasks(bool);
-    MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> createEmptyView(enum ChunkSource::LoadMode, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
+    MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> createEmptyView(enum class ChunkSource::LoadMode, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
     MCAPI class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const &);
     MCAPI class std::shared_ptr<class LevelChunk> getGeneratedChunk(class ChunkPos const &);
 
 //protected:
-    MCAPI bool _checkAndDispatchTaskForLevelChunk(struct std::pair<class ChunkPos, enum ChunkState> const &, bool);
+    MCAPI bool _checkAndDispatchTaskForLevelChunk(struct std::pair<class ChunkPos, enum class ChunkState> const &, bool);
     MCAPI void _checkForReplacementDataTask(class LevelChunk &, class ChunkViewSource &);
     MCAPI void _checkForUnblockingChunks(class LevelChunk const &);
-    MCAPI void _checkLevelChunkForNextStage(class LevelChunk const &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &, enum ChunkState);
+    MCAPI void _checkLevelChunkForNextStage(class LevelChunk const &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &, enum class ChunkState);
     MCAPI void _checkLevelChunkForPostProcessing(class LevelChunk const &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &);
-    MCAPI bool _chunkAtStage(class std::weak_ptr<class LevelChunk>, enum ChunkState);
+    MCAPI bool _chunkAtStage(class std::weak_ptr<class LevelChunk>, enum class ChunkState);
     MCAPI void _freeChunkGenerationGridMap(class ChunkPos const &);
     MCAPI void _launchGenerationTask(class std::shared_ptr<class LevelChunk> const &, bool);
     MCAPI void _launchLightingTask(class std::shared_ptr<class LevelChunk> const &, class std::shared_ptr<class ChunkViewSource> const &, bool);

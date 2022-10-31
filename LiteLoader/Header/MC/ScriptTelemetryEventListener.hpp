@@ -27,8 +27,8 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual enum EventResult onScriptLoaded(std::string const &, unsigned __int64);
-    /*8*/ virtual enum EventResult onScriptRan(std::string const &, std::string const &, bool);
+    /*7*/ virtual enum class EventResult onScriptLoaded(std::string const &, unsigned __int64);
+    /*8*/ virtual enum class EventResult onScriptRan(std::string const &, std::string const &, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTTELEMETRYEVENTLISTENER
 #endif
 

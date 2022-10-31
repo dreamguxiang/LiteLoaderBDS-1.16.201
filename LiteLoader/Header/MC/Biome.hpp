@@ -5,8 +5,27 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum VanillaBiomeTypes;
-
+enum class VanillaBiomeTypes : int {
+    Beach = 0x0,
+    Desert = 0x1,
+    ExtremeHills = 0x2,
+    Flat = 0x3,
+    Forest = 0x4,
+    Hell = 0x5,
+    Ice = 0x6,
+    Jungle = 0x7,
+    Mesa = 0x8,
+    MushroomIsland = 0x9,
+    Ocean = 0xA,
+    Plain = 0xB,
+    River = 0xC,
+    Savanna = 0xD,
+    StoneBeach = 0xE,
+    Swamp = 0xF,
+    Taiga = 0x10,
+    TheEnd = 0x11,
+    DataDriven = 0x12,
+};
 #undef BEFORE_EXTRA
 
 class Biome {
@@ -14,7 +33,7 @@ class Biome {
 #define AFTER_EXTRA
     // Add Member There
 public:
-    enum BiomeTempCategory;
+    enum class BiomeTempCategory;
     LIAPI int getId() const;
     LIAPI std::string const& getName() const;
     LIAPI static Biome* fromId(int id);
@@ -34,12 +53,12 @@ public:
 #endif
     MCAPI Biome(int);
     MCAPI class Biome & addTag(class HashedString, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> &);
-    MCAPI enum VanillaBiomeTypes getBiomeType() const;
+    MCAPI enum class VanillaBiomeTypes getBiomeType() const;
     MCAPI int getFoliageColor(class BlockPos const &) const;
     MCAPI int getMapFoliageColor(class BlockPos const &) const;
     MCAPI int getMapGrassColor(class BlockPos const &) const;
     MCAPI float getTemperature(class BlockSource const &, class BlockPos const &) const;
-    MCAPI enum Biome::BiomeTempCategory getTemperatureCategory() const;
+    MCAPI enum class Biome::BiomeTempCategory getTemperatureCategory() const;
     MCAPI float getTemperatureWorldGen(class BlockPos const &, short) const;
     MCAPI bool hasTag(unsigned __int64, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const &) const;
     MCAPI bool hasTag(struct IDType<struct BiomeTagIDType> const &, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const &) const;

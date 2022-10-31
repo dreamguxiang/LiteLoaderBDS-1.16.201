@@ -35,7 +35,7 @@ public:
         return dAccess<BlockPos>(this,44);
     };
 
-    inline enum BlockActorType getType(){
+    inline enum class BlockActorType getType(){
         //FlowerPotBlock::playerWillDestroy Line16
         return dAccess<BlockActorType>(this,21);
     }
@@ -98,10 +98,10 @@ public:
     MCVAPI void onMove();
     MCVAPI void onNeighborChanged(class BlockSource &, class BlockPos const &);
 #endif
-    MCAPI BlockActor(enum BlockActorType, class BlockPos const &, std::string const &);
+    MCAPI BlockActor(enum class BlockActorType, class BlockPos const &, std::string const &);
     MCAPI static void initBlockEntities();
     MCAPI static class std::shared_ptr<class BlockActor> loadStatic(class Level &, class CompoundTag const &, class DataLoadHelper &);
-    MCAPI static void setId(enum BlockActorType, std::string const &);
+    MCAPI static void setId(enum class BlockActorType, std::string const &);
 
 //protected:
     MCAPI void _resetAABB();
@@ -111,7 +111,7 @@ public:
 protected:
 
 private:
-    MCAPI static class std::map<enum BlockActorType, std::string, struct std::less<enum BlockActorType>, class std::allocator<struct std::pair<enum BlockActorType const, std::string>>> mClassIdMap;
-    MCAPI static class std::map<std::string, enum BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum BlockActorType>>> mIdClassMap;
+    MCAPI static class std::map<enum class BlockActorType, std::string, struct std::less<enum class BlockActorType>, class std::allocator<struct std::pair<enum class BlockActorType const, std::string>>> mClassIdMap;
+    MCAPI static class std::map<std::string, enum class BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum class BlockActorType>>> mIdClassMap;
 
 };

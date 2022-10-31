@@ -29,13 +29,13 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGVARIABLEMAP
 #endif
     MCAPI void setMolangVariable(unsigned __int64, char const *, struct MolangScriptArg const &);
-    MCAPI void setMolangVariable(enum MolangVariableIndex, struct MolangScriptArg const &);
+    MCAPI void setMolangVariable(enum class MolangVariableIndex, struct MolangScriptArg const &);
     MCAPI ~MolangVariableMap();
 
 //private:
-    MCAPI class MolangVariable const * _getMolangVariable(enum MolangVariableIndex) const;
+    MCAPI class MolangVariable const * _getMolangVariable(enum class MolangVariableIndex) const;
     MCAPI class MolangVariable * _getOrAddMolangVariable(unsigned __int64 const &, char const *, bool);
-    MCAPI class MolangVariable * _getOrAddMolangVariable(enum MolangVariableIndex);
+    MCAPI class MolangVariable * _getOrAddMolangVariable(enum class MolangVariableIndex);
 
 private:
 

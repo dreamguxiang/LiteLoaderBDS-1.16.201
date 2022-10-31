@@ -21,8 +21,8 @@ public:
 #endif
 
 public:
-    /*1*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /*3*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*1*/ virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
+    /*3*/ virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~AbstractArrow();
     /*32*/ virtual void __unk_vfn_32();
     /*37*/ virtual void lerpTo(class Vec3 const &, class Vec2 const &, int);

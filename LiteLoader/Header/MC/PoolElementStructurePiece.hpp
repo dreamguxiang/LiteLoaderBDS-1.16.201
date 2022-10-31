@@ -32,6 +32,6 @@ public:
     /*15*/ virtual bool _needsPostProcessing(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POOLELEMENTSTRUCTUREPIECE
 #endif
-    MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, enum Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
+    MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, enum class Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
 
 };

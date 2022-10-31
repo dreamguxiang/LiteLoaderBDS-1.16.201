@@ -12,7 +12,7 @@ class NetworkHandler {
 #define AFTER_EXTRA
     // Add Member There
 public:
-    enum NetworkStatisticsConfig;
+    enum class NetworkStatisticsConfig;
     class Connection
     {
     public:
@@ -48,7 +48,7 @@ public:
     MCVAPI bool useIPv6Only() const;
     MCVAPI ~NetworkHandler();
 #endif
-    MCAPI NetworkHandler(class Scheduler &, enum NetworkHandler::NetworkStatisticsConfig);
+    MCAPI NetworkHandler(class Scheduler &, enum class NetworkHandler::NetworkStatisticsConfig);
     MCAPI void disconnect();
     MCAPI class std::weak_ptr<class EncryptedNetworkPeer> getEncryptedPeerForUser(class NetworkIdentifier const &);
     MCAPI class NetworkIdentifier getLocalNetworkId() const;

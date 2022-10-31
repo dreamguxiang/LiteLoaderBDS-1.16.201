@@ -6,7 +6,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 enum class CommandFlagValue : unsigned short;
-enum SemanticConstraint : unsigned char;
+enum class SemanticConstraint : unsigned char;
 class CommandParameterData;
 #include "CommandFlag.hpp"
 #include <memory>
@@ -57,17 +57,17 @@ template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, AutomaticID<cl
 // template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class Block const*>();
 // template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, bool>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandMessage>();
-template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum CommandOperator>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class CommandOperator>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPosition>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Player>>();
-template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum EquipmentSlot>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class EquipmentSlot>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, float>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, int>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, Json::Value>();
-template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum Mirror>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class Mirror>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class MobEffect const*>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class RelativeFloat>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::string>();
@@ -533,7 +533,7 @@ private:
 public:
     template <typename T>
     inline static ParseFn getParseFn() {
-        if constexpr (!std::is_same_v<enum CommandOperator, T> && std::is_enum_v<T>)
+        if constexpr (!std::is_same_v<enum class CommandOperator, T> && std::is_enum_v<T>)
             return &fakeParse<T>;
         // else
         //     return &parse<T>;
@@ -634,7 +634,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDREGISTRY
 #endif
     MCAPI CommandRegistry();
-    MCAPI void addEnumValueConstraints(std::string const &, std::vector<std::string> const &, enum SemanticConstraint);
+    MCAPI void addEnumValueConstraints(std::string const &, std::vector<std::string> const &, enum class SemanticConstraint);
     MCAPI int addEnumValues(std::string const &, std::vector<std::string> const &);
     MCAPI int addSoftEnum(std::string const &, std::vector<std::string>);
     MCAPI void addSoftEnumValues(std::string const &, std::vector<std::string>);
@@ -643,7 +643,7 @@ public:
     MCAPI std::string getCommandName(std::string const &) const;
     MCAPI struct CommandSyntaxInformation getCommandOverloadSyntaxInformation(class CommandOrigin const &, std::string const &) const;
     MCAPI void registerAlias(std::string, std::string);
-    MCAPI void registerCommand(std::string const &, char const *, enum CommandPermissionLevel, struct CommandFlag, struct CommandFlag);
+    MCAPI void registerCommand(std::string const &, char const *, enum class CommandPermissionLevel, struct CommandFlag, struct CommandFlag);
     MCAPI void removeSoftEnumValues(std::string const &, std::vector<std::string>);
     MCAPI class AvailableCommandsPacket serializeAvailableCommands() const;
     MCAPI void setCommandRegistrationOverride(class std::function<void (struct CommandFlag &, std::string const &)>);
@@ -654,16 +654,16 @@ public:
     MCAPI static char const * TAG_VALUES_SOFTENUM_NAME;
 
 //private:
-    MCAPI void _addEnumValueConstraintsInternal(std::vector<struct std::pair<unsigned __int64, unsigned int>> const &, enum SemanticConstraint);
+    MCAPI void _addEnumValueConstraintsInternal(std::vector<struct std::pair<unsigned __int64, unsigned int>> const &, enum class SemanticConstraint);
     MCAPI class CommandRegistry::Symbol _addFunctionSoftEnum();
     MCAPI class CommandRegistry::Symbol _getConstrainedParamEnumSymbol(class CommandParameterData const &) const;
-    MCAPI bool _matchesEnumConstraintsSet(class CommandRegistry::Symbol const &, class CommandOrigin const &, class CommandRegistry::Symbol const &, enum SemanticConstraint) const;
+    MCAPI bool _matchesEnumConstraintsSet(class CommandRegistry::Symbol const &, class CommandOrigin const &, class CommandRegistry::Symbol const &, enum class SemanticConstraint) const;
     MCAPI class CommandRegistry::Symbol addEnumValuesInternal(std::string const &, std::vector<struct std::pair<unsigned __int64, unsigned __int64>> const &, class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const);
     MCAPI class CommandRegistry::Symbol addEnumValuesInternal(std::string const &, std::vector<struct std::pair<std::string, unsigned __int64>> const &, class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const);
     MCAPI void addEnumValuesToExisting(unsigned int, std::vector<struct std::pair<unsigned __int64, unsigned __int64>> const &);
     MCAPI class CommandRegistry::Symbol addPostfix(std::string const &);
     MCAPI void addRule(class CommandRegistry::Symbol, std::vector<class CommandRegistry::Symbol> &&, class std::function<struct CommandRegistry::ParseToken * (struct CommandRegistry::ParseToken &, class CommandRegistry::Symbol)>, class CommandVersion);
-    MCAPI void addSemanticConstraint(enum SemanticConstraint);
+    MCAPI void addSemanticConstraint(enum class SemanticConstraint);
     MCAPI class CommandRegistry::Symbol addSoftTerminal(std::string const &);
     MCAPI void buildFirstSet(struct CommandRegistry::ParseTable &, class CommandRegistry::Symbol, unsigned int) const;
     MCAPI void buildFollowSet(struct CommandRegistry::ParseTable &, class CommandRegistry::Symbol, unsigned int, class std::set<class CommandRegistry::Symbol, struct std::less<class CommandRegistry::Symbol>, class std::allocator<class CommandRegistry::Symbol>> &) const;
@@ -671,7 +671,7 @@ public:
     MCAPI class CommandRegistry::Symbol buildOptionalRuleChain(struct CommandRegistry::Signature const &, std::vector<class CommandParameterData> const &, class CommandParameterData const *, unsigned __int64);
     MCAPI void buildParseTable(unsigned int) const;
     MCAPI class CommandRegistry::Symbol buildRules(struct CommandRegistry::Signature &, std::vector<struct CommandRegistry::Overload *> const &, unsigned __int64);
-    MCAPI bool checkOriginCommandFlags(class CommandOrigin const &, struct CommandFlag, enum CommandPermissionLevel) const;
+    MCAPI bool checkOriginCommandFlags(class CommandOrigin const &, struct CommandFlag, enum class CommandPermissionLevel) const;
     MCAPI std::unique_ptr<class Command> createCommand(struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const;
     MCAPI std::string describe(class CommandRegistry::Symbol) const;
     MCAPI std::string describe(class CommandParameterData const &) const;
@@ -690,7 +690,7 @@ public:
     MCAPI bool isValid(class CommandRegistry::Symbol) const;
     MCAPI bool originCanRun(class CommandOrigin const &, struct CommandRegistry::Signature const &) const;
     MCAPI bool originCanRunOverloadWithParam(class CommandOrigin const &, class CommandParameterData const &) const;
-    MCAPI bool parseOperator(enum CommandOperator *, struct CommandRegistry::ParseToken const &, std::string &, std::vector<std::string> &) const;
+    MCAPI bool parseOperator(enum class CommandOperator *, struct CommandRegistry::ParseToken const &, std::string &, std::vector<std::string> &) const;
     MCAPI bool parseSelector(class CommandSelectorBase *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &, bool) const;
     MCAPI void registerOverloadInternal(struct CommandRegistry::Signature &, struct CommandRegistry::Overload &);
     MCAPI void setupOverloadRules(struct CommandRegistry::Signature &, struct CommandRegistry::Overload &);

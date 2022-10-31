@@ -22,7 +22,7 @@ public:
 #endif
 
 public:
-    /*3*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /*3*/ virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /*7*/ virtual ~MinecartCommandBlock();
     /*32*/ virtual void __unk_vfn_32();
     /*54*/ virtual bool canShowNameTag() const;
@@ -48,7 +48,7 @@ public:
     /*246*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*249*/ virtual void __unk_vfn_249();
     /*260*/ virtual void __unk_vfn_260();
-    /*262*/ virtual enum MinecartType getType();
+    /*262*/ virtual enum class MinecartType getType();
     /*263*/ virtual class Block const * getDefaultDisplayBlock() const;
     /*264*/ virtual void __unk_vfn_264();
     /*266*/ virtual void applyNaturalSlowdown(class BlockSource &);

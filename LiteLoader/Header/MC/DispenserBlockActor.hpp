@@ -38,7 +38,7 @@ public:
     MCVAPI void startOpen(class Player &);
     MCVAPI void stopOpen(class Player &);
 #endif
-    MCAPI DispenserBlockActor(class BlockPos, enum BlockActorType);
+    MCAPI DispenserBlockActor(class BlockPos, enum class BlockActorType);
 
 //protected:
     MCAPI void initItems();

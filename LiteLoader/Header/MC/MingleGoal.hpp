@@ -40,7 +40,7 @@ public:
     MCAPI bool _isSuitablePartner(class Actor &, struct ActorUniqueID);
     MCAPI void _partnerWith(class Actor &);
     MCAPI void _tickPartneredActive(class MingleComponent &);
-    MCAPI bool _validatePartnerState(enum MingleComponent::MingleState, class MingleComponent &, bool);
+    MCAPI bool _validatePartnerState(enum class MingleComponent::MingleState, class MingleComponent &, bool);
 
 private:
 

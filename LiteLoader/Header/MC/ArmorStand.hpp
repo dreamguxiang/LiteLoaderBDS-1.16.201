@@ -70,7 +70,7 @@ public:
     MCAPI void _dropHeldItemsAndResource();
     MCAPI void _dropItem(class ItemStack const &);
     MCAPI void _readPose(class CompoundTag const *);
-    MCAPI bool _trySwapItem(class Player &, enum EquipmentSlot);
+    MCAPI bool _trySwapItem(class Player &, enum class EquipmentSlot);
 
 private:
     MCAPI static struct ArmorStand::Pose const POSE_ATHENA;

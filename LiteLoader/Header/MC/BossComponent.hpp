@@ -24,14 +24,14 @@ public:
 #endif
     MCAPI BossComponent(class BossComponent &&);
     MCAPI void addPlayerToParty(class mce::UUID, int);
-    MCAPI void broadcastBossEvent(class Actor &, enum BossEventUpdateType);
+    MCAPI void broadcastBossEvent(class Actor &, enum class BossEventUpdateType);
     MCAPI class BossComponent & operator=(class BossComponent &&);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void sendDeathTelemetry(class Actor &);
     MCAPI void unRegisterPlayer(class Actor &, class Player *);
 
 //private:
-    MCAPI void _sendBossEvent(class Actor &, enum BossEventUpdateType, class Player *);
+    MCAPI void _sendBossEvent(class Actor &, enum class BossEventUpdateType, class Player *);
 
 private:
 

@@ -22,7 +22,7 @@ enum class AnimatedTextureType {
     Body128x128 = 0x3,
 };
 
-enum PieceType : unsigned int {
+enum class PieceType : unsigned int {
     Unknown = 0x0,
     Skeleton = 0x1,
     Body = 0x2,
@@ -71,7 +71,7 @@ enum PieceType : unsigned int {
     MCAPI extern std::string const NONE_PIECE_PATH;
     MCAPI extern class mce::UUID const NO_PIECE_SELECTED;
     MCAPI extern class HashedString const USE_BLINKING_ANIMATION_VARIABLE;
-    MCAPI enum persona::PieceType pieceTypeFromString(std::string const &);
-    MCAPI std::string const & stringFromPieceType(enum persona::PieceType, bool);
+    MCAPI enum class persona::PieceType pieceTypeFromString(std::string const &);
+    MCAPI std::string const & stringFromPieceType(enum class persona::PieceType, bool);
 
 };

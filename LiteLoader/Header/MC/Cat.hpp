@@ -46,7 +46,7 @@ public:
     /*241*/ virtual void __unk_vfn_241();
     /*249*/ virtual void __unk_vfn_249();
     /*260*/ virtual void __unk_vfn_260();
-    /*267*/ virtual enum LevelSoundEvent getAmbientSound();
+    /*267*/ virtual enum class LevelSoundEvent getAmbientSound();
     /*281*/ virtual void aiStep();
     /*294*/ virtual void __unk_vfn_294();
     /*304*/ virtual void __unk_vfn_304();

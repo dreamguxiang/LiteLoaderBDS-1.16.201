@@ -64,42 +64,42 @@ inline void PrettySnbtFormat::ValueFormat::toConsoleFormat() {
     ColorFormat::convertToConsole(mSuffix);
 }
 PrettySnbtFormat::PrettySnbtFormat() {
-#define InitFormat(type) mValueFormats[type] = {DefaultPrefix<type>, DefaultSuffix<type>};
+#define InitFormat(type) mValueFormats[(int)type] = {DefaultPrefix<type>, DefaultSuffix<type>};
     ForEachTagType(InitFormat)
-    mExpandInList[Tag::Type::End] = false;
-    mExpandInList[Tag::Type::Byte] = false;
-    mExpandInList[Tag::Type::Short] = false;
-    mExpandInList[Tag::Type::Int] = false;
-    mExpandInList[Tag::Type::Int64] = false;
-    mExpandInList[Tag::Type::Float] = false;
-    mExpandInList[Tag::Type::Double] = false;
-    mExpandInList[Tag::Type::ByteArray] = true;
-    mExpandInList[Tag::Type::String] = true;
-    mExpandInList[Tag::Type::List] = true;
-    mExpandInList[Tag::Type::Compound] = true;
-    mExpandInList[Tag::Type::IntArray] = true;
+    mExpandInList[(int)Tag::Type::End] = false;
+    mExpandInList[(int)Tag::Type::Byte] = false;
+    mExpandInList[(int)Tag::Type::Short] = false;
+    mExpandInList[(int)Tag::Type::Int] = false;
+    mExpandInList[(int)Tag::Type::Int64] = false;
+    mExpandInList[(int)Tag::Type::Float] = false;
+    mExpandInList[(int)Tag::Type::Double] = false;
+    mExpandInList[(int)Tag::Type::ByteArray] = true;
+    mExpandInList[(int)Tag::Type::String] = true;
+    mExpandInList[(int)Tag::Type::List] = true;
+    mExpandInList[(int)Tag::Type::Compound] = true;
+    mExpandInList[(int)Tag::Type::IntArray] = true;
 #undef InitFormat
 }
 template <Tag::Type type>
 inline bool PrettySnbtFormat::setValueColor(mce::Color const& color) {
     if constexpr (type == Tag::Type::String)
-        mValueFormats[type] = {getColorCode(color) + DefaultPrefix<type>, DefaultSuffix<type> + getResetColorCode()};
+        mValueFormats[(int)type] = {getColorCode(color) + DefaultPrefix<type>, DefaultSuffix<type> + getResetColorCode()};
     else if constexpr (type >= Tag::Type::ByteArray)
-        mValueFormats[type] = {getColorCode(color) + DefaultPrefix<type> + getResetColorCode(), getColorCode(color) + DefaultSuffix<type> + getResetColorCode()};
+        mValueFormats[(int)type] = {getColorCode(color) + DefaultPrefix<type> + getResetColorCode(), getColorCode(color) + DefaultSuffix<type> + getResetColorCode()};
     else
-        mValueFormats[type] = {getColorCode(color) + DefaultPrefix<type>, getItalicCode() + DefaultSuffix<type> + getResetColorCode()};
+        mValueFormats[(int)type] = {getColorCode(color) + DefaultPrefix<type>, getItalicCode() + DefaultSuffix<type> + getResetColorCode()};
     return true;
 }
 
 template <Tag::Type type>
 inline bool PrettySnbtFormat::setValueFormat(std::string const& prefix, std::string const& suffix) {
-    mValueFormats[type] = {prefix, suffix};
+    mValueFormats[(int)type] = {prefix, suffix};
     return true;
 }
 
 template <Tag::Type type>
 inline bool PrettySnbtFormat::setExpand(bool expand) {
-    mExpandInList[type] = expand;
+    mExpandInList[(int)type] = expand;
     return true;
 }
 

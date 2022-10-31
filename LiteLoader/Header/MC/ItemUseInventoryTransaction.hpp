@@ -23,8 +23,8 @@ public:
     /*0*/ virtual ~ItemUseInventoryTransaction();
     /*1*/ virtual void read(class ReadOnlyBinaryStream &);
     /*2*/ virtual void write(class BinaryStream &) const;
-    /*3*/ virtual enum InventoryTransactionError handle(class Player &, bool) const;
-    /*4*/ virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
+    /*3*/ virtual enum class InventoryTransactionError handle(class Player &, bool) const;
+    /*4*/ virtual void onTransactionError(class Player &, enum class InventoryTransactionError) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEINVENTORYTRANSACTION
 #endif
     MCAPI void resendBlocksAroundArea(class Player &, class BlockPos const &, unsigned char) const;
@@ -32,6 +32,6 @@ public:
 //private:
 
 private:
-    MCAPI static class BidirectionalUnorderedMap<enum ItemUseInventoryTransaction::ActionType, std::string> const actionTypeMap;
+    MCAPI static class BidirectionalUnorderedMap<enum class ItemUseInventoryTransaction::ActionType, std::string> const actionTypeMap;
 
 };

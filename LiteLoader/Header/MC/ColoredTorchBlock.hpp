@@ -66,6 +66,6 @@ public:
     /*174*/ virtual void __unk_vfn_174();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COLOREDTORCHBLOCK
 #endif
-    MCAPI static class ItemInstance getItemForColor(enum ColoredTorchColor);
+    MCAPI static class ItemInstance getItemForColor(enum class ColoredTorchColor);
 
 };

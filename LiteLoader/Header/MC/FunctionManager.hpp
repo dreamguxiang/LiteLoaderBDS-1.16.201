@@ -33,7 +33,7 @@ public:
 
 //protected:
     MCAPI void _addTickFunctionsFromJson(class Json::Value const &);
-    MCAPI void _processFunctionEntry(std::string const &, std::vector<std::string> const &, std::vector<std::string> &, enum CurrentCmdVersion, class CommandRegistry const &);
+    MCAPI void _processFunctionEntry(std::string const &, std::vector<std::string> const &, std::vector<std::string> &, enum class CurrentCmdVersion, class CommandRegistry const &);
 
 //private:
     MCAPI class CommandOrigin const & _addOriginReference(class CommandOrigin const &, unsigned int);

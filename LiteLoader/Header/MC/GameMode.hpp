@@ -9,8 +9,31 @@
 
 class GameMode {
 
-#define AFTER_EXTRA
-// Add Member There
+public:
+    Player* mPlayer;
+    BlockPos mDestroyBlockPos;
+    unsigned __int8 mDestroyBlockFace;
+    float mOldDestroyProgress;
+    float mDestroyProgress;
+    long double mLastDestroyTime;
+    float mDistanceTravelled;
+    Vec3 mPlayerLastPosition;
+    BlockPos mLastBuiltBlockPosition;
+    bool mLastBuildBlockWasInteractive;
+    bool mLastBuildBlockWasSnappable;
+    float mMinPlayerSpeed;
+    std::chrono::time_point<std::chrono::steady_clock, std::chrono::duration<__int64, std::ratio<1, 1000000000>>> mLastBuildTime;
+    std::chrono::time_point<std::chrono::steady_clock, std::chrono::duration<__int64, std::ratio<1, 1000000000>>> mNoDestroyUntil;
+    std::chrono::time_point<std::chrono::steady_clock, std::chrono::duration<__int64, std::ratio<1, 1000000000>>> mNoDestroySoundUntil;
+    std::chrono::duration<__int64, std::ratio<1, 1000>> creativeDestructionTickDelay;
+    std::chrono::duration<__int64, std::ratio<1, 1000>> buildingTickDelay;
+    std::chrono::duration<__int64, std::ratio<1, 1000>> destroySoundDelay;
+    bool mHasBuildDirection;
+    bool mHasLastBuiltPosition;
+    unsigned __int8 mContinueFacing;
+    BlockPos mBuildDirection;
+    BlockPos mNextBuildPos;
+
 public:
     LIAPI ServerPlayer* getPlayer();
 #undef AFTER_EXTRA
@@ -60,3 +83,5 @@ public:
 private:
 
 };
+
+static_assert(sizeof(GameMode) == 168);

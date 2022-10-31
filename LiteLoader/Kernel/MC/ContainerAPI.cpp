@@ -5,9 +5,7 @@
 #include "third-party/magic_enum/magic_enum.hpp"
 
  LIAPI std::string Container::getTypeName() {
-     ContainerType type = dAccess<ContainerType>(this, 8); //IDA Container::Container
-     // ContainerType type = getContainerType();
-     return std::string{magic_enum::enum_name(type)};
+     return std::string{magic_enum::enum_name(mContainerType)};
  }
 
 // Safely add items to the container

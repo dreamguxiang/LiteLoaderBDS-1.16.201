@@ -13,8 +13,8 @@ class ItemStack;
 
 class BlockLegacy {
 
-#define AFTER_EXTRA
-// Add new members to class
+public:
+
 public:
     struct NameInfo;
 

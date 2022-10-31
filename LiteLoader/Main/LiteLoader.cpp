@@ -341,7 +341,7 @@ void LLMain() {
 #include "MC/Player.hpp"
 // Call LLMain
 THook(int, "main", int a, void* b) {
-    std::cout << offsetof(Player, mRespawnPositionCandidate) << std::endl;
+    std::cout << offsetof(Player, mBedHelper) << std::endl;
     startTime = clock();
     char** str = static_cast<char**>(b);
     for (int i = 0; i < a; ++i) {

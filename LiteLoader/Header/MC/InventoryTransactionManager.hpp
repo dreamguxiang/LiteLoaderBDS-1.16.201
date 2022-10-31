@@ -11,7 +11,7 @@ class InventoryTransactionManager {
 
 #define AFTER_EXTRA
 public:
-    char filler[0x28];
+    char filler[28];
     //class Player* mPlayer;//0
     //std::unique_ptr<class InventoryTransaction> mCurrentTransaction;//8
     //std::vector<class InventoryAction> mExpectedActions;//16
@@ -36,4 +36,4 @@ public:
 
 };
 
-static_assert(sizeof(InventoryTransactionManager) == 0x28);
+static_assert(sizeof(InventoryTransactionManager) == 28);

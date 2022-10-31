@@ -213,28 +213,27 @@ public:
     PlayerUIContainer mPlayerUIContainer;//4336
     InventoryTransactionManager mTransactionManager;//4592
     std::shared_ptr<class GameMode> mGameMode;//4632
-    PlayerRespawnRandomizer mSpawnRandomizer;//4640
-    std::unique_ptr<class ItemStackNetManagerBase> mItemStackNetManager;//7248
+    PlayerRespawnRandomizer mSpawnRandomizer;//4648
+    std::unique_ptr<class ItemStackNetManagerBase> mItemStackNetManager;//7256
     float mVRMoveAdjAngle;//7256
-    std::shared_ptr<AnimationComponent> mUIAnimationComponent;//7260
-    //16
-    std::shared_ptr<AnimationComponent> mMapAnimationComponent;//7276
-    //16
-    Player::PlayerSpawnPoint mPlayerRespawnPoint; // 7292
-    //28
-    bool mUseUIAnimationComponent; //   7320
-    //4
-    std::vector<class PlayerListener*> mListeners; // 7324
-    //36
+    std::shared_ptr<class AnimationComponent> mUIAnimationComponent;  //7264
+    std::shared_ptr<class AnimationComponent> mMapAnimationComponent; //7280
+    Player::PlayerSpawnPoint mPlayerRespawnPoint; // 7296
+    bool mUseUIAnimationComponent; //7324
+    bool mUseMapAnimationComponent;//7325
+    std::vector<class PlayerListener*> mListeners; //7328
+    int mLastLevelUpTime;
+    bool mPlayerLevelChanged;
+    int mPreviousLevelRequirement;
     Vec3 mRespawnPositionCandidate; // 7364
     bool mPlayerIsSleeping;
-    bool mAllPlayersSleeping;//??
+    bool mAllPlayersSleeping;
     bool mDestroyingBlock;
     Vec3 mSurvivalViewerPosition;
     std::vector<unsigned int> mOnScreenAnimationTextures;
     int mOnScreenAnimationTicks;
     GameType mPlayerGameType;
-    int mEnchantmentSeed;//??
+    int mEnchantmentSeed;
     unsigned int mChunkRadius;
     int mMapIndex;
     unsigned __int64 mElytraLoop;
@@ -245,44 +244,17 @@ public:
     __int64 mBlockedUsingShieldTimeStamp;
     __int64 mBlockedUsingDamagedShieldTimeStamp;
     bool mPrevBlockedUsingShield;
-    bool mPrevBlockedUsingDamagedShield;//?
+    bool mPrevBlockedUsingDamagedShield;
     bool mUsedPotion;
     int mBounceHeight;
     SkinAdjustments mSkinAdjustments;
     SerializedSkin mSerializedSkin;
     int mScanForDolphinTimer;
-	
-    AABB* mHead;
-    AABB* mOther;
-    float mWidth;
-    float mHeight;
-    bool mCanMove;
-    bool mCanAttack;
-    bool mCanJump;
-    bool mCollisionTest;
-    float mCollisionTestPrecision;
-    float mRotateVelocity;
-    bool mSetRotateVelocity;
-    Vec3 mExtendDistance;
-    std::string mVipFormatName;
-    NameTagInfo mVipNameTagInfo;
-    std::string mNameTagName;
-    NameTagInfo mNameTagNameInfo;
-    float mMaxExhaustionValue;
-    int mHealthTick;
-    int mHealthLevel;
-    bool mNaturalRegen;
-    int mStarveTick;
-    int mStarveLevel;
-    bool mNaturalStarve;
-    unsigned int mGrowthLevel;
-
-	
     bool mR5DataRecoverComplete;
-    std::string mDeviceId;
-    bool mUsingModSkin;//?
+    std::string mDeviceId;//8032
+    bool mUsingModSkin;
     bool mFlagClientForBAIReset;
-    bool mOverrideHeightToWidth;//?
+    bool mOverrideHeightToWidth;
     BedHelper mBedHelper;
 
 public:

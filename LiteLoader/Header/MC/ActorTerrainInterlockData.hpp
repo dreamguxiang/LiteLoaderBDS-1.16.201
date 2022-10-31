@@ -8,7 +8,7 @@
 
 #undef BEFORE_EXTRA
 
-class ActorTerrainInterlockData {
+class __declspec(align(8)) ActorTerrainInterlockData {
 
 #define AFTER_EXTRA
 public:

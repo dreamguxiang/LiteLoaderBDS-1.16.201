@@ -9,10 +9,18 @@
 #include "BlockLegacy.hpp"
 #undef BEFORE_EXTRA
 
-class Block {
+class __declspec(align(8)) Block {
 
-#define AFTER_EXTRA
-    // Add new members to class
+
+public:
+    unsigned __int16 mAux;
+    gsl::not_null<BlockLegacy*> mLegacyBlock;
+    CompoundTag mSerializationId;
+    unsigned int mRuntimeId;
+    bool mHasRuntimeId;
+    OwnerPtrT<EntityRefTraits> mEntity;
+    std::vector<HashedString> mTags;
+
 public:
     LIAPI static Block* create(const string& str, unsigned short tileData);
     LIAPI static Block* create(CompoundTag* nbt);
@@ -103,3 +111,5 @@ public:
 protected:
 
 };
+
+//static_assert(sizeof(Block) == 0x68);

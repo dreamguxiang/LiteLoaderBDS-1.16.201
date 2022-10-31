@@ -338,10 +338,8 @@ void LLMain() {
     });
 }
 
-#include "MC/BlockLegacy.hpp"
 // Call LLMain
 THook(int, "main", int a, void* b) {
-    std::cout << sizeof(BlockLegacy) << std::endl;
     startTime = clock();
     char** str = static_cast<char**>(b);
     for (int i = 0; i < a; ++i) {

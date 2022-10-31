@@ -7,7 +7,6 @@
 // Add include headers & pre-declares
 #include "BlockActorDataPacket.hpp"
 #include "ActorTerrainInterlockData.hpp"
-class Block;
 class Container;
 class CompoundTag;
 class BlockSource;
@@ -132,5 +131,3 @@ private:
     MCAPI static class std::map<std::string, enum class BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum class BlockActorType>>> mIdClassMap;
 
 };
-
-static_assert(sizeof(BlockActor) == 0xd0);

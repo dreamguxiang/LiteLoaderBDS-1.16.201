@@ -7,12 +7,12 @@
 
 #undef BEFORE_EXTRA
 
-class AABB {
+class __declspec(align(4)) AABB {
 
 public:
     Vec3 min;
     Vec3 max;
-
+    bool empty;
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA

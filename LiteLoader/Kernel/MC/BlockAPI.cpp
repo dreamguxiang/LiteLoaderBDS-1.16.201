@@ -33,7 +33,7 @@ string Block::getTypeName() const {
 
 unsigned short Block::getTileData() {
     // 等待大佬改进
-    auto tileData = dAccess<unsigned short, 8>(this);
+    auto tileData = mAux;
     auto blk = &getLegacyBlock();
 
     if (((BlockLegacy*)blk)->toBlock(tileData) == (Block*)this) {
@@ -62,6 +62,5 @@ bool Block::setNbt(CompoundTag* nbt) {
 }
 
 unsigned int const & Block::getRuntimeId() const{
-    // Actor::_playFlySound Line7
-    return dAccess<unsigned int>(this, 12);
+    return mRuntimeId;
 }

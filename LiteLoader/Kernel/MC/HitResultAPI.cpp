@@ -1,13 +1,13 @@
 #include <MC/HitResult.hpp>
 
 FaceID HitResult::getFacing() {
-    return dAccess<FaceID>(this, 28);
+    return mFacing;
 }
 Vec3 HitResult::getPos() {
-    return dAccess<Vec3>(this, 44);
+    return mPos;
 }
 bool HitResult::isHitLiquid() {
-    return dAccess<bool>(this, 80);
+    return mIsHitLiquid;
 }
 // LIAPI bool HitResult::isEntity() {
 //     return getHitResultType() == HitResultType::ENTITY;
@@ -16,13 +16,13 @@ bool HitResult::isHitLiquid() {
 //     return getHitResultType() == HitResultType::TILE;
 // }
 BlockPos HitResult::getBlockPos() {
-    return dAccess<BlockPos>(this, 32);
+    return mBlock;
 }
 BlockPos HitResult::getLiquidPos() {
-    return dAccess<BlockPos>(this, 84);
+    return mLiquid;
 }
 FaceID HitResult::getLiquidFacing() {
-    return dAccess<FaceID>(this, 81);
+    return mLiquidFacing;
 }
 // LIAPI Vec3 HitResult::getLiquidHitPos();
 // LIAPI HitResultType HitResult::getHitResultType() {

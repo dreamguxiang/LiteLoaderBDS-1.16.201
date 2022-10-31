@@ -52,5 +52,5 @@
  };
 
  StructureTemplateData* StructureTemplate::getData() {
-     return (StructureTemplateData*)((uintptr_t)this + 32);
+     return &mStructureTemplateData;
  };

@@ -8,6 +8,12 @@
 // TODO: Need to verify
 #undef BEFORE_EXTRA
 
+enum class AnimationMode : unsigned char {
+    None = 0x0,
+    Layers = 0x1,
+    Blocks = 0x2,
+};
+
 class StructureSettings {
 
 #define AFTER_EXTRA
@@ -15,13 +21,17 @@ class StructureSettings {
 private:
     std::string mPaletteName;
     bool mIgnoreEntities;
+    bool mReloadActorEquipment;
     bool mIgnoreBlocks;
+    bool mIgnoreJigsawBlocks;
     BlockPos mStructureSize;
     BlockPos mStructureOffset;
     Vec3 mPivot;
     ActorUniqueID mLastTouchedByPlayer;
     Rotation mRotation;
     Mirror mMirror;
+    AnimationMode mAnimationMode;
+    unsigned int mAnimationTicks;
     float mIntegrityValue;
     unsigned int mIntegritySeed;
 
@@ -68,3 +78,5 @@ public:
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_SIZE;
 
 };
+
+static_assert(sizeof(StructureSettings) == 0x60);

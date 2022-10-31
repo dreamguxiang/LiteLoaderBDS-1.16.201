@@ -9,13 +9,15 @@
 #include "StructureTemplateData.hpp"
 #undef BEFORE_EXTRA
 
-class StructureTemplate {
+class __declspec(align(8)) StructureTemplate {
 
 #define AFTER_EXTRA
  //Add Member There
+public:
      string mName;
      StructureTemplateData mStructureTemplateData;
-
+     unsigned __int8 mStructureVersion;
+	
      public:
  #define DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATE
      class StructureTemplate& operator=(class StructureTemplate const&) = delete;
@@ -73,3 +75,5 @@ public:
 private:
 
 };
+
+static_assert(sizeof(StructureTemplate) == 216);

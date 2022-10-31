@@ -50,22 +50,14 @@ public:
         std::vector<std::string> values;
     };//56
 
+	
     std::vector<std::string> mAllEnums;//48
     std::vector<std::string> mAllSuffix;//72
     std::vector<EnumData> mEnumDatas;//96
     std::vector<CommandData> mCommandDatas;//120
     std::vector<SoftEnumData> mSoftEnums;//144
     std::vector<ConstrainedValueData> mConstrainedValueDatas; //168
-    inline void test()
-    {
-        static_assert(sizeof(AvailableCommandsPacket) == 184);
-        static_assert(sizeof(EnumData) == 56);
-        static_assert(sizeof(CommandData) == 104);
-        static_assert(offsetof(CommandData, perm) == 66);
-        static_assert(offsetof(AvailableCommandsPacket, mAllEnums) == 40);
-        static_assert(offsetof(AvailableCommandsPacket, mAllSuffix) == 64);
-        static_assert(offsetof(AvailableCommandsPacket, mConstrainedValueDatas) == 160);
-    }
+
 
 public:
     inline std::vector<std::string> getEnumNames()

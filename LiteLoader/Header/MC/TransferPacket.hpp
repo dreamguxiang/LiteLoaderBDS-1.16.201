@@ -12,7 +12,8 @@ class TransferPacket : public Packet {
 
 #define AFTER_EXTRA
     // Add Member There
-    char filler[40];
+    std::string mServerAddress;
+    int mServerPort;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRANSFERPACKET
 public:

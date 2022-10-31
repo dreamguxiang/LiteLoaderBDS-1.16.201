@@ -6,28 +6,45 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "ServerNetworkHandler.hpp"
+#include "IPacketHandlerDispatcher.hpp"
 class ReadOnlyBinaryStream;
 class BinaryStream;
 class ServerPlayer;
 class NetworkIdentifier;
 enum class StreamReadResult;
-enum class PacketReliability {
-    Relible,
-    RelibleOrdered
+enum class PacketReliability : int {
+    Reliable = 0x0,
+    ReliableOrdered = 0x1,
+    Unreliable = 0x2,
+    UnreliableSequenced = 0x3,
 };
+
+enum class Compressibility : __int32 {
+    Compressible = 0x0,
+    Incompressible = 0x1,
+};
+
+enum class PacketPriority : int {
+    IMMEDIATE_PRIORITY = 0x0,
+    HIGH_PRIORITY = 0x1,
+    MEDIUM_PRIORITY = 0x2,
+    LOW_PRIORITY = 0x3,
+    NUMBER_OF_PRIORITIES = 0x4,
+};
+
 #undef BEFORE_EXTRA
 
-class Packet {
+class __declspec(align(8)) Packet {
 
 #define AFTER_EXTRA
     // Add Member There
 public:
-    unsigned mPriority = 2;  //PacketPriority                              // 8
-    PacketReliability reliableOrdered = PacketReliability::RelibleOrdered; // 12
-    unsigned char clientSubId = 0;                                         // 16
-    uint64_t mHandler = 0;                                                 // 24
-    uint64_t mCompressible = 0;                                            // 32
-    //uint32_t incompressible = 0;                                           // 40
+    PacketPriority mPriority = PacketPriority::MEDIUM_PRIORITY;
+    PacketReliability mReliability = PacketReliability::ReliableOrdered;
+    unsigned __int8 mClientSubId; 
+    bool mIsHandled;
+    const IPacketHandlerDispatcher* mHandler;
+    Compressibility mCompressible;
 
 //    inline Packet(unsigned compress)
 //    : incompressible(!compress)
@@ -47,7 +64,7 @@ public:
     }
 protected:
     std::string toDebugString() {
-        return fmt::format("{}({})->{}", getName(), getId(), clientSubId);
+        return fmt::format("{}({})->{}", getName(), getId(), mClientSubId);
     }
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKET

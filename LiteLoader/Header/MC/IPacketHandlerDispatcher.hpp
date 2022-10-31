@@ -10,7 +10,8 @@
 class IPacketHandlerDispatcher {
 
 #define AFTER_EXTRA
-
+public:
+    void* __vftable;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPACKETHANDLERDISPATCHER
 public:

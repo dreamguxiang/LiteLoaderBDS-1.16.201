@@ -857,7 +857,7 @@ TInstanceHook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4Invento
         PlayerInteractEntityEvent ev{};
         ev.mPlayer = sp;
         ev.mTargetId = mRuntimeId;                                                                             
-        ev.mInteractiveMode = mActionType;
+        ev.mInteractiveMode = (PlayerInteractEntityEvent::InteractiveMode)mActionType;
         if (!ev.call())
             return;
     }
@@ -1864,7 +1864,7 @@ TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFo
      if (sp) {
          string data;
          auto formId = packet->mFormId;
-         auto data = packet->mJSONResponse;
+         data = packet->mJSONResponse;
 
          if (data.empty()) {
              data = "null";

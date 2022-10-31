@@ -11,6 +11,9 @@
 class ModalFormResponsePacket : public Packet {
 
 #define AFTER_EXTRA
+public:
+    unsigned int mFormId;
+    std::string mJSONResponse;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MODALFORMRESPONSEPACKET

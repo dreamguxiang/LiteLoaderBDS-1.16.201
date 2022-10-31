@@ -11,7 +11,10 @@
 class FillingContainer : public Container {
 
 #define AFTER_EXTRA
-
+public:
+    std::vector<class ItemStack> mItems;
+    class Player* mPlayer;
+	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILLINGCONTAINER
 public:

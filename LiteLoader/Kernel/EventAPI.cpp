@@ -620,279 +620,6 @@ TClasslessInstanceHook(void, "?sendBlockPlacedByPlayer@BlockEventCoordinator@@QE
     original(this, pl, bl, bp, a5);
 }
 
-/*
-#include <MC/BedrockBlocks.hpp>
-#include <mc/BlockLegacy.hpp>
-TInstanceHook(bool, "?_useOn@BlockItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
-              Item, ItemStack* a2, Actor* ac, BlockPos* a4, unsigned __int8 a5, class Vec3* a6)
-{
-    IF_LISTENED(PlayerPlaceBlockEvent)
-    {
-        Block* RenderBlock;
-        auto RegionConst = ac->getBlockSource();
-        if (!a2->getCount()) {
-            return 0;
-        }
-        auto& bls = this->getLegacyBlock();
-        if (bls && bls.get() != 0i64)
-            RenderBlock = const_cast<Block*>(&bls.get()->getRenderBlock());
-        else
-            RenderBlock = const_cast<Block*>(BedrockBlocks::mAir);
-        if (RegionConst->mayPlace(*RenderBlock, *a4, a5, (class Actor*)ac, 0)) {
-            if (Player::isValid((Player*)ac))
-            {
-                PlayerPlaceBlockEvent ev{};
-                ev.mPlayer = (Player*)ac;
-                ev.mBlockInstance = BlockInstance::createBlockInstance(Block::create(RenderBlock->getTypeName(), a2->getAux()), *a4, (int)RegionConst->getDimensionId());
-                if (!ev.call())
-                    return false;
-            }
-        }
-    }
-    IF_LISTENED_END(PlayerPlaceBlockEvent)
-
-    return original(this, a2, ac, a4, a5,a6);
-}
-
-TClasslessInstanceHook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
-       ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
-{
-    IF_LISTENED(PlayerPlaceBlockEvent)
-    {
-        if (Player::isValid((Player*)a3))
-        {
-            auto& bs = a3->getRegion();
-            auto onBlockPos = a4.relative(a5, -1);
-            auto onBlock = &bs.getBlock(onBlockPos).getDefaultState();
-            auto underBlock = &bs.getBlock(a4.relative(0, 1)).getDefaultState();
-            if (onBlock == VanillaBlocks::mBambooBlock || onBlock == VanillaBlocks::mBambooSapling
-                || underBlock == VanillaBlocks::mBambooBlock || underBlock == VanillaBlocks::mBambooSapling)
-                return original(this, a2, a3, a4, a5, a6); // listen in BlockSource::mayPlace
-
-            PlayerPlaceBlockEvent ev{};
-            ev.mPlayer = (Player*)a3;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mBambooSapling), a4, (int)a3->getDimensionId());
-            if (!ev.call())
-                return false;
-        }
-    }
-    IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return original(this, a2, a3, a4, a5, a6);
-}
-
-//THook(bool, "?_useOn@BannerItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
-//{
-//    IF_LISTENED(PlayerPlaceBlockEvent)
-//    {
-//        if (Player::isValid((Player*)a3))
-//        {
-//            PlayerPlaceBlockEvent ev{};
-//            ev.mPlayer = (Player*)a3;
-//            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(a2->getBlock()), *a4, (int)a3->getDimensionId());
-//            if (!ev.call())
-//                return false;
-//        }
-//    }
-//    IF_LISTENED_END(PlayerPlaceBlockEvent)
-//    return original(a1, a2, a3, a4, a5, a6);
-//}
-
-TClasslessInstanceHook(bool, "?_tryUseOn@BedItem@@AEBA_NAEAVItemStackBase@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
-     ItemStackBase *a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
-{
-    IF_LISTENED(PlayerPlaceBlockEvent)
-    {
-        if (Player::isValid((Player*)a3))
-        {
-            PlayerPlaceBlockEvent ev{};
-            ev.mPlayer = (Player*)a3;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mBed), a4, (int)a3->getDimensionId());
-            if (!ev.call())
-                return false;
-        }
-    }
-    IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return original(this, a2, a3, a4, a5, a6);
-}
-
-TClasslessInstanceHook(bool, "?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
-      ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
-{
-    IF_LISTENED(PlayerPlaceBlockEvent)
-    {
-        if (Player::isValid((Player*)a3))
-        {
-            PlayerPlaceBlockEvent ev{};
-            ev.mPlayer = (Player*)a3;
-            auto& PlacementBlock = VanillaBlocks::mCocoa->getPlacementBlock(*a3, a4, a5, a4.toVec3(), 0);
-            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(&PlacementBlock), a4, (int)a3->getDimensionId());
-            if (!ev.call())
-                return false;
-        }
-    }
-    IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return original(this, a2, a3, a4, a5, a6);
-}
-
-TClasslessInstanceHook(bool, "?_useOn@DoorItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
-      ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
-{
-    IF_LISTENED(PlayerPlaceBlockEvent)
-    {
-        if (Player::isValid((Player*)a3))
-        {
-            PlayerPlaceBlockEvent ev{};
-            ev.mPlayer = (Player*)a3;
-            const Block* v11 = nullptr;
-            switch (dAccess<int, 552>(this))
-            {
-                case 0:
-                    v11 = VanillaBlocks::mWoodenDoor;
-                    break;
-                case 1:
-                    v11 = VanillaBlocks::mWoodenDoorSpruce;
-                    break;
-                case 2:
-                    v11 = VanillaBlocks::mWoodenDoorBirch;
-                    break;
-                case 3:
-                    v11 = VanillaBlocks::mWoodenDoorJungle;
-                    break;
-                case 4:
-                    v11 = VanillaBlocks::mWoodenDoorAcacia;
-                    break;
-                case 5:
-                    v11 = VanillaBlocks::mWoodenDoorDarkOak;
-                    break;
-                case 6:
-                    v11 = VanillaBlocks::mIronDoor;
-                    break;
-                case 7:
-                    v11 = VanillaBlocks::mCrimsonDoor;
-                    break;
-                case 8:
-                    v11 = VanillaBlocks::mWarpedDoor;
-                    break;
-                case 9:
-                    v11 = VanillaBlocks::mMangroveDoor;
-                    break;
-            }
-            if (!v11) return false;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(v11), {a4.x, a4.y + 1, a4.z}, (int)a3->getDimensionId());
-            if (!ev.call())
-                return false;
-        }
-    }
-    IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return original(this, a2, a3, a4, a5, a6);
-}
-
-TClasslessInstanceHook(bool, "?_useOn@RedStoneDustItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
-      ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
-{
-    IF_LISTENED(PlayerPlaceBlockEvent)
-    {
-        if (Player::isValid((Player*)a3))
-        {
-            PlayerPlaceBlockEvent ev{};
-            ev.mPlayer = (Player*)a3;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mRedStoneDust), a4, (int)a3->getDimensionId());
-            if (!ev.call())
-                return false;
-        }
-    }
-    IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return original(this, a2, a3, a4, a5, a6);
-}
-
-//THook(bool, "?_useOn@SignItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z",
-//      class SignItem* a1, ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
-//{
-//    IF_LISTENED(PlayerPlaceBlockEvent)
-//    {
-//        if (Player::isValid((Player*)a3))
-//        {
-//            auto& blockMap = dAccess<std::map<int, std::pair<Block*, Block*>>>(a1, 552); // SignItem::SignItem
-//            auto& signType = dAccess<int>(a1, 568);                                      // SignItem::SignItem
-//            auto block = a5 == 1 ? blockMap[signType].first : blockMap[signType].second;
-//            PlayerPlaceBlockEvent ev{};
-//            ev.mPlayer = (Player*)a3;
-//            ev.mBlockInstance = BlockInstance::createBlockInstance(block, a4, (int)a3->getDimensionId());
-//            if (!ev.call())
-//                return false;
-//        }
-//    }
-//    IF_LISTENED_END(PlayerPlaceBlockEvent)
-//    return original(a1, a2, a3, a4, a5, a6);
-//}
-
-TInstanceHook(bool, "?_calculatePlacePos@SignItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z",
-              SignItem, ItemStackBase* a2, Actor* a3, unsigned char& a4, class BlockPos* a5)
-{
-    auto rtn = original(this, a2, a3, a4, a5);
-    if (!rtn)
-        return rtn;
-    IF_LISTENED(PlayerPlaceBlockEvent)
-    {
-        if (Player::isValid((Player*)a3))
-        {
-            // map<SignType, pair<StandingSign, WallSign>> blockMap
-            auto& blockMap = dAccess<std::map<int,std::pair<Block*, Block*>>>(this, 552); // SignItem::SignItem
-            auto& signType = dAccess<int>(this, 568); // SignItem::SignItem
-            auto block = a4 == 1 ? blockMap[signType].first : blockMap[signType].second;
-            PlayerPlaceBlockEvent ev{};
-            ev.mPlayer = (Player*)a3;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(block, *a5, (int)a3->getDimensionId());
-            if (!ev.call())
-                return false;
-        }
-    }
-    IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return rtn;
-}
-
-//THook(bool, "?_useOn@BlockPlanterItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z",
-//      class BlockPlanterItem* a1, ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
-//{
-//    IF_LISTENED(PlayerPlaceBlockEvent)
-//    {
-//        if (Player::isValid((Player*)a3))
-//        {
-//            PlayerPlaceBlockEvent ev{};
-//            ev.mPlayer = (Player*)a3;
-//            ev.mBlockInstance = BlockInstance::createBlockInstance(dAccess<Block*>(a1, 69*8), a4, (int)a3->getDimensionId());
-//            if (!ev.call())
-//                return false;
-//        }
-//    }
-//    IF_LISTENED_END(PlayerPlaceBlockEvent)
-//    return original(a1, a2, a3, a4, a5, a6);
-//}
-
-#include <MC/SeedItemComponentLegacy.hpp>
-TInstanceHook(bool, "?useOn@SeedItemComponentLegacy@@QEAA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z",
-      SeedItemComponentLegacy, ItemStack* a2, Actor* a3, BlockPos const* a4, unsigned char a5, Vec3 const* a6)
-{
-    IF_LISTENED(PlayerPlaceBlockEvent)
-    {
-        if (Player::isValid((Player*)a3))
-        {
-            //if (!this->_canPlant(a3->getRegion().getBlock(*a4)))
-            //    return original(this, a2, a3, a4, a5, a6);
-            auto growthDirection = dAccess<unsigned char>(this, 42);
-            auto blockPos = a4->relative(growthDirection, 1);
-            auto block = dAccess<Block*, 8>(this);
-            PlayerPlaceBlockEvent ev{};
-            ev.mPlayer = (Player*)a3;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(block, blockPos, (int)a3->getDimensionId());
-            if (!ev.call())
-                return false;
-        }
-    }
-    IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return original(this, a2, a3, a4, a5, a6);
-}
-*/
 
 /////////////////// PlayerOpenContainer ///////////////////
 // 符号更换
@@ -917,7 +644,7 @@ TInstanceHook(bool, "?useOn@SeedItemComponentLegacy@@QEAA_NAEAVItemStack@@AEAVAc
 TInstanceHook(bool, "?stopOpen@ChestBlockActor@@UEAAXAEAVPlayer@@@Z",
               ChestBlockActor, Player* pl) {
     IF_LISTENED(PlayerCloseContainerEvent) {
-        BlockActor* ba = (BlockActor*)((char*)this - 248); // IDA ChestBlockActor::stopOpen
+        BlockActor* ba = (BlockActor*)((char*)this - 248); 
         BlockPos bp = ba->getPosition();
 
         PlayerCloseContainerEvent ev{};
@@ -1122,15 +849,15 @@ TInstanceHook(void, "?addExperience@Player@@UEAAXH@Z", Player, int exp) {
     IF_LISTENED_END(PlayerExperienceAddEvent)
     return original(this, exp);
 }
-
+#include <MC/ItemUseOnActorInventoryTransaction.hpp>
 ////////////// PlayerInteractEntity //////////////
 TInstanceHook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
-              ServerNetworkHandler, ServerPlayer* sp, bool unk) {
+              ItemUseOnActorInventoryTransaction, ServerPlayer* sp, bool unk) {
     IF_LISTENED(PlayerInteractEntityEvent) {
         PlayerInteractEntityEvent ev{};
         ev.mPlayer = sp;
-        ev.mTargetId = dAccess<ActorRuntimeID, 104>(this);//正确
-        ev.mInteractiveMode = static_cast<PlayerInteractEntityEvent::InteractiveMode>(dAccess<int, 112>(this));//看起来应该正确
+        ev.mTargetId = mRuntimeId;                                                                             
+        ev.mInteractiveMode = mActionType;
         if (!ev.call())
             return;
     }
@@ -1824,97 +1551,94 @@ TClasslessInstanceHook(void, "?explode@Explosion@@QEAAXXZ") {
 // }
 
 ////////////// ProjectileSpawn //////////////
-// TClasslessInstanceHook(Actor*,
-//                        "?spawnProjectile@Spawner@@QEAAPEAVActor@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAV2@AEBVVec3@@3@Z",
-//                        BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3* a5, Vec3* a6) {
-//     string name = a3->getCanonicalName();
-//     if (name != "minecraft:thrown_trident") {
-//         IF_LISTENED(ProjectileSpawnEvent) {
-//             ProjectileSpawnEvent ev{};
-//             ev.mShooter = a4;
-//             ev.mIdentifier = a3;
-//             ev.mType = name;
+ TClasslessInstanceHook(Actor*,
+                        "?spawnProjectile@Spawner@@QEAAPEAVActor@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAV2@AEBVVec3@@3@Z",
+                        BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3* a5, Vec3* a6) {
+     string name = a3->getCanonicalName();
+     if (name != "minecraft:thrown_trident") {
+         IF_LISTENED(ProjectileSpawnEvent) {
+             ProjectileSpawnEvent ev{};
+             ev.mShooter = a4;
+             ev.mIdentifier = a3;
+             ev.mType = name;
 
-//             if (!ev.call())
-//                 return nullptr;
-//         }
-//         IF_LISTENED_END(ProjectileSpawnEvent)
-//     }
-//     auto projectile = original(this, a2, a3, a4, a5, a6);
-//     IF_LISTENED(ProjectileCreatedEvent) {
-//         ProjectileCreatedEvent ev{};
-//         ev.mShooter = a4;
-//         ev.mProjectile = projectile;
-//         ev.call();
-//     }
-//     IF_LISTENED_END(ProjectileCreatedEvent)
-//     return projectile;
-// }
+             if (!ev.call())
+                 return nullptr;
+         }
+         IF_LISTENED_END(ProjectileSpawnEvent)
+     }
+     auto projectile = original(this, a2, a3, a4, a5, a6);
+     IF_LISTENED(ProjectileCreatedEvent) {
+         ProjectileCreatedEvent ev{};
+         ev.mShooter = a4;
+         ev.mProjectile = projectile;
+         ev.call();
+     }
+     IF_LISTENED_END(ProjectileCreatedEvent)
+     return projectile;
+ }
 
-// #include <MC/CrossbowItem.hpp>
+#include <MC/CrossbowItem.hpp>
 #include <MC/ActorDefinitionIdentifier.hpp>
-// static_assert(sizeof(ActorDefinitionIdentifier) == 176);
-// TInstanceHook(void, "?_shootFirework@CrossbowItem@@AEBAXAEBVItemInstance@@AEAVPlayer@@@Z",
-//               CrossbowItem, void* a1, Player* a2) {
-//     IF_LISTENED(ProjectileSpawnEvent) {
-//         ActorDefinitionIdentifier identifier("minecraft:fireworks_rocket");
-//         ProjectileSpawnEvent ev{};
-//         ev.mShooter = a2;
-//         ev.mIdentifier = &identifier;
-//         ev.mType = this->getFullItemName();
+ static_assert(sizeof(ActorDefinitionIdentifier) == 176);
+ TInstanceHook(void, "?_shootFirework@CrossbowItem@@AEBAXAEBVItemInstance@@AEAVPlayer@@@Z",
+               CrossbowItem, void* a1, Player* a2) {
+     IF_LISTENED(ProjectileSpawnEvent) {
+         ActorDefinitionIdentifier identifier("minecraft:fireworks_rocket");
+         ProjectileSpawnEvent ev{};
+         ev.mShooter = a2;
+         ev.mIdentifier = &identifier;
+         ev.mType = this->getFullItemName();
 
-//         if (!ev.call())
-//             return;
-//     }
-//     IF_LISTENED_END(ProjectileSpawnEvent)
-//     original(this, a1, a2);
-// }
+         if (!ev.call())
+             return;
+     }
+     IF_LISTENED_END(ProjectileSpawnEvent)
+     original(this, a1, a2);
+ }
 
-// TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z",
-//                        ItemStack* a2, Player* a3, int a4) {
-//     IF_LISTENED(ProjectileSpawnEvent) {
-//         ActorDefinitionIdentifier identifier("minecraft:thrown_trident");
-//         ProjectileSpawnEvent ev{};
-//         ev.mShooter = a3;
-//         ev.mIdentifier = &identifier;
-//         ev.mType = a2->getTypeName();
+ TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z",
+                        ItemStack* a2, Player* a3, int a4) {
+     IF_LISTENED(ProjectileSpawnEvent) {
+         ActorDefinitionIdentifier identifier("minecraft:thrown_trident");
+         ProjectileSpawnEvent ev{};
+         ev.mShooter = a3;
+         ev.mIdentifier = &identifier;
+         ev.mType = a2->getTypeName();
 
-//         if (!ev.call())
-//             return;
-//     }
-//     IF_LISTENED_END(ProjectileSpawnEvent)
-//     return original(this, a2, a3, a4);
-// }
-
-// #include <MC/WeakEntityRef.hpp>
-// #include <mc/EntityContext.hpp>
+         if (!ev.call())
+             return;
+     }
+     IF_LISTENED_END(ProjectileSpawnEvent)
+     return original(this, a2, a3, a4);
+ }
 
 ////////////// NpcCmd //////////////
-// TInstanceHook(void,
-//               "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-//               NpcComponent, Actor* ac, Player* pl, int a4, string& a5) {
-//     IF_LISTENED(NpcCmdEvent) {
-//         // IDA NpcComponent::executeCommandAction
-//         // NpcSceneDialogueData data(*this, *ac, a5);
+ //TInstanceHook(void,
+ //              "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@H@Z",
+ //              NpcComponent, Actor* ac, int a3) {
+ //    IF_LISTENED(NpcCmdEvent) {
+ //        // IDA NpcComponent::executeCommandAction
+ //        // NpcSceneDialogueData data(*this, *ac, a5);
 
-//         auto ec = (EntityContext*)((char*)ac + 8);
-//         NpcSceneDialogueData data(WeakEntityRef(ec->getWeakRef()), a5);
+ //        auto ec = (EntityContext*)((char*)ac + 8);
+ //        NpcSceneDialogueData data(WeakEntityRef(ec->getWeakRef()), a5);
 
-//         auto container = data.getActionsContainer();
-//         auto actionAt = container->getActionAt(a4);
-//         if (actionAt && dAccess<char>(actionAt, 8) == (char)1) {
+ //        auto container = data.getActionsContainer();
+ //        auto actionAt = container->getActionAt(a4);
+ //        if (actionAt && dAccess<char>(actionAt, 8) == (char)1) {
 
-//             NpcCmdEvent ev{};
-//             ev.mPlayer = pl;
-//             ev.mNpc = ac;
-//             ev.mCommand = actionAt->getText();
-//             if (!ev.call())
-//                 return;
-//         }
-//     }
-//     IF_LISTENED_END(NpcCmdEvent)
-//     return original(this, ac, pl, a4, a5);
-// }
+ //            NpcCmdEvent ev{};
+ //            ev.mPlayer = pl;
+ //            ev.mNpc = ac;
+ //            ev.mCommand = actionAt->getText();
+ //            if (!ev.call())
+ //                return;
+ //        }
+ //    }
+ //    IF_LISTENED_END(NpcCmdEvent)
+ //    return original(this, ac, a3);
+ //}
 
 ////////////// ArmorStandChange //////////////
 TInstanceHook(bool, "?_trySwapItem@ArmorStand@@AEAA_NAEAVPlayer@@W4EquipmentSlot@@@Z",
@@ -2073,29 +1797,28 @@ TInstanceHook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTran
     }
     return original(this, a2, a3);
 }
-
-// 没有这个符号
-// TInstanceHook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z",
-//               Container, int a2, char a3, char a4, bool a5) {
-//     auto pl = dAccess<Player*, 248>(this);
-//     if (pl->isPlayer()) {
-//         IF_LISTENED(PlayerDropItemEvent) {
-//             PlayerDropItemEvent ev{};
-//             if (a2 >= 0) {
-//                 auto& item = this->getItem(a2);
-//                 if (!item.isNull()) {
-//                     ev.mItemStack = const_cast<ItemStack*>(&item);
-//                     ev.mPlayer = pl;
-//                 }
-//                 if (!ev.call()) {
-//                     return;
-//                 }
-//             }
-//         }
-//         IF_LISTENED_END(PlayerDropItemEvent)
-//     }
-//     return original(this, a2, a3, a4, a5);
-// }
+#include <MC/Inventory.hpp>
+ TInstanceHook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z",
+              Inventory, int a2, char a3) {
+     auto pl = mPlayer;
+     if (pl->isPlayer()) {
+         IF_LISTENED(PlayerDropItemEvent) {
+             PlayerDropItemEvent ev{};
+             if (a2 >= 0) {
+                 auto& item = this->getItem(a2);
+                 if (!item.isNull()) {
+                     ev.mItemStack = const_cast<ItemStack*>(&item);
+                     ev.mPlayer = pl;
+                 }
+                 if (!ev.call()) {
+                     return;
+                 }
+             }
+         }
+         IF_LISTENED_END(PlayerDropItemEvent)
+     }
+     return original(this, a2, a3);
+ }
 
 ////////////// PlayerBedEnter //////////////
 TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z",
@@ -2131,44 +1854,39 @@ TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBloc
 
 #include "Impl/FormPacketHelper.h"
 #include <MC/Json.hpp>
+ #include "MC/ModalFormResponsePacket.hpp"
 ////////////// FormResponsePacket //////////////
 
 TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
-                       NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket) {
-    Packet* packet = *(Packet**)pPacket;
-    ServerPlayer* sp = handler->getServerPlayer(*id, 0);
-    if (sp) {
-        string data;
-        auto formId = dAccess<int>(packet, 48);//未验证
-		
-        if (!dAccess<bool>(packet, 81)) {//未验证
-            if (dAccess<bool>(packet, 72)) {//未验证
-                auto json = dAccess<Json::Value>(packet, 56);//未验证
-                data = json.toStyledString();
-            }
-        }
-		
-        if (data.empty()) {
-            data = "null";
-        }
-		
-        if (data.back() == '\n')
-            data.pop_back();
+                        NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket) {
+     ModalFormResponsePacket* packet = *(ModalFormResponsePacket**)pPacket;
+     ServerPlayer* sp = handler->_getServerPlayer(*id, 0);
+     if (sp) {
+         string data;
+         auto formId = packet->mFormId;
+         auto data = packet->mJSONResponse;
 
-        IF_LISTENED(FormResponsePacketEvent) {
-            FormResponsePacketEvent ev{};
-            ev.mServerPlayer = sp;
-            ev.mFormId = formId;
-            ev.mJsonData = data;
+         if (data.empty()) {
+             data = "null";
+         }
 
-            if (!ev.call())
-                return;
-        }
-        IF_LISTENED_END(FormResponsePacketEvent)
-        HandleFormPacket(sp, formId, data);
-    }
-    original(this, id, handler, pPacket);
-}
+         if (data.back() == '\n')
+             data.pop_back();
+
+         IF_LISTENED(FormResponsePacketEvent) {
+             FormResponsePacketEvent ev{};
+             ev.mServerPlayer = sp;
+             ev.mFormId = formId;
+             ev.mJsonData = data;
+
+             if (!ev.call())
+                 return;
+         }
+         IF_LISTENED_END(FormResponsePacketEvent)
+         HandleFormPacket(sp, formId, data);
+     }
+     original(this, id, handler, pPacket);
+ }
 
 THook(void, "?_initialize@ResourcePackRepository@@AEAAXXZ",
       ResourcePackRepository* self) {

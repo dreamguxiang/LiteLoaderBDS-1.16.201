@@ -54,6 +54,11 @@ class Container;
 class WitherBoss;
 class ArmorStand;
 class Objective;
+class ItemUseOnActorInventoryTransaction {
+public:
+    enum class ActionType : int;
+};
+
 struct ScoreboardId;
 
 namespace Event {
@@ -358,14 +363,10 @@ public:
 
 class PlayerInteractEntityEvent : public EventTemplate<PlayerInteractEntityEvent> {
 public:
-    enum class InteractiveMode {
-        RightClick,
-        LeftClick
-    };
 
     ServerPlayer* mPlayer;
     ActorRuntimeID mTargetId;
-    InteractiveMode mInteractiveMode;
+    ItemUseOnActorInventoryTransaction::ActionType mInteractiveMode;
 };
 
 

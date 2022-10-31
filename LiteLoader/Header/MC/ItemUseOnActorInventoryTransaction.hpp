@@ -4,13 +4,28 @@
 #include "../Global.h"
 
 #define BEFORE_EXTRA
-
+#include "ComplexInventoryTransaction.hpp"
+#include "ItemStack.hpp"
 #undef BEFORE_EXTRA
 
-class ItemUseOnActorInventoryTransaction {
+class ItemUseOnActorInventoryTransaction : public ComplexInventoryTransaction {
 
 #define AFTER_EXTRA
+public:
 
+    enum class ActionType : int {
+        Interact = 0x0,
+        Attack = 0x1,
+        ItemInteract = 0x2,
+    };
+	
+    ActorRuntimeID mRuntimeId;
+    ActionType mActionType;
+    int mSlot;
+    ItemStack mItem;
+    Vec3 mFromPos;
+    Vec3 mHitPos;
+	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMUSEONACTORINVENTORYTRANSACTION
 public:

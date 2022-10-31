@@ -4,12 +4,7 @@
 #include "../Global.h"
 
 #define BEFORE_EXTRA
-enum class CommandVisibilityFlag : __int8 {
-    Visible = 0x0,
-    HiddenFromCommandBlockOrigin = 0x2,
-    HiddenFromPlayerOrigin = 0x4,
-    Hidden = 0x6,
-};
+
 
 #undef BEFORE_EXTRA
 
@@ -17,7 +12,11 @@ class ActorTerrainInterlockData {
 
 #define AFTER_EXTRA
 public:
-    typedef CommandVisibilityFlag VisibilityState;
+    enum class VisibilityState : unsigned char {
+        InitialNotVisible = 0x0,
+        Visible = 0x1,
+        DelayedDestructionNotVisible = 0x2,
+    };
 	
     VisibilityState mRenderVisibilityState;
     std::chrono::time_point<std::chrono::steady_clock, std::chrono::duration<__int64, std::ratio<1, 1000000000>>> mCreationTime;

@@ -6,7 +6,7 @@
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
 #include "BlockActorDataPacket.hpp"
-
+#include "ActorTerrainInterlockData.hpp"
 class Block;
 class Container;
 class CompoundTag;
@@ -14,10 +14,29 @@ class BlockSource;
 
 #undef BEFORE_EXTRA
 
-class BlockActor {
+class __declspec(align(8))  BlockActor {
 
-#define AFTER_EXTRA
-    // Add new members to class
+public:
+    int mTickCount;
+    const class Block* mBlock;
+    float mDestroyTimer;
+    Vec3 mDestroyDirection;
+    float mDestroyProgress;
+    BlockPos mPosition;
+    AABB mAABB;
+    const BlockActorType mType;
+    BlockActorRendererId mRendererId;
+    std::string mCustomName;
+    std::string mFilteredCustomName;
+    int mRepairCost;
+    bool mClientSideOnly;
+    bool mIsMovable;
+    bool mSaveCustomName;
+    bool mCanRenderCustomName;
+    const float signShadowRadius;
+    ActorTerrainInterlockData mTerrainInterlockData;
+    bool mChanged;
+
 public:
     LIAPI bool refreshData();
      LIAPI bool refreshData(BlockSource* bs);
@@ -27,23 +46,20 @@ public:
     static unsigned int getBlockEntityType(Block* block);
 
     inline void setChanged(){
-        //EndGatewayBlockActor::teleportEntity Line115
-        dAccess<bool, 200>(this) = 1;
+        mChanged = 1;
     }
     inline BlockPos const & getPosition() const{
-        //EndGatewayBlockActor::teleportEntity Line114
-        return dAccess<BlockPos>(this,44);
+        return mPosition;
     };
 
     inline enum class BlockActorType getType(){
-        //FlowerPotBlock::playerWillDestroy Line16
-        return dAccess<BlockActorType>(this,21);
+        return mType;
     }
 
     inline std::unique_ptr<BlockActorDataPacket> getServerUpdatePacket(BlockSource &bs){
         return _getUpdatePacket(bs);
     };
-#undef AFTER_EXTRA
+
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKACTOR
 public:
     class BlockActor& operator=(class BlockActor const &) = delete;
@@ -90,14 +106,15 @@ public:
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
     /*37*/ virtual int getOutputSignal();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTOR
+
     MCVAPI class Container * getContainer();
     MCVAPI class Container const * getContainer() const;
     MCVAPI void onChunkLoaded(class LevelChunk &);
     MCVAPI void onChunkUnloaded(class LevelChunk &);
     MCVAPI void onMove();
     MCVAPI void onNeighborChanged(class BlockSource &, class BlockPos const &);
-#endif
+
+	
     MCAPI BlockActor(enum class BlockActorType, class BlockPos const &, std::string const &);
     MCAPI static void initBlockEntities();
     MCAPI static class std::shared_ptr<class BlockActor> loadStatic(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -115,3 +132,5 @@ private:
     MCAPI static class std::map<std::string, enum class BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum class BlockActorType>>> mIdClassMap;
 
 };
+
+static_assert(sizeof(BlockActor) == 0xd0);

@@ -11,7 +11,7 @@ Block* BlockLegacy::toBlock(unsigned short tileData) {
 }
 
 string BlockLegacy::getTypeName() {
-    return dAccess<string, 128>(this);
+    return mFullName.getString();
 }
 
 bool BlockLegacy::applyBoneMeal(BlockSource* a1, BlockPos* a2) {

@@ -28,10 +28,50 @@ enum class VanillaBiomeTypes : int {
 };
 #undef BEFORE_EXTRA
 
-class Biome {
+enum class OceanTempCategory : int {
+    COLD = 0x0,
+    WARM = 0x1,
+};
 
-#define AFTER_EXTRA
-    // Add Member There
+class OceanRuinConfiguration {
+public:
+    OceanTempCategory type;
+    float largeProbability;
+    float clusterProbability;
+};
+
+class Biome {
+public:
+    void** vft;
+    std::string mName;
+    int mDebugMapColor;
+    int mDebugMapOddColor;
+    float mTemperature;
+    float mDownfall;
+    float mRedSporeDensity;
+    float mBlueSporeDensity;
+    float mAshDensity;
+    float mWhiteAshDensity;
+    float mSnowAccumulation;
+    float mFoliageSnow;
+    float mMinSnowLevel;
+    float mMaxSnowLevel;
+    float mDepth;
+    float mScale;
+    mce::Color mWaterColor;
+    float mWaterTransparency;
+    bool mRain;
+    int mId;
+    char filler[4];
+    char mFogDefinition[0x10];
+    OceanRuinConfiguration mOceanRuinConfig;
+    std::vector<class MobSpawnerData> mMobs;
+    std::unique_ptr<class PerlinSimplexNoise> mTemperatureNoise;
+    std::unique_ptr<class PerlinSimplexNoise> mFrozenTemperatureNoise;
+    char mEntity[0x18];
+    char mBiomeInfoNoise[0x10];
+
+
 public:
     enum class BiomeTempCategory;
     LIAPI int getId() const;
@@ -40,7 +80,7 @@ public:
     LIAPI static Biome* fromName(std::string const& name);
     LIAPI static std::vector<Biome*> getBiomesByType(VanillaBiomeTypes type);
 
-#undef AFTER_EXTRA
+
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOME
 public:
     class Biome& operator=(class Biome const &) = delete;
@@ -77,3 +117,5 @@ public:
     MCAPI static float const RAIN_TEMP_THRESHOLD;
 
 };
+
+static_assert(offsetof(Biome, mFogDefinition) == 128);

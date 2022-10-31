@@ -4,11 +4,11 @@
 #include <MC/Level.hpp>
 
 int Biome::getId() const {
-    return dAccess<int, 120>(this);
+    return mId;
 }
 
 std::string const& Biome::getName() const {
-    return dAccess<std::string, 8>(this);
+    return mName;
 }
 
 // Biome* Biome::fromId(int id) {

@@ -12,10 +12,10 @@ class RakPeerHelper {
 
 #define AFTER_EXTRA
 public:
-    struct IPSupportInterface{
+    class IPSupportInterface{
         IPSupportInterface() = delete;
-        IPSupportInterface(struct IPSupportInterface&) = delete;
-        IPSupportInterface(struct IPSupportInterface&&) = delete;
+        IPSupportInterface(class IPSupportInterface&) = delete;
+        IPSupportInterface(class IPSupportInterface&&) = delete;
     };
 
 #undef AFTER_EXTRA

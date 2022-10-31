@@ -20,20 +20,36 @@ struct tmat3x3{
 class Facing {
 
 #define AFTER_EXTRA
-enum Name;
-enum Rotation;
-public:
+    enum class Name : unsigned char {
+        DOWN = 0x0,
+        UP = 0x1,
+        NORTH = 0x2,
+        SOUTH = 0x3,
+        WEST = 0x4,
+        EAST = 0x5,
+        MAX = 0x6,
+        NOT_DEFINED = 0x6,
+        NUM_CULLING_IDS = 0x7,
+    };
+    enum class Rotation : int {
+        NONE = 0x0,
+        CCW = 0x1,
+        OPP = 0x2,
+        CW = 0x3,
+        _count = 0x4,
+    };
 
-static int convertYRotationToFacingDirection(float yRotation){
-    int cardinalDirection = (int)floor(((4.0 * yRotation)/360.0)+0.5) & 3;
-    void* Facing_Plane_HORIZONTAL = dlsym("?HORIZONTAL@Plane@Facing@@2V?$vector@EV?$allocator@E@std@@@std@@A");
-    return dAccess<int>(Facing_Plane_HORIZONTAL,cardinalDirection);
-}
+public:
+    static int convertYRotationToFacingDirection(float yRotation) {
+        int cardinalDirection = (int)floor(((4.0 * yRotation) / 360.0) + 0.5) & 3;
+        void* Facing_Plane_HORIZONTAL = dlsym("?HORIZONTAL@Plane@Facing@@2V?$vector@EV?$allocator@E@std@@@std@@A");
+        return dAccess<int>(Facing_Plane_HORIZONTAL, cardinalDirection);
+    }
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FACING
 public:
-    class Facing& operator=(class Facing const &) = delete;
-    Facing(class Facing const &) = delete;
+    class Facing& operator=(class Facing const&) = delete;
+    Facing(class Facing const&) = delete;
     Facing() = delete;
 #endif
 
@@ -52,7 +68,7 @@ public:
     MCAPI static int const STEP_X[];
     MCAPI static int const STEP_Y[];
     MCAPI static int const STEP_Z[];
-    MCAPI static unsigned char fromVec3(class Vec3 const &);
+    MCAPI static unsigned char fromVec3(class Vec3 const&);
     MCAPI static unsigned char getOpposite(unsigned char);
     MCAPI static struct glm::tmat3x3<float, 0> getRotationMatrix(unsigned char, enum class Facing::Rotation);
     MCAPI static int getStepX(unsigned char);
@@ -60,5 +76,4 @@ public:
     MCAPI static int getStepZ(unsigned char);
     MCAPI static unsigned char rotateFaceAroundGivenFace(unsigned char, unsigned char, enum class Facing::Rotation);
     MCAPI static class gsl::basic_string_span<char const, -1> toString(unsigned char);
-
 };

@@ -1,1 +1,1 @@
-https://minecraft.azureedge.net/bin-win/bedrock-server-1.16.40.02.zip
+https://minecraft.azureedge.net/bin-win/bedrock-server-1.16.201.03.zip

@@ -83,7 +83,7 @@ int ItemStack::getAux() const {
 int ItemStack::getCount() const {
     if (this->isNull())
         return 0;
-    return dAccess<unsigned char, 34>(this);
+    return mCount;
 }
 
 bool ItemStack::setItem(ItemStack* newItem) {
@@ -111,7 +111,7 @@ bool ItemStack::setNbt(CompoundTag* nbt) {
 int ItemStackBase::getCount() const {
     if (this->isNull())
         return 0;
-    return dAccess<unsigned char, 34>(this);
+    return mCount;
 }
 
 // string ItemStack::getStandardName(const Localization& language) {

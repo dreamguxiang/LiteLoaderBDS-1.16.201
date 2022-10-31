@@ -1857,7 +1857,7 @@ Local<Value> NbtStatic::newTag(const Arguments& args) {
         auto type = args[0].toInt();
 
         Local<Value> res;
-        switch (type) {
+        switch ((Tag::Type)type) {
             case Tag::Type::End: {
                 auto tag = EndTag::create();
                 if (args.size() >= 2 && args[1].isNumber()) {

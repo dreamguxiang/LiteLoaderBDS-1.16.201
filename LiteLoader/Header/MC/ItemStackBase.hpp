@@ -13,12 +13,12 @@ class ItemStackBase {
 
 #define AFTER_EXTRA
 // Add Member There
-private:
+public:
     WeakPtr<Item> mItem;
     std::unique_ptr<CompoundTag> mUserData;
     const Block *mBlock;
     int mAuxValue;
-    std::byte mCount;
+    uint8_t mCount; 
     bool mValid;
     std::chrono::steady_clock::time_point mPickupTime;
     bool mShowPickUp;

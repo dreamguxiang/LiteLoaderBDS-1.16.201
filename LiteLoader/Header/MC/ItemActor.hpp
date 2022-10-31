@@ -11,7 +11,19 @@
 class ItemActor : public Actor {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    ItemStack mItem;
+    int mAge;
+    int mPickupDelay;
+    int mThrowTime;
+    float mBobOffs;
+    int mHealth;
+    int mLifeTime;
+    bool mIsInItemFrame;
+    bool mIsFromFishing;
+
+
 public:
     LIAPI ItemStack* getItemStack();
     LIAPI int getDespawnTime();
@@ -74,3 +86,5 @@ public:
 private:
 
 };
+
+static_assert(sizeof(ItemActor) == 0x738, "Wrong size for ItemActor");
